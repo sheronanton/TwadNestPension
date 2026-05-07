@@ -26,7 +26,7 @@ ServletRequestAware,ServletResponseAware{
     /*public static String[] address={"char(", "ascii(", " union", "having",
         "group by", "order by" , "xp_", "0x", "cast(", "insert into",
         "delete from", "delete", "drop" , "exec(", "declare", "@@", "sp_","insert",
-        "update", "select","\"", "<", ">","!","script"};*/
+        "update", "select","\"", "<", ">","!","script"};*///
    
     public static String[] address={"char", "ascii","union","having", 
 		"insert","delete","update","select","script"};
