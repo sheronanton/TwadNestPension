@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15 Sep, 2009 3:45:35 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.DesignationCombo_dao" table="HRM_MST_DESIGNATIONS">
+		<id name="designationId" type="integer"  >
+            <column name="DESIGNATION_ID"  length="3" />
+            <generator class="assigned" />
+        </id>
+        
+      <property name="designationName" type="string">
+ 		<column name="DESIGNATION" length="50"/>     
+      </property> 
+      
+      <property name="gradeId" type="integer">
+ 		<column name="SERVICE_GROUP_ID" length="2"/>     
+      </property>  
+      
+         <property name="orderSeqNo" type="integer">
+ 		<column name="ORDERING_SEQUENCE_NO" length="4"/>     
+      </property>  
+ 
+ 
+   </class>     
+ </hibernate-mapping>

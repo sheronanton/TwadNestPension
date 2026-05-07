@@ -1,0 +1,120 @@
+.chromestyle{
+width: 99%;
+font-weight:normal;
+color:Gray;
+background-color: rgb(233,249,235);
+
+}
+
+.chromestyle:after{ /*Add margin between menu and rest of content in Firefox*/
+content: "."; 
+display: block; 
+height: 0; 
+clear: both; 
+visibility: hidden;
+}
+
+.chromestyle ul{
+border: 1px solid #BBB;
+width: 100%;
+/*background: url(chromebg.gif) center center repeat-x; THEME CHANGE HERE*/
+padding: 4px 0;
+margin: 0;
+text-align: center; /*set value to "left", "center", or "right"*/
+}
+
+.chromestyle ul li{
+display: inline;
+}
+
+.chromestyle ul li a{
+color: black;
+padding: 0px 0px;
+margin: 0;
+text-decoration: none;
+border-right: 0px solid #DADADA;
+}
+
+.chromestyle ul li a:hover{
+background: url(chromebg-over.gif) center center repeat-x; /*THEME CHANGE HERE*/
+}
+
+.chromestyle ul li a[rel]:after{ /*HTML to indicate drop down link*/
+content: " v";
+/*content: " " url(downimage.gif); /*uncomment this line to use an image instead*/
+}
+
+
+/* ######### Style for Drop Down Menu ######### */
+
+.dropmenudiv{
+position:absolute;
+text-align: left;
+top: 0;
+border: 0px solid rgb(51,102,102); /*THEME CHANGE HERE*/
+/*border-bottom-width: 0px solid rgb(51,102,102);*/
+font:lighter 11px oblique ;
+line-height:18px;
+z-index: 100px;
+background-position: 50%;
+/*background-color:rgb(255,198,181);
+background-color: rgb(207,222,225);*/
+background-color: rgb(233,249,235);
+width: 200px;
+visibility: hidden;
+/*
+filter: alpha(opacity=95);
+-moz-opacity: .95;
+*/
+}
+
+
+
+.dropmenudiv a{
+/*width: auto;*/
+direction: ltr;
+display: block;
+text-indent: 1px;/*
+border-bottom: 2px solid Black; THEME CHANGE HERE
+border-left: 2px solid Black;*/
+border-left: 1px solid rgb(51,102,102);
+border-right: 1px solid rgb(51,102,102); 
+border-bottom: 1px solid rgb(51,102,102);
+/*border-top:1px solid rgb(51,102,102);*/
+b
+
+padding: 0px 0;
+text-decoration:none;
+font-family: arial;
+font-size: 13px;
+font-weight:inherit;
+background-color:rgb(222,238,241);
+color: black;
+}
+
+* html .dropmenudiv a{ /*IE only hack*/
+width: 100%;
+}
+
+.dropmenudiv a:hover{ /*THEME CHANGE HERE
+background-color: #F0F0F0;
+background-color:rgb(222,238,241);*/
+background-color: rgb(207,222,225);
+
+}
+/*ssss
+
+transparency {filter: alpha(opacity=35); -moz-opacity: .35; background-color:#EEE; position:absolute; top:450px; left:110px; }
+
+*/
+catagory{
+
+background: rgb(233,249,235) ;
+}
+anchorcategory{
+color: black;
+padding: 0px 0px;
+margin: 0;
+text-decoration: none;
+border-right: 0px solid #DADADA;
+}

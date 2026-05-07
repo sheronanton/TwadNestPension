@@ -1,0 +1,8 @@
+.pupupdiv{
+  display:none;position:absolute;top:400px;left:50px;background:white ;
+ 	border: 2px solid black;
+	filter:alpha(opacity=100);
+	opacity: 100;
+	-moz-opacity:100;
+
+}

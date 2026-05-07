@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Pension_Form1_calculation_main_subreport1" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="9ec1e9bd-6a43-4a0d-898d-d778fc341fb9">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+  DATE_OF_JOINING,
+  DATE_OF_RELIEVING,
+  TOT_YEAR_SERVICE,
+  TOT_MONTH_SERVICE,
+  TOT_DAY_SERVICE,
+  DEPATMENT_NAME,
+  REMARKS
+ FROM HRM_PEN_APP_MST_OTH_DEPT_SER]]>
+	</queryString>
+	<field name="DATE_OF_JOINING" class="java.sql.Timestamp"/>
+	<field name="DATE_OF_RELIEVING" class="java.sql.Timestamp"/>
+	<field name="TOT_YEAR_SERVICE" class="java.math.BigDecimal"/>
+	<field name="TOT_MONTH_SERVICE" class="java.math.BigDecimal"/>
+	<field name="TOT_DAY_SERVICE" class="java.math.BigDecimal"/>
+	<field name="DEPATMENT_NAME" class="java.lang.String"/>
+	<field name="REMARKS" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement uuid="97b9a3e1-a7b3-4a19-91a5-6beeb718de2e" x="204" y="6" width="149" height="24"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Other Department Services]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

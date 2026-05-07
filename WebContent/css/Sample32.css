@@ -1,0 +1,159 @@
+.table
+{
+        background-color: rgb(247,247,247);
+}
+
+.tdH
+{
+     background-color: rgb(181,195,246);
+   
+}
+
+.tdH1
+{
+     background-color: rgb(112,89,106);
+   
+   
+}
+
+.disab
+{
+    background-color: rgb(231,231,231);
+}
+.tdTitle
+{
+    background-color: rgb(181,195,246);
+}
+
+.tdB
+{
+    background-color: rgb(220,223,251);
+}
+/*img
+{
+	border:none;
+}
+table.border1
+{
+	border-top:1px solid #FFFFFF;
+	border-right:0px solid #FFFFFF;
+	border-bottom:1px solid #FFFFFF;
+	border-left:1px solid #FFFFFF;
+	font-family:Verdana;
+	font-size:12px;
+}
+table.border1 th
+{
+	border-top:0px solid #FFFFFF;
+	border-right:1px solid #FFFFFF;
+	border-bottom:1px solid #FFFFFF;
+	border-left:0px solid #FFFFFF;
+	font-family:Verdana;
+	font-size:13px;
+	font-weight:bold;
+	height:35px;
+	padding:5px;
+	background-color: rgb(247,247,247);
+	nowrap:nowrap;
+}
+table.border1 td
+{
+	border-top:0px solid #EEEEEE;
+	border-right:1px solid #EEEEEE;
+	border-bottom:1px solid #EEEEEE;
+	border-left:0px solid #EEEEEE;
+	height:35px;
+	padding:5px;
+
+}*/
+
+table.border1
+{
+	border-top:1px solid #FFFFFF;
+	border-left:1px solid #FFFFFF;
+	border-right:0px solid #FFFFFF;
+	border-bottom:0px solid #FFFFFF;
+	font-family:Arial;
+	font-size:12px;
+	background-color:#DFE8E8;
+	
+}
+table.border1 th
+{
+	border-top:0px solid #FFFFFF;
+	border-left:0px solid #FFFFFF;
+	border-right:1px solid #FFFFFF;
+	border-bottom:1px solid #FFFFFF;
+	padding:5px 5px 5px 10px;
+	height:25px;
+	font-size:13px !important;
+	text-align:left;
+}
+table.border1 td
+{
+	border-top:0px solid #FFFFFF;
+	border-left:0px solid #FFFFFF;
+	border-right:1px solid #FFFFFF;
+	border-bottom:1px solid #FFFFFF;
+	padding:5px 0 5px 10px;
+	height:25px;
+	text-align:left;
+}
+
+table.border1 a
+{
+text-decoration:none;
+font-weight:bold;
+ color:#000000; 
+
+}
+table.border1 a:hover
+{
+text-decoration:none;
+font-weight:bold;
+color:red; 
+
+}
+img
+{
+border:none;
+}
+a
+{
+border:none;
+}
+
+
+table.border2
+{
+	border-top:0px solid #FFFFFF;
+	border-right:0px solid #FFFFFF;
+	border-bottom:0px solid #FFFFFF;
+	border-left:0px solid #FFFFFF;
+	font-family:Verdana;
+	font-size:12px;
+	
+}
+table.border2 th
+{
+	border-top:0px solid #FFFFFF;
+	border-right:0px solid #FFFFFF;
+	border-bottom:0px solid #FFFFFF;
+	border-left:0px solid #FFFFFF;
+	font-family:Verdana;
+	font-size:13px;
+	font-weight:bold;
+	height:27px !important;
+	padding:5px;
+	background-color: rgb(247,247,247);
+}
+table.border2 td
+{
+	border-top:0px solid #EEEEEE;
+	border-right:1px solid #EEEEEE;
+	border-bottom:1px solid #EEEEEE;
+	border-left:0px solid #EEEEEE;
+	height:27px !important;
+	padding:5px;
+
+}

@@ -1,0 +1,2128 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<!-- Constants -->
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.i18n.encoding" value="UTF-8" />
+	<constant name="struts.action.extension" value="html" />
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.custom.i18n.resources" value="ApplicationResources,errors" />
+	<constant name="struts.multipart.maxSize" value="2097152" />
+	<constant name="struts.ui.theme" value="css_xhtml" />
+	<constant name="struts.codebehind.pathPrefix" value="/WEB-INF/pages/" />
+	<constant name="struts.enable.SlashesInActionNames" value="true" />
+
+	<!-- Configuration for the default package. -->
+	<package name="default1" namespace="/pages" extends="struts-default">
+		<!--REPORT START -->
+		<result-types>
+			<result-type name="jasper"
+				class="org.apache.struts2.views.jasperreports.JasperReportsResult" />
+		</result-types>
+
+		<!-- Pension Application Form1 Calculation Start -->
+
+		<action name="penAppForm1FetchSettingdata" class="LoadMstPenForm1Calc"
+			method="loadSettingData">
+			<result name="input">/pages/PensionApplicationAddForm1.jsp</result>
+			<result name="success">/pages/PensionApplicationAddForm1.jsp</result>
+		</action>
+
+		<action name="penAppForm1FetchMstdata" class="LoadMstPenForm1Calc"
+			method="loadPenAppForm1MstData">
+			<result name="input">/pages/PensionApplicationAddForm1.jsp</result>
+			<result name="success">/pages/PensionApplicationAddForm1.jsp</result>
+		</action>
+
+
+		<action name="penAppForm1FetchMstCheckValdata" class="LoadMstPenForm1Calc"
+			method="loadPenAppForm1MstCheckValData">
+			<result name="input">/pages/PensionApplicationAddForm1.jsp</result>
+			<result name="success">/pages/PensionApplicationAddForm1.jsp</result>
+		</action>
+
+		<action name="penAppForm1CalcFetchOldMstdata" class="LoadMstPenForm1Calc"
+			method="loadPenAppForm1OldMstData">
+			<result name="input">/pages/PensionApplicationAddForm1.jsp</result>
+			<result name="success">/pages/PensionApplicationAddForm1.jsp</result>
+		</action>
+
+		<action name="penAppForm1CalcFetchOldAEdata" class="LoadMstPenForm1Calc"
+			method="loadPenAppForm1OldAEData">
+			<result name="input">/pages/PensionApplicationAddForm1.jsp</result>
+			<result name="success">/pages/PensionApplicationAddForm1.jsp</result>
+		</action>
+
+		<action name="penAppForm1CalcFetchOldOthDeptSerdata" class="LoadMstPenForm1Calc"
+			method="loadPenAppForm1OtherDepServiceData">
+			<result name="input">/pages/PensionApplicationAddForm1.jsp</result>
+			<result name="success">/pages/PensionApplicationAddForm1.jsp</result>
+		</action>
+
+		<action name="penAppForm1CalcFetchOldRecdata" class="LoadMstPenForm1Calc"
+			method="loadPenAppForm1OldRecoveryData">
+			<result name="input">/pages/PensionApplicationAddForm1.jsp</result>
+			<result name="success">/pages/PensionApplicationAddForm1.jsp</result>
+		</action>
+
+		<action name="saveAddPensionAppForm1Calculation" class="LoadMstPenForm1Calc"
+			method="addPensionAppForm1Calculation">
+			<result name="input">/pages/PensionApplicationAddForm1.jsp</result>
+			<result name="SUCCESS" type="redirect-action">
+				<param name="empId">${reportEmpId}</param>
+				<param name="typeOfPen">${typeofPension}</param>
+				<param name="actionName">pension_cal_form1_report_action.html</param>
+			</result>
+			<result name="DEATH" type="redirect-action">
+				<param name="empId">${reportEmpId}</param>
+				<param name="typeOfPen">${typeofPension}</param>
+				<param name="actionName">pension_cal_form1_report_death_action.html</param>
+			</result>
+		</action>
+
+		<action name="compenAppForm1CalcFetchMstdata" class="LoadMstPenForm1Calc"
+			method="loadPenAppForm1ComData">
+			<result name="input">/pages/PensionApplicationAddForm1.jsp</result>
+			<result name="success">/pages/PensionApplicationAddForm1.jsp</result>
+		</action>
+
+		<action name="empStatusAppForm1CalcFetchMstdata" class="LoadMstPenForm1Calc"
+			method="loadPenAppForm1EmpStatus">
+			<result name="input">/pages/PensionApplicationAddForm1.jsp</result>
+			<result name="success">/pages/PensionApplicationAddForm1.jsp</result>
+		</action>
+
+		<action name="PensionApplicationForm1Search" class="PenApplicationForm1Search"
+			method="PensionApplicationForm1Search">
+			<result name="success">/pages/PensionApplicationForm1Search.jsp</result>
+		</action>
+
+
+
+
+
+
+
+
+
+		<action name="penAppForm1FetchSettingValdata" class="LoadMstPenForm1ValCalc"
+			method="loadSettingValData">
+			<result name="input">/pages/PensionApplicationValForm1.jsp</result>
+			<result name="success">/pages/PensionApplicationValForm1.jsp</result>
+		</action>
+	<action name="penAppForm1FetchMstValdata" class="LoadMstPenForm1ValCalc"
+			method="loadPenAppForm1MstValData">
+			<result name="input">/pages/PensionApplicationValForm1.jsp</result>
+			<result name="success">/pages/PensionApplicationValForm1.jsp</result>
+		</action>
+
+		<action name="penAppForm1CalcFetchOldMstValdata" class="LoadMstPenForm1ValCalc"
+			method="loadPenAppForm1OldMstValData">
+			<result name="input">/pages/PensionApplicationValForm1.jsp</result>
+			<result name="success">/pages/PensionApplicationValForm1.jsp</result>
+		</action>
+
+		<action name="penAppForm1CalcFetchOldAEValdata" class="LoadMstPenForm1ValCalc"
+			method="loadPenAppForm1OldAEValData">
+			<result name="input">/pages/PensionApplicationValForm1.jsp</result>
+			<result name="success">/pages/PensionApplicationValForm1.jsp</result>
+		</action>
+
+		<action name="penAppForm1CalcFetchOldRecValdata" class="LoadMstPenForm1ValCalc"
+			method="loadPenAppForm1OldRecoveryValData">
+			<result name="input">/pages/PensionApplicationValForm1.jsp</result>
+			<result name="success">/pages/PensionApplicationValForm1.jsp</result>
+		</action>
+
+		<action name="penAppForm1CalcFetchOldOthDeptServValdata" class="LoadMstPenForm1ValCalc"
+			method="loadPenAppForm1OtherDepServiceValData">
+			<result name="input">/pages/PensionApplicationValForm1.jsp</result>
+			<result name="success">/pages/PensionApplicationValForm1.jsp</result>
+		</action>
+
+
+		<action name="saveAddPensionAppForm1ValCalculation" class="LoadMstPenForm1ValCalc"
+			method="addPensionAppForm1ValCalculation">
+			<result name="input">/pages/PensionApplicationValForm1.jsp</result>
+			<result name="SUCCESS" type="redirect-action">
+				<param name="empId">${reportEmpId}</param>
+				<param name="typeOfPen">${typeofPension}</param>
+				<param name="actionName">pension_cal_form1_report_val_action.html</param>
+			</result>
+			<result name="DEATH" type="redirect-action">
+				<param name="empId">${reportEmpId}</param>
+				<param name="typeOfPen">${typeofPension}</param>
+				<param name="actionName">pension_cal_form1_report_death_val_action.html</param>
+			</result>
+		</action>
+
+		<action name="pension_cal_form1_report_death_val_action" class="reportPensionForm1CalcValForms"
+			method="valfieldofficedeathprint">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Pension_Form1_calculation_death_Val_main.jasper</param>
+				<param name="documentName">Pension_Form1_calculation_death_Val_main</param>
+				<param name="dataSource">pensionForm1CalcDeathValDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+
+
+		<action name="compenAppForm1CalcFetchMstValdata" class="LoadMstPenForm1ValCalc"
+			method="loadPenAppForm1ComValData">
+			<result name="input">/pages/PensionApplicationValForm1.jsp</result>
+			<result name="success">/pages/PensionApplicationValForm1.jsp</result>
+		</action>
+
+		<action name="empStatusAppForm1CalcFetchMstValdata" class="LoadMstPenForm1ValCalc"
+			method="loadPenAppForm1EmpValStatus">
+			<result name="input">/pages/PensionApplicationValForm1.jsp</result>
+			<result name="success">/pages/PensionApplicationValForm1.jsp</result>
+		</action>
+
+
+		<action name="PensionApplicationForm1ValSearch" class="PenApplicationForm1Search"
+			method="PensionApplicationForm1ValSearch">
+			<result name="success">/pages/PensionApplicationForm1ValSearch.jsp
+			</result>
+		</action>
+		
+		<action name="pension_cal_form1_report_death_action" class="reportPensionForm1CalcForms"
+			method="deathprint">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Pension_Form1_calculation_death_main.jasper</param>
+				<param name="documentName">Pension_Form1_calculation_death_main</param>
+				<param name="dataSource">pensionForm1CalcDeathDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+        <action name="pension_cal_form1_report_action" class="reportPensionForm1CalcForms"
+			method="print">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Pension_Form1_calculation_main.jasper</param>
+				<param name="documentName">Pension_Form1_calculation_main</param>
+				<param name="dataSource">pensionForm1CalcDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="pension_cal_form1_report_val_action" class="reportPensionForm1CalcValForms"
+			method="valfieldofficeprint">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Pension_Form1_calculation_Val_main.jasper</param>
+				<param name="documentName">Pension_Form1_calculation_Val_main</param>
+				<param name="dataSource">pensionForm1CalcValDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		
+		<action name="pension_cal_form1_report_working_sheet_val_action"
+			class="reportPensionForm1CalcValForms" method="valfieldofficeworkingsheetprint">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Pension_Form1_calculation_Working_sheet_Val_main.jasper</param>
+				<param name="documentName">Pension_Form1_calculation_Working_sheet_Val_main</param>
+				<param name="dataSource">pensionForm1CalcValDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="pension_cal_form1_report_death_working_sheet_val_action"
+			class="reportPensionForm1CalcValForms" method="valfieldofficeworkingsheetdeathprint">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Pension_Form1_calculation_death_Working_sheet_Val_main.jasper</param>
+				<param name="documentName">Pension_Form1_calculation_death_Working_sheet_Val_main</param>
+				<param name="dataSource">pensionForm1CalcDeathValDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		
+		<!-- Pension Application Form1 Calculation End -->
+		
+		
+		<!-- PENSION APPLICATION FIELD OFFICE FORM 2 CONFIGURATION -->
+	
+		
+		<action name="penAppFetchMstdata" class="LoadMstPenApplication"
+			method="loadMstData">
+			<result name="input">/pages/PensionApplicationAddForm2.jsp</result>
+			<result name="success">/pages/PensionApplicationAddForm2.jsp</result>
+		</action>
+
+		<action name="penAppChkAvailable" class="LoadMstPenApplication"
+			method="chkAvailable">
+			<result name="input">/pages/PensionApplicationAddForm2.jsp</result>
+			<result name="success">/pages/PensionApplicationAddForm2.jsp</result>
+		</action>
+		<action name="loadAddPenApplicationForm2" class="loadPenAppComboDetails"
+			method="loadCombo">
+			<result name="success">/pages/PensionApplicationAddForm2.jsp</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+		<action name="penAppChkForm1Available" class="LoadMstPenApplication"
+			method="chkAvailableForm1">
+			<result name="success">/pages/PensionApplicationAddForm2.jsp</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+		<action name="penAppFreezeCheck" class="penAppFreezeCheck"
+			method="penAppFreezeCheck1">
+			<result name="success">/pages/PensionApplicationAddForm2.jsp</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+		<action name="penAppAddForm2SaveAction" class="penAppAddForm2"
+			method="saveForm2">
+			<result name="input">/pages/PensionApplicationAddForm2.jsp</result>
+			<result name="success">/pages/Success.jsp</result>
+			<result name="error">/pages/Failure.jsp</result>
+		</action>
+
+		<action name="loadIndividualDataForFieldOffice" class="penAppAddForm2"
+			method="getAppIndividualData">
+			<result>/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<action name="PenAppForm2EditDataLoad" class="penAppEditForm2"
+			method="loadEditData">
+			<result name="success">/pages/PensionApplicationEditForm2.jsp</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<action name="penAppEditForm2SaveAction" class="penAppEditForm2"
+			method="saveEditData">
+			<result name="input">/pages/PensionApplicationEditForm2.jsp</result>
+			<result name="success">/pages/Success.jsp</result>
+			<result name="error">/pages/Failure.jsp</result>
+		</action>
+
+
+		<action name="PenAppForm2ValidDataLoad" class="penAppValForm2"
+			method="loadValidateData">
+			<result name="input">/pages/PensionApplicationValidateForm2Search.jsp
+			</result>
+			<result name="success">/pages/PensionApplicationValidateForm2.jsp
+			</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<action name="penAppValidForm2SaveAction" class="penAppValForm2"
+			method="saveValidateData">
+			<result name="input">/pages/PensionApplicationValidateForm2.jsp
+			</result>
+			<result name="success">/pages/Success.jsp</result>
+			<result name="error">/pages/Failure.jsp</result>
+		</action>
+		
+				
+
+		<!-- PENSION APPLICATION FIELD OFFICE FORM 2 CONFIGURATION -->
+	   <!-- change pen/fam name start -->
+		
+		<action name="penfamnameSearch" class="penfamchangename" method="searchpenfamname">
+			<result name="success">/pages/penfamnameSearch.jsp</result>
+		</action>
+		
+		<!-- change pen/fam name start -->
+		
+		<!-- change Designation start -->
+		
+		<action name="designationSearch" class="changedesignationAction" method="searchDesignation">
+			<result name="success">/pages/designationSearch.jsp</result>
+		</action>
+		
+		<!-- change Designation start -->
+		
+			<!-- PENSION APPLICATION FIELD OFFICE WHOLE REPORT START -->
+
+		<action name="pen_app_field_off_report_anxform5" class="reportPenAppFieldOffice"
+			method="print">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/annexure_form5.jasper</param>
+				<param name="documentName">annexure_form5</param>
+				<param name="dataSource">penAppFieldOfficeDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="pen_app_field_off_report_anxform5_1" class="reportPenAppFieldOffice"
+			method="print1">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/annexure_form5_I.jasper</param>
+				<param name="documentName">annexure_form5_I</param>
+				<param name="dataSource">penAppFieldOfficeDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="pen_app_field_off_report_speci_sign" class="reportPenAppFieldOffice"
+			method="specisignprint">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/specimen_signature.jasper</param>
+				<param name="documentName">specimen_signature</param>
+				<param name="dataSource">penAppFieldOfficeDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="pen_app_field_off_report_desc_roll" class="reportPenAppFieldOffice"
+			method="descrollprint">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/descriptive_roll.jasper</param>
+				<param name="documentName">descriptive_roll</param>
+				<param name="dataSource">penAppFieldOfficeDcrg3Details</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="pen_app_field_off_report_att_joinphot" class="reportPenAppFieldOffice"
+			method="attjoinphotprint">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/attested_joint_photograph.jasper</param>
+				<param name="documentName">attested_joint_photograph</param>
+				<param name="dataSource">penAppFieldOfficeDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="pen_app_field_off_report_cons_let" class="reportPenAppFieldOffice"
+			method="consletprint">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/consent_letter.jasper</param>
+				<param name="documentName">consent_letter</param>
+				<param name="dataSource">penAppFieldOfficeDcrg3Details</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="pen_app_field_off_report_cons_let_rec" class="reportPenAppFieldOffice"
+			method="consletrecprint">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/consent_letter_for_recovery.jasper</param>
+				<param name="documentName">consent_letter_for_recovery</param>
+				<param name="dataSource">penAppFieldOfficeDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="pen_app_field_off_report_form_of_declaration"
+			class="reportPenAppFieldOffice" method="formofdeclarationprint">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/form_of_declaration.jasper</param>
+				<param name="documentName">form_of_declaration</param>
+				<param name="dataSource">penAppFieldOfficeDcrg3Details</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+
+		<action name="pen_app_field_off_report_apppendcrg1" class="reportPenAppFieldOffice"
+			method="apppendcrg1print">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/app_for_pen_or_dcrg.jasper</param>
+				<param name="documentName">app_for_pen_or_dcrg</param>
+				<param name="dataSource">penAppFieldOfficeDcrg1Details</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="pen_app_field_off_report_apppendcrg2" class="reportPenAppFieldOffice"
+			method="apppendcrg2print">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/app_for_pen_or_dcrg2.jasper</param>
+				<param name="documentName">app_for_pen_or_dcrg2</param>
+				<param name="dataSource">penAppFieldOfficeDcrg2Details</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="pen_app_field_off_report_form_pen_gratuity1"
+			class="reportPenAppFieldOffice" method="form_pen_gratuity1_print">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/form_for_ass_pen_gratuity1.jasper</param>
+				<param name="documentName">form_for_ass_pen_gratuity1</param>
+				<param name="dataSource">penAppFieldOfficeDcrg1Details</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="pen_app_field_off_report_form_pen_gratuity2"
+			class="reportPenAppFieldOffice" method="form_pen_gratuity2_print">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/form_for_ass_pen_gratuity2.jasper</param>
+				<param name="documentName">form_for_ass_pen_gratuity2</param>
+				<param name="dataSource">penAppFieldOfficeCalcDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="pen_app_field_off_report_form_pen_gratuity3"
+			class="reportPenAppFieldOffice" method="form_pen_gratuity3_print">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/form_for_ass_pen_gratuity3.jasper</param>
+				<param name="documentName">form_for_ass_pen_gratuity3</param>
+				<param name="dataSource">penAppFieldOfficeDcrg3Details</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+
+		<action name="details_of_family" class="reportPenAppFieldOffice"
+			method="details_of_family_print">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/pen_app_field_off_report_details_of_family.jasper</param>
+				<param name="documentName">pen_app_field_off_report_details_of_family</param>
+				<param name="dataSource">penAppFieldOfficeDcrg3Details</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+
+		<action name="no_due_certificate" class="reportPenAppFieldOffice"
+			method="no_due_certificate_print">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/pen_app_field_off_report_no_due_certificate.jasper</param>
+				<param name="documentName">pen_app_field_off_report_no_due_certificate</param>
+				<param name="dataSource">penAppFieldOfficeDcrg3Details</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="printPenAppFieldOffice" class="penAppFieldOfficeForm2Report"
+			method="printPenAppFieldOffice">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/PensionApplicationFieldOfficeForm2.jasper</param>
+				<param name="documentName">PensionApplicationFieldOfficeForm2</param>
+				<param name="dataSource">penAppFieldOfficeDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+        <action name="penAppForm2Validate" class="penAppValForm2" method="validateSearch">
+			<result name="success" >/pages/PensionApplicationValidateForm2Search.jsp</result>
+		</action>
+
+
+		<!-- PENSION APPLICATION FIELD OFFICE WHOLE REPORT END -->
+		<!-- Pension Calculation Field Office Whole report Search Start -->
+
+		<action name="PenAppFieldOfficeReportSearch" class="PenAppFieldOfficeReportSearch"
+			method="PenAppFieldOfficeReportUserSrch">
+			<result name="success">/pages/PensionApplicationFieldOfficeReportSearch.jsp
+			</result>
+		</action>
+
+		<action name="PenAppFieldOfficeReportSearch1" class="PenAppFieldOfficeReportSearch"
+			method="PenAppFieldOfficeReportUserSrch1">
+			<result name="success">/pages/PensionApplicationFieldOfficeReportSearch.jsp
+			</result>
+		</action>
+
+		<!-- Pension Calculation Field Office Whole report Search End -->
+                 <!-- change name pen/fam start -->
+		
+		<action name="ChangeNamepenFampension" class="penfamchangename" method="gettokenvalueof">
+		    <result name="success">/pages/ChangeNamePenFamPensioner.jsp</result>
+		</action>
+		
+		<action name="checkexistingpenfam" class="penfamchangename" method="getpenfamname">
+		    <result name="success">/pages/ChangeNamePenFamPensioner.jsp</result>
+		</action>
+		<action name="changepenname" class="penfamchangename" method="changepenfamname">
+		    <result name="success">/pages/ChangeNamePenFamPensioner.jsp</result>
+		    <result name="error">/pages/error1.jsp</result>
+		</action>
+		<!-- change name pen/fam end -->
+		<!-- UNfreez start suresh -->
+		<action name="Unfreezepensioncalculation" class="unfreezaction" method="tokengeneration">
+		<result name="success">/pages/UnFreezPensionCalculation.jsp</result>
+		</action> 
+		
+		<action name="checkempdetails" class="unfreezaction" method="getempname">
+		    <result name="success">/pages/UnFreezPensionCalculation.jsp</result>
+		</action>
+		
+		
+		<action name="Unfreezepensioncalculationrevised" class="unfreezaction" method="tokengeneration">
+		<result name="success">/pages/UnFreezPensionCalculationRevised.jsp</result>
+		</action> 
+		
+		
+		<action name="checkempdetailsrevised" class="unfreezaction" method="getrevisedempname">
+		    <result name="success">/pages/UnFreezPensionCalculationRevised.jsp</result>
+		</action>
+		
+		<action name="unfreezeaction"  class="unfreezaction" method="unfreezepensioncalc">
+		        <result name="success">/pages/UnFreezPensionCalculation.jsp</result>
+		</action>
+			<action name="unfreezeactionrevised"  class="unfreezaction" method="unfreezepensioncalcrevised">
+		        <result name="success">/pages/UnFreezPensionCalculationRevised.jsp</result>
+		</action>
+		<!-- UNfreez end suresh -->
+		
+		<!-- change Dest start -->
+		<action name="ChangeDesignationEmp" class="changedesignationAction" method="gettokenvaluegenerate">
+		    <result name="success">/pages/DesignationChangeForm.jsp</result>
+		</action>
+		<action name="checkexistingdest" class="changedesignationAction" method="getDesignation">
+		    <result name="success">/pages/DesignationChangeForm.jsp</result>
+		</action>
+		<action name="changedesination" class="changedesignationAction" method="changeDesignation">
+		    <result name="success">/pages/DesignationChangeForm.jsp</result>
+		    <result name="error">/pages/error1.jsp</result>
+		</action>
+		<!-- change Dest end -->
+		<action name="pension_cal_ho_form1_report_death_working_sheet_val_action"
+			class="reportPensionHOForm1CalcValForms" method="valfieldofficeworkingsheetdeathprint">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Pension_Form1_calculation_death_Working_sheet_Val_main.jasper</param>
+				<param name="documentName">Pension_Form1_calculation_death_Working_sheet_Val_main</param>
+				<param name="dataSource">pensionHOForm1CalcDeathValDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+	<!-- Family Pension Order Authorisation Report Start -->
+
+		<action name="familyPensionOrder1" class="reportFamilyPenOrderAuthorisation"
+			method="printPensionOrder1">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/FamilyPensionOrderForm1.jasper</param>
+				<param name="documentName">FamilyPensionOrderForm1</param>
+				<param name="dataSource">penOrderDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="familyPensionOrder2" class="reportFamilyPenOrderAuthorisation"
+			method="printPensionOrder2">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/FamilyPensionOrderForm2.jasper</param>
+				<param name="documentName">FamilyPensionOrderForm2</param>
+				<param name="dataSource">penOrderDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="familyPensionOrder3" class="reportFamilyPenOrderAuthorisation"
+			method="printPensionOrder3">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/FamilyPensionOrderForm3.jasper</param>
+				<param name="documentName">FamilyPensionOrderForm3</param>
+				<param name="dataSource">penOrderDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+
+		<action name="FamilyPenOrderAuthorisationReportSearch" class="reportFamilyPenOrderAuthorisation"
+			method="PenOrderAuthorisationReportUserSrch">
+			<result name="success">/pages/FamilyPensionOrderAuthorisationReport.jsp
+			</result>
+		</action>
+
+
+		<!-- Family Pension Order Authorisation Report End -->
+		<!-- pension application form 2 configuration -->
+		
+		<action name="loadHOEditData" class="penAppHOValidateForm2"
+			method="searchOperation">
+			<result name="success">/pages/PensionApplicationHOValidateForm2Search.jsp
+			</result>
+		</action>
+		 
+		<action name="penAppForm2Add" class="penAppAddForm2" method="addSearch">
+			<result name="success">/pages/PensionApplicationAddForm2Search.jsp
+			</result>
+		</action>
+
+		<action name="penAppForm2Edit" class="penAppEditForm2" method="SearchOperation">
+			<result name="success">/pages/PensionApplicationEditForm2.jsp</result>
+		</action>
+
+
+		 <action name="loadPenAppValidatedData" class="LoadPenAppFieldOfficeData"
+			method="loadData">
+			<result name="success">/pages/PensionApplicationHOSearch.jsp</result>
+		</action>
+		
+	  
+
+		<action name="searchPenAppValidatedData" class="LoadPenAppFieldOfficeData"
+			method="searchData">
+			<result name="success">/pages/PensionApplicationHOSearch.jsp</result>
+		</action>
+
+		
+		<action name="loadHOEditSearchData" class="penAppHOValidateForm2"
+			method="searchOperation2">
+			<result name="success">/pages/PensionApplicationHOValidateForm2Search.jsp
+			</result>
+		</action>
+
+		
+		<!-- pension application form 2 configuration -->
+		
+
+		<!-- Pension Calculation Field Office Death report Search Start -->
+
+		<action name="PenAppFieldOfficeDeathReportSearch" class="PenAppFieldOfficeDeathReportSearch"
+			method="PenAppFieldOfficeDeathReportUserSrch">
+			<result name="success">/pages/PensionApplicationFieldOfficeDeathReportSearch.jsp
+			</result>
+		</action>
+
+		
+		<action name="PenAppFieldOfficeDeathReportSearch1" class="PenAppFieldOfficeDeathReportSearch"
+			method="PenAppFieldOfficeDeathReportUserSrch1">
+			<result name="success">/pages/PensionApplicationFieldOfficeDeathReportSearch.jsp
+			</result>
+		</action>
+
+		
+		<!-- Pension Calculation Field Office Death report Search End -->
+
+		<!-- Pension Calculation Head Office Form1 Start -->
+		<action name="pension_cal_ho_form1_report_action" class="reportPensionHOForm1CalcForms"
+			method="headOffice_report_print">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Pension_Form1_calculation_main.jasper</param>
+				<param name="documentName">Pension_Form1_calculation_main</param>
+				<param name="dataSource">pensionHOForm1CalcDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="pension_cal_ho_form1_report_death_action" class="reportPensionHOForm1CalcForms"
+			method="headOffice_report_deathprint">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Pension_Form1_calculation_death_main.jasper</param>
+				<param name="documentName">Pension_Form1_calculation_death_main</param>
+				<param name="dataSource">pensionHOForm1CalcDeathDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		
+		<action name="pension_cal_ho_form1_report_val_action" class="reportPensionHOForm1CalcValForms"
+			method="valheadofficeprint">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Pension_Form1_calculation_Val_main.jasper</param>
+				<param name="documentName">Pension_Form1_calculation_Val_main</param>
+				<param name="dataSource">pensionHOForm1CalcValDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="pension_cal_ho_form1_report_death_val_action"
+			class="reportPensionHOForm1CalcValForms" method="valheadofficedeathprint">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Pension_Form1_calculation_death_Val_main.jasper</param>
+				<param name="documentName">Pension_Form1_calculation_death_Val_main</param>
+				<param name="dataSource">pensionHOForm1CalcDeathValDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="penAppHOForm1FetchSettingdata" class="LoadMstPenHOForm1Calc"
+			method="loadSettingData">
+			<result name="input">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+			<result name="success">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+		</action>
+
+		<action name="penAppHOForm1FetchMstdata" class="LoadMstPenHOForm1Calc"
+			method="loadPenAppHOForm1MstData">
+			<result name="input">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+			<result name="success">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+		</action>
+
+		<action name="penAppHOForm1FetchMstCheckValdata" class="LoadMstPenHOForm1Calc"
+			method="loadPenAppHOForm1MstCheckValData">
+			<result name="input">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+			<result name="success">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+		</action>
+
+		<action name="penAppHOForm1CalcFetchOldMstdata" class="LoadMstPenHOForm1Calc"
+			method="loadPenAppHOForm1OldMstData">
+			<result name="input">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+			<result name="success">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+		</action>
+
+		<action name="penAppHOForm1CalcFetchOldAEdata" class="LoadMstPenHOForm1Calc"
+			method="loadPenAppHOForm1OldAEData">
+			<result name="input">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+			<result name="success">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+		</action>
+
+		<action name="penAppHOForm1CalcFetchOldRecdata" class="LoadMstPenHOForm1Calc"
+			method="loadPenAppHOForm1OldRecoveryData">
+			<result name="input">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+			<result name="success">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+		</action>
+
+		<action name="saveAddPensionAppHOForm1Calculation" class="LoadMstPenHOForm1Calc"
+			method="addPensionAppHOForm1Calculation">
+			<result name="input">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+			<result name="SUCCESS" type="redirect-action">
+				<param name="empId">${reportEmpId}</param>
+				<param name="typeOfPen">${typeofPension}</param>
+				<param name="actionName">pension_cal_ho_form1_report_action.html</param>
+			</result>
+			<result name="DEATH" type="redirect-action">
+				<param name="empId">${reportEmpId}</param>
+				<param name="typeOfPen">${typeofPension}</param>
+				<param name="actionName">pension_cal_ho_form1_report_death_action.html</param>
+			</result>
+		</action>
+
+		<action name="compenAppHOForm1CalcFetchMstdata" class="LoadMstPenHOForm1Calc"
+			method="loadPenAppHOForm1ComData">
+			<result name="input">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+			<result name="success">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+		</action>
+
+		<action name="empStatusAppHOForm1CalcFetchMstdata" class="LoadMstPenHOForm1Calc"
+			method="loadPenAppHOForm1EmpStatus">
+			<result name="input">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+			<result name="success">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+		</action>
+
+
+
+		<action name="PensionApplicationHOForm1Search" class="PenApplicationHeadOfficeForm1Search"
+			method="PensionApplicationHeadOfficeForm1Search">
+			<result name="success">/pages/PensionApplicationHeadOfficeForm1Search.jsp
+			</result>
+		</action>
+
+
+		<action name="penAppHOForm1CalcFetchFieldOfficeOldMstdata"
+			class="LoadMstPenHOForm1Calc" method="loadPenAppHOForm1FieldOfficeOldMstData">
+			<result name="input">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+			<result name="success">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+		</action>
+
+		<action name="penAppHOForm1CalcFetchFieldOfficeOldAEdata"
+			class="LoadMstPenHOForm1Calc" method="loadPenAppHOForm1FieldOfficeOldAEData">
+			<result name="input">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+			<result name="success">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+		</action>
+
+		<action name="penAppFieldOfficeForm1CalcFetchOldOthDeptServdata"
+			class="LoadMstPenHOForm1Calc" method="loadPenAppHOForm1FieldOfficeOlddeptserviceData">
+			<result name="input">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+			<result name="success">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+		</action>
+
+
+		<action name="penAppHOForm1CalcFetchOldOthDeptServdata" class="LoadMstPenHOForm1Calc"
+			method="loadPenAppHOofficeOlddeptserviceData">
+			<result name="input">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+			<result name="success">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+		</action>
+
+
+		<action name="penAppHOForm1CalcFetchFieldOfficeOldRecdata"
+			class="LoadMstPenHOForm1Calc" method="loadPenAppHOForm1FieldOfficeOldRecoveryData">
+			<result name="input">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+			<result name="success">/pages/PensionApplicationHeadOfficeAddForm1.jsp
+			</result>
+		</action>
+
+
+
+
+
+		<action name="penAppHOForm1FetchSettingValdata" class="LoadMstPenHOForm1ValCalc"
+			method="loadSettingValData">
+			<result name="input">/pages/PensionApplicationHeadOfficeValForm1.jsp
+			</result>
+			<result name="success">/pages/PensionApplicationHeadOfficeValForm1.jsp
+			</result>
+		</action>
+
+		<action name="penAppHOForm1FetchMstValdata" class="LoadMstPenHOForm1ValCalc"
+			method="loadPenAppHOForm1MstValData">
+			<result name="input">/pages/PensionApplicationHeadOfficeValForm1.jsp
+			</result>
+			<result name="success">/pages/PensionApplicationHeadOfficeValForm1.jsp
+			</result>
+		</action>
+
+		<action name="penAppHOForm1CalcFetchOldMstValdata" class="LoadMstPenHOForm1ValCalc"
+			method="loadPenAppHOForm1OldMstValData">
+			<result name="input">/pages/PensionApplicationHeadOfficeValForm1.jsp
+			</result>
+			<result name="success">/pages/PensionApplicationHeadOfficeValForm1.jsp
+			</result>
+		</action>
+
+		<action name="penAppHOForm1CalcFetchOldAEValdata" class="LoadMstPenHOForm1ValCalc"
+			method="loadPenAppHOForm1OldAEValData">
+			<result name="input">/pages/PensionApplicationHeadOfficeValForm1.jsp
+			</result>
+			<result name="success">/pages/PensionApplicationHeadOfficeValForm1.jsp
+			</result>
+		</action>
+
+		<action name="penAppHOForm1CalcOldOthDeptServValdata" class="LoadMstPenHOForm1ValCalc"
+			method="loadPenAppHOForm1OldDeptValData">
+			<result name="input">/pages/PensionApplicationHeadOfficeValForm1.jsp
+			</result>
+			<result name="success">/pages/PensionApplicationHeadOfficeValForm1.jsp
+			</result>
+		</action>
+
+		
+
+		<action name="penAppHOForm1CalcFetchOldRecValdata" class="LoadMstPenHOForm1ValCalc"
+			method="loadPenAppHOForm1OldRecoveryValData">
+			<result name="input">/pages/PensionApplicationHeadOfficeValForm1.jsp
+			</result>
+			<result name="success">/pages/PensionApplicationHeadOfficeValForm1.jsp
+			</result>
+		</action>
+
+
+		<action name="saveAddPensionAppHOForm1ValCalculation" class="LoadMstPenHOForm1ValCalc"
+			method="addPensionAppHOForm1ValCalculation">
+			<result name="input">/pages/PensionApplicationHeadOfficeValForm1.jsp
+			</result>
+			<result name="SUCCESS" type="redirect-action">
+				<param name="empId">${reportEmpId}</param>
+				<param name="typeOfPen">${typeofPension}</param>
+				<param name="actionName">pension_cal_ho_form1_report_val_action.html</param>
+			</result>
+			<result name="DEATH" type="redirect-action">
+				<param name="empId">${reportEmpId}</param>
+				<param name="typeOfPen">${typeofPension}</param>
+				<param name="actionName">pension_cal_ho_form1_report_death_val_action.html</param>
+			</result>
+		</action>
+
+
+
+		<action name="compenAppHOForm1CalcFetchMstValdata" class="LoadMstPenHOForm1ValCalc"
+			method="loadPenAppHOForm1ComValData">
+			<result name="input">/pages/PensionApplicationHeadOfficeValForm1.jsp
+			</result>
+			<result name="success">/pages/PensionApplicationHeadOfficeValForm1.jsp
+			</result>
+		</action>
+
+		<action name="empStatusAppHOForm1CalcFetchMstValdata" class="LoadMstPenHOForm1ValCalc"
+			method="loadPenAppHOForm1EmpValStatus">
+			<result name="input">/pages/PensionApplicationHeadOfficeValForm1.jsp
+			</result>
+			<result name="success">/pages/PensionApplicationHeadOfficeValForm1.jsp
+			</result>
+		</action>
+
+
+		<action name="PensionApplicationHOForm1ValSearch" class="PenApplicationHeadOfficeForm1Search"
+			method="PensionApplicationHeadOfficeForm1ValSearch">
+			<result name="success">/pages/PensionApplicationHeadOfficeForm1ValSearch.jsp
+			</result>
+		</action>
+
+
+		<!-- Pension Calculation Head Office Form1 End -->
+		
+		<action name="FamilyPenOrderAuthorisationReportSearch1" class="FamilyPenOrderAuthorisationReportSearch"
+			method="PenOrderAuthorisationReportUserSrch1">
+			<result name="success">/pages/FamilyPensionOrderAuthorisationReportSearch.jsp
+			</result>
+		</action>
+		
+		
+		<!-- PENSION APPLICATION HEAD OFFICE FORM 2 CONFIGURATION -->
+
+		<action name="LoadPenAppFieldDataToHeadOff" class="LoadPenAppFieldOfficeData"
+			method="loadApplicationData">
+			<result name="success">/pages/PensionApplicationHOEdit.jsp</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<action name="penAppLoadFieldOfficeDatatoHeadOffice" class="LoadPenAppFieldOfficeData"
+			method="loadFieldOfficeData">
+			<result>/pages/PensionApplicationHOEdit.jsp</result>
+		</action>
+
+		<action name="penAppLoadHeadOfficeData" class="PenAppHOEdit"
+			method="getHeadOfficeData">
+			<result>/pages/PensionApplicationHOEdit.jsp</result>
+		</action>
+
+		<action name="penAppSaveHeadOfficeData" class="PenAppHOEdit"
+			method="saveHeadOfficeData">
+			<result name="success">/pages/Success.jsp</result>
+			<result name="error">/pages/Failure.jsp</result>
+		</action>
+
+		<action name="penAppLoadMstdata" class="PenAppHOEdit" method="getMstData">
+			<result>/pages/PensionApplicationHOEdit.jsp</result>
+		</action>
+
+		<action name="penAppLoadHeadOfficeEditData" class="penAppHOValidateForm2"
+			method="loadEditData">
+			<result name="success">/pages/PensionApplicationHOValidateForm2.jsp
+			</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<action name="penAppSaveValidateData" class="penAppHOValidateForm2"
+			method="saveFreezeData">
+			<result name="success">/pages/Success.jsp</result>
+			<result name="error">/pages/Failure.jsp</result>
+		</action>
+
+		<!-- PENSION APPLICATION HEAD OFFICE FORM 2 CONFIGURATION -->
+		<!-- PENSION AUTHORIZATION CONFIGURATION -->
+		<action name="penAuthoriseComboLoad" class="pensionAuthorisation"
+			method="loadCombo">
+			<result name="success">/pages/PensionAuthorizationOriginal.jsp</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<action name="penAuthoriseCheckPpoNo" class="pensionAuthorisation"
+			method="checkPpoNo">
+			<result name="success">/pages/PensionAuthorizationOriginal.jsp</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<action name="penAuthorisegetNomRelation" class="pensionAuthorisation"
+			method="getRelation">
+			<result name="success">/pages/PensionAuthorizationOriginal.jsp</result>
+		</action>
+
+
+		<action name="penAuthoriseGetMasterData" class="pensionAuthorisation"
+			method="getMstData">
+			<result name="input">/pages/PensionAuthorizationOriginal.jsp</result>
+			<result name="success">/pages/PensionAuthorizationOriginal.jsp</result>
+		</action>
+
+		<action name="penAuthoriseGetOfficeAddress" class="pensionAuthorisation"
+			method="loadOfficeAddress">
+			<result name="input">/pages/PensionAuthorizationOriginal.jsp</result>
+			<result name="success">/pages/PensionAuthorizationOriginal.jsp</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<action name="penAuthoriseSaveData" class="pensionAuthorisation"
+			method="saveRecord">
+			<result name="input">/pages/PensionAuthorizationOriginal.jsp</result>
+			<result name="success">/pages/Success.jsp</result>
+			<result name="error">/pages/Failure.jsp</result>
+		</action>
+
+		<action name="penAuthoriseSearch" class="pensionAuthorisation"
+			method="searchAction">
+			<result name="success">/pages/PensionAuthorizationOriginalSearch.jsp
+			</result>
+		</action>
+
+		<!-- PENSION AUTHORIZATION CONFIGURATION -->
+		<!-- REVISED DCRG PENSION ORDER REPORT CONFIG START -->
+
+		<action name="RevDCRGPenOrderAuthorisationReportSearch" class="RevDCRGPenOrderAuthorisationReportSearch"
+			method="RevisedDCRGPenOrderAuthorisationReportUserSrch">
+			<result name="success">/pages/RevisedDCRGPensionOrderAuthorisationReport.jsp
+			</result>
+		</action>
+
+		<action name="revisedDCRGPensionOrder" class="reportRevisedDCRGPenOrderAuthorisation"
+			method="printRevisedDCRGPensionOrder">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/RevisedPensionOrderDueToDAChange.jasper</param>
+				<param name="documentName">RevisedPensionOrderDueToDAChange</param>
+				<param name="dataSource">revDCRGPenOrderDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		
+		<action name="RevPenOrderAuthorisationReportSearch1" class="RevDCRGPenOrderAuthorisationReportSearch"
+			method="RevDCRGPenOrderAuthorisationReportUserSrch1">
+			<result name="success">/pages/RevisedDCRGPensionOrderAuthorisationReportSearch.jsp
+			</result>
+		</action>		
+		<!--RAJASEKAR REVISED DCRG PENSION DUE TO DA CHANGE STATING -->
+		
+		<!-- Pension Order Authorisation report Search Start -->
+
+		<action name="PenOrderAuthorisationReportSearch" class="PenOrderAuthorisationReportSearch"
+			method="PenOrderAuthorisationReportUserSrch">
+			<result name="success">/pages/PensionOrderAuthorisationReport.jsp
+			</result>
+		</action>
+		<action name="PenOrderAuthorisationReportSearch1" class="PenOrderAuthorisationReportSearch"
+			method="PenOrderAuthorisationReportUserSrch1">
+			<result name="success">/pages/PensionOrderAuthorisationReportSearch.jsp
+			</result>
+		</action>
+
+		<!-- Pension Order Authorisation report Search End -->
+	<!-- Pension Order Authorisation Report Start -->
+
+
+		<action name="pensionOrder1" class="reportPenOrderAuthorisation"
+			method="printPensionOrder1">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/PensionOrderForm1.jasper</param>
+				<param name="documentName">PensionOrderForm1</param>
+				<param name="dataSource">penOrderDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		<action name="superannuation" class="reportPenOrderAuthorisationnew"
+			method="printSuperannuation">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/superannuation.jasper</param>
+				<param name="documentName">Superannuation</param>
+				<param name="dataSource">penOrderDetailsNew</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		
+
+
+
+		<action name="pensionOrder2" class="reportPenOrderAuthorisation"
+			method="printPensionOrder2">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/PensionOrderForm2.jasper</param>
+				<param name="documentName">PensionOrderForm2</param>
+				<param name="dataSource">penOrderDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		<action name="vrs" class="reportPenOrderAuthorisationnew"
+			method="printVrs">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/vrs.jasper</param>
+				<param name="documentName">VRS</param>
+				<param name="dataSource">penOrderDetailsNew</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		
+
+
+		<action name="pensionOrder3" class="reportPenOrderAuthorisation"
+			method="printPensionOrder3">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/PensionOrderForm3.jasper</param>
+				<param name="documentName">PensionOrderForm3</param>
+				<param name="dataSource">penOrderDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		<action name="Death" class="reportPenOrderAuthorisationnew"
+			method="printDeath">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/death.jasper</param>
+				<param name="documentName">Deathwhileinservice</param>
+				<param name="dataSource">penOrderDetailsNew</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		
+
+
+		<action name="pensionOrder4" class="reportPenOrderAuthorisation"
+			method="printPensionOrder4">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/PensionOrderForm4.jasper</param>
+				<param name="documentName">PensionOrderForm4</param>
+				<param name="dataSource">penOrderDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="pensionOrder5" class="reportPenOrderAuthorisation"
+			method="printPensionOrder5">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/PensionOrderForm5.jasper</param>
+				<param name="documentName">PensionOrderForm5</param>
+				<param name="dataSource">penOrderDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+
+		<action name="printPenAppHeadOffice" class="penAppHeadOfficeForm2Report"
+			method="printPenAppHeadOffice">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/PensionApplicationHeadOfficeForm2.jasper</param>
+				<param name="documentName">PensionApplicationHeadOfficeForm2</param>
+				<param name="dataSource">penAppHeadOfficeDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		
+		<action name="pension_cal_ho_form1_report_working_sheet_val_action"
+			class="reportPensionHOForm1CalcValForms" method="valfieldofficeworkingsheetprint">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Pension_Form1_calculation_Working_sheet_Val_main.jasper</param>
+				<param name="documentName">Pension_Form1_calculation_Working_sheet_Val_main</param>
+				<param name="dataSource">pensionHOForm1CalcValDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<!-- Pension Order Authorisation Report Start -->
+				
+		<!-- Family Pension Application Field Office Form 2 Config -->
+
+		<action name="famPenAppFieldForm2ComboLoad" class="famPenAppFieldForm2"
+			method="loadCombo">
+			<result name="success">/pages/FamilyPensionApplicationDeathFieldForm2.jsp
+			</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<action name="famPenFieldForm2CheckForm2" class="famPenAppFieldForm2"
+			method="checkAvailability2">
+			<result name="success">/pages/FamilyPensionApplicationDeathFieldForm2.jsp
+			</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<action name="famPenFieldForm2CheckForm1" class="famPenAppFieldForm2"
+			method="checkAvailability1">
+			<result name="success">/pages/FamilyPensionApplicationDeathFieldForm2.jsp
+			</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+
+		<action name="famPenAppFieldForm2GetExistingData" class="famPenAppFieldForm2"
+			method="getMstData">
+			<result name="success">/pages/FamilyPensionApplicationDeathFieldForm2.jsp
+			</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<action name="famPenAppFieldForm2SaveAction" class="famPenAppFieldForm2"
+			method="saveData">
+			<result name="success">/pages/Success.jsp</result>
+			<result name="error">/pages/Failure.jsp</result>
+		</action>
+
+		<action name="famPenAppFieldForm2EditSearch" class="famPenAppFieldForm2"
+			method="searchData">
+			<result name="success">/pages/Success.jsp</result>
+			<result name="error">/pages/Failure.jsp</result>
+		</action>
+
+
+
+		<action name="famPenAppFieldForm2ValidateSearch" class="famPenAppFieldForm2Validate"
+			method="searchData">
+			<result name="success">/pages/FamilyPensionApplicationDeathFieldForm2ValSearch.jsp
+			</result>
+			<result name="error">/pages/Failure.jsp</result>
+		</action>
+
+		<action name="famPenAppFieldForm2LoadData" class="famPenAppFieldForm2Validate"
+			method="loadExistData">
+			<result name="success">/pages/FamilyPensionApplicationDeathFieldForm2Validate.jsp
+			</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<action name="famPenAppFieldForm2ValSaveAction" class="famPenAppFieldForm2Validate"
+			method="saveMethod">
+			<result name="success">/pages/Success.jsp</result>
+			<result name="error">/pages/Failure.jsp</result>
+		</action>
+
+		<!-- Family Pension Application Field Office Form 2 Config -->
+		
+		
+		<action name="searchOffice" class="searchOffice" method="searchOffice">
+			<result name="success">/pages/LastWorkingOffice.jsp</result>
+		</action>
+		
+		<!-- Family Pension Application Head Office Form 2 Config -->
+
+		<action name="famPenAppHOForm2EditSearch" class="famPenAppHOForm2Edit"
+			method="editSearch">
+			<result name="success">/pages/FamilyPensionApplicationDeathHOEditForm2Search.jsp
+			</result>
+			<result name="error">/pages/Failure.jsp</result>
+		</action>
+
+		<action name="famPenAppHoEditLoadData" class="famPenAppHOForm2Edit"
+			method="loadCombo">
+			<result name="success">/pages/FamilyPensionApplicationDeathHOEditForm2.jsp
+			</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<action name="famPenAppHoLoadMstDataChk" class="famPenAppHOForm2Edit"
+			method="loadMstDataChk">
+			<result name="success">/pages/FamilyPensionApplicationDeathHOEditForm2.jsp
+			</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<action name="famPenAppHoEditLoadHOData" class="famPenAppHOForm2Edit"
+			method="loadHOData">
+			<result name="success">/pages/FamilyPensionApplicationDeathHOEditForm2.jsp
+			</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<action name="famPenAppHoEditLoadFieldData" class="famPenAppHOForm2Edit"
+			method="loadFieldData">
+			<result name="success">/pages/FamilyPensionApplicationDeathHOEditForm2.jsp
+			</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<action name="famPenAppHoEditSaveData" class="famPenAppHOForm2Edit"
+			method="saveRecord">
+			<result name="success">/pages/Success.jsp</result>
+			<result name="error">/pages/Failure.jsp</result>
+		</action>
+
+
+		<action name="famPenAppHOForm2ValidateSearch" class="famPenAppHOForm2Validate"
+			method="searchData">
+			<result name="success">/pages/FamilyPensionApplicationDeathHOValidateForm2Search.jsp
+			</result>
+			<result name="error">/pages/Failure.jsp</result>
+		</action>
+
+		<action name="famPenAppHoValidateLoadForm" class="famPenAppHOForm2Validate"
+			method="loadData">
+			<result name="success">/pages/FamilyPensionApplicationDeathHOValidateForm2.jsp
+			</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+
+		<action name="famPenAppHoValidateSaveData" class="famPenAppHOForm2Validate"
+			method="saveData">
+			<result name="success">/pages/Success.jsp</result>
+			<result name="error">/pages/Failure.jsp</result>
+		</action>
+		<!-- Family Pension Application Head Office Form 2 Config -->
+		
+		<!-- FAMILY PENSION AUTHORIZATION CONFIGURATION -->
+		<action name="familyPenAuthoriseComboLoad" class="familyPensionAuthorisation"
+			method="loadCombo">
+			<result name="success">/pages/FamilyPensionAuthorizationOriginal.jsp
+			</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<action name="familyPenAuthoriseGetMasterData" class="familyPensionAuthorisation"
+			method="getMstData">
+			<result name="input">/pages/FamilyPensionAuthorizationOriginal.jsp
+			</result>
+			<result name="success">/pages/FamilyPensionAuthorizationOriginal.jsp
+			</result>
+		</action>
+
+		<action name="familyPenAuthoriseSaveData" class="familyPensionAuthorisation"
+			method="saveRecord">
+			<result name="input">/pages/FamilyPensionAuthorizationOriginal.jsp
+			</result>
+			<result name="success">/pages/Success.jsp</result>
+			<result name="error">/pages/Failure.jsp</result>
+		</action>
+
+		<action name="familyPenAuthorisegetNomRelation" class="familyPensionAuthorisation"
+			method="getRelation">
+			<result name="success">/pages/FamilyPensionAuthorizationOriginal.jsp
+			</result>
+		</action>
+
+		<!-- FAMILY PENSION AUTHORIZATION CONFIGURATION -->
+		
+		<action name="lastWorkingOffice" class="lastWorkingOffice"
+			method="loadoffices">
+			<result name="success">/pages/CutOfEntryPension.jsp</result>
+		</action>
+		
+		<!-- PENSION APPLICATION FIELD OFFICE DEATH REPORT START -->
+
+
+		<action name="pen_app_field_off_report_form12" class="reportPenAppFieldOfficeDeath"
+			method="deathform12print">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/pen_app_field_off_report_form12.jasper</param>
+				<param name="documentName">pen_app_field_off_report_form12</param>
+				<param name="dataSource">penAppFieldOfficeDeathDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="pen_app_field_off_report_form14" class="reportPenAppFieldOfficeDeath"
+			method="deathform14print">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/pen_app_field_off_report_form14.jasper</param>
+				<param name="documentName">pen_app_field_off_report_form14</param>
+				<param name="dataSource">penAppFieldOfficeDeathDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="pen_app_field_off_death_report_desc_roll" class="reportPenAppFieldOfficeDeath"
+			method="deathdescrollprint">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/descriptive_roll_death.jasper</param>
+				<param name="documentName">descriptive_roll_death</param>
+				<param name="dataSource">penAppFieldOfficeDeathDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="pen_app_field_off_report_death_family" class="reportPenAppFieldOfficeDeath"
+			method="details_of_family_print">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/PensionApplicationFieldOfficeDeathNominee.jasper</param>
+				<param name="documentName">PensionApplicationFieldOfficeDeathNominee</param>
+				<param name="dataSource">penAppFieldOfficeDeathDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="pen_app_field_off_report_death_speci_sign" class="reportPenAppFieldOfficeDeath"
+			method="deathspecisignprint">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/specimen_signature_death.jasper</param>
+				<param name="documentName">specimen_signature_death</param>
+				<param name="dataSource">penAppFieldOfficeDeathDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="pen_app_field_off_report_death_form_of_declaration"
+			class="reportPenAppFieldOfficeDeath" method="deathformofdeclarationprint">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/form_of_declaration_death.jasper</param>
+				<param name="documentName">form_of_declaration_death</param>
+				<param name="dataSource">penAppFieldOfficeDeathDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="pen_app_field_off_death_report_cons_let" class="reportPenAppFieldOfficeDeath"
+			method="deathconsletprint">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/consent_letter_death.jasper</param>
+				<param name="documentName">consent_letter_death</param>
+				<param name="dataSource">penAppFieldOfficeDeathDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="pen_app_field_off_death_report_cons_let_rec"
+			class="reportPenAppFieldOfficeDeath" method="deathconsletrecprint">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/consent_letter_for_recovery_death.jasper</param>
+				<param name="documentName">consent_letter_for_recovery_death</param>
+				<param name="dataSource">penAppFieldOfficeDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+
+		<!-- PENSION APPLICATION FIELD OFFICE DEATH REPORT END -->
+		<!-- REVISED PENSION CHANGE REPORT CONFIGURATION START -->
+
+
+
+		<action name="rev_pension_cal_report_action" class="reportRevisedPensionCalc"
+			method="revised_pension_report_print">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Pension_Form1_calculation_main_rev1.jasper</param>
+				<param name="documentName">Pension_Form1_calculation_main</param>
+				<param name="dataSource">pensionHOForm1CalcDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		<action name="rev_pension_cal_report_death_action" class="reportRevisedPensionCalc"
+			method="revised_pension_report_deathprint">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Pension_Form1_calculation_death_main.jasper</param>
+				<param name="documentName">Pension_Form1_calculation_death_main</param>
+				<param name="dataSource">pensionHOForm1CalcDeathDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+
+
+		<action name="rev_pension_cal_report_val_action" class="reportRevisedPensionValCalc"
+			method="revised_pension_report_print">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Pension_Form1_calculation_main_rev1.jasper</param>
+				<param name="documentName">Pension_Form1_calculation_main</param>
+				<param name="dataSource">pensionHOForm1CalcDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		<action name="rev_pension_cal_report_death_val_action" class="reportRevisedPensionValCalc"
+			method="revised_pension_report_deathprint">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Pension_Form1_calculation_death_main.jasper</param>
+				<param name="documentName">Pension_Form1_calculation_death_main</param>
+				<param name="dataSource">pensionHOForm1CalcDeathDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+
+		<!-- REVISED PENSION CHANGE REPORT CONFIGURATION END -->
+		
+		<!-- REVISED PENSION CALCULATION DUE TO PAY CHANGE START -->
+
+		<action name="revisedPenCalcFetchSettingdata" class="LoadRevisedPensionCalc"
+			method="loadSettingData">
+			<result name="input">/pages/RevisedPensionApplicationAddForm1.jsp
+			</result>
+			<result name="success">/pages/RevisedPensionApplicationAddForm1.jsp
+			</result>
+		</action>
+
+		<action name="revisedPensionCalculationSearch" class="revisedPenCalculationSearch"
+			method="revisedPensionCalculationSearch">
+			<result name="success">/pages/RevisedPensionApplicationForm1Search.jsp
+			</result>
+		</action>
+
+		<action name="revisedPenCalculationFetchValdata" class="LoadRevisedPensionCalc"
+			method="loadPenAppHOForm1MstCheckValData">
+			<result name="input">/pages/RevisedPensionApplicationAddForm1.jsp
+			</result>
+			<result name="success">/pages/RevisedPensionApplicationAddForm1.jsp
+			</result>
+		</action>
+
+		<action name="revisedPenCalculationFetchdata" class="LoadRevisedPensionCalc"
+			method="loadRevisedPenCalculationData">
+			<result name="input">/pages/RevisedPensionApplicationAddForm1.jsp
+			</result>
+			<result name="success">/pages/RevisedPensionApplicationAddForm1.jsp
+			</result>
+		</action>
+
+
+		<action name="revisedPenCalculationFetchOlddata" class="LoadRevisedPensionCalc"
+			method="loadRevPenCalculationOldData">
+			<result name="input">/pages/RevisedPensionApplicationAddForm1.jsp
+			</result>
+			<result name="success">/pages/RevisedPensionApplicationAddForm1.jsp
+			</result>
+		</action>
+         <action name="revisedpenCalcFetchOldOthDeptServdata" class="LoadRevisedPensionCalc"
+			method="loadPenAppHOofficeOlddeptserviceData">
+			<result name="input">/pages/RevisedPensionApplicationAddForm1.jsp
+			</result>
+			<result name="success">/pages/RevisedPensionApplicationAddForm1.jsp
+			</result>
+		</action>
+      
+		<action name="revisedPenCalculationFetchOldAEdata" class="LoadRevisedPensionCalc"
+			method="loadRevPenCalculationOldAEData">
+			<result name="input">/pages/RevisedPensionApplicationAddForm1.jsp
+			</result>
+			<result name="success">/pages/RevisedPensionApplicationAddForm1.jsp
+			</result>
+		</action>
+
+
+		<action name="saveRevPensionCalculation" class="LoadRevisedPensionCalc"
+			method="addRevisedPensionCalculation">
+			
+			<result name="SUCCESS" type="redirect-action">
+				<param name="empId">${reportEmpId}</param>
+				<param name="typeOfPen">${typeofPension}</param>
+				<param name="actionName">rev_pension_cal_report_action.html</param>
+			</result>
+			<result name="DEATH" type="redirect-action">
+				<param name="empId">${reportEmpId}</param>
+				<param name="typeOfPen">${typeofPension}</param>
+				<param name="actionName">rev_pension_cal_report_death_action.html</param>
+			</result>
+			<result name="input">/pages/RevisedPensionApplicationAddForm1.jsp
+			</result>
+		</action>
+
+		<!-- <action name="saveRevPensionCalculation" class="LoadRevisedPensionCalc" 
+			method="addRevisedPensionCalculation"> <result name="input">/pages/RevisedPensionApplicationAddForm1.jsp</result> 
+			<result name="success">/pages/Success.jsp</result> </action> -->
+
+		<action name="comRevpenCalcFetchMstdata" class="LoadRevisedPensionCalc"
+			method="loadRevPenCalcComData">
+			<result name="input">/pages/RevisedPensionApplicationAddForm1.jsp
+			</result>
+			<result name="success">/pages/RevisedPensionApplicationAddForm1.jsp
+			</result>
+		</action>
+
+		<action name="empStatusRevPensionCalcFetchMstdata" class="LoadRevisedPensionCalc"
+			method="loadRevPenCalcEmpStatus">
+			<result name="input">/pages/RevisedPensionApplicationAddForm1.jsp
+			</result>
+			<result name="success">/pages/RevisedPensionApplicationAddForm1.jsp
+			</result>
+		</action>
+
+
+
+
+
+		<action name="revisedPensionCalculationValSearch" class="revisedPenCalculationValSearch"
+			method="revisedPensionCalculationValSearch">
+			<result name="success">/pages/RevisedPensionApplicationValSearch.jsp
+			</result>
+		</action>
+
+		<action name="revisedPenCalcFetchSettingValData" class="LoadRevisedPensionValCalc"
+			method="loadSettingData">
+			<result name="input">/pages/RevisedPensionApplicationValForm1.jsp
+			</result>
+			<result name="success">/pages/RevisedPensionApplicationValForm1.jsp
+			</result>
+		</action>
+
+		<action name="revisedPenCalculationFetchChangeData" class="LoadRevisedPensionValCalc"
+			method="loadRevPenChangeData">
+			<result name="input">/pages/RevisedPensionApplicationValForm1.jsp
+			</result>
+			<result name="success">/pages/RevisedPensionApplicationValForm1.jsp
+			</result>
+		</action>
+
+		<action name="revisedPenCalculationChangeData" class="LoadRevisedPensionValCalc"
+			method="loadRevisedPenCalcChangeMstData">
+			<result name="input">/pages/RevisedPensionApplicationValForm1.jsp
+			</result>
+			<result name="success">/pages/RevisedPensionApplicationValForm1.jsp
+			</result>
+		</action>
+
+       
+
+		<action name="revisedPenCalculationChangeDataLoad" class="LoadRevisedPensionValCalc"
+			method="loadRevPenCalculationChangeData">
+			<result name="input">/pages/RevisedPensionApplicationValForm1.jsp
+			</result>
+			<result name="success">/pages/RevisedPensionApplicationValForm1.jsp
+			</result>
+		</action>
+
+         <action name="RevisedPensionCalcOldOthDeptServValdata" class="LoadRevisedPensionValCalc"
+			method="loadPenAppHOForm1OldDeptValData">
+			<result name="input">/pages/RevisedPensionApplicationValForm1.jsp
+			</result>
+			<result name="success">/pages/RevisedPensionApplicationValForm1.jsp
+			</result>
+		</action>   
+
+		<action name="revisedPenCalculationFetchChangeAEdata" class="LoadRevisedPensionValCalc"
+			method="loadRevPenCalculationChangeAEData">
+			<result name="input">/pages/RevisedPensionApplicationValForm1.jsp
+			</result>
+			<result name="success">/pages/RevisedPensionApplicationValForm1.jsp
+			</result>
+		</action>
+
+		<action name="saveRevPensionValCalculation" class="LoadRevisedPensionValCalc"
+			method="addRevisedPensionValCalculation">
+			<result name="input">/pages/RevisedPensionApplicationValForm1.jsp
+			</result>
+			<result name="SUCCESS" type="redirect-action">
+				<param name="empId">${reportEmpId}</param>
+				<param name="typeOfPen">${typeofPension}</param>
+				<param name="actionName">rev_pension_cal_report_val_action.html</param>
+			</result>
+			<result name="DEATH" type="redirect-action">
+				<param name="empId">${reportEmpId}</param>
+				<param name="typeOfPen">${typeofPension}</param>
+				<param name="actionName">rev_pension_cal_report_death_val_action.html</param>
+			</result>
+		</action>
+
+		<action name="comRevpenCalcFetchMstValdata" class="LoadRevisedPensionValCalc"
+			method="loadRevPenCalcComData">
+			<result name="input">/pages/RevisedPensionApplicationValForm1.jsp
+			</result>
+			<result name="success">/pages/RevisedPensionApplicationValForm1.jsp
+			</result>
+		</action>
+
+		<action name="empStatusRevPensionCalcFetchMstValdata" class="LoadRevisedPensionValCalc"
+			method="loadRevPenCalcEmpStatus">
+			<result name="input">/pages/RevisedPensionApplicationAddForm1.jsp
+			</result>
+			<result name="success">/pages/RevisedPensionApplicationAddForm1.jsp
+			</result>
+		</action>
+
+		<!-- REVISED PENSION CALCULATION DUE TO PAY CHANGE END -->
+		
+		<!-- REVISED PENSION AUTHORISATION CONFIG START -->
+
+		<action name="revisedPenAuthoriseComboLoad" class="pensionAuthorisation"
+			method="loadCombo">
+			<result name="success">/pages/RevisedPensionAuthorization.jsp</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<action name="revisedPenAuthoriseSaveData" class="revisedPensionAuthorisation"
+			method="saveRecord">
+			<result name="input">/pages/RevisedPensionAuthorization.jsp</result>
+			<result name="success">/pages/Success.jsp</result>
+			<result name="error">/pages/Failure.jsp</result>
+		</action>
+
+		<action name="revPenAuthoriseSearch" class="revisedPensionAuthorisation"
+			method="searchAction">
+			<result name="success">/pages/RevisedPensionAuthorizationSearch.jsp
+			</result>
+		</action>
+
+		<action name="revisedPenAuthoriseGetMasterData" class="revisedPensionAuthorisation"
+			method="getMstData">
+			<result name="input">/pages/RevisedPensionAuthorization.jsp</result>
+			<result name="success">/pages/RevisedPensionAuthorization.jsp</result>
+		</action>
+
+		<action name="revisedPenAuthorisegetNomRelation" class="revisedPensionAuthorisation"
+			method="getRelation">
+			<result name="success">/pages/RevisedPensionAuthorization.jsp</result>
+		</action>
+
+		<action name="revisedPenAuthoriseCheckPpoNo" class="revisedPensionAuthorisation"
+			method="checkPpoNo">
+			<result name="success">/pages/RevisedPensionAuthorization.jsp</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<action name="revisedPenAuthoriseGetOfficeAddress" class="revisedPensionAuthorisation"
+			method="loadOfficeAddress">
+			<result name="input">/pages/RevisedPensionAuthorization.jsp</result>
+			<result name="success">/pages/RevisedPensionAuthorization.jsp</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<!-- REVISED PENSION AUTHORISATION CONFIG END -->
+		<!-- Gopinath Revised Pension Note and Order Start -->
+		
+		<action name="RevisedpensionDraftSave" class="revisePensionNoteOrder" 
+			method="SaveRecordAsDraft">
+			<result name="success">/pages/Success.jsp</result> 			
+			
+			<!--<result name="success" type="redirect-action">
+				<param name="actionName">RevisedpensionNote.html</param>
+	            <param name="namespace">/pages</param>
+				<param name="empId">empId</param>
+			</result>
+			--><result name="error">/pages/Failure.jsp</result>
+		</action>
+
+		<action name="RevisedpensionNote" class="revisePensionNoteOrder" method="printRevisedpensionNote">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/RevisedPensionNote.jasper</param>
+				<param name="documentName">Revised_Pension_Note</param>
+				<param name="dataSource">revisedpensionnotedetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="OneManCommisionNote" class="revisePensionNoteOrder"
+			method="printOneManCommisionNote">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/RevisedPensionNote_OneManComm.jasper</param>
+				<param name="documentName">One_Man_Commision_Note</param>
+				<param name="dataSource">onemancommisionnotedetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		
+
+		<action name="RevisedpensionOrder" class="revisePensionNoteOrder"
+			method="printRevisedpensionOrder">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Revised_pension_auth_pay_change_order.jasper</param>
+				<param name="documentName">Revised_Pension_Order</param>
+				<param name="dataSource">revisedpensionorderdetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<action name="RevisedpensionOrderDcrg" class="revisePensionNoteOrder"
+			method="printRevisedpensionDcrg">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Revised_pension_auth_pay_change1_DCRG.jasper</param>
+				<param name="documentName">Revised_Pension_Dcrg</param>
+				<param name="dataSource">revisedpensiondcrgdetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		
+		<action name="OneManCommisionOrder" class="revisePensionNoteOrder"
+			method="printOneManCommisionOrder">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/OneMan_Commision_auth_pay_change_order.jasper</param>
+				<param name="documentName">OneMan_Commision_Order</param>
+				<param name="dataSource">onemancommisionnotedetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>		
+		
+		<action name="OneManCommisionOrderDcrg" class="revisePensionNoteOrder"
+			method="printOneManCommisionDcrg">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/OneMan_Commision_auth_pay_change1_DCRG.jasper</param>
+				<param name="documentName">OneMan_Commision_Dcrg</param>
+				<param name="dataSource">onemancommisionnotedetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+       <action name="SplGradeNote" class="revisePensionNoteOrder"
+			method="printsplgradeNote">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/RevisedPensionNote_SplGrade.jasper</param>
+				<param name="documentName">Special_Grade_Note</param>
+				<param name="dataSource">onemancommisionnotedetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>		
+		
+		<action name="SpecialGradeOrder" class="revisePensionNoteOrder"
+			method="printSpecialGradeOrder">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Special_grade_auth_pay_change_order.jasper</param>
+				<param name="documentName">Special_Grade_Order</param>
+				<param name="dataSource">onemancommisionnotedetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		<action name="SpecialGradeOrderDcrg" class="revisePensionNoteOrder"
+			method="printSpecialGradeDcrg">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Special_Grade_auth_pay_change1_DCRG.jasper</param>
+				<param name="documentName">Special_Grade_Dcrg</param>
+				<param name="dataSource">onemancommisionnotedetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		
+		 <action name="GradePayNote" class="revisePensionNoteOrder"
+			method="printgradepayNote">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/RevisedPensionNote_GradePay.jasper</param>
+				<param name="documentName">Grade_Pay_Note</param>
+				<param name="dataSource">onemancommisionnotedetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		
+		
+		<action name="GradePayOrder" class="revisePensionNoteOrder"
+			method="printGradePay_order">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Grade_pay_auth_pay_change_order.jasper</param>
+				<param name="documentName">Grade_Pay_Order</param>
+				<param name="dataSource">onemancommisionnotedetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		<action name="GradePayOrderDcrg" class="revisePensionNoteOrder"
+			method="printgradepayDcrg">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Grade_pay_auth_pay_change1_DCRG.jasper</param>
+				<param name="documentName">Grade_Pay_Dcrg</param>
+				<param name="dataSource">onemancommisionnotedetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		<!-- Gopinath Revised Pension Note and Order End -->
+		
+		<!-- REVISED DCRG PENSION AMOUNT DUE TO DA CHANGE START -->
+
+		<action name="loadRevDCRGPenValidData" class="LoadRevDCRGPenHeadOfficeData"
+			method="loadData">
+			<result name="success">/pages/RevisedDCRGSearch.jsp</result>
+		</action>
+		<action name="searchRevDCRGPenValidData" class="LoadRevDCRGPenHeadOfficeData"
+			method="searchData">
+			<result name="success">/pages/RevisedDCRGSearch.jsp</result>
+		</action>
+		<action name="LoadRevDCRGPenAppHeadDataToRevised" class="LoadRevDCRGPenHeadOfficeData"
+			method="loadApplicationData">
+			<result name="success">/pages/RevisedDCRGPensionApplicationHeadOfficeData.jsp
+			</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<action name="LoadRevDCRGPenAppHeadData" class="LoadRevDCRGPenHeadOfficeData"
+			method="loadHeadOfficeData">
+			<result name="success">/pages/RevisedDCRGPensionApplicationHeadOfficeData.jsp
+			</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<action name="revpenAppHOFetchOldMstValdata" class="LoadRevDCRGPenHeadOfficeData"
+			method="loadrevPenAppHOOldMstValData">
+			<result name="success">/pages/RevisedDCRGPensionApplicationHeadOfficeData.jsp
+			</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<action name="revpenAppHOFetchOldAEValdata" class="LoadRevDCRGPenHeadOfficeData"
+			method="loadrevPenAppHOOldAEValData">
+			<result name="success">/pages/RevisedDCRGPensionApplicationHeadOfficeData.jsp
+			</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<action name="reviseDCRGPensionData" class="LoadRevDCRGPenHeadOfficeData"
+			method="ReviseDCRGPensionData">
+			<result name="success">/pages/Success.jsp</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+
+		<!-- REVISED DCRG PENSION AMOUNT DUE TO DA CHANGE END -->
+		
+		<!-- Revision due to increase DA -->
+
+		<action name="RevisedDCRGnote" class="reportRevisedDCRGnote"
+			method="printRevisedDCRGnote">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Revision_Due_to_Increase_DA.jasper</param>
+				<param name="documentName">Revision_Due_to_Increase_DA</param>
+				<param name="dataSource">RevisedDCRGnoteDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<!--Revision due to increase DA -->
+		
+		<!-- REVISED PENSION ORDER REPORT DUE TO PAY CHANGE CONFIG START -->
+
+		<action name="RevPenOrderReportSearch1" class="RevPenOrderReportSearch"
+			method="RevDCRGPenOrderAuthorisationReportUserSrch1">
+			<result name="success">/pages/RevisedPensionOrderReportSearch.jsp
+			</result>
+		</action>
+
+		<action name="RevPenOrderReportSearch" class="RevPenOrderReportSearch"
+			method="RevisedDCRGPenOrderAuthorisationReportUserSrch">
+			<result name="success">/pages/RevisedPensionOrderReport.jsp</result>
+		</action>
+
+		<!-- REVISED PENSION ORDER REPORT DUE TO PAY CHANGE CONFIG END -->
+		<!-- Gopinath Revised Pension Order Report Start -->
+		
+		<action name="RevisedPensionNoteReport" class="reportRevisedpaypension"
+			method="printRevisedpaypension_note">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/RevisedPensionNote.jasper</param>
+				<param name="documentName">RevisedPensionOrder-Note</param>
+				<param name="dataSource">RevisedpaypensionDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		
+		<action name="RevisedPensionOrderReport" class="reportRevisedpaypension"
+			method="printRevisedpaypension_order">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Revised_pension_auth_pay_change_order.jasper</param>
+				<param name="documentName">Revised_Pension_Order</param>
+				<param name="dataSource">revisedpensionorderdetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+
+		<action name="RevisedPensionDCRGReport" class="reportRevisedpaypension"
+			method="printRevisedpaypension_dcrg">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Revised_pension_auth_pay_change1_DCRG.jasper</param>
+				<param name="documentName">Revised_Pension_DCRG</param>
+				<param name="dataSource">revisedpensiondcrgdetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		
+		<action name="OneManCommisionOrderReport" class="reportRevisedpaypension"
+			method="printonemancommision_order">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/OneMan_Commision_auth_pay_change_order.jasper</param>
+				<param name="documentName">OnMan_Commision_Order</param>
+				<param name="dataSource">onemancommisionnotedetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		
+		<action name="OneManCommisionDCRGReport" class="reportRevisedpaypension"
+			method="printonmancommision_dcrg">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/OneMan_Commision_auth_pay_change1_DCRG.jasper</param>
+				<param name="documentName">OnMan_Commision_DCRG</param>
+				<param name="dataSource">onemancommisionnotedetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		
+		
+		<action name="SpecialGradeOrderReport" class="reportRevisedpaypension"
+			method="printspecialgrade_order">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Special_grade_auth_pay_change_order.jasper</param>
+				<param name="documentName">Special_Grade_Order</param>
+				<param name="dataSource">onemancommisionnotedetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		
+		<action name="SpecialGradeDCRGReport" class="reportRevisedpaypension"
+			method="printspecialgrade_dcrg">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Special_Grade_auth_pay_change1_DCRG.jasper</param>
+				<param name="documentName">Special_Grade_DCRG</param>
+				<param name="dataSource">onemancommisionnotedetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+		<!-- Gopinath Revised Pension Order Report End-->
+		
+		<!--RAJASEKAR REVISED DCRG PENSION DUE TO DA CHANGE STATING -->
+
+		<action name="loadRevDCRGPenValidDataDuetoDa" class="LoadRevDCRGPenHeadOfficeData"
+			method="loadApplicationRevisedDa">
+			<result name="success">/pages/RevisedDCRGPensionAuthorizationDuetoDA.jsp
+			</result>
+			<result name="error">/pages/ErrorLoad.jsp</result>
+		</action>
+
+		<action name="loadRevDCRGPensionValidDataDuetoDa" class="LoadRevDCRGPenHeadOfficeData"
+			method="loadDataEmployee">
+			<result name="success">/pages/RevisedDCRGPensionAuthorizationDuetoDA.jsp
+			</result>
+		</action>
+
+
+
+		<action name="revisedDCRGPensionOrderduetoDaReport" class="LoadRevDCRGPenHeadOfficeData"
+			method="loadDataEmployeeRpt">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/RevisedPensionOrderDueToDAChange.jasper</param>
+				<param name="documentName">RevisedPensionOrderDueToDAChange</param>
+				<param name="dataSource">report</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+
+
+		<action name="RevisedDCRGnoteduetoDa" class="LoadRevDCRGPenHeadOfficeData"
+			method="loadDataEmployeeRptnote">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Revision_Due_to_Increase_DA.jasper</param>
+				<param name="documentName">Revision_Due_to_Increase_DA</param>
+				<param name="dataSource">reportnote</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+
+
+		<action name="revisedDCRGPensionfreeze" class="LoadRevDCRGPenHeadOfficeData"
+			method="ReviseDCRGPensionDataFreeze">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/RevisedPensionOrderDueToDAChange.jasper</param>
+				<param name="documentName">RevisedPensionOrderDueToDAChange</param>
+				<param name="dataSource">report</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+
+		<!--RAJASEKAR REVISED DCRG PENSION DUE TO DA CHANGE ENDING -->
+		
+		<!-- REVISED FAMILY PENSION ORDER REPORT DUE TO PAY CHANGE CONFIG START -->
+
+		<action name="RevFamPenOrderReportSearch1" class="RevFamPenOrderReportSearch"
+			method="RevFamilyPenOrderAuthorisationReportUserSrch1">
+			<result name="success">/pages/RevisedFamilyPensionOrderReportSearch.jsp
+			</result>
+		</action>
+
+		<action name="RevFamPenOrderReportSearch" class="RevFamPenOrderReportSearch"
+			method="RevisedFamilyPenOrderAuthorisationReportUserSrch">
+			<result name="success">/pages/RevisedFamilyPensionOrderReport.jsp
+			</result>
+		</action>
+
+		<!-- REVISED FAMILY PENSION ORDER REPORT DUE TO PAY CHANGE CONFIG END -->
+		
+		<!-- Start Revised Family pension Due to Pay change -->
+
+		<action name="RevisedpayFamilypension" class="reportRevisedFamilyPensionduetopaychange"
+			method="printRevisedpayFamilypension">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/RevisedpayFamilypension.jasper</param>
+				<param name="documentName">RevisedpayFamilypension</param>
+				<param name="dataSource">RevisedpayFamilypensionDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+
+		<action name="RevisedFamilyPensionduetopaychange" class="reportRevisedFamilyPensionduetopaychange"
+			method="printRevisedFamilyPensionduetopaychange">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Revised_Family_Pension_pay_change.jasper</param>
+				<param name="documentName">Revised_Family_Pension_pay_change</param>
+				<param name="dataSource">revdutopayfamilypensionDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+
+		<action name="RevisedFamilyPensionduetopaychange1" class="reportRevisedFamilyPensionduetopaychange"
+			method="printRevisedFamilyPensionduetopaychange1">
+			<result name="success" type="jasper">
+				<param name="location">/org/HR/hr/pension/reports/Revised_Family_Pension_pay_change1.jasper</param>
+				<param name="documentName">Revised_Family_Pension_pay_change1</param>
+				<param name="dataSource">revdutopayfamilypensionDetails</param>
+				<param name="format">PDF</param>
+			</result>
+		</action>
+
+		<!-- End Revised Family pension Due to Pay change -->
+		
+	</package>
+</struts>

@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.ChangePensionerPaymentOffice_dao" table="HRM_PEN_CHANGE_PAYMENT_OFFICE">
+      
+      	<id name="ppoNo" type="integer">
+            <column name="PPO_NO"/>
+            <generator class="assigned" />
+        </id>
+       
+        <property name="paymentOfficeId" type="integer">
+            <column name="PAYMENT_OFFICE_ID" length="6" />
+        </property>
+        
+        <property name="reason" type="string">
+            <column name="REASON" length="200" />
+        </property>
+        
+        <property name="updatedDate" type="java.sql.Timestamp">
+            <column name="UPDATED_DATE"  />
+        </property>
+         <property name="updatedBy" type="string">
+            <column name="UPDATED_USER" length="15" />
+        </property>
+        
+        <property name="unlockedBy" type="string">
+        <column name="UNLOCKED_BY" length="15" />
+        </property>
+        
+       <property name="unlockedDate" type="java.sql.Timestamp">
+       <column name="UNLOCKED_DATE" />
+       </property>
+
+       <property name="processStatus" type="string">
+       <column name="PROCESS_STATUS" length="10" />
+       </property>        
+        
+        </class>
+</hibernate-mapping>

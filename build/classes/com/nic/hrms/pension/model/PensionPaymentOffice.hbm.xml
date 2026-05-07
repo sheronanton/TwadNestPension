@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.nic.hrms.pension.model.PensionPaymentOffice_dao" table="COM_MST_OFFICES">
+		
+		<id name="currAccountOfficeId" type="integer"  >
+            <column name="OFFICE_ID"  />
+            <generator class="assigned" />
+        </id>
+        
+		<property name="currAccountOfficeName" type="string">
+			<column name="OFFICE_NAME" length="60" />
+		</property>
+		
+		<property name="PenisonPaymentOffice" type="char">
+			<column name="PENSION_PAYMENT_OFFICE" length="5" />
+		</property>
+	
+	</class>
+</hibernate-mapping>	

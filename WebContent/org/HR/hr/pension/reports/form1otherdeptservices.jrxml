@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="form1otherdeptservices"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="594"
+		 pageHeight="802"
+		 columnWidth="594"
+		 columnSpacing="0"
+		 leftMargin="0"
+		 rightMargin="0"
+		 topMargin="0"
+		 bottomMargin="0"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+
+	<field name="DATE_OF_JOINING" class="java.util.Date"/>
+	<field name="DATE_OF_RELIEVING" class="java.util.Date"/>
+	<field name="TOT_YEAR_SERVICE" class="java.math.BigDecimal"/>
+	<field name="TOT_MONTH_SERVICE" class="java.math.BigDecimal"/>
+	<field name="TOT_DAY_SERVICE" class="java.math.BigDecimal"/>
+	<field name="DEPATMENT_NAME" class="java.lang.String"/>
+	<field name="REMARKS" class="java.lang.String"/>
+
+	<variable name="slno" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{DATE_OF_JOINING}]]></variableExpression>
+	</variable>
+
+		<group  name="dateofjoining" >
+			<groupExpression><![CDATA[]]></groupExpression>
+			<groupHeader>
+			<band height="26"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="33"
+						y="4"
+						width="66"
+						height="20"
+						key="staticText-2"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Date of Joining]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="99"
+						y="4"
+						width="78"
+						height="20"
+						key="staticText-3"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Date of Relieving]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="177"
+						y="4"
+						width="30"
+						height="20"
+						key="staticText-4"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Year]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="207"
+						y="4"
+						width="30"
+						height="20"
+						key="staticText-5"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Month]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="237"
+						y="4"
+						width="26"
+						height="20"
+						key="staticText-6"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Days]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="263"
+						y="4"
+						width="204"
+						height="20"
+						key="staticText-7"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Department Name]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="469"
+						y="4"
+						width="120"
+						height="20"
+						key="staticText-8"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Remarks]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="2"
+						y="4"
+						width="30"
+						height="20"
+						key="staticText-9"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Sl.No]]></text>
+				</staticText>
+			</band>
+			</groupHeader>
+			<groupFooter>
+			<band height="9"  isSplitAllowed="true" >
+			</band>
+			</groupFooter>
+		</group>
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="25"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="4"
+						y="4"
+						width="130"
+						height="20"
+						key="staticText-1"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Other Department Details]]></text>
+				</staticText>
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="30"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" pattern="dd/MM/yyyy" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="33"
+						y="3"
+						width="66"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="7"/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[$F{DATE_OF_JOINING}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="dd/MM/yyyy" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="99"
+						y="3"
+						width="78"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="7"/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[$F{DATE_OF_RELIEVING}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="177"
+						y="3"
+						width="30"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="7"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{TOT_YEAR_SERVICE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="207"
+						y="3"
+						width="30"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="7"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{TOT_MONTH_SERVICE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="237"
+						y="3"
+						width="26"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="7"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{TOT_DAY_SERVICE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="469"
+						y="3"
+						width="120"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="7"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{REMARKS}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="263"
+						y="3"
+						width="204"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="7"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DEPATMENT_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="2"
+						y="3"
+						width="30"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="7"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.Integer"><![CDATA[$V{slno}]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

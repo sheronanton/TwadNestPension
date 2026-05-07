@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15 Sep, 2009 3:45:35 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.ValidateServiceDetails" table="HRM_PEN_MST_SERVICE">
+      
+      <id name="ppoNo" type="integer"  >
+            <column name="PPO_NO"  length="6" />
+            <generator class="assigned" />
+        </id>
+        
+        
+        <property name="grossServiceYrs" type="integer">
+            <column name="GROSS_SERVICE_YRS" length="2" />
+        </property>
+        
+        <property name="grossServiceMonth" type="integer">
+            <column name="GROSS_SERVICE_MONTH" length="2" />
+        </property>
+        
+        <property name="grossServiceDays" type="integer">
+            <column name="GROSS_SERVICE_DAYS" length="2" />
+        </property>
+        
+         <property name="totServiceYrs" type="integer">
+            <column name="TOT_SERVICE_YRS" length="4" />
+        </property>
+
+        <property name="totServiceMonths" type="integer">
+            <column name="TOT_SERVICE_MONTHS" length="2" />
+        </property>
+
+        <property name="totServiceDays" type="integer">
+            <column name="TOT_SERVICE_DAYS" length="2" />
+        </property>
+        <property name="quaServiceYrs" type="integer">
+            <column name="QUA_SERVICE_YRS" length="4" />
+        </property>
+        
+        <property name="quaServiceMonths" type="integer">
+            <column name="QUA_SERVICE_MONTHS" length="2" />
+        </property>
+        
+        <property name="quaServiceDays" type="integer">
+            <column name="QUA_SERVICE_DAYS" length="4" />
+        </property>
+        
+        <property name="nonquaServiceYrs" type="integer">
+            <column name="NON_QUA_SERVICE_YRS" length="4" />
+        </property>
+        
+        <property name="nonquaServiceMonths" type="integer">
+            <column name="NON_QUA_SERVICE_MONTHS" length="2" />
+        </property>
+        
+        <property name="nonquaServiceDays" type="integer">
+            <column name="NON_QUA_SERVICE_DAYS" length="2" />
+        </property>
+        
+        <property name="weightageServiceYrs" type="integer">
+            <column name="WEIGTAGE_SERVICE_YRS" length="2" />
+        </property>
+        
+        <property name="weightageServiceMonths" type="integer">
+            <column name="WEIGTAGE_SERVICE_MONTHS" length="2" />
+        </property>
+        
+        <property name="weightageServiceDays" type="integer">
+            <column name="WEIGHTAGE_SERVICE_DAYS" length="2" />
+        </property>
+        
+        <property name="netquaServiceYrs" type="integer">
+            <column name="NET_QUA_SERVICE_YRS" length="2" />
+        </property>
+        
+        <property name="netquaServiceMonths" type="integer">
+            <column name="NET_QUA_SERVICE_MONTHS" length="2" />
+        </property>
+        
+        <property name="netquaServiceDays" type="integer">
+            <column name="NET_QUA_SERVICE_DAYS" length="2" />
+        </property>
+        
+         <property name="processStatus" type="string">
+            <column name="PROCESS_STATUS" length="10" />
+        </property>
+        
+           <property name="updatedId" type="string">
+            <column name="UPDATED_USER" length="20"/>
+        </property>
+        
+         <property name="updatedDate" type="java.sql.Timestamp">
+            <column name="UPDATED_DATE" />
+        </property>
+        
+        </class>
+</hibernate-mapping>
+        
+        

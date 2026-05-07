@@ -1,0 +1,1058 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="Pension_Form1_calculation_Val_main_I_Old"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+
+	<field name="EMP_ID" class="java.math.BigDecimal"/>
+	<field name="OFFICE_ID" class="java.math.BigDecimal"/>
+	<field name="PENSION_TYPE" class="java.math.BigDecimal"/>
+	<field name="EMP_INITIAL" class="java.lang.String"/>
+	<field name="EMP_NAME" class="java.lang.String"/>
+	<field name="DESIG_SERVICE_GRP" class="java.math.BigDecimal"/>
+	<field name="DESIGNATION_ID" class="java.math.BigDecimal"/>
+	<field name="DATE_OF_BIRTH" class="java.util.Date"/>
+	<field name="DATE_OF_APP" class="java.util.Date"/>
+	<field name="DATE_OF_PROVINC" class="java.util.Date"/>
+	<field name="DATE_OF_REG_ESTAB" class="java.util.Date"/>
+	<field name="DATE_OF_SELECTION" class="java.util.Date"/>
+	<field name="DATE_OF_SPECIAL" class="java.util.Date"/>
+	<field name="DATE_OF_RETIRE" class="java.util.Date"/>
+	<field name="DATE_OF_VRS" class="java.util.Date"/>
+	<field name="COMM_OPTED" class="java.lang.String"/>
+	<field name="COMM_FACTOR_ONRTHIRD" class="java.lang.String"/>
+	<field name="COM_FACTOR_PERT" class="java.math.BigDecimal"/>
+	<field name="WCE_SERV_DAYS" class="java.lang.String"/>
+	<field name="WCE_SERV_MONTH" class="java.lang.String"/>
+	<field name="WCE_SERV_YEAR" class="java.lang.String"/>
+	<field name="WCE_SERV_FLAG" class="java.lang.String"/>
+	<field name="WCE_SERV_COUNT_FLAG" class="java.lang.String"/>
+	<field name="CONTINGENT_SERV_FLAG" class="java.lang.String"/>
+	<field name="CONTINGENT_SERV_DAYS" class="java.lang.String"/>
+	<field name="CONTINGENT_SERV_MONTH" class="java.lang.String"/>
+	<field name="CONTINGENT_SERV_YEAR" class="java.lang.String"/>
+	<field name="NON_PROV_SERV_DAYS" class="java.math.BigDecimal"/>
+	<field name="NON_PROV_SERV_MONTH" class="java.math.BigDecimal"/>
+	<field name="NON_PROV_SERV_YEAR" class="java.math.BigDecimal"/>
+	<field name="EOL_DAYS" class="java.math.BigDecimal"/>
+	<field name="EOL_MONTH" class="java.math.BigDecimal"/>
+	<field name="EOL_YEAR" class="java.math.BigDecimal"/>
+	<field name="SUSPENSION_DAYS" class="java.math.BigDecimal"/>
+	<field name="SUSPENSION_MONTH" class="java.math.BigDecimal"/>
+	<field name="SUSPENSION_YEAR" class="java.math.BigDecimal"/>
+	<field name="BOY_SERV_DAYS" class="java.math.BigDecimal"/>
+	<field name="BOY_SERV_MONTH" class="java.math.BigDecimal"/>
+	<field name="BOY_SERV_YEAR" class="java.math.BigDecimal"/>
+	<field name="OVERSTAY_LEAVE_DAYS" class="java.math.BigDecimal"/>
+	<field name="OVERSTAY_LEAVE_MONTH" class="java.math.BigDecimal"/>
+	<field name="OVERSTAY_LEAVE_YEAR" class="java.math.BigDecimal"/>
+	<field name="NOT_REG_LEAVE_DAYS" class="java.math.BigDecimal"/>
+	<field name="NOT_REG_LEAVE_MONTH" class="java.math.BigDecimal"/>
+	<field name="NOT_REG_LEAVE_YEAR" class="java.math.BigDecimal"/>
+	<field name="APPRENTICE_DAYS" class="java.math.BigDecimal"/>
+	<field name="APPRENTICE_MONTH" class="java.math.BigDecimal"/>
+	<field name="APPRENTICE_YEAR" class="java.math.BigDecimal"/>
+	<field name="NOT_SERV_VERIFY_DAYS" class="java.math.BigDecimal"/>
+	<field name="NOT_SERV_VERIFY_MONTH" class="java.math.BigDecimal"/>
+	<field name="NOT_SERV_VERIFY_YEAR" class="java.math.BigDecimal"/>
+	<field name="FOREIGN_SERV_DAYS" class="java.math.BigDecimal"/>
+	<field name="FOREIGN_SERV_MONTH" class="java.math.BigDecimal"/>
+	<field name="FOREIGN_SERV_YEAR" class="java.math.BigDecimal"/>
+	<field name="LAST_BASIC_PAY" class="java.lang.String"/>
+	<field name="LAST_SPECIAL_PAY" class="java.lang.String"/>
+	<field name="LAST_GRADE_PAY" class="java.lang.String"/>
+	<field name="LAST_OTHER_PAY1" class="java.lang.String"/>
+	<field name="LAST_OTHER_PAY2" class="java.lang.String"/>
+	<field name="LAST_OTHER_PAY3" class="java.lang.String"/>
+	<field name="PENSION_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="DCRG_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="NO_OF_HALFYEAR_PENSION" class="java.math.BigDecimal"/>
+	<field name="NO_OF_HALFYEAR_DCRG" class="java.math.BigDecimal"/>
+	<field name="TOTAL_COMMUTED_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="REDUCED_PENSION_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="FAMILY_PENSION_50_AMT" class="java.math.BigDecimal"/>
+	<field name="FAMILY_PENSION_30_AMT" class="java.math.BigDecimal"/>
+	<field name="form1avgValDetails" class="org.apache.struts2.views.jasperreports.ValueStackDataSource"/>
+	<field name="form1Valrecovery" class="org.apache.struts2.views.jasperreports.ValueStackDataSource"/>
+	<field name="LPD" class="java.math.BigDecimal"/>
+	<field name="COMMUTEDAMOUNT" class="java.math.BigDecimal"/>
+	<field name="DAMOUNT" class="java.math.BigDecimal"/>
+	<field name="COMMUTEDVAL" class="java.math.BigDecimal"/>
+	<field name="DESIGNATION_NAME" class="java.lang.String"/>
+	<field name="ACTUALSERVICEYEAR" class="java.math.BigDecimal"/>
+	<field name="ACTUALSERVICEMONTH" class="java.math.BigDecimal"/>
+	<field name="ACTUALSERVICEDAYS" class="java.math.BigDecimal"/>
+	<field name="NONQUALSERVICEYEAR" class="java.math.BigDecimal"/>
+	<field name="NONQUALSERVICEMONTH" class="java.math.BigDecimal"/>
+	<field name="NONQUALSERVICEDAYS" class="java.math.BigDecimal"/>
+	<field name="NETQUALSERVICEYEAR" class="java.math.BigDecimal"/>
+	<field name="NETQUALSERVICEMONTH" class="java.math.BigDecimal"/>
+	<field name="NETQUALSERVICEDAYS" class="java.math.BigDecimal"/>
+	<field name="WCESERVICELABLE" class="java.lang.String"/>
+	<field name="SCALEOFPAY" class="java.lang.String"/>
+	<field name="TYPEOFPENSION" class="java.lang.String"/>
+	<field name="CONTSERVICELABLE" class="java.lang.String"/>
+	<field name="WEIGHTAGE_SERV_DAYS" class="java.lang.String"/>
+	<field name="WEIGHTAGE_SERV_MONTH" class="java.lang.String"/>
+	<field name="WEIGHTAGE_SERV_YEAR" class="java.lang.String"/>
+	<field name="WEIGHTAGELABLE" class="java.lang.String"/>
+	<field name="new Date()" class="java.util.Date">
+		<fieldDescription><![CDATA[new Date()]]></fieldDescription>
+	</field>
+	<field name="LASTBASICLABLE" class="java.lang.String"/>
+	<field name="LASTGRADELABLE" class="java.lang.String"/>
+	<field name="LASTSPECIALLABLE" class="java.lang.String"/>
+	<field name="LASTOTHER1LABLE" class="java.lang.String"/>
+	<field name="LASTOTHER2LABLE" class="java.lang.String"/>
+	<field name="LASTOTHER3LABLE" class="java.lang.String"/>
+	<field name="FAM_UPTO_DATE" class="java.util.Date"/>
+	<field name="FAM_AFTER_DATE" class="java.util.Date"/>
+	<field name="LASTPAYDRAWNAMOUNT" class="java.math.BigDecimal"/>
+	<field name="DAPERCENTAGE" class="java.math.BigDecimal"/>
+	<field name="AVGEMOULMENTSAMOUNT" class="java.math.BigDecimal"/>
+	<field name="RECOVERYAMOUNT" class="java.math.BigDecimal"/>
+	<field name="DCRGRECAMTLABLE" class="java.lang.String"/>
+	<field name="DCRGDISAMT" class="java.lang.String"/>
+	<field name="DCRGDISMINUSLABLE" class="java.lang.String"/>
+	<field name="RECAMOUNTDIS" class="java.lang.String"/>
+	<field name="DCRGAMOUNTEQUALLABLE" class="java.lang.String"/>
+	<field name="DCRGRECFINALDISAMT" class="java.lang.String"/>
+	<field name="COMMURECAMTLABLE" class="java.lang.String"/>
+	<field name="COMMUDISAMT" class="java.lang.String"/>
+	<field name="COMMUDISMINUSLABLE" class="java.lang.String"/>
+	<field name="COMMURECAMOUNTDIS" class="java.lang.String"/>
+	<field name="COMMUAMOUNTEQUALLABLE" class="java.lang.String"/>
+	<field name="COMMURECFINALDISAMT" class="java.lang.String"/>
+	<field name="RESTRICT_ORG_PEN" class="java.lang.String"/>
+	<field name="MAX_PEN_HALF_YR" class="java.math.BigDecimal"/>
+	<field name="VRS_FAM_PEN_TEXT" class="java.lang.String"/>
+	<field name="FAM_UPTO_DATE_TEXT" class="java.lang.String"/>
+	<field name="FAM_AFTER_DATE_TEXT" class="java.lang.String"/>
+	<field name="RESTRICT_PENSION_TEXT" class="java.lang.String"/>
+	<field name="SUBJECT_CONTENT" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="331"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="1"
+						y="1"
+						width="193"
+						height="16"
+						forecolor="#000000"
+						key="staticText-1"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Times New Roman" pdfFontName="Helvetica-Bold" size="12" isBold="true" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[DCRG]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="19"
+						width="317"
+						height="14"
+						forecolor="#000000"
+						key="staticText-2"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Times New Roman" pdfFontName="Helvetica-Bold" size="10" isBold="true" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[(LPD+DA) * (0.25) * (Number of Half Years for DCRG)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="162"
+						y="35"
+						width="14"
+						height="14"
+						forecolor="#000000"
+						key="staticText-3"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" pdfFontName="Helvetica" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[*]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="175"
+						y="35"
+						width="25"
+						height="14"
+						forecolor="#000000"
+						key="staticText-4"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" pdfFontName="Helvetica" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[0.25]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="199"
+						y="35"
+						width="14"
+						height="14"
+						forecolor="#000000"
+						key="staticText-5"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" pdfFontName="Helvetica" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[*]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="213"
+						y="35"
+						width="14"
+						height="14"
+						forecolor="#000000"
+						key="staticText-6"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" pdfFontName="Helvetica" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[(]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="249"
+						y="35"
+						width="14"
+						height="14"
+						forecolor="#000000"
+						key="staticText-7"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" pdfFontName="Helvetica" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="262"
+						y="35"
+						width="14"
+						height="14"
+						forecolor="#000000"
+						key="staticText-8"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" pdfFontName="Helvetica" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[=]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="72"
+						y="35"
+						width="14"
+						height="14"
+						forecolor="#000000"
+						key="staticText-9"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" pdfFontName="Helvetica" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="35"
+						width="14"
+						height="14"
+						forecolor="#000000"
+						key="staticText-10"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" pdfFontName="Helvetica" size="7" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[(]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="148"
+						y="35"
+						width="14"
+						height="14"
+						forecolor="#000000"
+						key="staticText-11"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" pdfFontName="Helvetica" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[)]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="275"
+						y="35"
+						width="83"
+						height="14"
+						key="textField-1"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{DCRG_AMOUNT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="227"
+						y="35"
+						width="22"
+						height="14"
+						key="textField-2"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{NO_OF_HALFYEAR_DCRG}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="14"
+						y="35"
+						width="59"
+						height="14"
+						key="textField-3"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{LPD}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="359"
+						y="35"
+						width="97"
+						height="14"
+						forecolor="#000000"
+						key="staticText-12"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times New Roman" pdfFontName="Helvetica-Bold" size="10" isBold="true" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[DA Percentage =]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="457"
+						y="35"
+						width="15"
+						height="14"
+						key="textField-4"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{DAPERCENTAGE}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="473"
+						y="35"
+						width="14"
+						height="14"
+						forecolor="#000000"
+						key="staticText-13"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Times New Roman" pdfFontName="Helvetica" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[%]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="87"
+						y="35"
+						width="61"
+						height="14"
+						key="textField-5"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{DAMOUNT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1"
+						y="51"
+						width="50"
+						height="14"
+						forecolor="#000000"
+						key="textField-6"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DCRGRECAMTLABLE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="50"
+						y="51"
+						width="70"
+						height="14"
+						key="textField-7"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DCRGDISAMT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="120"
+						y="51"
+						width="15"
+						height="14"
+						key="textField-8"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DCRGDISMINUSLABLE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="136"
+						y="51"
+						width="66"
+						height="14"
+						key="textField-9"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{RECAMOUNTDIS}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="202"
+						y="51"
+						width="15"
+						height="14"
+						key="textField-10"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DCRGAMOUNTEQUALLABLE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="217"
+						y="51"
+						width="70"
+						height="14"
+						key="textField-11"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DCRGRECFINALDISAMT}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="1"
+						y="67"
+						width="534"
+						height="0"
+						forecolor="#000099"
+						key="line-1"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						x="1"
+						y="70"
+						width="161"
+						height="16"
+						forecolor="#000000"
+						key="staticText-14"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Times New Roman" pdfFontName="Helvetica-Bold" size="12" isBold="true" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[Commutation of Pension]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="168"
+						y="70"
+						width="109"
+						height="14"
+						forecolor="#000000"
+						key="staticText-15"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font fontName="Times New Roman" pdfFontName="Helvetica-Bold" size="10" isBold="true" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[Commuted Amount =]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="279"
+						y="70"
+						width="111"
+						height="14"
+						key="textField-12"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{COMMUTEDAMOUNT}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="1"
+						y="87"
+						width="484"
+						height="14"
+						forecolor="#000000"
+						key="staticText-16"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Times New Roman" pdfFontName="Helvetica-Bold" size="10" isBold="true" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[(Commuted amount) * 12 * (Value from the Commuted table based on next birthday)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="99"
+						y="103"
+						width="15"
+						height="14"
+						forecolor="#000000"
+						key="staticText-17"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" pdfFontName="Helvetica" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[12]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="114"
+						y="103"
+						width="14"
+						height="14"
+						forecolor="#000000"
+						key="staticText-18"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" pdfFontName="Helvetica" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[*]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="217"
+						y="103"
+						width="14"
+						height="14"
+						forecolor="#000000"
+						key="staticText-19"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" pdfFontName="Helvetica" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[=]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="86"
+						y="103"
+						width="14"
+						height="14"
+						forecolor="#000000"
+						key="staticText-20"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" pdfFontName="Helvetica" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[*]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="230"
+						y="103"
+						width="75"
+						height="14"
+						key="textField-13"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{TOTAL_COMMUTED_AMOUNT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1"
+						y="103"
+						width="85"
+						height="14"
+						key="textField-14"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{COMMUTEDAMOUNT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0.000" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="127"
+						y="103"
+						width="90"
+						height="14"
+						key="textField-15"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{COMMUTEDVAL}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1"
+						y="119"
+						width="149"
+						height="14"
+						forecolor="#000000"
+						key="textField-16"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="10" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{COMMURECAMTLABLE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="150"
+						y="119"
+						width="89"
+						height="14"
+						key="textField-17"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{COMMUDISAMT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="238"
+						y="119"
+						width="14"
+						height="14"
+						key="textField-18"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{COMMUDISMINUSLABLE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="252"
+						y="119"
+						width="84"
+						height="14"
+						key="textField-19"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{COMMURECAMOUNTDIS}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="336"
+						y="119"
+						width="14"
+						height="14"
+						key="textField-20"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{COMMUAMOUNTEQUALLABLE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="350"
+						y="119"
+						width="76"
+						height="14"
+						key="textField-21"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{COMMURECFINALDISAMT}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="1"
+						y="137"
+						width="534"
+						height="0"
+						forecolor="#000099"
+						key="line-2"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						x="1"
+						y="140"
+						width="108"
+						height="14"
+						forecolor="#000000"
+						key="staticText-21"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Times New Roman" pdfFontName="Helvetica-Bold" size="12" isBold="true" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[Reduced Pension]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="156"
+						width="237"
+						height="14"
+						forecolor="#000000"
+						key="staticText-22"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font fontName="Times New Roman" pdfFontName="Helvetica-Bold" size="10" isBold="true" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[Pension Amount - Commutation Amount]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="159"
+						y="172"
+						width="14"
+						height="14"
+						forecolor="#000000"
+						key="staticText-23"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" pdfFontName="Helvetica" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[=]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="80"
+						y="172"
+						width="14"
+						height="14"
+						forecolor="#000000"
+						key="staticText-24"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Times New Roman" pdfFontName="Helvetica" size="10" isBold="false" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[-]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1"
+						y="172"
+						width="79"
+						height="14"
+						key="textField-22"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{PENSION_AMOUNT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="172"
+						y="172"
+						width="66"
+						height="14"
+						key="textField-23"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{REDUCED_PENSION_AMOUNT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="93"
+						y="172"
+						width="66"
+						height="14"
+						key="textField-24"/>
+					<box></box>
+					<textElement verticalAlignment="Middle">
+						<font size="10"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{COMMUTEDAMOUNT}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="1"
+						y="188"
+						width="534"
+						height="0"
+						forecolor="#000099"
+						key="line-3"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						x="1"
+						y="192"
+						width="534"
+						height="36"
+						forecolor="#000000"
+						key="staticText-25"/>
+					<box>					<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="0.0" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+</box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font fontName="Times New Roman" pdfFontName="Helvetica-Bold" size="12" isBold="true" isItalic="false" isUnderline="false" isPdfEmbedded ="false" isStrikeThrough="false" />
+					</textElement>
+				<text><![CDATA[Subject to approval necessary authorisation is put up below for approval with the following remarks]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="22"
+						y="252"
+						width="509"
+						height="21"
+						key="staticText-27"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[LPC to be furnished]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="229"
+						width="20"
+						height="21"
+						key="staticText-28"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="252"
+						width="20"
+						height="21"
+						key="staticText-29"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[2.]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="22"
+						y="229"
+						width="508"
+						height="21"
+						key="textField-25"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{SUBJECT_CONTENT}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="22"
+						y="275"
+						width="509"
+						height="21"
+						key="staticText-30"/>
+					<box></box>
+					<textElement>
+						<font fontName="Times New Roman" pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Copy of Retirement order to be furnished]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="275"
+						width="20"
+						height="21"
+						key="staticText-31"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[3.]]></text>
+				</staticText>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

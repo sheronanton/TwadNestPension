@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 Jun, 2013 3:55:02 PM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.MstNominee_dao" table="MSTNOMINEE_DAO">
+        <id name="nomineeID" type="int">
+            <column name="NOMINEEID" />
+            <generator class="assigned" />
+        </id>
+        <property name="serialVersionUID" type="long" access="field">
+            <column name="SERIALVERSIONUID" />
+        </property>
+        <property name="ppoNo" type="int">
+            <column name="PPONO" />
+        </property>
+        <property name="familyMembers" type="java.lang.String">
+            <column name="FAMILYMEMBERS" />
+        </property>
+        <property name="nomineeInitial" type="java.lang.String">
+            <column name="NOMINEEINITIAL" />
+        </property>
+        <property name="relation" type="java.lang.String">
+            <column name="RELATION" />
+        </property>
+        <property name="dob" type="java.util.Date">
+            <column name="DOB" />
+        </property>
+        <property name="age" type="java.lang.Integer">
+            <column name="AGE" />
+        </property>
+        <property name="maritalStatus" type="java.lang.String">
+            <column name="MARITALSTATUS" />
+        </property>
+        <property name="handicapped" type="java.lang.String">
+            <column name="HANDICAPPED" />
+        </property>
+        <property name="nominationDate" type="java.util.Date">
+            <column name="NOMINATIONDATE" />
+        </property>
+        <property name="updatedDate" type="java.sql.Timestamp">
+            <column name="UPDATEDDATE" />
+        </property>
+        <property name="updatedBy" type="java.lang.String">
+            <column name="UPDATEDBY" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+ <class name="com.nic.hrms.pension.model.FamilyPensionApplicationDeathHOForm2DetailsDao" table="HRM_PEN_FAPP_HO_DET_CO_FORM2">
+                
+    	<id name="empNo" type="integer">
+            <column name="EMP_NO" length="10" />
+            <generator class="assigned" />
+    	 </id>
+      
+        <property name="religionId" type="integer">
+            <column name="RELIGION_ID" length="6" />
+        </property>
+     	
+     	<property name="nationality" type="string">
+            <column name="NATIONALITY" length="50" />
+        </property>
+        
+        	
+     	<property name="idMark1" type="string">
+            <column name="ID_MARK1" length="250" />
+        </property>
+        
+        	
+     	<property name="idMark2" type="string">
+            <column name="ID_MARK2" length="250" />
+        </property>
+        
+        	
+     	<property name="presentAddress" type="string">
+            <column name="PRESENT_ADDRESS" length="250" />
+        </property>
+        
+         <property name="stateId" type="integer">
+            <column name="STATE_ID" length="5" />
+        </property>
+        
+		 <property name="paymentOfficeId" type="integer">
+            <column name="PENSION_PAY_OFFICE_ID" length="6" />
+        </property>
+        
+			<property name="claimentName" type="string">
+            <column name="CLAIMENT_NAME" length="100" />
+        </property>
+        
+        <property name="claimentDob2" type="date">
+            <column name="CLAIMENT_DOB"  />
+        </property>
+        
+          <property name="claimentAge" type="integer">
+            <column name="CLAIMENT_AGE" length="5" />
+        </property>
+        
+        <property name="guardianName" type="string">
+            <column name="GUARDIAN_NAME" length="100" />
+        </property>
+        
+        <property name="guardianDob2" type="date">
+            <column name="GUARDIAN_DOB"  />
+        </property>
+        
+        <property name="guardianRelationMinor" type="string">
+            <column name="GUARDIAN_RELATION_MINOR" length="50" />
+        </property>
+        
+         <property name="guardianRelationEmp" type="string">
+            <column name="GUARDIAN_RELATION_EMP" length="50" />
+        </property>
+        
+     	 <property name="employeeDeathDate2" type="date">
+            <column name="EMPLOYEE_DEATH_DATE"  />
+        </property>
+        
+         <property name="address" type="string">
+            <column name="ADDRESS" length="250" />
+        </property>
+        
+        
+        <property name="height" type="string">
+            <column name="HEIGHT" length="50" />
+        </property>
+        
+          <property name="updatedUser" type="string">
+            <column name="UPDATED_USER_ID" length="15" />
+        </property>
+        
+            
+     	 <property name="updatedDate" type="java.sql.Timestamp">
+            <column name="UPDATED_DATE"  />
+        </property>
+        
+              <property name="processStatus" type="string">
+            <column name="PROCESS_STATUS" length="15" />
+        </property>
+        
+              <property name="unlockedUser" type="string">
+            <column name="UNLOCKED_BY" length="15" />
+        </property>
+        
+            
+     	 <property name="unlockedDate" type="java.sql.Timestamp">
+            <column name="UNLOCKED_DATE"  />
+        </property>
+        
+        
+  </class>
+
+</hibernate-mapping>
+
+	

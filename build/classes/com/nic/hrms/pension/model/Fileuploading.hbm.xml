@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15 Sep, 2009 3:45:35 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.Fileuploaddao" table="HRM_PEN_FILEUPLOAD" >
+        		
+       	<id name="ppoNo" type="integer"  >
+            <column name="PPO_NO"  length="6" />
+            <generator class="assigned" />
+        </id>
+        <!--
+        
+        <property name="fileContentType" type="string">
+            <column name="FILE_CONTENT_TYPE" length="4000" />
+        </property>
+        
+        -->
+        <property name="familyPhoto" type="binary">
+            <column name="FAMILY_PHOTO" sql-type="blob" />
+        </property>
+        
+         <property name="signatureDetails" type="binary">
+            <column name="SIGNATURE_DETAILS" sql-type="blob" />
+        </property>
+        
+         <property name="otherDocuments" type="binary">
+            <column name="OTHER_DETAILS" sql-type="blob" />
+        </property>
+        
+   </class>
+</hibernate-mapping>

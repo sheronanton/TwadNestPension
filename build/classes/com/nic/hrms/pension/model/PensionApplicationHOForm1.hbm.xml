@@ -1,0 +1,458 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15 Sep, 2009 3:45:35 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.PensionApplicationHOForm1Dao" table="HRM_PEN_APP_HO_CO_FORM1_DET">
+      
+     <id name="empNo" type="integer"   >
+            <column name="EMP_ID"  />
+            <generator class="assigned" />
+     </id>
+      
+        <property name="officeId" type="integer">
+            <column name="OFFICE_ID" length="6" />
+        </property>
+
+		<property name="classPensionId" type="integer">
+            <column name="PENSION_TYPE" length="6" />
+        </property>
+        
+       <property name="empInitial" type="string">
+            <column name="EMP_INITIAL" length="10" />
+        </property> 
+        
+        <property name="empName" type="string">
+            <column name="EMP_NAME" length="50" />
+        </property> 
+        
+        <property name="desigServiceGrp" type="integer">
+            <column name="DESIG_SERVICE_GRP" length="6" />
+        </property>
+        
+        <property name="desigId" type="integer">
+            <column name="DESIGNATION_ID" length="6" />
+        </property>                
+        
+        <property name="dateOfBirth1" type="date">
+            <column name="DATE_OF_BIRTH"  />
+        </property>
+        
+        <property name="twadDoj1" type="date">
+            <column name="DATE_OF_APP"  />
+        </property>
+        
+        <property name="province_date1" type="date">
+            <column name="DATE_OF_PROVINC"  />
+        </property>
+        
+        <property name="regualr_estab_date1" type="date">
+            <column name="DATE_OF_REG_ESTAB"  />
+        </property>
+        
+        <property name="datOfSelectionGrade1" type="date">
+            <column name="DATE_OF_SELECTION"  />
+        </property>
+        
+        <property name="dateOfSpecialGrade1" type="date">
+            <column name="DATE_OF_SPECIAL"  />
+        </property>
+        
+        <property name="dar1" type="date">
+            <column name="DATE_OF_RETIRE"  />
+        </property>
+        
+        <property name="vrs_date1" type="date">
+            <column name="DATE_OF_VRS"  />
+        </property>  
+        
+        <property name="pensionCommutedFlag" type="string">
+            <column name="COMM_OPTED" length="6" />
+        </property>
+        
+        <property name="pensionpertFlag" type="string">
+            <column name="COMM_FACTOR_ONRTHIRD" length="20" />
+        </property>
+        
+        <property name="commPert" type="integer">
+            <column name="COM_FACTOR_PERT" length="5" />
+        </property>   
+        
+        <property name="wceday" type="integer">
+            <column name="WCE_SERV_DAYS" length="6" />
+        </property>
+        
+        <property name="wcemonth" type="integer">
+            <column name="WCE_SERV_MONTH" length="2" />
+        </property>
+        
+        <property name="wceyear" type="integer">
+            <column name="WCE_SERV_YEAR" length="4" />
+        </property>
+        
+         <property name="wceserviceFlag" type="string">
+            <column name="WCE_SERV_FLAG" length="5" />
+        </property>
+        
+         <property name="wcecountedFlag" type="string">
+            <column name="WCE_SERV_COUNT_FLAG" length="5" />
+        </property>
+        
+         <property name="contingentserviceFlag" type="string">
+            <column name="CONTINGENT_SERV_FLAG" length="5" />
+        </property>
+        
+        <property name="contingentday" type="integer">
+            <column name="CONTINGENT_SERV_DAYS" length="6" />
+        </property>
+        
+        <property name="contingentmonth" type="integer">
+            <column name="CONTINGENT_SERV_MONTH" length="2" />
+        </property>
+        
+        <property name="contingentyear" type="integer">
+            <column name="CONTINGENT_SERV_YEAR" length="4" />
+        </property>
+        
+        <!--<property name="contingent_daydis" type="integer">
+            <column name="CONTINGENT_SERV_DAYS" length="6" />
+        </property>
+        
+        <property name="contingent_monthdis" type="integer">
+            <column name="CONTINGENT_SERV_MONTH" length="2" />
+        </property>
+        
+        <property name="contingent_yeardis" type="integer">
+            <column name="CONTINGENT_SERV_YEAR" length="4" />
+        </property>-->
+        
+        <property name="npp_day" type="integer">
+            <column name="NON_PROV_SERV_DAYS" length="6" />
+        </property>
+        
+        <property name="npp_month" type="integer">
+            <column name="NON_PROV_SERV_MONTH" length="2" />
+        </property>
+        
+        <property name="npp_year" type="integer">
+            <column name="NON_PROV_SERV_YEAR" length="4" />
+        </property>        
+        
+        
+        
+        <property name="ewm_day" type="integer">
+            <column name="EOL_DAYS" length="6" />
+        </property>
+        
+        <property name="ewm_month" type="integer">
+            <column name="EOL_MONTH" length="2" />
+        </property>
+        
+        <property name="ewm_year" type="integer">
+            <column name="EOL_YEAR" length="4" />
+        </property>
+        
+        
+        
+        <property name="s_day" type="integer">
+            <column name="SUSPENSION_DAYS" length="6" />
+        </property>
+        
+        <property name="s_month" type="integer">
+            <column name="SUSPENSION_MONTH" length="2" />
+        </property>
+        
+        <property name="s_year" type="integer">
+            <column name="SUSPENSION_YEAR" length="4" />
+        </property>
+        
+        
+        
+        
+        
+        <property name="bs_day" type="integer">
+            <column name="BOY_SERV_DAYS" length="6" />
+        </property>
+        
+        <property name="bs_month" type="integer">
+            <column name="BOY_SERV_MONTH" length="2" />
+        </property>
+        
+        <property name="bs_year" type="integer">
+            <column name="BOY_SERV_YEAR" length="4" />
+        </property>
+        
+        
+        
+        
+        <property name="ol_day" type="integer">
+            <column name="OVERSTAY_LEAVE_DAYS" length="6" />
+        </property>
+        
+        <property name="ol_month" type="integer">
+            <column name="OVERSTAY_LEAVE_MONTH" length="2" />
+        </property>
+        
+        <property name="ol_year" type="integer">
+            <column name="OVERSTAY_LEAVE_YEAR" length="4" />
+        </property>
+        
+        
+        
+        
+        
+        <property name="lnr_day" type="integer">
+            <column name="NOT_REG_LEAVE_DAYS" length="6" />
+        </property>
+        
+        <property name="lnr_month" type="integer">
+            <column name="NOT_REG_LEAVE_MONTH" length="2" />
+        </property>
+        
+        <property name="lnr_year" type="integer">
+            <column name="NOT_REG_LEAVE_YEAR" length="4" />
+        </property>
+        
+        
+        
+        
+        <property name="as_day" type="integer">
+            <column name="APPRENTICE_DAYS" length="6" />
+        </property>
+        
+        <property name="as_month" type="integer">
+            <column name="APPRENTICE_MONTH" length="2" />
+        </property>
+        
+        <property name="as_year" type="integer">
+            <column name="APPRENTICE_YEAR" length="4" />
+        </property>
+        
+        
+        
+        <property name="svnd_day" type="integer">
+            <column name="NOT_SERV_VERIFY_DAYS" length="6" />
+        </property>
+        
+        <property name="svnd_month" type="integer">
+            <column name="NOT_SERV_VERIFY_MONTH" length="2" />
+        </property>
+        
+        <property name="svnd_year" type="integer">
+            <column name="NOT_SERV_VERIFY_YEAR" length="4" />
+        </property>
+        
+        
+        
+        
+        <property name="fs_day" type="integer">
+            <column name="FOREIGN_SERV_DAYS" length="6" />
+        </property>
+        
+        <property name="fs_month" type="integer">
+            <column name="FOREIGN_SERV_MONTH" length="2" />
+        </property>
+        
+        <property name="fs_year" type="integer">
+            <column name="FOREIGN_SERV_YEAR" length="4" />
+        </property> 
+        
+        
+        <property name="lastbasic" type="integer">
+            <column name="LAST_BASIC_PAY" length="8" />
+        </property>
+        
+        <property name="lastspecial" type="integer">
+            <column name="LAST_SPECIAL_PAY" length="8" />
+        </property>
+        
+        <property name="lastgrade" type="integer">
+            <column name="LAST_GRADE_PAY" length="8" />
+        </property>
+        
+        <property name="lastother1" type="integer">
+            <column name="LAST_OTHER_PAY1" length="8" />
+        </property>
+        
+        <property name="lastother2" type="integer">
+            <column name="LAST_OTHER_PAY2" length="8" />
+        </property>
+        
+        <property name="lastother3" type="integer">
+            <column name="LAST_OTHER_PAY3" length="8" />
+        </property>
+        
+        
+        <property name="pensionamount" type="integer">
+            <column name="PENSION_AMOUNT" length="8" />
+        </property>
+        
+        
+        <property name="fampensionamount" type="integer">
+            <column name="FAMILY_PENSION_50_AMT" length="8" />
+        </property>
+        
+        
+        <property name="famafterpensionamount" type="integer">
+            <column name="FAMILY_PENSION_30_AMT" length="8" />
+        </property>
+        
+        
+        <property name="dcrgamount" type="integer">
+            <column name="DCRG_AMOUNT" length="8" />
+        </property>
+        
+        
+        <property name="nohalfyearpen" type="integer">
+            <column name="NO_OF_HALFYEAR_PENSION" length="8" />
+        </property>
+        
+        
+        <property name="nohalfyeardcrg" type="integer">
+            <column name="NO_OF_HALFYEAR_DCRG" length="8" />
+        </property>
+        
+        
+        <property name="commutedamount" type="integer">
+            <column name="TOTAL_COMMUTED_AMOUNT" length="8" />
+        </property>
+        
+        
+        <property name="reducedpensionamount" type="integer">
+            <column name="REDUCED_PENSION_AMOUNT" length="8" />
+        </property>
+        
+        
+        
+        <property name="totcommutedamount" type="integer">
+            <column name="COMMUTATION_PEN_AMOUNT" length="8" />
+        </property>
+        
+        <property name="commuted_val">
+            <column name="COMMUTED_VALUE" sql-type="NUMERIC(8,3)" />
+        </property>             
+        
+        <property name="damount" type="integer">
+            <column name="DA_AMOUNT" length="8" />
+        </property>        
+        
+        <property name="aws_yeardis" type="integer">
+            <column name="ACTUAL_SER_YEAR" length="4" />
+        </property>
+        
+        <property name="aws_monthdis" type="integer">
+            <column name="ACTUAL_SER_MON" length="4" />
+        </property>
+        
+        <property name="aws_daydis" type="integer">
+            <column name="ACTUAL_SER_DAYS" length="4" />
+        </property>
+        
+        
+        
+        <property name="tqs_year" type="integer">
+            <column name="TOT_NON_QUAL_SER_YEAR" length="4" />
+        </property>
+        
+        <property name="tqs_month" type="integer">
+            <column name="TOT_NON_QUAL_SER_MON" length="4" />
+        </property>
+        
+        <property name="tqs_day" type="integer">
+            <column name="TOT_NON_QUAL_SER_DAYS" length="4" />
+        </property>
+        
+        
+        <property name="nqs_year" type="integer">
+            <column name="NET_SER_YEAR" length="4" />
+        </property>
+        
+        <property name="nqs_month" type="integer">
+            <column name="NET_SER_MON" length="4" />
+        </property>
+        
+        <property name="nqs_day" type="integer">
+            <column name="NET_SER_DAYS" length="4" />
+        </property>
+        
+        <property name="scaleOfPay" type="string">
+            <column name="SCALE_OF_PAY" length="50" />
+        </property>        
+        
+        <property name="weigt_yeardis" type="integer">
+            <column name="WEIGHTAGE_YEAR" length="4" />
+        </property>
+        
+        <property name="weigt_monthdis" type="integer">
+            <column name="WEIGHTAGE_MONTH" length="4" />
+        </property>
+        
+        <property name="weigt_daydis" type="integer">
+            <column name="WEIGHTAGE_DAYS" length="4" />
+        </property>
+        
+        
+        <property name="fam_pen_upto_seven_date1" type="date">
+            <column name="FAM_PEN_UPTO_SEVEN"  />            
+        </property>
+        
+        
+        <property name="fam_pen_after_seven_date1" type="date">
+            <column name="FAM_PEN_AFTER_SEVEN"  />
+        </property>
+        
+        
+        <property name="death_date1" type="date">
+            <column name="DEATH_DATE"  />
+        </property>
+        
+        
+        
+        
+        <property name="processStatus" type="string">
+            <column name="PROCESS_STATUS" length="20" />
+        </property> 
+                
+        <property name="updatedUser" type="string">
+			<column name="UPDATED_USER_ID" length="20"/>
+		</property>
+        
+        <property name="updateDate" type="timestamp">
+			<column name="UPDATED_DATE"/>
+		</property>
+		
+		<property name="unlockedBy" type="string">
+			<column name="UNLOCKED_BY" length="20"/>
+		</property>
+		
+		<property name="unlockedDate" type="timestamp">
+			<column name="UNLOCKED_DATE"/>
+		</property>
+		
+		<property name="da_percentage" type="integer">
+			<column name="DA_PERT" length="6"/>
+		</property>
+        
+        <property name="otherdeparmentserviceFlag" type="string">
+            <column name="OTH_DEPT_SERV_FLAG" length="5" />
+        </property>
+        
+        <property name="tototdepyear" type="integer">
+			<column name="OTH_DEPT_TOT_YEAR" length="4"/>
+		</property>
+		
+		<property name="tototdepmonth" type="integer">
+			<column name="OTH_DEPT_TOT_MONTH" length="2"/>
+		</property>
+		
+		<property name="totothdeptday" type="integer">
+			<column name="OTH_DEPT_TOT_DAYS" length="2"/>
+		</property>
+		
+		
+		<property name="lastlevel" type="integer">
+			<column name="LEVEL_OF_PAY" length="2"/>
+		</property>
+               
+     </class>
+</hibernate-mapping>

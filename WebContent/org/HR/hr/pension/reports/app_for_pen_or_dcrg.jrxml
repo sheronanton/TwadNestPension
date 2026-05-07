@@ -1,0 +1,1171 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="app_for_pen_or_dcrg"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="1124"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+
+	<field name="EMP_NO" class="java.math.BigDecimal"/>
+	<field name="EMP_NAME" class="java.lang.String"/>
+	<field name="FATHER_NAME" class="java.lang.String"/>
+	<field name="HUSBAND_NAME" class="java.lang.String"/>
+	<field name="RELIGION" class="java.lang.String"/>
+	<field name="NATIONALITY" class="java.lang.String"/>
+	<field name="PERMANENT_ADDRESS" class="java.lang.String"/>
+	<field name="STATE_NAME" class="java.lang.String"/>
+	<field name="PENSION_TYPE" class="java.lang.String"/>
+	<field name="DATE_OF_BIRTH" class="java.util.Date"/>
+	<field name="DATE_EFFECTIVE_FROM" class="java.util.Date"/>
+	<field name="DATE_FROM" class="java.util.Date"/>
+	<field name="DATE_FROM_SESSION" class="java.lang.String"/>
+	<field name="DATE_OF_RETIRE" class="java.util.Date"/>
+	<field name="DATE_OF_VRS" class="java.util.Date"/>
+	<field name="DEATH_DATE" class="java.util.Date"/>
+	<field name="ACTUAL_SER_YEAR" class="java.math.BigDecimal"/>
+	<field name="ACTUAL_SER_MON" class="java.math.BigDecimal"/>
+	<field name="ACTUAL_SER_DAYS" class="java.math.BigDecimal"/>
+	<field name="EOL_YEAR" class="java.math.BigDecimal"/>
+	<field name="EOL_MONTH" class="java.math.BigDecimal"/>
+	<field name="EOL_DAYS" class="java.math.BigDecimal"/>
+	<field name="NET_SER_YEAR" class="java.math.BigDecimal"/>
+	<field name="NET_SER_MON" class="java.math.BigDecimal"/>
+	<field name="NET_SER_DAYS" class="java.math.BigDecimal"/>
+	<field name="PENSION_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="AE_LPD" class="java.math.BigDecimal"/>
+	<field name="NAME_OF_ESTABLISHMENT" class="java.lang.String"/>
+
+		<background>
+			<band height="1"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="71"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="0"
+						y="28"
+						width="535"
+						height="41"
+						key="staticText-1"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[APPLICATION FOR PENSION OR GRATUITY (AND DEATH CUM RETIREMENT GRATUITY)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="3"
+						width="535"
+						height="25"
+						key="staticText-91"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[FORM.7]]></text>
+				</staticText>
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="676"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="21"
+						y="1"
+						width="181"
+						height="21"
+						key="staticText-2"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Name of applicant]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="24"
+						width="189"
+						height="52"
+						key="staticText-3"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Father's name and also Husband's name in the case of Women Govt.servant.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="42"
+						y="219"
+						width="207"
+						height="32"
+						key="staticText-4"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Present or last substantive Appointment.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="1"
+						width="20"
+						height="21"
+						key="staticText-6"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="24"
+						width="20"
+						height="21"
+						key="staticText-7"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[2.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="176"
+						width="20"
+						height="21"
+						key="staticText-8"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[5.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="176"
+						width="15"
+						height="21"
+						key="staticText-10"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="285"
+						width="15"
+						height="21"
+						key="staticText-11"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="219"
+						width="15"
+						height="21"
+						key="staticText-12"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="22"
+						y="331"
+						width="15"
+						height="21"
+						key="staticText-14"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[a.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="285"
+						width="218"
+						height="21"
+						key="staticText-21"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Date of beginning of service.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="285"
+						width="20"
+						height="21"
+						key="staticText-22"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[6.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="607"
+						width="15"
+						height="21"
+						key="staticText-23"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="308"
+						width="218"
+						height="21"
+						key="staticText-27"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Date of ending of service.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="308"
+						width="20"
+						height="21"
+						key="staticText-28"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[7.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="458"
+						width="248"
+						height="38"
+						key="staticText-30"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Length of service with details of Interruption and non qualifying period.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="458"
+						width="20"
+						height="21"
+						key="staticText-31"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[8.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="78"
+						width="218"
+						height="21"
+						key="staticText-33"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Religion and Nationality]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="78"
+						width="20"
+						height="21"
+						key="staticText-34"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[3.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="78"
+						width="15"
+						height="21"
+						key="staticText-35"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="101"
+						width="218"
+						height="50"
+						key="staticText-36"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Permanent residential address showing village,Town,District.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="101"
+						width="20"
+						height="21"
+						key="staticText-37"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[4.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="101"
+						width="15"
+						height="21"
+						key="staticText-38"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="176"
+						width="248"
+						height="37"
+						key="staticText-39"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Present or last appointment Including Name of establishment]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="567"
+						width="15"
+						height="21"
+						key="staticText-42"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="37"
+						y="423"
+						width="232"
+						height="33"
+						key="staticText-45"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Governement under which service has been rendered in order to employment.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="423"
+						width="15"
+						height="21"
+						key="staticText-46"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="22"
+						y="423"
+						width="15"
+						height="21"
+						key="staticText-47"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[b.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="630"
+						width="15"
+						height="21"
+						key="staticText-50"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="607"
+						width="20"
+						height="21"
+						key="staticText-52"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[10.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="37"
+						y="331"
+						width="207"
+						height="21"
+						key="staticText-63"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Total period of military service]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="331"
+						width="15"
+						height="21"
+						key="staticText-64"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="22"
+						y="219"
+						width="15"
+						height="21"
+						key="staticText-65"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[a.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="37"
+						y="354"
+						width="234"
+						height="67"
+						key="staticText-66"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Date of commencement and end of such Period of military service, Amount and Nature of any pension/Gratuity received For the military service.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="567"
+						width="248"
+						height="38"
+						key="staticText-70"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Class of Pension or Grauity applied for and cause of application.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="567"
+						width="20"
+						height="21"
+						key="staticText-71"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[9.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="308"
+						width="15"
+						height="21"
+						key="staticText-72"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="607"
+						width="248"
+						height="21"
+						key="staticText-73"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Average Emoluments/LPD]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="630"
+						width="248"
+						height="21"
+						key="staticText-76"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Proposed Pension]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="630"
+						width="20"
+						height="21"
+						key="staticText-77"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[11.]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="1"
+						width="245"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{EMP_NAME}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="271"
+						y="24"
+						width="15"
+						height="21"
+						key="staticText-78"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="1"
+						width="15"
+						height="21"
+						key="staticText-79"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="24"
+						width="245"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FATHER_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="78"
+						width="143"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{RELIGION}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="432"
+						y="78"
+						width="103"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{NATIONALITY}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="101"
+						width="245"
+						height="50"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PERMANENT_ADDRESS}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="21"
+						y="153"
+						width="218"
+						height="21"
+						key="staticText-80"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[State]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="153"
+						width="245"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{STATE_NAME}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="271"
+						y="153"
+						width="15"
+						height="21"
+						key="staticText-81"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="dd/MM/yyyy" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="285"
+						width="245"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[$F{DATE_FROM}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="dd/MM/yyyy" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="308"
+						width="245"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[$F{DATE_OF_RETIRE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="567"
+						width="245"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PENSION_TYPE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="314"
+						y="630"
+						width="220"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{PENSION_AMOUNT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="314"
+						y="607"
+						width="220"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{AE_LPD}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="290"
+						y="475"
+						width="43"
+						height="21"
+						key="staticText-82"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Year]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="37"
+						y="498"
+						width="171"
+						height="21"
+						key="staticText-83"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Gross Service]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="37"
+						y="521"
+						width="171"
+						height="21"
+						key="staticText-84"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[E.O.L]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="37"
+						y="544"
+						width="171"
+						height="21"
+						key="staticText-85"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Net Qualifyig Service]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="335"
+						y="475"
+						width="43"
+						height="21"
+						key="staticText-86"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Month]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="380"
+						y="475"
+						width="43"
+						height="21"
+						key="staticText-87"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Days]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="498"
+						width="43"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{ACTUAL_SER_YEAR}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="335"
+						y="498"
+						width="43"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{ACTUAL_SER_MON}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="380"
+						y="498"
+						width="43"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{ACTUAL_SER_DAYS}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="521"
+						width="43"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{EOL_YEAR}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="335"
+						y="521"
+						width="43"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{EOL_MONTH}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="382"
+						y="521"
+						width="41"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{EOL_DAYS}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="544"
+						width="43"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{NET_SER_YEAR}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="335"
+						y="544"
+						width="43"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{NET_SER_MON}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="382"
+						y="544"
+						width="43"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{NET_SER_DAYS}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="271"
+						y="498"
+						width="15"
+						height="21"
+						key="staticText-88"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="521"
+						width="15"
+						height="21"
+						key="staticText-89"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="544"
+						width="15"
+						height="21"
+						key="staticText-90"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="176"
+						width="245"
+						height="22"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{NAME_OF_ESTABLISHMENT}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="290"
+						y="607"
+						width="24"
+						height="21"
+						key="staticText-92"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Rs.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="290"
+						y="630"
+						width="24"
+						height="21"
+						key="staticText-93"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Rs.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="290"
+						y="219"
+						width="245"
+						height="20"
+						key="staticText-94"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Engineering Service/]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="290"
+						y="239"
+						width="245"
+						height="20"
+						key="staticText-95"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Engineering Subordinate Service/
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="290"
+						y="259"
+						width="245"
+						height="20"
+						key="staticText-96"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Subordinate Service/WCE Service
+
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="290"
+						y="331"
+						width="40"
+						height="21"
+						key="staticText-97"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[-]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="290"
+						y="423"
+						width="244"
+						height="21"
+						key="staticText-99"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[TWAD Board.]]></text>
+				</staticText>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="50"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

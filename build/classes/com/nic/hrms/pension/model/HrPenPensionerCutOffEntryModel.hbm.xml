@@ -1,0 +1,252 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 Jun, 2013 3:55:02 PM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.HrPenPensionerCutOffEntryModel" table="HRPENPENSIONERCUTOFFENTRYMODEL">
+        <id name="bankId" type="int">
+            <column name="BANKID" />
+            <generator class="assigned" />
+        </id>
+        <property name="serialVersionUID" type="long" access="field">
+            <column name="SERIALVERSIONUID" />
+        </property>
+        <property name="ppoNo" type="int">
+            <column name="PPONO" />
+        </property>
+        <property name="employeeId" type="int">
+            <column name="EMPLOYEEID" />
+        </property>
+        <property name="pensionerInitial" type="java.lang.String">
+            <column name="PENSIONERINITIAL" />
+        </property>
+        <property name="sex" type="java.lang.String">
+            <column name="SEX" />
+        </property>
+        <property name="titleId" type="int">
+            <column name="TITLEID" />
+        </property>
+        <property name="pensionerName" type="java.lang.String">
+            <column name="PENSIONERNAME" />
+        </property>
+        <property name="dateOfBirth" type="java.util.Date">
+            <column name="DATEOFBIRTH" />
+        </property>
+        <property name="dateOfRetirement" type="java.util.Date">
+            <column name="DATEOFRETIREMENT" />
+        </property>
+        <property name="desigServGrp" type="int">
+            <column name="DESIGSERVGRP" />
+        </property>
+        <property name="designationId" type="int">
+            <column name="DESIGNATIONID" />
+        </property>
+        <property name="panNumber" type="java.lang.String">
+            <column name="PANNUMBER" />
+        </property>
+        <property name="idMark1" type="java.lang.String">
+            <column name="IDMARK1" />
+        </property>
+        <property name="idMark2" type="java.lang.String">
+            <column name="IDMARK2" />
+        </property>
+        <property name="lastPayDrawnAmt" type="float">
+            <column name="LASTPAYDRAWNAMT" />
+        </property>
+        <property name="avgEmoulmentAmt" type="float">
+            <column name="AVGEMOULMENTAMT" />
+        </property>
+        <property name="lastWorkingOfficeLevel" type="java.lang.String">
+            <column name="LASTWORKINGOFFICELEVEL" />
+        </property>
+        <property name="lastWorkingOfficeId" type="int">
+            <column name="LASTWORKINGOFFICEID" />
+        </property>
+        <property name="currAccountOfficeId" type="int">
+            <column name="CURRACCOUNTOFFICEID" />
+        </property>
+        <property name="cutOfEntryDate" type="java.util.Date">
+            <column name="CUTOFENTRYDATE" />
+        </property>
+        <property name="classPensionId" type="int">
+            <column name="CLASSPENSIONID" />
+        </property>
+        <property name="originalPensionAmt" type="float">
+            <column name="ORIGINALPENSIONAMT" />
+        </property>
+        <property name="reducedPensionAmt" type="float">
+            <column name="REDUCEDPENSIONAMT" />
+        </property>
+        <property name="dearnessPay" type="float">
+            <column name="DEARNESSPAY" />
+        </property>
+        <property name="provisionalPensionAmt" type="float">
+            <column name="PROVISIONALPENSIONAMT" />
+        </property>
+        <property name="dcrgAmt" type="float">
+            <column name="DCRGAMT" />
+        </property>
+        <property name="dcrgPertReceived" type="float">
+            <column name="DCRGPERTRECEIVED" />
+        </property>
+        <property name="paymentOfficeId" type="int">
+            <column name="PAYMENTOFFICEID" />
+        </property>
+        <property name="commOpted" type="char">
+            <column name="COMMOPTED" />
+        </property>
+        <property name="commReceived" type="char">
+            <column name="COMMRECEIVED" />
+        </property>
+        <property name="commfactorOnethird" type="java.lang.String">
+            <column name="COMMFACTORONETHIRD" />
+        </property>
+        <property name="commFactorPert" type="float">
+            <column name="COMMFACTORPERT" />
+        </property>
+        <property name="commAmt" type="float">
+            <column name="COMMAMT" />
+        </property>
+        <property name="commPayDate" type="java.util.Date">
+            <column name="COMMPAYDATE" />
+        </property>
+        <property name="pshfSubscribed" type="java.lang.String">
+            <column name="PSHFSUBSCRIBED" />
+        </property>
+        <property name="familyPensionTillDate" type="java.util.Date">
+            <column name="FAMILYPENSIONTILLDATE" />
+        </property>
+        <property name="familyPensionTillDateAmt" type="float">
+            <column name="FAMILYPENSIONTILLDATEAMT" />
+        </property>
+        <property name="familyPensionAfterDateAmt" type="float">
+            <column name="FAMILYPENSIONAFTERDATEAMT" />
+        </property>
+        <property name="payCommissionRevisonFlag" type="java.lang.String">
+            <column name="PAYCOMMISSIONREVISONFLAG" />
+        </property>
+        <property name="grossServiceYrs" type="int">
+            <column name="GROSSSERVICEYRS" />
+        </property>
+        <property name="grossServiceMonth" type="int">
+            <column name="GROSSSERVICEMONTH" />
+        </property>
+        <property name="grossServiceDays" type="int">
+            <column name="GROSSSERVICEDAYS" />
+        </property>
+        <property name="totServiceYrs" type="int">
+            <column name="TOTSERVICEYRS" />
+        </property>
+        <property name="totServiceMonths" type="int">
+            <column name="TOTSERVICEMONTHS" />
+        </property>
+        <property name="totServiceDays" type="int">
+            <column name="TOTSERVICEDAYS" />
+        </property>
+        <property name="quaServiceYrs" type="int">
+            <column name="QUASERVICEYRS" />
+        </property>
+        <property name="quaServiceMonths" type="int">
+            <column name="QUASERVICEMONTHS" />
+        </property>
+        <property name="quaServiceDays" type="int">
+            <column name="QUASERVICEDAYS" />
+        </property>
+        <property name="nonquaServiceYrs" type="int">
+            <column name="NONQUASERVICEYRS" />
+        </property>
+        <property name="nonquaServiceMonths" type="int">
+            <column name="NONQUASERVICEMONTHS" />
+        </property>
+        <property name="nonquaServiceDays" type="int">
+            <column name="NONQUASERVICEDAYS" />
+        </property>
+        <property name="weightageServiceYrs" type="int">
+            <column name="WEIGHTAGESERVICEYRS" />
+        </property>
+        <property name="weightageServiceMonths" type="int">
+            <column name="WEIGHTAGESERVICEMONTHS" />
+        </property>
+        <property name="weightageServiceDays" type="int">
+            <column name="WEIGHTAGESERVICEDAYS" />
+        </property>
+        <property name="netquaServiceYrs" type="int">
+            <column name="NETQUASERVICEYRS" />
+        </property>
+        <property name="netquaServiceMonths" type="int">
+            <column name="NETQUASERVICEMONTHS" />
+        </property>
+        <property name="netquaServiceDays" type="int">
+            <column name="NETQUASERVICEDAYS" />
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="ADDRESS" />
+        </property>
+        <property name="district" type="java.lang.String">
+            <column name="DISTRICT" />
+        </property>
+        <property name="state" type="java.lang.String">
+            <column name="STATE" />
+        </property>
+        <property name="pincode" type="java.lang.String">
+            <column name="PINCODE" />
+        </property>
+        <property name="contactLandline" type="java.lang.String">
+            <column name="CONTACTLANDLINE" />
+        </property>
+        <property name="contactCell" type="java.lang.String">
+            <column name="CONTACTCELL" />
+        </property>
+        <property name="faxNo" type="java.lang.String">
+            <column name="FAXNO" />
+        </property>
+        <property name="contactEmailId" type="java.lang.String">
+            <column name="CONTACTEMAILID" />
+        </property>
+        <property name="pensionStatus" type="java.lang.String">
+            <column name="PENSIONSTATUS" />
+        </property>
+        <property name="pensionNotPaidFrmMon" type="java.lang.String">
+            <column name="PENSIONNOTPAIDFRMMON" />
+        </property>
+        <property name="pensionNotPaidFrmYear" type="java.lang.String">
+            <column name="PENSIONNOTPAIDFRMYEAR" />
+        </property>
+        <property name="lastSignatureDate" type="java.util.Date">
+            <column name="LASTSIGNATUREDATE" />
+        </property>
+        <property name="branchId" type="int">
+            <column name="BRANCHID" />
+        </property>
+        <property name="bankAcNo" type="java.lang.String">
+            <column name="BANKACNO" />
+        </property>
+        <primitive-array name="familyPhoto" table="HRPENPENSIONERCUTOFFENTRYMODEL">
+            <key>
+                <column name="BANKID" />
+            </key>
+            <index></index>
+            <element type="byte">
+                <column name="FAMILYPHOTO" />
+            </element>
+        </primitive-array>
+        <primitive-array name="signatureAttachment" table="HRPENPENSIONERCUTOFFENTRYMODEL">
+            <key>
+                <column name="BANKID" />
+            </key>
+            <index></index>
+            <element type="byte">
+                <column name="SIGNATUREATTACHMENT" />
+            </element>
+        </primitive-array>
+        <primitive-array name="otherAttachment" table="HRPENPENSIONERCUTOFFENTRYMODEL">
+            <key>
+                <column name="BANKID" />
+            </key>
+            <index></index>
+            <element type="byte">
+                <column name="OTHERATTACHMENT" />
+            </element>
+        </primitive-array>
+    </class>
+</hibernate-mapping>

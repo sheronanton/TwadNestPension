@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="pen_app_field_off_report_form14_I"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="1124"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="reportFieldOffParams.dir" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" isForPrompting="true" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["C:\\2011_Jan_Workspace\\twad_ver2\\WebContent\\org\\HR\\hr\\pension\\reports\\"]]></defaultValueExpression>
+	</parameter>
+
+	<field name="PENSION_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="DCRG_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="RETDATE" class="java.util.Date"/>
+	<field name="EMP_HEIGHT" class="java.lang.String"/>
+	<field name="ID_MARK1" class="java.lang.String"/>
+	<field name="ID_MARK2" class="java.lang.String"/>
+	<field name="fieldOfficeNomineeDetails" class="org.apache.struts2.views.jasperreports.ValueStackDataSource"/>
+	<field name="PAYMENT_OFFICE" class="java.lang.String"/>
+
+		<background>
+			<band height="1"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="2"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="441"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="21"
+						y="1"
+						width="248"
+						height="21"
+						key="staticText-2"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Enclosures]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="41"
+						y="24"
+						width="494"
+						height="40"
+						key="staticText-3"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Two specimen signatures of the applicant, duly attested. (to be furnished in two separate sheets.)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="1"
+						width="20"
+						height="21"
+						key="staticText-6"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[8.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="24"
+						width="20"
+						height="21"
+						key="staticText-7"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[i)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="1"
+						width="15"
+						height="21"
+						key="staticText-79"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="41"
+						y="66"
+						width="494"
+						height="21"
+						key="staticText-167"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Two copies of passport size photograph of the applicant duly attested.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="66"
+						width="20"
+						height="21"
+						key="staticText-168"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[ii)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="41"
+						y="89"
+						width="494"
+						height="55"
+						key="staticText-169"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Two slips eah bearing left hand thumb and finger impressions of the applicant, duly attested. (To be furnished in case of the applicant is not literate enough to sign his name)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="89"
+						width="20"
+						height="21"
+						key="staticText-170"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[iii)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="41"
+						y="146"
+						width="494"
+						height="21"
+						key="staticText-171"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Descriptive Roll of the applicant, duly attested indicating.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="146"
+						width="20"
+						height="21"
+						key="staticText-172"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[iv)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="41"
+						y="169"
+						width="494"
+						height="35"
+						key="staticText-174"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[a) height and b) Personal marks if any, on the hand, face etc. (to be furnished in duplicate)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="41"
+						y="206"
+						width="494"
+						height="98"
+						key="staticText-175"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Certificate(s) of age (in original with two attested copies) showing the date of birth of the children. The certificate should be from the Municipal Authorities or from the Local Panchayat or from the head of a recognised school if the child is studying in such school. This information should be furnished in respect of such child or children the particulars of whose date of birth are not available with the Audit Officer/Head of Office.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="206"
+						width="20"
+						height="21"
+						key="staticText-176"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[v)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="306"
+						width="228"
+						height="35"
+						key="staticText-177"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Signature or left hand thumb impression of the applicant]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="306"
+						width="20"
+						height="21"
+						key="staticText-178"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[9.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="251"
+						y="306"
+						width="15"
+						height="21"
+						key="staticText-179"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="343"
+						width="228"
+						height="35"
+						key="staticText-180"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Attested by]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="343"
+						width="20"
+						height="21"
+						key="staticText-181"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[10.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="251"
+						y="343"
+						width="15"
+						height="21"
+						key="staticText-182"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="270"
+						y="343"
+						width="265"
+						height="80"
+						key="staticText-183"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[(Attestation should be done by two gazetted Government servants or two or more persons of respectability in the town or village in which the applicant resides.]]></text>
+				</staticText>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

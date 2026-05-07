@@ -1,0 +1,392 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"
+	default-lazy-init="true">
+	<bean id="sessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:hibernate.cfg.xml" />
+		<property name="hibernateProperties">
+			<value>
+				hibernate.dialect=${hibernate.dialect}
+				hibernate.query.substitutions=true 'Y', false 'N'
+				hibernate.cache.use_second_level_cache=true
+				hibernate.cache.provider_class=org.hibernate.cache.EhCacheProvider
+				hibernate.jdbc.batch_size=0
+				hibernate.show_sql=false
+				hibernate.connection.autocommit=true                         
+            </value>
+		</property>
+	</bean>
+
+<!-- Common Updated user id and Office id -->
+
+	<bean id="updateservice" class="com.nic.hrms.pension.dao.impl.UpdatedUserIdDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<bean id="valupdateservice" class="com.nic.hrms.pension.dao.impl.UpdatedUserIdDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+
+	<!-- End Common Updated user id and Office id -->
+
+
+<!-- Pension Calculation Feild office Start -->
+     
+	<bean id="penappmform1calcservice"
+		class="com.nic.hrms.pension.dao.impl.PensionApplicationForm1CalcMstDataDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="penappform1searchservice"
+		class="com.nic.hrms.pension.dao.impl.PensionApplicationForm1SearchDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="reportpensionForm1CalcService"
+		class="com.nic.hrms.pension.reports.dao.impl.reportPensionForm1CalcFormDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="penappmform1calcValservice"
+		class="com.nic.hrms.pension.dao.impl.PensionApplicationForm1CalcMstValDataDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="reportpensionForm1CalcValService"
+		class="com.nic.hrms.pension.reports.dao.impl.reportPensionForm1CalcFormValDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="religionService" class="com.nic.hrms.pension.dao.impl.ReligionDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="officeIdservice" class="com.nic.hrms.pension.dao.impl.officeId_daoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="stateservice" class="com.nic.hrms.pension.dao.impl.State_daoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="paymentservice1"
+		class="com.nic.hrms.pension.dao.impl.PensionerPaymentOfficeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+<!-- Pension Calculation Feild office End -->
+
+    <bean id="penappmstservice"
+		class="com.nic.hrms.pension.dao.impl.PensionApplicationLoadMstDataDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+    <bean id="penappform2service"
+		class="com.nic.hrms.pension.dao.impl.PensionApplicationAddForm2DaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="penAppEditService"
+		class="com.nic.hrms.pension.dao.impl.PensionApplicationEditForm2DaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+    <bean id="penappvalservice"
+		class="com.nic.hrms.pension.dao.impl.PensionApplicationValidateForm2DaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- Pension Calculation Feild office Whole report Start -->
+
+	<bean id="reportPenAppFieldOfficeService"
+		class="com.nic.hrms.pension.reports.dao.impl.reportPenAppFieldOfficeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="penappfieldofficereportservice"
+		class="com.nic.hrms.pension.reports.dao.impl.PensionApplicationFieldOfficeReportSearchDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="penAppFieldOfficeReportForm2Service"
+		class="com.nic.hrms.pension.reports.dao.impl.PensionApplicationFieldOfficeForm2ReportDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- Pension Calculation Feild office Whole report End -->
+	 <!-- change pen/fam start -->
+    
+        <bean id="penfamService" class="com.nic.hrms.pension.dao.impl.ChangePenFamNameDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+       <!-- change pen/fam end -->
+    
+    <bean id="unfreezeservice" class="com.nic.hrms.pension.dao.impl.UnfreezPensionCalculationDaoImpl">
+          <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+    
+       <!-- change Designation start -->
+    
+        <bean id="designationservicechange" class="com.nic.hrms.pension.dao.impl.ChangeDesignationDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="destsrvice" class="com.nic.hrms.pension.dao.impl.DesignationDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+       <!-- change Designation end -->
+	<!-- Pension Calculation Feild office Death report Start -->
+
+	<bean id="reportPenAppFieldOfficeDeathService"
+		class="com.nic.hrms.pension.reports.dao.impl.reportPenAppFieldOfficeDeathDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<bean id="penappfieldofficeDeathreportservice"
+		class="com.nic.hrms.pension.reports.dao.impl.PensionApplicationFieldOfficeDeathReportSearchDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	
+	
+	<!-- Pension Calculation Feild office Death report End -->
+	
+	<!-- Pension Calculation Head office Start -->
+
+	<bean id="penappmHeadOfficeform1calcservice"
+		class="com.nic.hrms.pension.dao.impl.PensionApplicationHOForm1CalcMstDataDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="reportpensionHOForm1CalcService"
+		class="com.nic.hrms.pension.reports.dao.impl.reportPensionHOForm1CalcFormDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="penappHeadOfficeform1searchservice"
+		class="com.nic.hrms.pension.dao.impl.PensionApplicationHeadOfficeForm1SearchDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="reportpensionHOForm1CalcValService"
+		class="com.nic.hrms.pension.reports.dao.impl.reportPensionHOForm1CalcFormValDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+
+	<bean id="penappHeadOfficeform1calcValservice"
+		class="com.nic.hrms.pension.dao.impl.PensionApplicationHOForm1CalcMstValDataDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+
+	<!-- Pension Calculation Head office End -->
+	<!-- PENSION APPLICATION HEAD OFFICE FORM 2 CONFIGURATION -->
+
+
+	<bean id="penappfielddataservice"
+		class="com.nic.hrms.pension.dao.impl.PensionApplicationLoadFieldOfficeDataDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+
+	<bean id="headEditService"
+		class="com.nic.hrms.pension.dao.impl.PensionApplicationHOEditDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="penapphovalservice"
+		class="com.nic.hrms.pension.dao.impl.PensionApplicationHOValidateDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+
+	<!-- PENSION APPLICATION HEAD OFFICE FORM 2 CONFIGURATION -->
+	<!-- PENSION AUTHORIZATION CONFIGURATION -->
+
+	<bean id="penAuthOriService"
+		class="com.nic.hrms.pension.dao.impl.PensionAuthorizationOriginalDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- PENSION AUTHORIZATION CONFIGURATION -->
+	
+	<!-- REVISED DCRG PENSION ORDER REPORT CONFIG START -->
+
+	<bean id="revdcrgPenOrderAuthorisationreportservice"
+		class="com.nic.hrms.pension.reports.dao.impl.RevisedDCRGPensionOrderAuthorisationReportSearchDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="reportRevisedDCRGPenOrderAuthoService"
+		class="com.nic.hrms.pension.reports.dao.impl.reportRevisedDCRGPenOrderAuthorisationDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- REVISED DCRG PENSION ORDER REPORT CONFIG END -->
+	
+	<!-- Pension Order Authorisation report Start -->
+
+	<bean id="reportPenOrderAuthoService"
+		class="com.nic.hrms.pension.reports.dao.impl.reportPenOrderAuthorisationDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="penOrderAuthorisationreportservice"
+		class="com.nic.hrms.pension.reports.dao.impl.PensionOrderAuthorisationReportSearchDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<bean id="penAppHeadOfficeReportForm2Service"
+		class="com.nic.hrms.pension.reports.dao.impl.PensionApplicationHeadOfficeForm2ReportDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+
+	<bean id="familyPenOrderAuthorisationreportservice"
+		class="com.nic.hrms.pension.reports.dao.impl.FamilyPensionOrderAuthorisationReportSearchDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- Pension Order Authorisation report End -->
+	<!-- Family Pension Order Authorisation report Start -->
+	
+	<bean id="reportFamilyPenOrderAuthoService"
+		class="com.nic.hrms.pension.reports.dao.impl.reportFamilyPenOrderAuthorisationDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- Family Pension Order Authorisation report End -->
+	<!-- Family Pension Application Field Office Form 2 Config -->
+
+	<bean id="famPenAppDeathForm2Service"
+		class="com.nic.hrms.pension.dao.impl.FamilyPensionApplicationDeathFieldForm2DaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="fpenAppDeathService"
+		class="com.nic.hrms.pension.dao.impl.FamilyPensionApplicationDeathFieldForm2ValidateDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- Family Pension Application Field Office Form 2 Config -->
+	<!-- Family Pension Application Head Office Form 2 Config -->
+
+	<bean id="fpenapphoservice"
+		class="com.nic.hrms.pension.dao.impl.FamilyPensionApplicationDeathHOForm2EditDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="fampenappvalser"
+		class="com.nic.hrms.pension.dao.impl.FamilyPensionApplicationDeathHOForm2ValidateDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- Family Pension Application Head Office Form 2 Config -->
+	
+	<!-- FAMILY PENSION AUTHORIZATION REVISED PROCESS START -->
+	
+	<bean id="familyPenAuthOriService"
+		class="com.nic.hrms.pension.dao.impl.FamilyPensionAuthorizationOriginalDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- FAMILY PENSION AUTHORIZATION REVISED PROCESS END -->
+	
+	<bean id="officeService" class="com.nic.hrms.pension.dao.impl.LastWorkingOfficeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="searchService"
+		class="com.nic.hrms.pension.dao.impl.LastWorkingOfficeSearchDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	
+	<!-- REVISED PENSION CALCULATION CONFIG START -->
+
+	<bean id="revpenCalculationsearchservice"
+		class="com.nic.hrms.pension.dao.impl.RevisedPensionCalculationSearchDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="revisedpensioncalculationservice"
+		class="com.nic.hrms.pension.dao.impl.RevisedPensionCalculationMstDataDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+
+	<bean id="revpenCalculationsearchvalservice"
+		class="com.nic.hrms.pension.dao.impl.RevisedPensionCalculationSearchValDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="revisedpensioncalculationvalservice"
+		class="com.nic.hrms.pension.dao.impl.RevisedPensionCalculationMstDataValDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- REVISED PENSION CALCULATION CONFIG END -->
+	
+	<!-- REVISED PENSION CALCULATION CHANGE CONFIGUATION START -->
+
+	<bean id="reportRevisedPensionCalcService"
+		class="com.nic.hrms.pension.reports.dao.impl.reportRevisedPensionCalcDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="reportRevisedPensionCalcvalService"
+		class="com.nic.hrms.pension.reports.dao.impl.reportRevisedPensionCalcValDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- REVISED PENSION CALCULATION CHANGE CONFIGURATION END -->
+	
+	<!-- REVISED PENSION AUTHORISATION CONFIG START -->
+
+	<bean id="revisedPenAuthService"
+		class="com.nic.hrms.pension.dao.impl.RevisedPensionAuthorizationDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- REVISED PENSION AUTHORISATION CONFIG END -->
+	
+	<!-- Gopinath Revised Pension Order Report Start -->
+
+	<bean id="reportRevisedpaypensionService"
+		class="com.nic.hrms.pension.reports.dao.impl.ReportRevisedPensionOrderDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- Gopinath Revised Pension Order Report End -->
+	
+	<!-- REVISED DCRG PENSION AMOUNT DUE TO DA CHANGE START -->
+	<bean id="revDcrgPenHeadDataService"
+		class="com.nic.hrms.pension.dao.impl.RevisedDCRGPenLoadHeadOfficeDataDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- REVISED DCRG PENSION AMOUNT DUE TO DA CHANGE END -->
+	
+	<!-- Revision due to increase DA -->
+
+	<bean id="reportRevisedDCRGnoteService"
+		class="com.nic.hrms.pension.reports.dao.impl.reportRevisedDCRGnoteDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- Revision due to increase DA -->
+	
+	<!-- REVISED PENSION ORDER REPORT DUE TO PAY CHANGE CONFIG START -->
+
+	<bean id="revPenOrderreportservice"
+		class="com.nic.hrms.pension.reports.dao.impl.RevisedPensionOrderReportSearchDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- REVISED PENSION ORDER REPORT DUE TO PAY CHANGE CONFIG END -->
+	
+	<!--
+		REVISED FAMILY PENSION ORDER REPORT DUE TO PAY CHANGE CONFIG START
+	-->
+
+	<bean id="revFamPenOrderreportservice"
+		class="com.nic.hrms.pension.reports.dao.impl.RevisedFamilyPensionOrderReportSearchDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!--REVISED FAMILY PENSION ORDER REPORT DUE TO PAY CHANGE CONFIG END-->
+	
+	<!-- Start Revised Family pension Due to Pay change -->
+	<bean id="reportRevisedfamPensionduetopaychangeService"
+		class="com.nic.hrms.pension.reports.dao.impl.reportRevisedFamPensionduetopaychangeDaoImpl">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+	<!-- End Revised Family pension Due to Pay change -->
+	
+</beans>

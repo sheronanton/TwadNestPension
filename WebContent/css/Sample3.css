@@ -1,0 +1,59 @@
+.table
+{
+        background-color: rgb(247,247,247);
+}
+
+.tdH
+{
+     background-color: rgb(181,195,246);
+   
+}
+
+.tdH1
+{
+     background-color: rgb(153,102,255);
+   
+}
+
+.disab
+{
+    background-color: rgb(231,231,231);
+}
+.tdTitle
+{
+    background-color: rgb(181,195,246);
+}
+
+.tdB
+{
+    background-color: rgb(220,223,251);
+}
+
+.pink
+{
+	background-color: rgb(202,255,255);
+}
+.shade
+{
+	background-color: rgb(198,226,255);
+}
+
+.light
+{
+	background-color: rgb(230,230,250);
+}
+
+.green
+{
+	background-color: rgb(193,255,193);
+}
+input.lime {
+background:  #ffffff repeat-x left center; }
+
+
+.box_wrapper
+{
+width: 350px; height: 75px;
+background: url(imgs/bg.jpg);
+}
+

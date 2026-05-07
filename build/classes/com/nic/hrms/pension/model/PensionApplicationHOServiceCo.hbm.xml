@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.nic.hrms.pension.model.PensionApplicationHOServiceCoDao" table="HRM_PEN_APP_HO_CO_FORM2_SERV" >
+
+    <id name="id" type="integer">
+        <column name="ID" />
+        <generator class="increment" />
+     </id>
+      
+        <property name="empNo" type="integer">
+            <column name="EMP_NO" length="6" />
+        </property>
+    
+  	     <property name="notVerifyServFromDate1" type="date">
+            <column name="START_DATE"  />
+        </property>
+        
+ 		<property name="notVerifyServToDate1" type="date">
+            <column name="END_DATE"  />
+        </property>
+       
+        
+       <property name="notVerifyServiceReason" type="string">
+            <column name="REASON" length="100" />
+        </property>
+        
+                  
+		<property name="notVerifyYear" type="integer">
+            <column name="NOT_VERIFY_YEARS" length="6" />
+        </property>
+  
+		<property name="notVerifyMonth" type="integer">
+            <column name="NOT_VERIFY_MONTHS" length="6" />
+        </property>
+        
+      <property name="notVerifyDays" type="integer">
+            <column name="NOT_VERIFY_DAYS" length="6" />
+        </property>
+                
+        <property name="processStatus" type="string">
+            <column name="PROCESS_STATUS" length="15" />
+        </property>
+ 
+        <property name="updatedUserId" type="string">
+            <column name="UPDATED_USER"  length="15"/>
+        </property>
+        
+        <property name="updatedDate" type="java.sql.Timestamp">
+            <column name="UPDATED_DATE"  />
+        </property>
+              
+
+
+
+</class>
+
+</hibernate-mapping>

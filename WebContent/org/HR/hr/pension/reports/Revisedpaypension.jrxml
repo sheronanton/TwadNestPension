@@ -1,0 +1,672 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="Revisedpaypension"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+
+	<field name="EMP_INITIAL" class="java.lang.String"/>
+	<field name="EMP_NAME" class="java.lang.String"/>
+	<field name="DATE_OF_RETIRE" class="java.util.Date"/>
+	<field name="DEATH_DATE" class="java.util.Date"/>
+	<field name="DATE_OF_VRS" class="java.util.Date"/>
+	<field name="NEWPENSIONAMOUNT" class="java.math.BigDecimal"/>
+	<field name="OLDPENSIONAMOUNT" class="java.math.BigDecimal"/>
+	<field name="NEWDCRGAMOUNT" class="java.math.BigDecimal"/>
+	<field name="OLDDCRGAMOUNT" class="java.math.BigDecimal"/>
+	<field name="NEWCOMMPENAMT" class="java.math.BigDecimal"/>
+	<field name="OLDCOMMPENAMT" class="java.math.BigDecimal"/>
+	<field name="NEWREDPENAMT" class="java.math.BigDecimal"/>
+	<field name="OLDREDPENAMT" class="java.math.BigDecimal"/>
+	<field name="NEWFAMPEN50AMT" class="java.math.BigDecimal"/>
+	<field name="NEWFAMPEN30AMT" class="java.math.BigDecimal"/>
+	<field name="OLDFAMPEN50AMT" class="java.math.BigDecimal"/>
+	<field name="OLDFAMPEN30AMT" class="java.math.BigDecimal"/>
+	<field name="subject" class="java.lang.String"/>
+
+	<variable name="rem_pen_amt" class="java.math.BigDecimal" resetType="Report" calculation="Nothing">
+		<variableExpression><![CDATA[($F{NEWPENSIONAMOUNT}.subtract($F{OLDPENSIONAMOUNT}))]]></variableExpression>
+	</variable>
+	<variable name="rem_decrg_amt" class="java.math.BigDecimal" resetType="Report" calculation="Nothing">
+		<variableExpression><![CDATA[($F{NEWDCRGAMOUNT}.subtract($F{OLDDCRGAMOUNT}))]]></variableExpression>
+	</variable>
+	<variable name="rem_comm_val" class="java.math.BigDecimal" resetType="Report" calculation="Nothing">
+		<variableExpression><![CDATA[($F{NEWCOMMPENAMT}.subtract($F{OLDCOMMPENAMT}))]]></variableExpression>
+	</variable>
+	<variable name="rem_red_amt" class="java.math.BigDecimal" resetType="Report" calculation="Nothing">
+		<variableExpression><![CDATA[($F{NEWREDPENAMT}.subtract($F{OLDREDPENAMT}))]]></variableExpression>
+	</variable>
+	<variable name="rem_fam_50_amt" class="java.math.BigDecimal" resetType="Report" calculation="Nothing">
+		<variableExpression><![CDATA[($F{NEWFAMPEN50AMT}.subtract($F{OLDFAMPEN50AMT}))]]></variableExpression>
+	</variable>
+	<variable name="rem_fam_30_amt" class="java.math.BigDecimal" resetType="Report" calculation="Nothing">
+		<variableExpression><![CDATA[($F{NEWFAMPEN30AMT}.subtract($F{OLDFAMPEN30AMT}))]]></variableExpression>
+	</variable>
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="40"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" pattern="###0.00" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="4"
+						y="5"
+						width="531"
+						height="34"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{subject}]]></textFieldExpression>
+				</textField>
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="218"  isSplitAllowed="true" >
+				<rectangle>
+					<reportElement
+						x="9"
+						y="9"
+						width="515"
+						height="181"
+						key="rectangle-1"/>
+					<graphicElement stretchType="NoStretch"/>
+				</rectangle>
+				<line direction="TopDown">
+					<reportElement
+						x="10"
+						y="41"
+						width="514"
+						height="1"
+						key="line-1"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="41"
+						y="9"
+						width="0"
+						height="181"
+						key="line-2"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="208"
+						y="9"
+						width="0"
+						height="181"
+						key="line-3"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="313"
+						y="10"
+						width="0"
+						height="180"
+						key="line-4"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="415"
+						y="10"
+						width="2"
+						height="180"
+						key="line-5"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						x="11"
+						y="14"
+						width="26"
+						height="15"
+						key="staticText-5"/>
+					<box></box>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[Sl.no]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="47"
+						y="54"
+						width="150"
+						height="14"
+						key="staticText-6"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Pension]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="47"
+						y="79"
+						width="150"
+						height="14"
+						key="staticText-7"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[D.C.R.G]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="47"
+						y="104"
+						width="150"
+						height="14"
+						key="staticText-8"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Commutation value of Pension]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="48"
+						y="126"
+						width="150"
+						height="14"
+						key="staticText-9"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Reduced Pension]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="47"
+						y="148"
+						width="150"
+						height="34"
+						key="staticText-10"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Family Pension
+(in the event of death)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="48"
+						y="13"
+						width="149"
+						height="26"
+						key="staticText-11"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Details of Pensionary benefits]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="215"
+						y="13"
+						width="93"
+						height="26"
+						key="staticText-12"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Revised Pensionary benefits Rs.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="319"
+						y="15"
+						width="93"
+						height="26"
+						key="staticText-13"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Pensionary benefits already paid Rs.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="425"
+						y="14"
+						width="91"
+						height="26"
+						key="staticText-14"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Difference of amount Rs.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="14"
+						y="55"
+						width="20"
+						height="13"
+						key="staticText-15"/>
+					<box></box>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[1]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="14"
+						y="79"
+						width="20"
+						height="13"
+						key="staticText-16"/>
+					<box></box>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[2]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="14"
+						y="104"
+						width="20"
+						height="13"
+						key="staticText-17"/>
+					<box></box>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[3]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="14"
+						y="126"
+						width="20"
+						height="13"
+						key="staticText-18"/>
+					<box></box>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[4]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="14"
+						y="153"
+						width="20"
+						height="13"
+						key="staticText-19"/>
+					<box></box>
+					<textElement>
+						<font size="10"/>
+					</textElement>
+				<text><![CDATA[5]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="9"
+						y="190"
+						width="515"
+						height="28"
+						key="staticText-20"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Hence the authorisation for payment of pensionary benefits is put up for approval please. Necessary entries have been made in the P.P.O and G.P.O Register.]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="9"
+						y="72"
+						width="514"
+						height="1"
+						key="line-6"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="10"
+						y="98"
+						width="514"
+						height="1"
+						key="line-7"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="10"
+						y="121"
+						width="514"
+						height="1"
+						key="line-8"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="9"
+						y="144"
+						width="514"
+						height="1"
+						key="line-9"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="215"
+						y="48"
+						width="93"
+						height="14"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{NEWPENSIONAMOUNT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="319"
+						y="48"
+						width="93"
+						height="14"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{OLDPENSIONAMOUNT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="215"
+						y="77"
+						width="93"
+						height="14"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{NEWDCRGAMOUNT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="319"
+						y="79"
+						width="93"
+						height="14"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{OLDDCRGAMOUNT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="215"
+						y="102"
+						width="93"
+						height="14"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{NEWCOMMPENAMT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="319"
+						y="102"
+						width="93"
+						height="14"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{OLDCOMMPENAMT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="213"
+						y="125"
+						width="93"
+						height="14"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{NEWREDPENAMT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="319"
+						y="126"
+						width="93"
+						height="14"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{OLDREDPENAMT}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="152"
+						y="148"
+						width="24"
+						height="13"
+						key="staticText-21"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[50%]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="153"
+						y="164"
+						width="24"
+						height="13"
+						key="staticText-22"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[30%]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="215"
+						y="148"
+						width="93"
+						height="14"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{NEWFAMPEN50AMT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="214"
+						y="168"
+						width="93"
+						height="14"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{NEWFAMPEN30AMT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="319"
+						y="148"
+						width="93"
+						height="14"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{OLDFAMPEN50AMT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="319"
+						y="168"
+						width="93"
+						height="14"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{OLDFAMPEN30AMT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="419"
+						y="49"
+						width="93"
+						height="14"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{rem_pen_amt}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="421"
+						y="79"
+						width="93"
+						height="14"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{rem_decrg_amt}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="422"
+						y="104"
+						width="93"
+						height="14"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{rem_comm_val}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="423"
+						y="126"
+						width="93"
+						height="14"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{rem_red_amt}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="424"
+						y="149"
+						width="93"
+						height="14"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{rem_fam_50_amt}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="425"
+						y="169"
+						width="93"
+						height="14"
+						key="textField"/>
+					<box></box>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$V{rem_fam_30_amt}]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="30"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="50"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<lastPageFooter>
+			<band height="50"  isSplitAllowed="true" >
+			</band>
+		</lastPageFooter>
+		<summary>
+			<band height="50"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

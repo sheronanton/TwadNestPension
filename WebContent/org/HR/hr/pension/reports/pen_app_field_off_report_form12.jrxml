@@ -1,0 +1,787 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="pen_app_field_off_report_form12"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="1124"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="reportFieldOffParams.dir" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" isForPrompting="true" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["C:\\2011_Jan_Workspace\\twad_ver2\\WebContent\\org\\HR\\hr\\pension\\reports\\"]]></defaultValueExpression>
+	</parameter>
+
+	<field name="fieldOfficeNomineeDeathDetails" class="org.apache.struts2.views.jasperreports.ValueStackDataSource"/>
+	<field name="EMP_NAME" class="java.lang.String"/>
+	<field name="DATE_OF_BIRTH" class="java.util.Date"/>
+	<field name="DESIGNATION" class="java.lang.String"/>
+	<field name="DATE_FROM" class="java.util.Date"/>
+	<field name="DATE_FROM_SESSION" class="java.lang.String"/>
+	<field name="CLAIMENTNAME" class="java.lang.String"/>
+	<field name="CLAIMENT_DATE_OF_BIRTH" class="java.util.Date"/>
+	<field name="GUARDIAN_NAME" class="java.lang.String"/>
+	<field name="GUARDIAN_DATE_OF_BIRTH" class="java.util.Date"/>
+	<field name="ADDRESS" class="java.lang.String"/>
+	<field name="PAYMENT_OFFICE" class="java.lang.String"/>
+	<field name="GUARDIAN_RELATION_EMP" class="java.lang.String"/>
+	<field name="GUARDIAN_RELATION_MINOR" class="java.lang.String"/>
+	<field name="DATE_OF_DEATH" class="java.util.Date"/>
+
+		<background>
+			<band height="1"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="65"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="132"
+						y="0"
+						width="289"
+						height="20"
+						key="staticText-163"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[FORM - 12]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="20"
+						width="534"
+						height="40"
+						key="staticText-165"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[FORM OF APPLICATION FOR THE GRANT OF DEATH-CUM-RETIREMENT GRATUITY ON THE DEATH OF A GOVERNMENT SERVANT.]]></text>
+				</staticText>
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="630"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="41"
+						y="53"
+						width="228"
+						height="35"
+						key="staticText-2"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Name of the claiment in case he is not minor]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="53"
+						width="20"
+						height="21"
+						key="staticText-6"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="53"
+						width="15"
+						height="21"
+						key="staticText-79"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="-12"
+						y="410"
+						width="520"
+						height="21"
+						key="subreport-1"/>
+					<dataSourceExpression><![CDATA[$F{fieldOfficeNomineeDeathDetails}]]></dataSourceExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{reportFieldOffParams.dir}]]></subreportExpression>
+				</subreport>
+				<staticText>
+					<reportElement
+						x="357"
+						y="576"
+						width="176"
+						height="40"
+						key="staticText-147"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Signature/Thumb impression of the claiment/guardian.]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="53"
+						width="244"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CLAIMENTNAME}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="21"
+						y="387"
+						width="470"
+						height="21"
+						key="staticText-167"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Relationship with Government Servant.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="387"
+						width="20"
+						height="21"
+						key="staticText-168"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[6.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="2"
+						width="534"
+						height="49"
+						key="staticText-176"/>
+					<box></box>
+					<textElement textAlignment="Left" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[(To be filled in separately by each claiment and in case the climent is minor, the Form should be filled in by the guardian on his/her behalf. Where there are more than one minor, the guardian should claim gratuity in one form on their behalf.)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="478"
+						width="20"
+						height="21"
+						key="staticText-177"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[7.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="478"
+						width="248"
+						height="40"
+						key="staticText-178"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Name of the Treasury or Sub-treasury at which payment is desired]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="436"
+						width="20"
+						height="21"
+						key="staticText-179"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[ii)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="41"
+						y="436"
+						width="228"
+						height="40"
+						key="staticText-180"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Relationship of the guardian with minor]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="436"
+						width="15"
+						height="21"
+						key="staticText-181"
+						positionType="Float"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="478"
+						width="15"
+						height="21"
+						key="staticText-182"
+						positionType="Float"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="53"
+						width="20"
+						height="21"
+						key="staticText-183"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[(i)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="41"
+						y="90"
+						width="228"
+						height="21"
+						key="staticText-184"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Date of birth of the claiment]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="90"
+						width="15"
+						height="21"
+						key="staticText-185"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="90"
+						width="20"
+						height="21"
+						key="staticText-186"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[(ii)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="41"
+						y="113"
+						width="228"
+						height="35"
+						key="staticText-187"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Name of the guardian in case the claiments are minors]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="113"
+						width="20"
+						height="21"
+						key="staticText-188"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[2.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="113"
+						width="15"
+						height="21"
+						key="staticText-189"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="113"
+						width="244"
+						height="21"
+						key="textField-2"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{GUARDIAN_NAME}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="21"
+						y="113"
+						width="20"
+						height="21"
+						key="staticText-190"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[(i)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="41"
+						y="150"
+						width="228"
+						height="21"
+						key="staticText-191"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Date of birth of the guardian]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="150"
+						width="15"
+						height="21"
+						key="staticText-192"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="150"
+						width="20"
+						height="21"
+						key="staticText-193"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[(ii)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="41"
+						y="173"
+						width="228"
+						height="55"
+						key="staticText-194"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Name of the deceased Government servant in respect of whom gratuity is being claimed]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="173"
+						width="20"
+						height="21"
+						key="staticText-195"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[3.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="173"
+						width="15"
+						height="21"
+						key="staticText-196"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="173"
+						width="244"
+						height="21"
+						key="textField-4"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{EMP_NAME}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="21"
+						y="173"
+						width="20"
+						height="21"
+						key="staticText-197"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[(i)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="41"
+						y="230"
+						width="228"
+						height="21"
+						key="staticText-198"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Date of death of Government servant]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="230"
+						width="15"
+						height="21"
+						key="staticText-199"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="230"
+						width="20"
+						height="21"
+						key="staticText-200"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[(ii)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="41"
+						y="253"
+						width="228"
+						height="35"
+						key="staticText-201"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Office/Department in which the deceased servant last]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="253"
+						width="15"
+						height="21"
+						key="staticText-202"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="253"
+						width="20"
+						height="21"
+						key="staticText-203"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[(iii)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="290"
+						width="248"
+						height="35"
+						key="staticText-204"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Relationship of the claimant/Guardian with the deceased Government Servant.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="290"
+						width="20"
+						height="21"
+						key="staticText-205"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[4.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="290"
+						width="15"
+						height="21"
+						key="staticText-206"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="327"
+						width="248"
+						height="35"
+						key="staticText-207"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Full postal address of the claimant/Guardian.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="327"
+						width="20"
+						height="21"
+						key="staticText-208"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[5.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="327"
+						width="15"
+						height="21"
+						key="staticText-209"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="436"
+						width="244"
+						height="20"
+						key="textField"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{GUARDIAN_RELATION_MINOR}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="dd/MM/yyyy" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="230"
+						width="244"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[$F{DATE_OF_DEATH}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="253"
+						width="244"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PAYMENT_OFFICE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="478"
+						width="244"
+						height="20"
+						key="textField-5"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PAYMENT_OFFICE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="327"
+						width="244"
+						height="57"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{ADDRESS}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="dd/MM/yyyy" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="150"
+						width="244"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[$F{GUARDIAN_DATE_OF_BIRTH}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="dd/MM/yyyy" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="90"
+						width="244"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[$F{CLAIMENT_DATE_OF_BIRTH}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="290"
+						width="244"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{GUARDIAN_RELATION_EMP}]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="50"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

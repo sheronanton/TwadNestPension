@@ -1,0 +1,113 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15 Sep, 2009 3:45:35 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.ValidateCutOffDetails_dao" table="HRM_PEN_MST_DETAILS">
+      
+      <id name="ppoNo" type="integer"  >
+            <column name="PPO_NO"  length="6" />
+            <generator class="assigned" />
+        </id>
+        
+         <property name="employeeId" type="integer">
+            <column name="EMPLOYEE_ID" length="6" />
+        </property>
+        
+        <property name="pensionerInitial" type="string">
+            <column name="PENSIONER_INITIAL" length="10" />
+        </property>
+        
+        <property name="pensionerName" type="string">
+            <column name="PENSIONER_NAME" length="50" />
+        </property>
+        
+        <property name="sex" type="string">
+            <column name="SEX" length="5" />
+        </property>
+        
+         <property name="titleId" type="integer">
+            <column name="TITLE_ID" length="10" />
+        </property>
+        
+        <property name="dateOfBirth1" type="date">
+            <column name="DATE_OF_BIRTH"  />
+        </property>
+        
+        <property name="idMark1" type="string">
+            <column name="ID_MARK1" length="100" />
+        </property>
+        
+        <property name="idMark2" type="string">
+            <column name="ID_MARK2" length="100" />
+        </property>
+        
+        <property name="dateOfRetirement1" type="date">
+            <column name="DATE_OF_RETIREMENT" />
+        </property>
+        
+       <property name="lastPayDrawnAmt" type="integer">
+            <column name="LAST_PAY_DRAWN_AMT"  length="8" />
+        </property>
+        
+        <property name="avgEmoulmentAmt" type="integer">
+            <column name="AVG_EMOULMENT_AMT" length="8" />
+        </property>
+        
+        <property name="panNumber" type="string">
+            <column name="PAN_NUMBER" length="20" />
+        </property>
+        
+       <property name="desigServGrp" type="integer">
+            <column name="DESIG_SERVICE_GRP" length="6" />
+        </property>
+        
+        <property name="designationId" type="integer">
+            <column name="DESIGNATION_ID" length="6" />
+        </property>
+        
+        <property name="lastWorkingOfficeLevel" type="string">
+            <column name="LAST_WORKING_OFFICE_LEVEL" length="2" />
+        </property>
+        
+        <property name="lastWorkingOfficeId" type="integer">
+            <column name="LAST_WORKING_OFFICE_ID" length="6" />
+        </property>
+        
+        <property name="cutOfEntryDate1" type="date">
+            <column name="CUTOFF_ENTRY_DATE"  />
+        </property>
+        
+        <property name="currAccountOfficeId" type="integer">
+            <column name="CURR_ACCOUNT_OFFICE_ID" length="6" />
+        </property>
+        
+        
+         <property name="processStatus" type="string">
+            <column name="PROCESS_STATUS" length="10" />
+        </property>
+        
+        <property name="paymentOfficeId" type="integer">
+            <column name="PAYMENT_OFFICE_ID" length="10" />
+        </property>
+        
+        <property name="pensionStatus" type="string">
+            <column name="PENSION_STATUS" length="10" />
+        </property>
+        
+        <property name="classPensionId" type="integer">
+            <column name="CLASS_PENSION_ID" length="6" />
+        </property>
+        
+        
+          <property name="updatedId" type="string">
+            <column name="UPDATED_USER_ID" length="20"/>
+        </property>
+        
+         <property name="updatedDate" type="java.sql.Timestamp">
+            <column name="UPDATED_DATE" />
+        </property>
+        
+        
+	</class>
+</hibernate-mapping>

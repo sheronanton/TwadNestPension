@@ -1,0 +1,30 @@
+.table
+{
+     
+    background-color: rgb(252,217,175);
+    color: rgb(115,115,00);
+}
+th{
+    background-color: rgb(252,217,175);
+      color: rgb(128,00,128);
+}
+.tdH
+{
+     
+     background-color: rgb(252,217,175);
+      color: rgb(128,00,128);
+}
+
+.disab
+{
+    background-color: rgb(231,231,231);
+}
+.tdTitle
+{
+    background-color: rgb(255,239,181);
+}
+
+.tdB
+{
+    background-color: rgb(0,51,153);
+}

@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.nic.hrms.pension.model.ClassOfPension_dao" table="HRM_PEN_MST_CLASS_PENSION">
+		<id name="classPensionId" type="int"  >
+            <column name="CLASS_PENSION_ID"  length="2" />
+            <generator class="assigned" />
+        </id>
+        
+        <property name="classDescription" type="string">
+            <column name="CLASS_DESCRIPTION" length="60" />
+        </property>
+        
+         <property name="updatedUser" type="string">
+            <column name="UPDATED_USER" length="15" />
+        </property>
+         <property name="updatedDate" type="date">
+            <column name="UPDATED_DATE"  />
+        </property>
+        
+        
+        </class>
+</hibernate-mapping>

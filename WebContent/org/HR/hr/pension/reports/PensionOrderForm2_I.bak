@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="PensionOrderForm2_I"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+
+	<field name="EMP_NO" class="java.math.BigDecimal"/>
+	<field name="FROM_ADDRESS" class="java.lang.String"/>
+	<field name="TO_ADDRESS" class="java.lang.String"/>
+	<field name="CIRCLE_HO_OFFICE_STATUS" class="java.lang.String"/>
+	<field name="PENSION_PAY_OFFICE_ADDRESS" class="java.lang.String"/>
+	<field name="LETTER_NO" class="java.lang.String"/>
+	<field name="DATED_ON" class="java.lang.String"/>
+	<field name="REFERENCE" class="java.lang.String"/>
+	<field name="AUTHORIZED_OFFICER" class="java.lang.String"/>
+	<field name="AUTHORIZED_OFFICER_ADDRESS" class="java.lang.String"/>
+	<field name="COPY_TO1" class="java.lang.String"/>
+	<field name="COPY_TO2" class="java.lang.String"/>
+	<field name="SUBJECT" class="java.lang.String"/>
+	<field name="CONTENT" class="java.lang.String"/>
+	<field name="EMP_NAME" class="java.lang.String"/>
+	<field name="DATE_OF_RETIREMENT" class="java.util.Date"/>
+	<field name="LAST_WORK_OFFICE_ADDRESS" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="716"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="0"
+						y="1"
+						width="519"
+						height="715"
+						key="staticText-74"/>
+					<box></box>
+					<textElement textAlignment="Justified">
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[(C) To any person sending a Life Certificate signed by some person exercising the powers of Magistrate under the Criminal Procedure Code, or by any Register or Sub-Registrar appointed under the Indian Registration Act 1908, or by any pensioned Officer who before retirement exercised the powers of a Magistrate or by a Munisiff or by a Police Officer not below the rank of Sub-Inspector in-charge of Police Station or by a Post Master, A Departmental Sub-Post Master or an Inspector of Post Offices or by a Class I Officer of the Reserve Bank of India or a Staff Officer or Staff Assistant of the State Bank of India.
+
+(d) To any person resident in India who drawn his pension through an agent who has executed a bond to refund over payments, subjects to the condition that the latter produces at least once a year a life certificate signed by a person mentioned in clause ©.
+
+(e) In all cases referred to in clauses (a), (b) and (c) the Disbursing Officer must at least once a year, require proof, independent of that furnished by the Life Certificates, of the continued existence of the pensioner. In cases referred to in clause(d), the pension shall not be paid on account of a period more than a year after the date of Life Certificate last received, and the Disbursing Officer must be on the watch for authentic information of the decease any such pensioner, and on receipt thereof shall promptly stop further payment.
+
+3. In the event of the death of a pensioner governed by the Liberalised Pension Rules after his retirement, the Disbursing Officer should take the following action:
+i.	Intimation regarding the benefit of family pension and/or residuary gratuity admissible under the Liberalised Pension Rules under certain circumstances should be sent to the person to whom arrears of pension are paid or are payable and
+ii.	Intimation about the death of the pensioner should be sent to the Head of the Office/Department, along with a statement of pension. Etc., so far paid in order to enable him to take further action regarding grant of family pension and/or residuary gratuity.
+
+4. This document is to be retained by the Disbursing Officer and posted in the pension Audit Register so long as the authority remains in force in such manner that the pensioner shall have no access to it. Payment is to be recorded in the pension Audit.
+
+(b) To female unaccustomed to appear in public and to persons unable to appear on account of illness or bodily infirmity. Payment in both case (a) and (b) is made on production of a Life Certificate signed by a responsible officer of Government or Board or other well-known and trustworthy person.
+
+(C) To any person sending a Life Certificate signed by some person exercising the powers of Magistrate under the Criminal Procedure Code, or by any Register or Sub-Registrar appointed under the Indian Registration Act 1908, or by any pensioned Officer who before retirement exercised the powers of a Magistrate or by a Munisiff or by a Police Officer not below the rank of Sub-Inspector in-charge of Police Station or by a Post Master, A Departmental Sub-Post Master or an Inspector of Post Offices or by a Class I Officer of the Reserve Bank of India or a Staff Officer or Staff Assistant of the State Bank of India.
+
+(d) To any person resident in India who drawn his pension through an agent who has executed a bond to refund over payments, subjects to the condition that the latter produces at least once a year a life certificate signed by a person mentioned in clause ©.
+
+(e) In all cases referred to in clauses (a), (b) and (c) the Disbursing Officer must at least once a year, require proof, independent of that furnished by the Life Certificates, of the continued existence of the pensioner. In cases referred to in clause(d), the pension shall not be paid on account of a period more than a year after the date of Life Certificate last received, and the Disbursing Officer must be on the watch for authentic information of the decease any such pensioner, and on receipt thereof shall promptly stop further payment.
+
+3. In the event of the death of a pensioner governed by the Liberalised Pension Rules after his retirement, the Disbursing Officer should take the following action:
+
+i.	Intimation regarding the benefit of family pension and/or residuary gratuity admissible under the Liberalised Pension Rules under certain circumstances should be sent to the person to whom arrears of pension are paid or are payable and
+ii.	Intimation about the death of the pensioner should be sent to the Head of the Office/Department, along with a statement of pension. Etc., so far paid in order to enable him to take further action regarding grant of family pension and/or residuary gratuity.
+
+4. This document is to be retained by the Disbursing Officer and posted in the pension Audit Register so long as the authority remains in force in such manner that the pensioner shall have no access to it. Payment is to be recorded in the pension Audit.
+]]></text>
+				</staticText>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

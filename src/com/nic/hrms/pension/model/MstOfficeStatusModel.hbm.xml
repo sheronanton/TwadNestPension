@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+
+	<class name="com.nic.hrms.pension.model.MstOfficeStatusModel" table="COM_MST_OFFICE_STATUS">
+		
+		<id name="office_status_id" type="char">
+			<column name="OFFICE_STATUS_ID" length="2"/>
+			<generator class="assigned" />
+		</id>
+		
+		<property name="office_status_desc" type="string">
+			<column name="OFFICE_STATUS_DESC" length="50"/>
+		</property>
+		
+		<property name="remarks" type="string">
+			<column name="REMARKS" length="200"/>
+		</property>
+		
+		<property name="updated_by_user_id" type="string">
+			<column name="UPDATED_BY_USER_ID" length="20"/>
+		</property>
+		
+		<property name="updated_date" type="timestamp">
+			<column name="UPDATED_DATE" length="6"/>
+		</property>
+		
+		
+   
+     
+		
+	</class>
+		
+		    
+</hibernate-mapping>

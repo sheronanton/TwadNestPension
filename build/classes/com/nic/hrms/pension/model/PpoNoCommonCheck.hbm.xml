@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.nic.hrms.pension.model.PpoNoCommonCheck" table="HRM_PEN_MST_COMMON">
+     	
+      	<id name="ppoNo" type="integer">
+            <column name="PPO_NO" length="6"/>
+            <generator class="assigned" />
+        </id>
+        
+         <property name="pensionerInitial" type="string">
+            <column name="PENSIONER_INITIAL" length="10" />
+        </property>
+        
+         <property name="pensionerName" type="string">
+            <column name="PENSIONER_NAME" length="50" />
+        </property>
+        
+         <property name="pensionFlag" type="string">
+            <column name="PEN_FAMILYPEN_FLAG" length="5" />
+        </property>
+       
+       
+       </class>
+
+</hibernate-mapping>

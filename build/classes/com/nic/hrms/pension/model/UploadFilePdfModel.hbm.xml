@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 Jun, 2013 3:55:02 PM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.UploadFilePdfModel" table="UPLOADFILEPDFMODEL">
+        <id name="serialVersionUID" type="long" access="field">
+            <column name="SERIALVERSIONUID" />
+            <generator class="assigned" />
+        </id>
+        <primitive-array name="myFile" table="UPLOADFILEPDFMODEL">
+            <key>
+                <column name="SERIALVERSIONUID" />
+            </key>
+            <index></index>
+            <element type="byte">
+                <column name="MYFILE" />
+            </element>
+        </primitive-array>
+    </class>
+</hibernate-mapping>

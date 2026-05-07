@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 Jun, 2013 3:55:02 PM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.PensionApplicationIndividualNotVerServ" table="PENSIONAPPLICATIONINDIVIDUALNOTVERSERV">
+        <id name="id" type="java.lang.Integer">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <property name="serialVersionUID" type="long" access="field">
+            <column name="SERIALVERSIONUID" />
+        </property>
+        <property name="empNo" type="java.lang.Integer">
+            <column name="EMPNO" />
+        </property>
+        <property name="notVerifyServFromDate" type="java.lang.String">
+            <column name="NOTVERIFYSERVFROMDATE" />
+        </property>
+        <property name="notVerifyServToDate" type="java.lang.String">
+            <column name="NOTVERIFYSERVTODATE" />
+        </property>
+        <property name="notVerifyServiceReason" type="java.lang.String">
+            <column name="NOTVERIFYSERVICEREASON" />
+        </property>
+        <property name="notVerifyYear" type="java.lang.Integer">
+            <column name="NOTVERIFYYEAR" />
+        </property>
+        <property name="notVerifyMonth" type="java.lang.Integer">
+            <column name="NOTVERIFYMONTH" />
+        </property>
+        <property name="notVerifyDays" type="java.lang.Integer">
+            <column name="NOTVERIFYDAYS" />
+        </property>
+        <property name="notVerifyServFromDate1" type="java.util.Date">
+            <column name="NOTVERIFYSERVFROMDATE1" />
+        </property>
+        <property name="notVerifyServFromDate2" type="java.lang.String">
+            <column name="NOTVERIFYSERVFROMDATE2" />
+        </property>
+        <property name="notVerifyServToDate1" type="java.util.Date">
+            <column name="NOTVERIFYSERVTODATE1" />
+        </property>
+        <property name="notVerifyServToDate2" type="java.lang.String">
+            <column name="NOTVERIFYSERVTODATE2" />
+        </property>
+        <property name="processStatus" type="java.lang.String">
+            <column name="PROCESSSTATUS" />
+        </property>
+        <property name="updatedUserId" type="java.lang.String">
+            <column name="UPDATEDUSERID" />
+        </property>
+        <property name="updatedDate" type="java.sql.Timestamp">
+            <column name="UPDATEDDATE" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.nic.hrms.pension.model.State_dao" table="COM_MST_STATE">
+		
+		<id name="StateId" type="integer"  >
+            <column name="STATE_CODE"  length="30" />
+            <generator class="assigned" />
+        </id>
+        
+		<property name="stateName" type="string">
+			<column name="STATE_NAME" />
+		</property>
+		
+	
+	</class>
+</hibernate-mapping>	

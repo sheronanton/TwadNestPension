@@ -1,0 +1,306 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15 Sep, 2009 3:45:35 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.CutOffEntryPension_dao" table="HR_PEN_MST_CO">
+      
+        <id name="ppoNo" type="integer"  >
+            <column name="PPO_NO"  length="6" />
+            <generator class="assigned" />
+        </id>
+        
+        <property name="employeeId" type="integer">
+            <column name="EMPLOYEE_ID" length="6" />
+        </property>
+        
+        <property name="pensionerInitial" type="string">
+            <column name="PENSIONER_INITIAL" length="10" />
+        </property>
+        
+        <property name="pensionerName" type="string">
+            <column name="PENSIONER_NAME" length="50" />
+        </property>
+        
+        <property name="sex" type="string">
+            <column name="SEX" length="5" />
+        </property>
+        
+         <property name="titleId" type="integer">
+            <column name="TITLE_ID" length="10" />
+        </property>
+        
+        <property name="dateOfBirth1" type="date">
+            <column name="DATE_OF_BIRTH"  />
+        </property>
+        <property name="idMark1" type="string">
+            <column name="ID_MARK1" length="100" />
+        </property>
+        <property name="idMark2" type="string">
+            <column name="ID_MARK2" length="100" />
+        </property>
+        <property name="dateOfRetirement1" type="date">
+            <column name="DATE_OF_RETIREMENT" />
+        </property>
+        <property name="lastPayDrawnAmt" type="integer">
+            <column name="LAST_PAY_DRAWN_AMT"  length="8"/>
+        </property>
+        <property name="avgEmoulmentAmt" type="integer">
+            <column name="AVG_EMOULMENT_AMT" length="8" />
+        </property>
+        <property name="panNumber" type="string">
+            <column name="PAN_NUMBER" length="20" />
+        </property>
+        
+       <property name="desigServGrp" type="integer">
+            <column name="DESIG_SERVICE_GRP" length="6" />
+        </property>
+        
+        <property name="designationId" type="integer">
+            <column name="DESIGNATION_ID" length="6" />
+        </property>
+       
+        <property name="bankId" type="integer">
+            <column name="BANK_ID" length="6" />
+        </property>
+        
+         <property name="lastWorkingOfficeLevel" type="string">
+            <column name="LAST_WORKING_OFFICE_LEVEL" length="2" />
+        </property>
+        
+         <property name="lastWorkingOfficeId" type="integer">
+            <column name="LAST_WORKING_OFFICE_ID" length="6" />
+        </property>
+        
+        <property name="cutOfEntryDate1" type="date">
+            <column name="CUTOFF_ENTRY_DATE"  />
+        </property>
+        <property name="currAccountOfficeId" type="integer">
+            <column name="CURR_ACCOUNT_OFFICE_ID"  />
+        </property>
+        
+      
+         <property name="classPensionId" type="integer">
+            <column name="CLASS_PENSION_ID" length="6" />
+        </property>
+        
+        <property name="originalPensionAmt" type="integer">
+            <column name="ORIGINAL_PENSION_AMT" length="8" />
+        </property>
+        
+        <property name="reducedPensionAmt" type="integer">
+            <column name="REDUCED_PENSION_AMT" length="8" />
+        </property>
+        
+         <property name="dearnessPay" type="integer">
+            <column name="DEARNESS_PAY" length="8" />
+        </property>
+        
+        <property name="provisionalPensionAmt" type="integer">
+            <column name="PROVISIONAL_PENSION_AMT" length="8" />
+        </property>
+        
+        <property name="dcrgAmt" type="integer">
+            <column name="DCRG_AMT" length="8" />
+        </property>
+        
+        <property name="dcrgPertReceived" type="integer">
+            <column name="DCRG_PERT_RECEIVED" length="5"/>
+        </property>
+        
+        <property name="commOpted" type="char">
+            <column name="COMM_OPTED" length="1"/>
+        </property>
+        
+        <property name="commReceived" type="string">
+            <column name="COMM_RECEIVED" length="6"/>
+        </property>
+        
+        <property name="commfactorOnethird" type="string">
+            <column name="COMM_FACTOR_ONETHIRD" length="5"/>
+        </property>
+        
+        <property name="commFactorPert" type="integer">
+            <column name="COMM_FACTOR_PERT" length="5"/>
+        </property>
+        
+        <property name="commAmt" type="integer">
+            <column name="COMM_AMT" length="8"/>
+        </property>
+        
+        <property name="commPayDate1" type="date">
+            <column name="COMM_PAY_DATE" />
+        </property>
+        
+        <property name="pshfSubscribed" type="string">
+            <column name="PSHF_SUBSCRIBED" length="1"/>
+        </property>
+        
+        <property name="familyPensionTillDate1" type="date">
+            <column name="FAMILY_PENSION_TILL_DATE" />
+        </property>
+        
+        <property name="familyPensionTillDateAmt" type="integer">
+            <column name="FAMILY_PENSION_TILL_DATE_AMT" length="12"/>
+        </property>
+        
+        <property name="familyPensionAtferDateAmt" type="integer">
+            <column name="FAMILY_PENSION_AFTER_DATE_AMT" length="12"/>
+        </property>
+        
+        <property name="payCommissionRevisonFlag" type="string">
+            <column name="PAY_COMMISSION_REVISON_FLAG" length="10"/>
+        </property>
+        
+        <property name="grossServiceYrs" type="integer">
+            <column name="GROSS_SERVICE_YRS" length="2" />
+        </property>
+        
+        <property name="grossServiceMonth" type="integer">
+            <column name="GROSS_SERVICE_MONTH" length="2" />
+        </property>
+        
+        <property name="grossServiceDays" type="integer">
+            <column name="GROSS_SERVICE_DAYS" length="2" />
+        </property>
+        
+         <property name="totServiceYrs" type="integer">
+            <column name="TOT_SERVICE_YRS" length="4" />
+        </property>
+
+        <property name="totServiceMonths" type="integer">
+            <column name="TOT_SERVICE_MONTHS" length="2" />
+        </property>
+
+        <property name="totServiceDays" type="integer">
+            <column name="TOT_SERVICE_DAYS" length="2" />
+        </property>
+        <property name="quaServiceYrs" type="integer">
+            <column name="QUA_SERVICE_YRS" length="4" />
+        </property>
+        
+        <property name="quaServiceMonths" type="integer">
+            <column name="QUA_SERVICE_MONTHS" length="2" />
+        </property>
+        
+        <property name="quaServiceDays" type="integer">
+            <column name="QUA_SERVICE_DAYS" length="4" />
+        </property>
+        
+        <property name="nonquaServiceYrs" type="integer">
+            <column name="NON_QUA_SERVICE_YRS" length="4" />
+        </property>
+        
+        <property name="nonquaServiceMonths" type="integer">
+            <column name="NON_QUA_SERVICE_MONTHS" length="2" />
+        </property>
+        
+        <property name="nonquaServiceDays" type="integer">
+            <column name="NON_QUA_SERVICE_DAYS" length="2" />
+        </property>
+        
+        <property name="weightageServiceYrs" type="integer">
+            <column name="WEIGTAGE_SERVICE_YRS" length="2" />
+        </property>
+        
+        <property name="weightageServiceMonths" type="integer">
+            <column name="WEIGTAGE_SERVICE_MONTHS" length="2" />
+        </property>
+        
+        <property name="weightageServiceDays" type="integer">
+            <column name="WEIGHTAGE_SERVICE_DAYS" length="2" />
+        </property>
+        
+        <property name="netquaServiceYrs" type="integer">
+            <column name="NET_QUA_SERVICE_YRS" length="2" />
+        </property>
+        
+        <property name="netquaServiceMonths" type="integer">
+            <column name="NET_QUA_SERVICE_MONTHS" length="2" />
+        </property>
+        
+        <property name="netquaServiceDays" type="integer">
+            <column name="NET_QUA_SERVICE_DAYS" length="2" />
+        </property>
+        
+         <property name="address" type="string">
+            <column name="ADDRESS" length="100" />
+        </property>
+        
+        <property name="district" type="string">
+            <column name="DISTRICT" length="50" />
+        </property>
+        
+         <property name="state" type="string">
+            <column name="STATE" length="50" />
+        </property>
+        
+
+        <property name="pincode" type="string">
+            <column name="PINCODE" length="10" />
+        </property>
+       
+        <property name="contactLandline" type="string">
+            <column name="CONTACT_LANDLINE" length="20" />
+        </property>
+        <property name="contactCell" type="string">
+            <column name="CONTACT_CELL" length="20" />
+        </property>
+        <property name="faxNo" type="string">
+            <column name="FAX_NUMBER" length="20" />
+        </property>
+        <property name="contactEmailId" type="string">
+            <column name="CONTACT_EMAIL_ID" length="50" />
+        </property>
+        
+        <property name="pensionStatus" type="string">
+            <column name="PENSION_STATUS" length="5" />
+        </property>
+        <property name="pensionNotPaidFrmMon" type="string">
+            <column name="PENSION_NOT_PAID_FRM_MON" length="15" />
+        </property>
+        
+        <property name="pensionNotPaidFrmYear" type="string">
+            <column name="PENSION_NOT_PAID_FRM_YEAR" length="15" />
+        </property>
+        
+        <property name="lastSignatureDate1" type="date">
+            <column name="LAST_SIGNATURE_DATE"  />
+        </property>
+       
+        <property name="branchId" type="integer">
+            <column name="BRANCH_ID" length="6" />
+        </property>
+
+         <property name="bankAcNo" type="string">
+            <column name="BANK_AC_NO" length="30" />
+        </property>
+        
+        <property name="bankPaymentMode" type="string">
+            <column name="BANK_PAYMENT_MODE" length="15" />
+        </property>
+        
+        
+       <property name="processStatus" type="string">
+            <column name="PROCESS_STATUS" length="10" />
+        </property>
+        
+        <property name="paymentOfficeId" type="integer">
+            <column name="PAYMENT_OFFICE_ID" length="4" />
+        </property>
+        
+        <property name="closed" type="string">
+            <column name="CLOSED" length="10" />
+        </property>
+        
+        <property name="updatedUserId" type="string">
+            <column name="UPDATED_USER_ID"  length="20"/>
+        </property>
+        
+        <property name="updatedDate" type="java.sql.Timestamp">
+            <column name="UPDATED_DATE"  />
+        </property>
+        
+        
+     </class>
+</hibernate-mapping>

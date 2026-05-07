@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="pen_app_field_off_report_details_of_family"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="1124"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="reportFieldOffParams.dir" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" isForPrompting="true" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["C:\\2011_Jan_Workspace\\twad_ver2\\WebContent\\org\\HR\\hr\\pension\\reports\\"]]></defaultValueExpression>
+	</parameter>
+
+	<field name="fieldOfficeNomineeDetails" class="org.apache.struts2.views.jasperreports.ValueStackDataSource"/>
+	<field name="EMP_NAME" class="java.lang.String"/>
+	<field name="DATE_OF_BIRTH" class="java.util.Date"/>
+	<field name="DESIGNATION" class="java.lang.String"/>
+	<field name="DATE_FROM" class="java.util.Date"/>
+	<field name="DATE_FROM_SESSION" class="java.lang.String"/>
+
+		<background>
+			<band height="1"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="100"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="132"
+						y="0"
+						width="289"
+						height="20"
+						key="staticText-163"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[THE TAMILNADU PENSION RULES]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="157"
+						y="40"
+						width="216"
+						height="20"
+						key="staticText-164"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[See Rule 54 (12)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="157"
+						y="20"
+						width="216"
+						height="20"
+						key="staticText-165"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[FORM.3]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="157"
+						y="60"
+						width="216"
+						height="20"
+						key="staticText-166"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[DETAILS OF FAMILY]]></text>
+				</staticText>
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="600"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="21"
+						y="1"
+						width="248"
+						height="21"
+						key="staticText-2"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Name of the Government Servant]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="24"
+						width="248"
+						height="21"
+						key="staticText-3"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Designation]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="1"
+						width="20"
+						height="21"
+						key="staticText-6"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="24"
+						width="20"
+						height="21"
+						key="staticText-7"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[2.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="24"
+						width="15"
+						height="21"
+						key="staticText-78"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="1"
+						width="15"
+						height="21"
+						key="staticText-79"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="47"
+						width="248"
+						height="21"
+						key="staticText-93"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Date of Birth]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="47"
+						width="20"
+						height="21"
+						key="staticText-94"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[3.]]></text>
+				</staticText>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="-12"
+						y="116"
+						width="520"
+						height="21"
+						key="subreport-1"/>
+					<dataSourceExpression><![CDATA[$F{fieldOfficeNomineeDetails}]]></dataSourceExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{reportFieldOffParams.dir}]]></subreportExpression>
+				</subreport>
+				<staticText>
+					<reportElement
+						x="271"
+						y="47"
+						width="15"
+						height="21"
+						key="staticText-134"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="70"
+						width="248"
+						height="21"
+						key="staticText-135"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Date of appointment]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="70"
+						width="20"
+						height="21"
+						key="staticText-136"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[4.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="70"
+						width="15"
+						height="21"
+						key="staticText-137"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Top">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="282"
+						width="351"
+						height="21"
+						key="staticText-147"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Family for this purpose means]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="41"
+						y="306"
+						width="488"
+						height="21"
+						key="staticText-149"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Wife in the case of a male Government servnat]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="306"
+						width="20"
+						height="21"
+						key="staticText-150"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[a)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="41"
+						y="329"
+						width="488"
+						height="21"
+						key="staticText-151"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Husband, in the case of a female Government Servant]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="329"
+						width="20"
+						height="21"
+						key="staticText-152"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[b)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="41"
+						y="352"
+						width="488"
+						height="40"
+						key="staticText-153"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Sons below eighteen years of age and unmarried daughters below twenty the years of age, including such son or daughter adopted legally before retirement; and]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="352"
+						width="20"
+						height="21"
+						key="staticText-154"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[c)]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="1"
+						width="244"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{EMP_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="dd/MM/yyyy" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="47"
+						width="244"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[$F{DATE_OF_BIRTH}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="24"
+						width="244"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DESIGNATION}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="dd/MM/yyyy" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="290"
+						y="70"
+						width="100"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[$F{DATE_FROM}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="391"
+						y="70"
+						width="100"
+						height="21"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DATE_FROM_SESSION}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="21"
+						y="93"
+						width="470"
+						height="21"
+						key="staticText-167"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Details of the members of my family as on 01.05.2002]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="93"
+						width="20"
+						height="21"
+						key="staticText-168"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[5.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="142"
+						width="534"
+						height="40"
+						key="staticText-169"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[I hereby undertake to keep the above particulars upto date by notifying to the Audit officer/Head of office any addition or alteration.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="222"
+						width="75"
+						height="20"
+						key="staticText-170"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Place:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="244"
+						width="75"
+						height="20"
+						key="staticText-171"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Dated the]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="271"
+						y="222"
+						width="258"
+						height="20"
+						key="staticText-172"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Signature of Government Servant.]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="1"
+						y="269"
+						width="534"
+						height="2"
+						forecolor="#000000"
+						key="line-1"
+						positionType="Float"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						x="41"
+						y="394"
+						width="488"
+						height="21"
+						key="staticText-173"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Parents, in hte case of unmarried Government servants.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="394"
+						width="20"
+						height="21"
+						key="staticText-174"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[d)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="21"
+						y="423"
+						width="488"
+						height="40"
+						key="staticText-175"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[NOTE :  Wife and husband shall include respectively judicially separated wife and husband.]]></text>
+				</staticText>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="50"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

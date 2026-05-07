@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+<class name="com.nic.hrms.pension.model.RevisedPensionAuthorizationDao" table="HRM_PEN_APP_REV_AUTH_ORG">
+<id name="empNo" type="integer" column="EMP_NO" length="10">
+	<generator class="assigned" />
+</id>
+<timestamp name="updatedDate" column="UPDATED_DATE" source="db" />
+<property name="ppoNo" column="PPO_NO" type="integer" length="10" />
+<property name="gpoNo" column="GPO_NO" type="integer" length="10" />
+<property name="residentialAddress" column="RESIDENT_ADDRESS" type="string" length="250" />
+<property name="namefromAddress" column="NAME_FROM_ADDRESS" type="string" length="250" />
+<property name="fromAddress" column="FROM_ADDRESS" type="string" length="250" />
+<property name="serviceBookAddress" column="SERVICE_BOOK_ADDRESS" type="string" length="250" />
+<property name="officeStatus" column="CIRCLE_HO_OFFICE_STATUS" type="string" length="10" />
+<property name="lastWorkOfficeId" column="LAST_WORK_OFFICE_ID" type="integer" length="10" />
+<property name="lastWorkOffice" column="LAST_WORK_OFFICE" type="string" length="250" />
+<property name="lastWorkOfficeAddress" column="LAST_WORK_OFFICE_ADDRESS" type="string" length="250" />
+<property name="paymentOfficeId" column="PENSION_PAY_OFFICE_ID" type="integer" length="10" />
+<property name="paymentOfficeAddress" column="PENSION_PAY_OFFICE_ADDRESS" type="string" length="250"/>
+<property name="letterNo" column="LETTER_NO" type="string" length="100" />
+<property name="datedOn1" column="DATED_ON" type="date" length="100" />
+<property name="reference" column="REFERENCE" type="string" length="250" />
+<property name="authorizedOfficer" column="AUTHORIZED_OFFICER" type="integer" length="5" />
+<property name="authorizedOfficerAddress" column="AUTHORIZED_OFFICER_ADDRESS" type="string" length="250" />
+<property name="nomineeId" column="NOMINEE_ID" type="integer" length="10" />
+<property name="nomineeName" column="NOMINEE_NAME" type="string" length="80" />
+<property name="nomineeRelationId" column="NOMINEE_RELATION_ID" type="integer" length="5" />
+<property name="nomineeRelationDesc" column="NOMINEE_RELATION_DESC" type="string" length="30" />
+<property name="processStatus" column="PROCESS_STATUS" type="string" length="15" />
+<property name="updateUser" column="UPDATED_USER" type="string" length="15" />
+<!-- <property name="updatedDate" column="UPDATED_DATE" type="timestamp" /> -->	
+</class>
+</hibernate-mapping>
+

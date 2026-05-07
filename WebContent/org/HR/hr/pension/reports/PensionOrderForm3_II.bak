@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="PensionOrderForm3_II"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+
+	<field name="EMP_NO" class="java.math.BigDecimal"/>
+	<field name="PPO_NO" class="java.math.BigDecimal"/>
+	<field name="FROM_ADDRESS" class="java.lang.String"/>
+	<field name="TO_ADDRESS" class="java.lang.String"/>
+	<field name="CIRCLE_HO_OFFICE_STATUS" class="java.lang.String"/>
+	<field name="PENSION_PAY_OFFICE_ADDRESS" class="java.lang.String"/>
+	<field name="LETTER_NO" class="java.lang.String"/>
+	<field name="DATED_ON" class="java.lang.String"/>
+	<field name="REFERENCE" class="java.lang.String"/>
+	<field name="AUTHORIZED_OFFICER" class="java.lang.String"/>
+	<field name="AUTHORIZED_OFFICER_ADDRESS" class="java.lang.String"/>
+	<field name="COPY_TO1" class="java.lang.String"/>
+	<field name="COPY_TO2" class="java.lang.String"/>
+	<field name="SUBJECT" class="java.lang.String"/>
+	<field name="CONTENT" class="java.lang.String"/>
+	<field name="EMP_NAME" class="java.lang.String"/>
+	<field name="DATE_OF_RETIREMENT" class="java.util.Date"/>
+	<field name="LAST_WORK_OFFICE_ADDRESS" class="java.lang.String"/>
+	<field name="IDMARK1" class="java.lang.String"/>
+	<field name="IDMARK2" class="java.lang.String"/>
+	<field name="DESIGNATION" class="java.lang.String"/>
+	<field name="DATE_OF_BIRTH" class="java.util.Date"/>
+	<field name="HEIGHT" class="java.lang.String"/>
+	<field name="NATIONALITY" class="java.lang.String"/>
+	<field name="RELIGION" class="java.lang.String"/>
+	<field name="RESIDENT_ADDRESS" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="252"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="0"
+						y="19"
+						width="111"
+						height="18"
+						key="staticText-1"/>
+					<box></box>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[Name]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="190"
+						y="19"
+						width="21"
+						height="18"
+						key="staticText-2"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="36"
+						width="111"
+						height="18"
+						key="staticText-3"/>
+					<box></box>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[Designation ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="190"
+						y="36"
+						width="21"
+						height="18"
+						key="staticText-4"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="54"
+						width="111"
+						height="18"
+						key="staticText-5"/>
+					<box></box>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[Date of Birth]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="190"
+						y="54"
+						width="21"
+						height="18"
+						key="staticText-6"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="72"
+						width="190"
+						height="18"
+						key="staticText-7"/>
+					<box></box>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[Personal marks of identification]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="144"
+						width="162"
+						height="18"
+						key="staticText-9"/>
+					<box></box>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[Height]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="190"
+						y="144"
+						width="21"
+						height="18"
+						key="staticText-10"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="162"
+						width="162"
+						height="18"
+						key="staticText-11"/>
+					<box></box>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[Nationality]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="190"
+						y="162"
+						width="21"
+						height="18"
+						key="staticText-12"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="180"
+						width="162"
+						height="18"
+						key="staticText-13"/>
+					<box></box>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[Religion]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="190"
+						y="180"
+						width="21"
+						height="18"
+						key="staticText-14"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="198"
+						width="162"
+						height="18"
+						key="staticText-15"/>
+					<box></box>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[Residential Address]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="190"
+						y="198"
+						width="21"
+						height="18"
+						key="staticText-16"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="216"
+						y="19"
+						width="314"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{EMP_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="216"
+						y="36"
+						width="314"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DESIGNATION}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="dd/MM/yyyy" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="216"
+						y="54"
+						width="100"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[$F{DATE_OF_BIRTH}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="216"
+						y="144"
+						width="314"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{HEIGHT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="216"
+						y="162"
+						width="314"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{NATIONALITY}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="216"
+						y="180"
+						width="314"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{RELIGION}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="216"
+						y="198"
+						width="314"
+						height="54"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{RESIDENT_ADDRESS}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="236"
+						y="72"
+						width="294"
+						height="36"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{IDMARK1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="236"
+						y="108"
+						width="294"
+						height="36"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{IDMARK2}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="215"
+						y="72"
+						width="21"
+						height="18"
+						key="staticText-17"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[1)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="215"
+						y="108"
+						width="21"
+						height="18"
+						key="staticText-18"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[2)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="190"
+						y="72"
+						width="21"
+						height="18"
+						key="staticText-19"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="-1"
+						y="1"
+						width="461"
+						height="18"
+						key="staticText-20"/>
+					<box></box>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[The particulars regarding the identification of the applicant are given below:]]></text>
+				</staticText>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

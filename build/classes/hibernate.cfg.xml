@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+	<session-factory>
+	
+		<!-- Pension Calculation Field Office Start -->
+		
+		
+		<mapping
+			resource="com/nic/hrms/pension/model/PensionApplicationForm1AverageEmoluments.hbm.xml" />
+		<mapping
+			resource="com/nic/hrms/pension/model/PensionApplicationForm1Recoveries.hbm.xml" />
+
+		<mapping
+			resource="com/nic/hrms/pension/model/PensionApplicationForm1Val.hbm.xml" />
+		<mapping
+			resource="com/nic/hrms/pension/model/PensionApplicationForm1AverageEmolumentsVal.hbm.xml" />
+		<mapping
+			resource="com/nic/hrms/pension/model/PensionApplicationForm1RecoveriesVal.hbm.xml" />
+			
+	     <mapping resource="com/nic/hrms/pension/model/PensionApplicationForm1OthDeptServiceDao.hbm.xml" />
+         <mapping resource="com/nic/hrms/pension/model/PensionApplicationForm1OthDeptServiceValDao.hbm.xml" />
+		
+		 <mapping resource="com/nic/hrms/pension/model/Religion.hbm.xml" />	
+		 <mapping resource="com/nic/hrms/pension/model/State.hbm.xml" />	
+         <mapping resource="com/nic/hrms/pension/model/MstOfficeStatusModel.hbm.xml" />
+         <mapping resource="com/nic/hrms/pension/model/MstOfficesModel.hbm.xml" />
+		<mapping resource="com/nic/hrms/pension/model/MstOfficeLevelModel.hbm.xml" />
+		<mapping 
+		    resource="com/nic/hrms/pension/model/PensionApplicationForm1.hbm.xml" />
+		<mapping
+			resource="com/nic/hrms/pension/model/Designationmodel.hbm.xml" />
+		<!-- Pension Calculation Field Office End -->
+		
+		<!-- PENSION APPLICATION FIELD OFFICE FORM 2 CONFIGURATION START -->
+		<!-- <mapping
+			resource="com/nic/hrms/pension/model/PensionApplicationForm1OthDeptServicePK.hbm.xml" /> -->
+	   <!-- <mapping
+			resource="com/nic/hrms/pension/model/PensionApplicationForm1OthDeptServiceValPK.hbm.xml" /> -->
+	   <!--  <mapping
+			resource="com/nic/hrms/pension/model/PensionApplicationHOForm1OthDeptServiceDaoPK.hbm.xml" />
+		<mapping
+			resource="com/nic/hrms/pension/model/RevisedPensionCalcOthDeptService.hbm.xml" />--> 
+			<mapping
+			resource="com/nic/hrms/pension/model/RevisePensionCalcOthDeptServiceDao.hbm.xml" />
+		<mapping
+			resource="com/nic/hrms/pension/model/RevisedPensionCalcOthDeptService.hbm.xml" />
+			
+		<mapping
+			resource="com/nic/hrms/pension/model/PensionApplicationHOForm1.hbm.xml" />
+			
+		<mapping resource="com/nic/hrms/pension/model/PensionPaymentOffice.hbm.xml" />
+		
+		<mapping resource="com/nic/hrms/pension/model/PensionApplicationNominee.hbm.xml" />
+		<mapping
+			resource="com/nic/hrms/pension/model/PensionApplicationForm2MstDao.hbm.xml" />
+		<mapping
+			resource="com/nic/hrms/pension/model/PensionApplicationForm2MstNomineeDao.hbm.xml" />
+		<mapping
+			resource="com/nic/hrms/pension/model/PensionApplicationForm2MstNotVerifyServDao.hbm.xml" />
+		<mapping resource="com/nic/hrms/pension/model/PensionApplicationNotVerifyService.hbm.xml" />
+		
+	    <mapping resource="com/nic/hrms/pension/model/PensionAppFormAdditional.hbm.xml" />
+	    <!-- PENSION APPLICATION FIELD OFFICE FORM 2 CONFIGURATION START -->
+	    
+	    
+	    <!-- PENSION APPLICATION HEAD OFFICE FORM CONFIGURATION -->
+	    <mapping
+			resource="com/nic/hrms/pension/model/PensionApplicationHOForm1AverageEmoluments.hbm.xml" />
+		<mapping
+			resource="com/nic/hrms/pension/model/PensionApplicationHOForm1OthDeptServiceDao.hbm.xml" />
+		<mapping
+			resource="com/nic/hrms/pension/model/PensionApplicationHOForm1Recoveries.hbm.xml" />
+		<mapping
+			resource="com/nic/hrms/pension/model/PensionApplicationHOForm1AverageEmolumentsVal.hbm.xml" />
+			
+		<mapping
+			resource="com/nic/hrms/pension/model/PensionApplicationHOForm1Val.hbm.xml" />
+		<mapping
+			resource="com/nic/hrms/pension/model/PensionApplicationHOForm1OthDeptServiceValDao.hbm.xml" />
+		<mapping
+			resource="com/nic/hrms/pension/model/PensionApplicationHOForm1RecoveriesVal.hbm.xml" />
+		
+		<mapping
+			resource="com/nic/hrms/pension/model/PensionApplicationHONomineeCo.hbm.xml" />
+		<mapping
+			resource="com/nic/hrms/pension/model/PensionApplicationHOServiceCo.hbm.xml" />
+		<mapping
+			resource="com/nic/hrms/pension/model/PensionApplicationHODetailsCo.hbm.xml" />
+		<mapping
+			resource="com/nic/hrms/pension/model/PensionApplicationHONomineeValidate.hbm.xml" />
+		<mapping
+			resource="com/nic/hrms/pension/model/PensionApplicationHODetailsValidate.hbm.xml" />
+			
+		<mapping
+			resource="com/nic/hrms/pension/model/PensionAuthorizationOriginal.hbm.xml" />
+		<mapping resource="com/nic/hrms/pension/model/PensionAuthorisedOfficer.hbm.xml" />
+		<!-- PENSION APPLICATION HEAD OFFICE FORM  CONFIGURATION -->
+		
+		<!-- FAMILY PENSION APPLICATION HEAD OFFICE FORM 2 CONFIGURATION -->
+
+		<mapping
+			resource="com/nic/hrms/pension/model/FamilyPensionApplicationDeathHOForm2DetailsDao.hbm.xml" />
+		<mapping
+			resource="com/nic/hrms/pension/model/FamilyPensionApplicationDeathHOForm2NomineeDao.hbm.xml" />
+
+		<mapping
+			resource="com/nic/hrms/pension/model/FamilyPensionApplicationDeathHOForm2MstDetailsDao.hbm.xml" />
+		<mapping
+			resource="com/nic/hrms/pension/model/FamilyPensionApplicationDeathHOForm2MstNomineeDao.hbm.xml" />
+
+		<!--FAMILY PENSION APPLICATION HEAD OFFICE FORM 2 CONFIGURATION -->
+		
+		<!-- FAMILY PENSION APPLICATION CONFIGURATION -->
+		
+		<mapping resource="com/nic/hrms/pension/model/FamilyPensionAuthorizationOriginal.hbm.xml" />
+		
+		<!-- FAMILY PENSION APPLICATION CONFIGURATION -->
+		
+		<!-- REVISED PENSION CALCULATION CONFIG START -->
+
+		<mapping
+			resource="com/nic/hrms/pension/model/RevisedPensionCalculationAverageEmoluments.hbm.xml" />
+		<mapping
+			resource="com/nic/hrms/pension/model/RevisedPensionCalculation.hbm.xml" />
+		<mapping
+			resource="com/nic/hrms/pension/model/RevisedPensionAuthorization.hbm.xml" />
+			
+		<!-- REVISED PENSION CALCULATIN CONFIG END -->
+		
+	</session-factory>
+</hibernate-configuration>

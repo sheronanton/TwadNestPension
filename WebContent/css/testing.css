@@ -1,0 +1,27 @@
+.popupdiv
+{
+        cursor: pointer;
+        display:none;
+        position:absolute;
+        
+        height: 150px; 
+        width: 210px;
+        overflow: auto;
+       /* background:rgb(224,224,255) ;*/
+       background: rgb(255,247,214) ;
+ 	border: 2px solid black;
+	filter:alpha(opacity=75);
+	opacity: 75;
+	-moz-opacity:100; 
+        text-align: left;
+}
+
+.options_gain_focus
+{
+    background: rgb(210,206,189) ;
+}
+
+.options_lost_focus
+{
+    background: rgb(255,247,214);
+}

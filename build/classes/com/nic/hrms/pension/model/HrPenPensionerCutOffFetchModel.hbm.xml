@@ -1,0 +1,114 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 Jun, 2013 3:55:02 PM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.HrPenPensionerCutOffFetchModel" table="HRPENPENSIONERCUTOFFFETCHMODEL">
+        <id name="religonId" type="char">
+            <column name="RELIGONID" />
+            <generator class="assigned" />
+        </id>
+        <property name="employeeId" type="int">
+            <column name="EMPLOYEEID" />
+        </property>
+        <property name="employeeName" type="java.lang.String">
+            <column name="EMPLOYEENAME" />
+        </property>
+        <property name="employeeInitial" type="java.lang.String">
+            <column name="EMPLOYEEINITIAL" />
+        </property>
+        <property name="employeePrefix" type="java.lang.String">
+            <column name="EMPLOYEEPREFIX" />
+        </property>
+        <property name="gpfNo" type="int">
+            <column name="GPFNO" />
+        </property>
+        <property name="panNo" type="java.lang.String">
+            <column name="PANNO" />
+        </property>
+        <property name="dateOfBirth" type="java.util.Date">
+            <column name="DATEOFBIRTH" />
+        </property>
+        <property name="bloodGroup" type="java.lang.String">
+            <column name="BLOODGROUP" />
+        </property>
+        <property name="gender" type="java.lang.String">
+            <column name="GENDER" />
+        </property>
+        <property name="communityId" type="char">
+            <column name="COMMUNITYID" />
+        </property>
+        <property name="motherTongueId" type="char">
+            <column name="MOTHERTONGUEID" />
+        </property>
+        <property name="mediumOfStudyId" type="char">
+            <column name="MEDIUMOFSTUDYID" />
+        </property>
+        <property name="nativeDistrictCode" type="int">
+            <column name="NATIVEDISTRICTCODE" />
+        </property>
+        <property name="nativeTalukCode" type="int">
+            <column name="NATIVETALUKCODE" />
+        </property>
+        <property name="employmentStatusId" type="char">
+            <column name="EMPLOYMENTSTATUSID" />
+        </property>
+        <property name="twadEntryDate" type="java.util.Date">
+            <column name="TWADENTRYDATE" />
+        </property>
+        <property name="joinTimeDesigId" type="int">
+            <column name="JOINTIMEDESIGID" />
+        </property>
+        <property name="recruitmentModeId" type="char">
+            <column name="RECRUITMENTMODEID" />
+        </property>
+        <property name="serviceTobeCounted" type="char">
+            <column name="SERVICETOBECOUNTED" />
+        </property>
+        <property name="dateFromServiceCount" type="java.util.Date">
+            <column name="DATEFROMSERVICECOUNT" />
+        </property>
+        <property name="maritalStatus" type="char">
+            <column name="MARITALSTATUS" />
+        </property>
+        <property name="empCurrentStatusId" type="char">
+            <column name="EMPCURRENTSTATUSID" />
+        </property>
+        <property name="remarks" type="java.lang.String">
+            <column name="REMARKS" />
+        </property>
+        <property name="updatedByUserId" type="java.lang.String">
+            <column name="UPDATEDBYUSERID" />
+        </property>
+        <property name="updatedDate" type="java.sql.Timestamp">
+            <column name="UPDATEDDATE" />
+        </property>
+        <property name="qualifications" type="java.lang.String">
+            <column name="QUALIFICATIONS" />
+        </property>
+        <property name="otherDistricts" type="java.lang.String">
+            <column name="OTHERDISTRICTS" />
+        </property>
+        <property name="otherState" type="java.lang.String">
+            <column name="OTHERSTATE" />
+        </property>
+        <property name="processFlowStatusId" type="char">
+            <column name="PROCESSFLOWSTATUSID" />
+        </property>
+        <property name="regularisationProbationDate" type="java.util.Date">
+            <column name="REGULARISATIONPROBATIONDATE" />
+        </property>
+        <property name="approvedProbationer" type="java.lang.String">
+            <column name="APPROVEDPROBATIONER" />
+        </property>
+        <property name="isConsolidate" type="java.lang.String">
+            <column name="ISCONSOLIDATE" />
+        </property>
+        <property name="empWkgGettingPension" type="java.lang.String">
+            <column name="EMPWKGGETTINGPENSION" />
+        </property>
+        <property name="isHandicapped" type="java.lang.String">
+            <column name="ISHANDICAPPED" />
+        </property>
+    </class>
+</hibernate-mapping>

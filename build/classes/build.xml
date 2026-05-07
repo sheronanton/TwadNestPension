@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<project name="pension_application" default="compile" basedir=".">
+<property name="src" value="."/>
+<property name="build" value="build"/>
+<target name="init">
+<mkdir dir="${build}"/>
+</target>
+<target name="compile" depends="init">
+<javac srcdir="${src}" destdir="${build}"/>
+</target>
+</project>
+

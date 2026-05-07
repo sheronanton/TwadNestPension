@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="form_of_declaration_death"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+
+	<field name="EMP_NAME" class="java.lang.String"/>
+	<field name="PENSION_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="DCRG_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="PENSION_AMOUNT_WORD" class="java.lang.String"/>
+	<field name="DCRG_AMOUNT_WORD" class="java.lang.String"/>
+	<field name="RETDATE" class="java.util.Date"/>
+	<field name="PENSION_TYPE" class="java.lang.String"/>
+	<field name="DESIGNATION" class="java.lang.String"/>
+	<field name="CLAIMENTNAME" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="50"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="136"
+						y="25"
+						width="271"
+						height="20"
+						key="staticText-1"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[FORM OF DECLARATION]]></text>
+				</staticText>
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="568"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="284"
+						y="274"
+						width="251"
+						height="20"
+						key="staticText-6"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[SIGNATURE OF THE APPLICANT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="81"
+						y="5"
+						width="454"
+						height="18"
+						key="staticText-7"/>
+					<box></box>
+					<textElement textAlignment="Justified">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Under Section Section 92(u) of the Tamilnadu Pension Code, I,  Thiru/Tmt/Selvi]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="301"
+						y="23"
+						width="234"
+						height="18"
+						key="staticText-9"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[who is family pensioner due to death of ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="59"
+						width="24"
+						height="18"
+						key="staticText-10"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[on]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="122"
+						y="59"
+						width="413"
+						height="18"
+						key="staticText-11"/>
+					<box></box>
+					<textElement textAlignment="Justified">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Whereas the Tamilnadu Water Suply and Drainage Board have to grant]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="75"
+						width="91"
+						height="18"
+						key="staticText-12"/>
+					<box></box>
+					<textElement textAlignment="Justified">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[the sum of Rs]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="143"
+						width="534"
+						height="84"
+						key="staticText-14"/>
+					<box></box>
+					<textElement textAlignment="Justified">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[as the amount of Death-cum-Retirement Gratuity. I hereby acknowledge that in accepting this account, I fully understand that the Pension of its being found to be in excess of that to which I am entitled under the Rules and I promise to have no objection to such revision. I, therefore promise to repay the amount advanced to me in excess of that to which I may be eventual found entitled.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="0"
+						y="109"
+						width="378"
+						height="18"
+						key="staticText-15"/>
+					<box></box>
+					<textElement textAlignment="Justified">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[only) per month as the amount of Pension and the sum of Rupees]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="4"
+						y="296"
+						width="77"
+						height="20"
+						key="staticText-19"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[WITNESS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="4"
+						y="328"
+						width="21"
+						height="20"
+						key="staticText-20"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[1.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="4"
+						y="438"
+						width="21"
+						height="20"
+						key="staticText-21"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[2.]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1"
+						y="41"
+						width="534"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{EMP_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="dd/MM/yyyy" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="25"
+						y="59"
+						width="97"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[$F{RETDATE}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="172"
+						y="75"
+						width="63"
+						height="18"
+						key="staticText-22"/>
+					<box></box>
+					<textElement textAlignment="Justified">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[/- (Rupees]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="93"
+						width="534"
+						height="18"
+						key="staticText-23"/>
+					<box></box>
+					<textElement textAlignment="Justified">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="481"
+						y="109"
+						width="52"
+						height="18"
+						key="staticText-24"/>
+					<box></box>
+					<textElement textAlignment="Justified">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[(Rupees]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="496"
+						y="129"
+						width="39"
+						height="18"
+						key="staticText-25"/>
+					<box></box>
+					<textElement textAlignment="Justified">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[only)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="1"
+						y="127"
+						width="495"
+						height="18"
+						key="staticText-26"/>
+					<box></box>
+					<textElement textAlignment="Justified">
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="1"
+						y="23"
+						width="300"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CLAIMENTNAME}]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

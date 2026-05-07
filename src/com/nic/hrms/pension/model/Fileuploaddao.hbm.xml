@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 Jun, 2013 3:55:02 PM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.Fileuploaddao" table="FILEUPLOADDAO">
+        <id name="serialVersionUID" type="long" access="field">
+            <column name="SERIALVERSIONUID" />
+            <generator class="assigned" />
+        </id>
+        <property name="ppoNo" type="int">
+            <column name="PPONO" />
+        </property>
+        <property name="fileContentType" type="java.lang.String">
+            <column name="FILECONTENTTYPE" />
+        </property>
+        <property name="fileFileName" type="java.lang.String">
+            <column name="FILEFILENAME" />
+        </property>
+        <primitive-array name="familyPhoto" table="FILEUPLOADDAO">
+            <key>
+                <column name="SERIALVERSIONUID" />
+            </key>
+            <index></index>
+            <element type="byte">
+                <column name="FAMILYPHOTO" />
+            </element>
+        </primitive-array>
+        <primitive-array name="signatureDetails" table="FILEUPLOADDAO">
+            <key>
+                <column name="SERIALVERSIONUID" />
+            </key>
+            <index></index>
+            <element type="byte">
+                <column name="SIGNATUREDETAILS" />
+            </element>
+        </primitive-array>
+        <primitive-array name="otherDocuments" table="FILEUPLOADDAO">
+            <key>
+                <column name="SERIALVERSIONUID" />
+            </key>
+            <index></index>
+            <element type="byte">
+                <column name="OTHERDOCUMENTS" />
+            </element>
+        </primitive-array>
+    </class>
+</hibernate-mapping>

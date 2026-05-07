@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 Jun, 2013 3:55:02 PM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.PensionApplicationForm1RecoveriesValDao" table="PENSIONAPPLICATIONFORM1RECOVERIESVALDAO">
+        <id name="recID" type="java.lang.Integer">
+            <column name="RECID" />
+            <generator class="assigned" />
+        </id>
+        <property name="serialVersionUID" type="long" access="field">
+            <column name="SERIALVERSIONUID" />
+        </property>
+        <property name="empNo" type="java.lang.Integer">
+            <column name="EMPNO" />
+        </property>
+        <property name="rec_description" type="java.lang.String">
+            <column name="REC_DESCRIPTION" />
+        </property>
+        <property name="rec_amount" type="java.lang.Integer">
+            <column name="REC_AMOUNT" />
+        </property>
+        <property name="processStatus" type="java.lang.String">
+            <column name="PROCESSSTATUS" />
+        </property>
+        <property name="updatedUser" type="java.lang.String">
+            <column name="UPDATEDUSER" />
+        </property>
+        <property name="updateDate" type="java.sql.Timestamp">
+            <column name="UPDATEDATE" />
+        </property>
+        <property name="unlockedDate" type="java.sql.Timestamp">
+            <column name="UNLOCKEDDATE" />
+        </property>
+        <property name="unlockedBy" type="java.lang.String">
+            <column name="UNLOCKEDBY" />
+        </property>
+    </class>
+</hibernate-mapping>

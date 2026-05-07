@@ -1,0 +1,67 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.ChangeCommutationDao" table="HRM_PEN_CHANGE_COMMUTATION">
+     
+	
+      	<id name="ppoNo" type="integer">
+            <column name="PPO_NO"/>
+            <generator class="assigned" />
+        </id>
+       
+        <property name="commOpted" type="char">
+            <column name="COMM_OPT" length="1" />
+        </property>
+        
+        <property name="commRecd" type="string">
+            <column name="COMM_RECEIVED" length="5" />
+        </property>
+        
+        <property name="commFactorOneThird" type="string">
+            <column name="COM_FACTOR_ONETHIRD" length="5" />
+        </property>
+        
+        <property name="commFactorPert" type="integer"> 
+            <column name="COM_FACTOR_PERCENTAGE" length="5" />
+        </property>
+        
+        <property name="commAmt" type="integer">
+            <column name="COMM_AMT" length="8" />
+        </property>
+        
+        <property name="commPayDate" type="date">
+            <column name="COMM_PAY_DATE"  />
+        </property>
+        
+        <property name="ReducedPensionAmt" type="integer">
+            <column name="REDUCED_PENSION" length="8" />
+        </property>
+        
+        <property name="reason" type="string">
+            <column name="REASON" length="200" />
+        </property>
+        
+        <property name="updatedDate" type="java.sql.Timestamp">
+            <column name="UPDATED_DATE"  />
+        </property>
+         <property name="updatedBy" type="string">
+            <column name="UPDATED_USER"  />
+        </property>
+        
+        <property name="processStatus" type="string">
+            <column name="PROCESS_STATUS" length="10" />
+        </property>
+        
+        <property name="unlockedBy" type="string">
+            <column name="UNLOCKED_BY" length="15" />
+        </property>
+        
+        <property name="unlockedDate" type="java.sql.Timestamp">
+            <column name="UNLOCKED_DATE" />
+        </property>
+        
+        
+        </class>
+</hibernate-mapping>

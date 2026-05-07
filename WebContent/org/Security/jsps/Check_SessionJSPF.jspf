@@ -1,0 +1,18 @@
+<%@ page session="false" %>
+<%
+try
+{
+    HttpSession session=request.getSession(false);
+    System.out.println("local address::"+request.getLocalAddr());
+    System.out.println("Session :::::------------------:::::::"+session);
+    if(session==null )
+    {
+       // System.out.println(request.getContextPath()+"/index.jsp");
+        response.sendRedirect(request.getContextPath()+"/index.jsp");
+    }
+            
+}catch(Exception e)
+{
+System.out.println("Redirect Error :"+e);
+}
+%>

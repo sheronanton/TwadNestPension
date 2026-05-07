@@ -1,0 +1,69 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 Jun, 2013 3:55:02 PM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.FamilyPensionApplicationDeathFieldForm2MstNomineeDao" table="FAMILYPENSIONAPPLICATIONDEATHFIELDFORM2MSTNOMINEEDAO">
+        <id name="nomineeId" type="int">
+            <column name="NOMINEEID" />
+            <generator class="assigned" />
+        </id>
+        <property name="serialVersionUID" type="long" access="field">
+            <column name="SERIALVERSIONUID" />
+        </property>
+        <property name="empNo" type="int">
+            <column name="EMPNO" />
+        </property>
+        <property name="nomineeInitial" type="java.lang.String">
+            <column name="NOMINEEINITIAL" />
+        </property>
+        <property name="familyMembers" type="java.lang.String">
+            <column name="FAMILYMEMBERS" />
+        </property>
+        <property name="relation" type="java.lang.String">
+            <column name="RELATION" />
+        </property>
+        <property name="nomineeDob" type="java.lang.String">
+            <column name="NOMINEEDOB" />
+        </property>
+        <property name="nomineeAge" type="java.lang.Integer">
+            <column name="NOMINEEAGE" />
+        </property>
+        <property name="handicapped" type="java.lang.String">
+            <column name="HANDICAPPED" />
+        </property>
+        <property name="martialStatus" type="java.lang.String">
+            <column name="MARTIALSTATUS" />
+        </property>
+        <property name="nominationDate" type="java.lang.String">
+            <column name="NOMINATIONDATE" />
+        </property>
+        <property name="nominationDate1" type="java.util.Date">
+            <column name="NOMINATIONDATE1" />
+        </property>
+        <property name="nominationDate2" type="java.lang.String">
+            <column name="NOMINATIONDATE2" />
+        </property>
+        <property name="nomineeDob1" type="java.util.Date">
+            <column name="NOMINEEDOB1" />
+        </property>
+        <property name="nomineeDob2" type="java.lang.String">
+            <column name="NOMINEEDOB2" />
+        </property>
+        <property name="activeStatus" type="java.lang.String">
+            <column name="ACTIVESTATUS" />
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="ADDRESS" />
+        </property>
+        <property name="processStatus" type="java.lang.String">
+            <column name="PROCESSSTATUS" />
+        </property>
+        <property name="updatedUserId" type="java.lang.String">
+            <column name="UPDATEDUSERID" />
+        </property>
+        <property name="updatedDate" type="java.sql.Timestamp">
+            <column name="UPDATEDDATE" />
+        </property>
+    </class>
+</hibernate-mapping>

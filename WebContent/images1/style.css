@@ -1,0 +1,41 @@
+.arialwhitebold {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.texbox {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+	border: solid 1px #176b9b;
+	height: 16px;
+}
+.button {
+	background-color: #2082b2;
+	border: 1px solid #FFFFFF;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	height: 18px;
+}
+.texboxfocus {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+	border: solid 1px #176b9b;
+	height: 16px;
+	background-color: #FFFFCC;
+}
+.bg {
+    background-image: url(indexbg.jpg);
+    background-repeat: no-repeat;
+    background-position: center top;
+}

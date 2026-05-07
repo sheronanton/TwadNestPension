@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15 Sep, 2009 3:45:35 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.ValidateBankDetails" table="HRM_PEN_MST_PENSIONER_BANK">
+      
+      <id name="ppoNo" type="integer"  >
+            <column name="PPO_NO"  length="6" />
+            <generator class="assigned" />
+        </id>
+        
+        <property name="bankId" type="integer">
+            <column name="BANK_ID" length="6" />
+        </property>
+        
+        <property name="branchId" type="integer">
+            <column name="BRANCH_ID" length="6" />
+        </property>
+
+         <property name="bankAcNo" type="string">
+            <column name="BANK_AC_NO" length="30" />
+        </property>
+        
+       <property name="processStatus" type="string">
+            <column name="PROCESS_STATUS" length="10" />
+        </property>
+        
+        <property name="bankPaymentMode" type="string">
+            <column name="BANK_PAYMENT_MODE" length="15" />
+        </property>
+        
+        <property name="updatedId" type="string">
+            <column name="UPDATED_USER_ID" length="20"/>
+        </property>
+        
+         <property name="updatedDate" type="java.sql.Timestamp">
+            <column name="UPDATED_DATE" />
+        </property>
+        
+        
+         </class>
+</hibernate-mapping>
+        

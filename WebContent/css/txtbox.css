@@ -1,0 +1,48 @@
+.tb0 {
+	background-image: url(../images/bg.png);
+	border: 1px solid #6297BC;
+	width: 30px;
+	text-align: right;
+}
+.tb1 {
+	background-image: url(../images/bg.png);
+	border: 1px solid #6297BC;
+	width: 40px;
+	text-align: right;
+}
+.tb4 {
+	background-image: url(../images/bg.png);
+	border: 1px solid #6297BC;
+	width: 70px;
+	text-align: right;
+}
+.tb5 {
+	background-image: url(../images/bg.png);
+	border: 1px solid #6297BC;
+	width: 90px;
+	text-align: right;
+}
+.textarea {
+	background-image: url(../images/bg.png);
+	border: 1px solid #6297BC;
+	width: 390px;
+	height: 40px;
+	text-align: left;
+}
+.fb1 {
+    background: #FFBD2B url('images/gradient.png') repeat-x;
+    border: 1px solid #bfa277;
+}
+.fb2 {
+	border: 1px solid #3366FF;
+	background-color:#B3C6FF;
+}
+
+.select {    
+ font: 12px Verdana, Geneva, Arial, Helvetica, sans-serif;    
+ background-color: white;    
+ color: #102132;    
+ border: 1px solid #284279;    
+}
+
+  

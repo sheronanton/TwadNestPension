@@ -1,0 +1,890 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="PensionApplicationHeadOfficeForm2"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="reportParams.dir" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="SUBREPORT_DIR" isForPrompting="true" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["C:\\twadlive2\\twad_ver2\\WebContent\\org\\HR\\hr\\pension\\reports\\"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="reportParams.dir1" isForPrompting="false" class="java.lang.String"/>
+
+	<field name="EMP_NO" class="java.math.BigDecimal"/>
+	<field name="EMP_NAME" class="java.lang.String"/>
+	<field name="GENDER" class="java.lang.String"/>
+	<field name="DESIG_SERVICE_GRP" class="java.math.BigDecimal"/>
+	<field name="DESIG_ID" class="java.math.BigDecimal"/>
+	<field name="GRADE" class="java.lang.String"/>
+	<field name="OFFICE_ID" class="java.math.BigDecimal"/>
+	<field name="GPF_NO" class="java.math.BigDecimal"/>
+	<field name="FATHER_NAME" class="java.lang.String"/>
+	<field name="HUSBAND_NAME" class="java.lang.String"/>
+	<field name="RELIGION" class="java.lang.String"/>
+	<field name="NATIONALITY" class="java.lang.String"/>
+	<field name="EMP_HEIGHT" class="java.lang.String"/>
+	<field name="ID_MARK1" class="java.lang.String"/>
+	<field name="ID_MARK2" class="java.lang.String"/>
+	<field name="PRESENT_ADDRESS" class="java.lang.String"/>
+	<field name="PERMANENT_ADDRESS" class="java.lang.String"/>
+	<field name="ADDRESS_AFTER_RETIRE" class="java.lang.String"/>
+	<field name="STATE" class="java.math.BigDecimal"/>
+	<field name="CHARGES_FLAG" class="java.lang.String"/>
+	<field name="CHARGES_DETAILS" class="java.lang.String"/>
+	<field name="PAYMENT_OFFICE_ID" class="java.math.BigDecimal"/>
+	<field name="APPLICATION_DATE" class="java.util.Date"/>
+	<field name="DCRG_NOMINEE_NAME" class="java.lang.String"/>
+	<field name="DCRG_NOMINEE_DOB" class="java.util.Date"/>
+	<field name="DCRG_NOMINEE_RELATION" class="java.lang.String"/>
+	<field name="DCRG_NOMINEE_ADDRESS" class="java.lang.String"/>
+	<field name="NOT_VERIFY_SERVICE_TOT_YEARS" class="java.math.BigDecimal"/>
+	<field name="NOT_VERIFY_SERVICE_TOT_MONTHS" class="java.math.BigDecimal"/>
+	<field name="NOT_VERIFY_SERVICE_TOT_DAYS" class="java.math.BigDecimal"/>
+	<field name="penAppHeadOfficeNominee" class="org.apache.struts2.views.jasperreports.ValueStackDataSource"/>
+	<field name="OFFICE_NAME" class="java.lang.String"/>
+	<field name="DESIGNATION" class="java.lang.String"/>
+	<field name="PAY_OFFICE_NAME" class="java.lang.String"/>
+	<field name="STATE_NAME" class="java.lang.String"/>
+	<field name="penHeadOfficeApplication" class="org.apache.struts2.views.jasperreports.ValueStackDataSource"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="50"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="5"
+						y="7"
+						width="525"
+						height="24"
+						key="staticText-1"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font pdfFontName="Helvetica-Bold" size="14" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Tamil Nadu Water Supply and Drainage Board]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="102"
+						y="33"
+						width="335"
+						height="17"
+						key="staticText-2"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[Pension Application ( Form 2 )]]></text>
+				</staticText>
+			</band>
+		</title>
+		<pageHeader>
+			<band height="1"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="577"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="37"
+						y="15"
+						width="82"
+						height="20"
+						key="staticText-3"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Emp.No]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="37"
+						y="37"
+						width="82"
+						height="20"
+						key="staticText-4"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Emp.Name]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="44"
+						y="42"
+						width="0"
+						height="0"
+						key="staticText-5"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Static Text]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="37"
+						y="81"
+						width="82"
+						height="20"
+						key="staticText-6"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Designation]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="37"
+						y="125"
+						width="82"
+						height="20"
+						key="staticText-7"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Grade]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="37"
+						y="103"
+						width="82"
+						height="20"
+						key="staticText-8"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Office]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="37"
+						y="147"
+						width="82"
+						height="20"
+						key="staticText-9"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[GPF No]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="37"
+						y="191"
+						width="82"
+						height="20"
+						key="staticText-10"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Father Name]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="37"
+						y="213"
+						width="82"
+						height="20"
+						key="staticText-11"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Husband Name]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="37"
+						y="235"
+						width="82"
+						height="20"
+						key="staticText-12"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Religion]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="37"
+						y="257"
+						width="82"
+						height="20"
+						key="staticText-13"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Nationality]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="37"
+						y="279"
+						width="82"
+						height="20"
+						key="staticText-14"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Height]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="263"
+						y="15"
+						width="118"
+						height="20"
+						key="staticText-15"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Identification Mark 1]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="263"
+						y="67"
+						width="118"
+						height="20"
+						key="staticText-16"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Identification Mark 2]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="263"
+						y="119"
+						width="119"
+						height="20"
+						key="staticText-17"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Present Address]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="263"
+						y="191"
+						width="120"
+						height="20"
+						key="staticText-18"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Permanent Address]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="263"
+						y="263"
+						width="127"
+						height="20"
+						key="staticText-19"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Address After Retirement]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="37"
+						y="301"
+						width="82"
+						height="20"
+						key="staticText-20"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[State]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="263"
+						y="334"
+						width="121"
+						height="20"
+						key="staticText-21"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Charges if any ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="263"
+						y="355"
+						width="121"
+						height="20"
+						key="staticText-22"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Charges Desciption]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="37"
+						y="169"
+						width="82"
+						height="20"
+						key="staticText-23"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Payment Office]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="37"
+						y="323"
+						width="82"
+						height="20"
+						key="staticText-24"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Application Date]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="124"
+						y="15"
+						width="133"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{EMP_NO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="124"
+						y="37"
+						width="133"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{EMP_NAME}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						mode="Opaque"
+						x="37"
+						y="59"
+						width="82"
+						height="20"
+						key="staticText-25"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Gender]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="124"
+						y="59"
+						width="133"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{GENDER}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="124"
+						y="125"
+						width="133"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{GRADE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="124"
+						y="191"
+						width="133"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{FATHER_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="124"
+						y="213"
+						width="133"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{HUSBAND_NAME}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="43"
+						y="413"
+						width="120"
+						height="20"
+						key="staticText-26"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[DCRG Nominee]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="43"
+						y="436"
+						width="57"
+						height="20"
+						key="staticText-27"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[ Name ]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="43"
+						y="458"
+						width="57"
+						height="20"
+						key="staticText-28"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Relation]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="267"
+						y="436"
+						width="110"
+						height="20"
+						key="staticText-29"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[DOB]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="267"
+						y="458"
+						width="110"
+						height="20"
+						key="staticText-30"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<text><![CDATA[Address]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="124"
+						y="147"
+						width="133"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.math.BigDecimal"><![CDATA[$F{GPF_NO}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="124"
+						y="257"
+						width="133"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{NATIONALITY}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="124"
+						y="279"
+						width="133"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{EMP_HEIGHT}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="389"
+						y="15"
+						width="145"
+						height="50"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{ID_MARK1}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="389"
+						y="67"
+						width="145"
+						height="50"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{ID_MARK2}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="389"
+						y="119"
+						width="145"
+						height="70"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PRESENT_ADDRESS}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="389"
+						y="191"
+						width="145"
+						height="70"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PERMANENT_ADDRESS}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="389"
+						y="263"
+						width="145"
+						height="70"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{ADDRESS_AFTER_RETIRE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="dd/MM/yyyy" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="124"
+						y="323"
+						width="133"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[$F{APPLICATION_DATE}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="124"
+						y="235"
+						width="133"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{RELIGION}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="389"
+						y="334"
+						width="145"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CHARGES_FLAG}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="389"
+						y="355"
+						width="145"
+						height="50"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{CHARGES_DETAILS}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="111"
+						y="436"
+						width="133"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DCRG_NOMINEE_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="111"
+						y="458"
+						width="133"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DCRG_NOMINEE_RELATION}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" pattern="dd/MM/yyyy" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="389"
+						y="436"
+						width="145"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.util.Date"><![CDATA[$F{DCRG_NOMINEE_DOB}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="389"
+						y="458"
+						width="145"
+						height="50"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DCRG_NOMINEE_ADDRESS}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="37"
+						y="408"
+						width="497"
+						height="1"
+						key="line-1"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="260"
+						y="2"
+						width="1"
+						height="406"
+						key="line-2"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="0"
+						y="509"
+						width="535"
+						height="1"
+						key="line-3"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="37"
+						y="2"
+						width="498"
+						height="1"
+						key="line-4"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="9"
+						y="520"
+						width="526"
+						height="16"
+						key="subreport-1"
+						positionType="Float"/>
+					<dataSourceExpression><![CDATA[$F{penAppHeadOfficeNominee}]]></dataSourceExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{reportParams.dir}]]></subreportExpression>
+				</subreport>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="124"
+						y="103"
+						width="133"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{OFFICE_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="124"
+						y="81"
+						width="133"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{DESIGNATION}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="124"
+						y="169"
+						width="133"
+						height="18"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{PAY_OFFICE_NAME}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Transparent"
+						x="124"
+						y="301"
+						width="133"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{STATE_NAME}]]></textFieldExpression>
+				</textField>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="10"
+						y="538"
+						width="525"
+						height="16"
+						key="subreport-2"
+						positionType="Float"/>
+					<dataSourceExpression><![CDATA[$F{penHeadOfficeApplication}]]></dataSourceExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{reportParams.dir1}]]></subreportExpression>
+				</subreport>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

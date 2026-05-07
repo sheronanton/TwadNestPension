@@ -1,0 +1,165 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.nic.hrms.pension.model.PensionApplicationIndividualDao" table="HRM_PEN_APP_INDIVI_CO">
+    
+       <id name="empNo" type="integer">
+            <column name="EMP_NO" length="6" /> 
+            <generator class="assigned" />          
+        </id>        
+     
+        <property name="empName" type="string">
+            <column name="EMP_NAME" length="60" />
+        </property>
+      
+         
+        <property name="gender" type="string">
+            <column name="GENDER" length="5" />
+        </property>
+        
+        <property name="desigServiceGrp" type="integer">
+            <column name="DESIG_SERVICE_GRP"  length="6"/>
+        </property>
+        
+         <property name="desigId" type="integer">
+            <column name="DESIG_ID" length="6" />
+        </property>
+        
+        <property name="gradeId" type="string">
+            <column name="GRADE" length="20" />
+        </property>
+        
+       <property name="officeId" type="integer">
+            <column name="OFFICE_ID" length="6" />
+        </property>
+        
+                 
+         <property name="gpfNo" type="integer">
+            <column name="GPF_NO" length="6" />
+        </property>
+        
+        <property name="fatherName" type="string">
+            <column name="FATHER_NAME" length="60" />
+        </property>
+        
+        <property name="husbandName" type="string">
+            <column name="HUSBAND_NAME" length="60" />
+        </property>
+        
+           
+        <property name="religion" type="string">
+            <column name="RELIGION" length="20" />
+        </property>
+        
+         <property name="nationality" type="string">
+            <column name="NATIONALITY" length="50" />
+        </property>
+      
+           <property name="empHeight" type="string">
+            <column name="EMP_HEIGHT" length="10" />
+        </property>
+          
+                 
+      
+      
+        <property name="idMark1" type="string">
+            <column name="ID_MARK1" length="100" />
+        </property>
+        
+          <property name="idMark2" type="string">
+            <column name="ID_MARK2" length="100" />
+        </property>
+        
+        <property name="presentAddress" type="string">
+            <column name="PRESENT_ADDRESS" length="100" />
+        </property>
+        
+        <property name="permanentAddress" type="string">
+            <column name="PERMANENT_ADDRESS" length="100" />
+        </property>
+                     
+        <property name="addressAfterRetire" type="string">
+            <column name="ADDRESS_AFTER_RETIRE" length="100" />
+        </property>
+        
+        
+        
+        <property name="stateId" type="integer">
+            <column name="STATE" length="6" />
+        </property>
+    
+      
+        <property name="chargesFlag" type="string">
+            <column name="CHARGES_FLAG" length="10" />
+        </property>
+        
+         <property name="chargeDetails" type="string">
+            <column name="CHARGES_DETAILS" length="100" />
+        </property>
+        
+               
+        <property name="pensionPayOfficeId" type="integer">
+            <column name="PAYMENT_OFFICE_ID" length="8" />
+        </property>
+        
+        
+          <property name="appliedDate1" type="date">
+            <column name="APPLICATION_DATE" />
+        </property>
+        
+        
+           <property name="dcrgNomineeName" type="string">
+            <column name="DCRG_NOMINEE_NAME" length="30" />
+        </property>
+          
+        <property name="dcrgNomineeDob1" type="date">
+            <column name="DCRG_NOMINEE_DOB" />
+        </property>
+        
+        <property name="dcrgRelation" type="string">
+            <column name="DCRG_NOMINEE_RELATION" length="20" />
+        </property>
+         
+        <property name="dcrgAddress" type="string">
+            <column name="DCRG_NOMINEE_ADDRESS" length="100" />
+        </property>
+                
+        <property name="notVerifyServiceTotYears" type="integer">
+            <column name="NOT_VERIFY_SERVICE_TOT_YEARS" length="6" />
+        </property>
+        
+        <property name="notVerifyServiceTotMonths" type="integer">
+            <column name="NOT_VERIFY_SERVICE_TOT_MONTHS" length="6" />
+        </property>
+        
+        <property name="notVerifyServiceTotDays" type="integer">
+            <column name="NOT_VERIFY_SERVICE_TOT_DAYS" length="6" />
+        </property>
+        
+        <property name="processStatus" type="string">
+        	<column name="PROCESS_STATUS" length="15"></column>
+        </property>
+
+ 		<property name="updatedUser" type="string">
+        	<column name="UPDATED_USER"  length="15"></column>
+        </property>
+        
+       <property name="updatedDate" type="java.sql.Timestamp">
+            <column name="UPDATED_DATE"  />
+        </property>
+        
+         <property name="unlockedBy" type="string">
+        	<column name="UNLOCKED_BY"  length="15"></column>
+        </property>
+        
+       <property name="unlockedDate" type="java.sql.Timestamp">
+            <column name="UNLOCKED_DATE"  />
+        </property>
+        
+
+
+        </class>
+</hibernate-mapping>

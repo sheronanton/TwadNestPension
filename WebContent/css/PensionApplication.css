@@ -1,0 +1,56 @@
+@CHARSET "ISO-8859-1";
+.bodyText
+	{	
+		font-family:Verdana;
+		font-size:12px;		
+	}
+.textHeader
+	{
+		font-family:Verdana;
+		font-size:14px;
+		color: white;					
+	}	
+
+input.textbox
+	{
+		BORDER-RIGHT: #ffba14 1.5px solid;
+		BORDER-TOP: #ffba14 1.5px solid;
+		BORDER-LEFT: #ffba14 1.5px solid;
+		BORDER-BOTTOM: #ffba14 1.5px solid;
+	}
+	
+	
+	
+input.readonlytext
+	{
+		BORDER-RIGHT: #ffba14 1.5px solid;
+		BORDER-TOP: #ffba14 1.5px solid;
+		BORDER-LEFT: #ffba14 1.5px solid;
+		BORDER-BOTTOM: #ffba14 1.5px solid;
+		background-color:#dddddf;
+	}
+	
+	
+.tableGrid
+	{			
+		border-collapse:collapse;
+		border:1.5px solid #BCC0C4;				
+	}
+	
+.tableGrid td
+	{			
+		padding:5px;				
+	}	
+.showAlert
+	{
+		font-size: 15px;
+		color:red;
+	}
+		
+		
+.bodyTextBold
+	{	
+		font-family:Verdana;
+		font-size:12px;	
+		font-weight: bold;		 
+	}

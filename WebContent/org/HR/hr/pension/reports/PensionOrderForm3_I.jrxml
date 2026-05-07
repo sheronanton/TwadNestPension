@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="PensionOrderForm3_I"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+
+	<field name="EMP_NO" class="java.math.BigDecimal"/>
+	<field name="PPO_NO" class="java.math.BigDecimal"/>
+	<field name="FROM_ADDRESS" class="java.lang.String"/>
+	<field name="TO_ADDRESS" class="java.lang.String"/>
+	<field name="CIRCLE_HO_OFFICE_STATUS" class="java.lang.String"/>
+	<field name="PENSION_PAY_OFFICE_ADDRESS" class="java.lang.String"/>
+	<field name="LETTER_NO" class="java.lang.String"/>
+	<field name="DATED_ON" class="java.lang.String"/>
+	<field name="REFERENCE" class="java.lang.String"/>
+	<field name="AUTHORIZED_OFFICER" class="java.lang.String"/>
+	<field name="AUTHORIZED_OFFICER_ADDRESS" class="java.lang.String"/>
+	<field name="COPY_TO1" class="java.lang.String"/>
+	<field name="COPY_TO2" class="java.lang.String"/>
+	<field name="SUBJECT" class="java.lang.String"/>
+	<field name="CONTENT" class="java.lang.String"/>
+	<field name="EMP_NAME" class="java.lang.String"/>
+	<field name="DATE_OF_RETIREMENT" class="java.util.Date"/>
+	<field name="LAST_WORK_OFFICE_ADDRESS" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="384"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="0"
+						y="0"
+						width="485"
+						height="384"
+						key="staticText-74"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[Before making payment please ensure that there are no recoveries due from the individual.
+                                                                                                                                                                       The DCRG is debitable under A-Expenditure from Revenue Account_V.Pension and Gratuity charges (ii) Gratuity.
+
+The acquittance of the applicant may be obtained on the reverse of the order sent to the applicant with Re.1 Revenue stamp. The applicant is being informed of the issue of this order separately.
+
+Please note that payment is to be made only on receipt of clear retirement order i.e. unconditional retirement order from the competent authority.
+
+This order is issued subject to recovery of all dues from the retiring person before settlement of retirement benefits and if any dues are found to be recoverable from the retired person at a later date, the person who furnished the ‘no due’ certificate will be held responsible and action will be taken against him and he will be held liable for the unrecovered amount if any.
+
+Before making payment it should be ensured that all the dues to TWAD Board and others i.e. Thrift Society Recovery, Bank loan recovery etc. if any are effected from his pensionary benefits.
+
+Please acknowledge the receipt of this order and intimate the payment of gratuity with Cheque No. and date.
+]]></text>
+				</staticText>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

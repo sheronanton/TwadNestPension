@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.nic.hrms.pension.model.ReligionDao" table="HRM_MST_RELIGIONS">
+		
+		<id name="religionCode" type="int"  >
+            <column name="RELIGION_CODE"  length="5" />
+            <generator class="assigned" />
+        </id>
+        
+        <property name="religionName" type="string">
+            <column name="RELIGION_NAME" length="50" />
+        </property>      
+        
+        </class>
+</hibernate-mapping>

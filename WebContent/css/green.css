@@ -1,0 +1,32 @@
+BODY
+{
+  /* background: rgb(209,220,224)   ;*/
+  background: rgb(231,240,242);
+  COLOR: black;
+  FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+H1
+{
+  COLOR: black;
+  FONT-FAMILY: Arial, Helvetica, sans-serif;
+  FONT-SIZE: x-large;
+  FONT-WEIGHT: bolder;
+  TEXT-TRANSFORM: capitalize;
+ 
+}
+H2
+{
+  COLOR: black;
+  FONT-FAMILY: Arial, Helvetica, sans-serif;
+  FONT-SIZE: large;
+  FONT-WEIGHT: bolder;
+  TEXT-TRANSFORM: capitalize;
+}
+H3
+{
+  COLOR: black;
+  FONT-FAMILY: Arial, Helvetica, sans-serif;
+  FONT-SIZE: large;
+  FONT-WEIGHT: lighter;
+  TEXT-TRANSFORM: capitalize;
+}

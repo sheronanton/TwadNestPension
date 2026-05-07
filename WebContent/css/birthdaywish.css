@@ -1,0 +1,91 @@
+@CHARSET "ISO-8859-1";
+
+.topimg
+	{
+	width: 150px;
+	height: 150px;
+	}
+.fontss 
+	{
+	font-family: Verdana;
+	font-size: 12px;
+}
+.imgsize
+	{
+  margin:2px;
+  border:1px solid #0000ff;
+  text-align:left;
+	
+	}
+	
+.a1
+	{
+	color:blue;
+	}
+body
+	{
+	background-color: #DFE8E8;
+	background-position:left; 
+	}
+	.wish
+	{
+		color: maroon;
+	}
+.fontHeader {
+	font-family: Verdana;
+	font-size: 14px;
+}
+
+table.border1 {
+	border-top: 2px solid #FFFFFF;
+	border-left: 2px solid #FFFFFF;
+	border-right: 2px solid #FFFFFF;
+	border-bottom: 2px solid #FFFFFF;
+	font-family: Arial;
+	font-size: 12px;
+	background-color: #DFE8E8;
+}
+
+table.border1 th {
+	border-top: 0px solid #FFFFFF;
+	border-left: 0px solid #FFFFFF;
+	border-right: 1px solid #FFFFFF;
+	border-bottom: 1px solid #FFFFFF;
+	padding: 5px 0 5px 10px;
+	height: 25px;
+	font-size: 13px !important;
+	text-align: left;
+}
+
+table.border1 td {
+	border-top: 0px solid #FFFFFF;
+	border-left: 0px solid #FFFFFF;
+	border-right: 1px solid #FFFFFF;
+	border-bottom: 1px solid #FFFFFF;
+	padding: 5px 0 5px 10px;
+	height: 25px;
+	text-align: left;
+}
+
+table.border1 a {
+	text-decoration: none;
+	font-weight: bold;
+	color: #000000;
+}
+
+table.border1 a:hover {
+	text-decoration: none;
+	font-weight: bold;
+	color: red;
+}
+
+img {
+	border: none;
+}
+
+.a {
+	font-family: none;
+	height: 40px;
+	width:70px;
+	
+}

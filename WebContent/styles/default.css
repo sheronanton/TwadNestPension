@@ -1,0 +1,87 @@
+@CHARSET "ISO-8859-1";
+
+
+input.fontss
+{
+	font-family:monospace;
+	font-size: 5px;
+	color: blue;
+}
+
+
+input.btn {
+	  color:#050;
+	  font: bold 84% 'trebuchet ms',helvetica,sans-serif;
+}
+
+input.btn1 {
+		  color:#987;
+		  font: bold 84% 'trebuchet ms',helvetica,sans-serif;
+		  background-color:#fed;
+		  border:1px solid;
+		  border-color: #696 #363 #363 #696;
+}
+
+input.textbox1{
+		BORDER-RIGHT: #ffba14 1px solid;
+		BORDER-TOP: #ffba14 1px solid;
+		BORDER-LEFT: #ffba14 1px solid;
+		BORDER-BOTTOM: #ffba14 1px solid;
+		PADDING-RIGHT: 3px;
+		PADDING-BOTTOM: 1px;
+		PADDING-TOP: 1px;
+		ADDING-LEFT: 4px;
+		FONT-SIZE: 10pt;
+		COLOR: #000080;
+		FONT-FAMILY: sans-serif;
+		BACKGROUND-COLOR: #ffffff;		
+		}
+
+
+
+input.textbox{
+		BORDER-RIGHT: #ffba14 1.5px solid;
+		BORDER-TOP: #ffba14 1.5px solid;
+		BORDER-LEFT: #ffba14 1.5px solid;
+		BORDER-BOTTOM: #ffba14 1.5px solid;
+		}
+
+
+input.textbox2{
+		background-color: #E2E2E2;
+		BORDER-RIGHT: #ffba14 1.5px solid;
+		BORDER-TOP: #ffba14 1.5px solid;
+		BORDER-LEFT: #ffba14 1.5px solid;
+		BORDER-BOTTOM: #ffba14 1.5px solid;
+
+}
+ 
+
+input.selectbox {
+		BORDER-RIGHT: #ffba14 1px solid;
+		BORDER-TOP: #ffba14 1px solid;
+		BORDER-LEFT: #ffba14 1px solid;
+		BORDER-BOTTOM: #ffba14 1px solid;
+     
+}
+
+
+input.textarea1{
+		BORDER-RIGHT: #ffba14 1.5px solid;
+		BORDER-TOP: #ffba14 1.5px solid;
+		BORDER-LEFT: #ffba14 1.5px solid;
+		BORDER-BOTTOM: #ffba14 1.5px solid;
+	}
+
+	
+	
+input.textareastyle1 {
+	width: 600px;
+	height: 120px;
+	border: 3px solid #cccccc;
+	padding: 5px;
+	font-family: Tahoma, sans-serif;
+	background-image: url(bg.gif);
+	background-position: bottom right;
+	background-repeat: no-repeat;
+}	

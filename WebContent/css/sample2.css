@@ -1,0 +1,50 @@
+body { color: black; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; }
+p { color: #d2b48c; font-size: 0.8em; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular, Arial, Helvetica, Geneva, Swiss, SunSans-Regular }
+pre { color: #d2b48c; font-size: 0.8em; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular }
+blockquote { color: #d2b48c; font-size: 0.8em; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular }
+h1 { color: #fc9; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular }
+h2 { color: black;font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular ; background-color:  rgb(200,216,218); }
+h3 { color: #fc9; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular }
+h4 { color: #df33e8; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular  ; font-style: italic; }
+h5 {color: #ee900d;font-size: medium; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular }
+h6 { color: #fc9; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular }
+img { background-color: #eee; border: 0px }
+ol { color: #ffa07a; font-size: 0.8em; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular }
+ul { color: #ffa07a; font-size: 0.8em; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; list-style-position: inside }
+a { color: #ff6347; font-size: 0.95em; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; text-decoration: none }
+a:visited { color: #ff8c00; font-size: 0.95em; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; text-decoration: none }
+a:hover { color: #ff8c00; font-size: 0.95em; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; text-decoration: none }
+a:active { color: #ff6347; font-size: 0.95em; text-decoration: none }
+tr { border: 0 }
+.cellcolor { font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; background-color: #ffdab9 }
+.rev_type { color: white; font-weight: bold; font-size: 1em; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; text-decoration: none }
+.g_nav_cellcolor { color: #ffffce; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; background-color: #deb887 }
+.a_type_color { color: #fff; font-size: 0.9em; font-family: Arial, Helvetica, Geneva, Swiss, SunSans-Regular; text-decoration: none }
+.td { color:black; ;font-size: medium; font-style: normal; }
+.th { color: #9a79d7; font-weight: bold; }
+.treven {color:#eee;}
+.trodd {color:#fff;}
+.toggleOn {
+      border-style: inset;
+      background-color: #bfbfbf;
+    }
+    .toggleOff {
+      border-style: outset;
+      background-color: #e0e0e0;
+    }
+
+    .uiInfo_panel {
+      border: solid 1px blue;
+      padding: 5px 8px 5px 8px;
+      background-color: #ffffe1;
+      width: 200px;
+      height: 30px;
+    }
+
+    .customPanel {
+      border: solid 1px blue;
+      padding: 5px 8px 5px 8px;
+      background-color: #ffffe1;
+      width: 300px;
+      height: 80px;
+      }

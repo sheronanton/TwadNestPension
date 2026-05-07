@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15 Sep, 2009 3:45:35 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.MstPension" table="class_of_pension">
+		<id name="classId" type="string"  >
+            <column name="class_id"  length="30" />
+            <generator class="assigned" />
+        </id>
+        
+        <property name="classDesc" type="string">
+            <column name="class_desc" length="30" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,33 @@
+.table
+{
+ background:  rgb(215,237,226) ;
+  COLOR: black;
+  FONT-FAMILY: Arial, Helvetica, sans-serif;
+}
+.tdH
+{
+   BACKGROUND-COLOR:rgb(138,204,171);
+   font-style:normal ;
+   font-family:TimesNewRoman; 
+   font-size: 12pt;
+   
+}
+.td1
+{
+color:Black;
+font-family: TimesNewRoman;
+font-size: 10pt;
+}
+.td2
+{
+  color:Black;
+font-family: TimesNewRoman;
+font-size: 10pt;  
+}
+.td3
+{
+  color:Black;
+  font-family: TimesNewRoman;
+font-size: 12pt; 
+  
+}

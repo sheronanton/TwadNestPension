@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.nic.hrms.pension.model.Grade_dao" table="HRM_MST_SERVICE_GROUP">
+		
+		<id name="gradeId" type="integer"  >
+            <column name="SERVICE_GROUP_ID"  length="30" />
+            <generator class="assigned" />
+        </id>
+        
+		<property name="gradeName" type="string">
+			<column name="SERVICE_GROUP_NAME" />
+		</property>
+		
+		
+	</class>
+</hibernate-mapping>

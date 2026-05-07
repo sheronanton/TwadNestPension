@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15 Sep, 2009 3:45:35 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.PensionApplicationForm1AverageEmolumentsValDao" table="HRM_PEN_APP_MST_AVG_FORM1">
+      
+     <id name="avgID" type="integer"   >
+            <column name="AVG_ID"  />
+            <generator class="assigned" />
+     </id>
+      
+        <property name="empNo" type="integer">
+            <column name="EMP_ID" length="6" />
+        </property>
+        
+		<property name="maxcheck_value" type="string">
+            <column name="NOT_CONSIDERED" length="10" />
+        </property>           
+        
+        <property name="fromdate1" type="date">
+            <column name="DATE_FROM"  />
+        </property>
+        
+        <property name="todate1" type="date">
+            <column name="DATE_TO"  />
+        </property>
+        
+        <property name="tmonth" type="integer">
+            <column name="TOT_MONTHS" length="4" />
+        </property>
+        
+        <property name="tday" type="integer">
+            <column name="TOT_DAYS" length="4" />
+        </property>
+        
+        <property name="basic_pay" type="integer">
+            <column name="BASIC_PAY" length="10" />
+        </property>
+        
+        <property name="grade_pay" type="integer">
+            <column name="GRADE_PAY" length="10" />
+        </property>
+        
+        <property name="special_pay" type="integer">
+            <column name="SPECIAL_PAY" length="10" />
+        </property>
+        
+        <property name="optionpay1" type="integer">
+            <column name="OTHER1_PAY" length="10" />
+        </property>
+        
+        <property name="optionpay2" type="integer">
+            <column name="OTHER2_PAY" length="10" />
+        </property>
+        
+        <property name="optionpay3" type="integer">
+            <column name="OTHER3_PAY" length="10" />
+        </property>       
+    
+    	<property name="ppamount">
+            <column name="PROP_PAY" sql-type="NUMERIC(10,2)"/>
+        </property>
+        
+        
+        
+        
+        <property name="processStatus" type="string">
+            <column name="PROCESS_STATUS" length="20" />
+        </property> 
+                
+        <property name="updatedUser" type="string">
+			<column name="UPDATED_USER_ID" length="20"/>
+		</property>
+        
+        <property name="updateDate" type="timestamp">
+			<column name="UPDATED_DATE"/>
+		</property>
+		
+		<property name="unlockedBy" type="string">
+			<column name="UNLOCKED_BY" length="20"/>
+		</property>
+		
+		<property name="unlockedDate" type="timestamp">
+			<column name="UNLOCKED_DATE"/>
+		</property>
+    
+    </class>
+</hibernate-mapping>

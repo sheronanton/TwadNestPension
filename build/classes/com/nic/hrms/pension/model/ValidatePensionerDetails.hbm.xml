@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15 Sep, 2009 3:45:35 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.ValidatePensionerDetails" table="HRM_PEN_MST_PENSION_DETAILS">
+      
+      <id name="ppoNo" type="integer"  >
+            <column name="PPO_NO"  length="6" />
+            <generator class="assigned" />
+        </id>
+        
+        <property name="originalPensionAmt" type="integer">
+            <column name="ORIGINAL_PENSION_AMT" length="8" />
+        </property>
+        
+        <property name="reducedPensionAmt" type="integer">
+            <column name="REDUCED_PENSION_AMT" length="8" />
+        </property>
+        
+         <property name="dearnessPay" type="integer">
+            <column name="DEARNESS_PAY" length="8" />
+        </property>
+        
+        <property name="provisionalPensionAmt" type="integer">
+            <column name="PROVISIONAL_PENSION_AMT" length="8" />
+        </property>
+        
+        <property name="dcrgAmt" type="integer">
+            <column name="DCRG_AMT" length="8" />
+        </property>
+        
+        <property name="dcrgPertReceived" type="integer">
+            <column name="DCRG_PERT_RECEIVED" length="5" />
+        </property>
+        
+        <property name="commOpted" type="char">
+            <column name="COMM_OPTED" length="1"/>
+        </property>
+        
+        <property name="commReceived" type="string">
+            <column name="COMM_RECEIVED" length="1"/>
+        </property>
+        
+        <property name="commfactorOnethird" type="string">
+            <column name="COMM_FACTOR_ONETHIRD" length="5"/>
+        </property>
+        
+        <property name="commFactorPert" type="integer">
+            <column name="COMM_FACTOR_PERT" length="5" />
+        </property>
+        
+        <property name="commAmt" type="integer">
+            <column name="COMM_AMT" length="8" />
+        </property>
+        
+        <property name="commPayDate1" type="date">
+            <column name="COMM_PAY_DATE" />
+        </property>
+        
+       <property name="pshfSubscribed" type="string">
+            <column name="PFSF_SUBSCRIBED_SELF" length="10"/>
+        </property>
+        
+       <property name="familyPensionTillDate1" type="date">
+            <column name="FAMILY_PENSION_TILL_DATE" />
+        </property>
+        
+        <property name="familyPensionTillDateAmt" type="integer">
+            <column name="FAMILY_PENSION_TILL_DATE_AMT" length="12" />
+        </property>
+        
+        <property name="familyPensionAtferDateAmt" type="integer">
+            <column name="FAMILY_PENSION_AFTER_DATE_AMT" length="12" />
+        </property>
+        
+        <property name="payCommissionRevisonFlag" type="string">
+            <column name="PAY_COMMISSION_REVISON_FLAG" length="1"/>
+        </property>
+        
+        <property name="processStatus" type="string">
+            <column name="PROCESS_STATUS" length="10" />
+        </property>
+        
+               
+        <property name="updatedId" type="string">
+            <column name="UPDATED_USER" length="20"/>
+        </property>
+        
+         <property name="updatedDate" type="java.sql.Timestamp">
+            <column name="UPDATED_DATE" />
+        </property>
+               
+     </class>
+</hibernate-mapping>
+        
+        
+

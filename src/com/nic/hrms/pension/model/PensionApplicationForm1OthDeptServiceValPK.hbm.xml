@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 Jun, 2013 3:55:02 PM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.PensionApplicationForm1OthDeptServiceValPK" table="PENSIONAPPLICATIONFORM1OTHDEPTSERVICEVALPK">
+        <id name="serialVersionUID" type="long" access="field">
+            <column name="SERIALVERSIONUID" />
+            <generator class="assigned" />
+        </id>
+        <property name="empNo" type="java.lang.Integer">
+            <column name="EMPNO" />
+        </property>
+        <property name="fromdate" type="java.lang.String">
+            <column name="FROMDATE" />
+        </property>
+        <property name="fromdate1" type="java.util.Date">
+            <column name="FROMDATE1" />
+        </property>
+        <property name="fromdate2" type="java.lang.String">
+            <column name="FROMDATE2" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,354 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.nic.hrms.pension.model.PensionApplicationHODetailsValidateDao" table="HRM_PEN_APP_HO_MST_FORM2_DET">
+    
+        <id name="empNo" type="integer">
+            <column name="EMP_NO" length="6" /> 
+            <generator class="assigned" />          
+        </id>        
+     
+        <property name="empName" type="string">
+            <column name="EMP_NAME" length="60" />
+        </property>
+      
+         
+        <property name="gender" type="string">
+            <column name="GENDER" length="5" />
+        </property>
+        
+        <property name="desigServiceGrp" type="integer">
+            <column name="DESIG_SERVICE_GRP"  length="6"/>
+        </property>
+        
+         <property name="desigId" type="integer">
+            <column name="DESIG_ID" length="6" />
+        </property>
+        
+        <property name="gradeId" type="string">
+            <column name="GRADE" length="20" />
+        </property>
+        
+       <property name="officeId" type="integer">
+            <column name="OFFICE_ID" length="6" />
+        </property>
+        
+                 
+         <property name="gpfNo" type="integer">
+            <column name="GPF_NO" length="6" />
+        </property>
+        
+        <property name="fatherName" type="string">
+            <column name="FATHER_NAME" length="60" />
+        </property>
+        
+        <property name="husbandName" type="string">
+            <column name="HUSBAND_NAME" length="60" />
+        </property>
+        
+           
+        <property name="religion" type="string">
+            <column name="RELIGION" length="20" />
+        </property>
+        
+         <property name="nationality" type="string">
+            <column name="NATIONALITY" length="50" />
+        </property>
+      
+           <property name="empHeight" type="string">
+            <column name="EMP_HEIGHT" length="10" />
+        </property>
+          
+                 
+      
+      
+        <property name="idMark1" type="string">
+            <column name="ID_MARK1" length="255" />
+        </property>
+        
+          <property name="idMark2" type="string">
+            <column name="ID_MARK2" length="255" />
+        </property>
+        
+        <property name="presentAddress" type="string">
+            <column name="PRESENT_ADDRESS" length="255" />
+        </property>
+        
+        <property name="permanentAddress" type="string">
+            <column name="PERMANENT_ADDRESS" length="255" />
+        </property>
+                     
+        <property name="addressAfterRetire" type="string">
+            <column name="ADDRESS_AFTER_RETIRE" length="255" />
+        </property>
+        
+        
+        
+        <property name="stateId" type="integer">
+            <column name="STATE" length="6" />
+        </property>
+    
+      
+        <property name="chargesFlag" type="string">
+            <column name="CHARGES_FLAG" length="10" />
+        </property>
+        
+         <property name="chargeDetails" type="string">
+            <column name="CHARGES_DETAILS" length="255" />
+        </property>
+        
+               
+        <property name="pensionPayOfficeId" type="integer">
+            <column name="PAYMENT_OFFICE_ID" length="8" />
+        </property>
+        
+        
+          <property name="appliedDate1" type="date">
+            <column name="APPLICATION_DATE" />
+        </property>
+        
+        
+           <property name="dcrgNomineeName" type="string">
+            <column name="DCRG_NOMINEE_NAME" length="60" />
+        </property>
+          
+        <property name="dcrgNomineeDob1" type="date">
+            <column name="DCRG_NOMINEE_DOB" />
+        </property>
+        
+        <property name="dcrgRelation" type="string">
+            <column name="DCRG_NOMINEE_RELATION" length="30" />
+        </property>
+         
+        <property name="dcrgAddress" type="string">
+            <column name="DCRG_NOMINEE_ADDRESS" length="255" />
+        </property>
+                
+        <property name="notVerifyServiceTotYears" type="integer">
+            <column name="NOT_VERIFY_SERVICE_TOT_YEARS" length="6" />
+        </property>
+        
+        <property name="notVerifyServiceTotMonths" type="integer">
+            <column name="NOT_VERIFY_SERVICE_TOT_MONTHS" length="6" />
+        </property>
+        
+        <property name="notVerifyServiceTotDays" type="integer">
+            <column name="NOT_VERIFY_SERVICE_TOT_DAYS" length="6" />
+        </property>
+        
+        <property name="dcfpDeathCertFlag" type="string">
+            <column name="DCFP_ORGDEATH_CERT_FLAG" length="5" />
+        </property>
+        
+        <property name="dcfpDeathCertRemarks" type="string">
+            <column name="DCFP_ORGDEATH_CERT_REMARKS" length="255" />
+        </property>
+        
+        <property name="dcfpHeirCertFlag" type="string">
+            <column name="DCFP_HEIRCERT_FLAG" length="5" />
+        </property>
+        
+        <property name="dcfpHeirCertRemarks" type="string">
+            <column name="DCFP_HEIRCERT_REMARKS" length="255" />
+        </property>
+        
+        <property name="dcfpServiceBookFlag" type="string">
+            <column name="DCFP_SERVBOOK_REC_FLAG" length="5" />
+        </property>
+        
+         <property name="dcfpServiceBookRemarks" type="string">
+            <column name="DCFP_SERVBOOK_REC_REMARKS" length="255" />
+        </property>
+      
+          <property name="dcfpLastPayDrwan" type="integer">
+            <column name="DCFP_LPD" length="15" />
+        </property>
+        
+          <property name="dcfpFamilyPensionFlag" type="string">
+            <column name="DCFP_ROLL_FAMILY_PEN_FLAG" length="5" />
+        </property>
+        
+         <property name="dcfpFamilyPensionRemarks" type="string">
+            <column name="DCFP_ROLL_FAMILY_PEN_REMARKS" length="255" />
+        </property>
+        
+          <property name="dcfpPhotoAttachFlag" type="string">
+            <column name="DCFP_PHOTO_ATTACH_FLAG" length="5" />
+        </property>
+        
+         <property name="dcfpPhotoAttachRemarks" type="string">
+            <column name="DCFP_PHOTO_ATTACH_REMARKS" length="255" />
+        </property>
+
+     	<property name="dcfpSignAttachFlag" type="string">
+            <column name="DCFP_SPECIMEN_SIGN_FLAG" length="5" />
+        </property>
+        
+         <property name="dcfpSignAttachRemarks" type="string">
+            <column name="DCFP_SPECIMEN_SIGN_REMARKS" length="255" />
+        </property>
+        
+        <property name="dcfpNoDueCertFlag" type="string">
+            <column name="DCFP_NO_DUE_CERT_FLAG" length="5" />
+        </property>
+        
+         <property name="dcfpNoDueCertRemarks" type="string">
+            <column name="DCFP_NO_DUE_CERT_REMARKS" length="255" />
+        </property>
+        
+        <property name="familyMembersList" type="string">
+            <column name="DCFP_FAMILY_MEMBERS_LIST" length="400" />
+        </property>
+        
+         <property name="dcfpPensionAmount" type="integer">
+            <column name="DCFP_PENSION_AMOUNT" length="15" />
+        </property>
+        
+           <property name="dcfpGratuityAmount" type="integer">
+            <column name="DCFP_GRATUITY_AMOUNT" length="15" />
+        </property>
+        
+         
+        <property name="penFamilyPensionFlag" type="string">
+            <column name="PEN_ROLL_FAMPEN_FLAG" length="5" />
+        </property>
+        
+         <property name="penFamilyPensionRemarks" type="string">
+            <column name="PEN_ROLL_FAMPEN_REMARKS" length="255" />
+        </property>
+        
+            <property name="penPhotoAttachFlag" type="string">
+            <column name="PEN_PHOTOATTACH_FLAG" length="5" />
+        </property>
+        
+         <property name="penPhotoAttachRemarks" type="string">
+            <column name="PEN_PHOTOATTACH_REMARKS" length="255" />
+        </property>
+        
+        
+          <property name="penSignAttachFlag" type="string">
+            <column name="PEN_SPECIMEN_SIGN_FLAG" length="5" />
+        </property>
+        
+         <property name="penSignAttachRemarks" type="string">
+            <column name="PEN_SPECIMEN_SIGN_REMARKS" length="255" />
+        </property>
+          
+     
+		 <property name="penNoDueCertFlag" type="string">
+            <column name="PEN_NO_DUE_CERT_FLAG" length="5" />
+        </property>
+        
+         <property name="penNoDueCertRemarks" type="string">
+            <column name="PEN_NO_DUE_CERT_REMARKS" length="255" />
+        </property>
+           
+		<property name="penConsentRecoverFlag" type="string">
+            <column name="PEN_CONSENT_RECOVER_FLAG" length="5" />
+        </property>
+        
+         <property name="penConsentRecoverRemarks" type="string">
+            <column name="PEN_CONSENT_RECOVER_REMARKS" length="255" />
+        </property>
+      
+       <property name="penDeathCertFlag" type="string">
+            <column name="PEN_ORGDEATH_CERT_FLAG" length="5" />
+        </property>
+        
+         <property name="penDeathCertRemarks" type="string">
+            <column name="PEN_ORGDEATH_CERT_REMARKS" length="255" />
+        </property>
+        
+          <property name="penHeirCertFlag" type="string">
+            <column name="PEN_HEIRCERT_FLAG" length="5" />
+        </property>
+        
+         <property name="penHeirCertRemarks" type="string">
+            <column name="PEN_HEIRCERT_REMARKS" length="255" />
+        </property>
+        
+         <property name="penServiceBookFlag" type="string">
+            <column name="PEN_SERVBOOK_REC_FLAG" length="5" />
+        </property>
+        
+         <property name="penServiceBookRemarks" type="string">
+            <column name="PEN_SERVBOOK_REC_REMARKS" length="255" />
+        </property>
+        
+        
+                
+          <property name="penDeclareFlag" type="string">
+            <column name="PEN_DECLARATION_FLAG" length="5" />
+        </property>
+        
+         <property name="penDeclareRemarks" type="string">
+            <column name="PEN_DECLARATION_REMARKS" length="255" />
+        </property>
+       
+      <property name="penRegardDateFlag" type="string">
+            <column name="PEN_REGARDING_DATE_FLAG" length="5" />
+        </property>
+        
+         <property name="penRegardDateRemarks" type="string">
+            <column name="PEN_REGARDING_DATE_REMARKS" length="255" />
+        </property>
+        
+          <property name="penSanctionUptoDateFlag" type="string">
+            <column name="PEN_SANC_UPTODATE_FLAG" length="5" />
+        </property>
+        
+         <property name="penSanctionUptoDateRemarks" type="string">
+            <column name="PEN_SANC_UPTODATE_REMARKS" length="255" />
+        </property>
+      
+         <property name="pensionPaymentPlace" type="string">
+            <column name="PLACE_OF_PENSION_PAYMENT" length="255" />
+        </property>
+        
+         <property name="dcrgPaymentPlace" type="string">
+            <column name="PLACE_OF_GRATUITY_PAYMENT" length="255" />
+        </property>
+        
+         <property name="recoveriesIfAny" type="string">
+            <column name="RECOVERIES_IF_ANY" length="255" />
+        </property>
+        
+         <property name="retireOrderFlag" type="string">
+            <column name="RETIRE_ORDER_FLAG" length="5" />
+        </property>
+        
+          <property name="retireOrderRemarks" type="string">
+            <column name="RETIRE_ORDER_REMARKS" length="255" />
+        </property>
+        
+          <property name="deputationIfAny" type="string">
+            <column name="DEPUTATION_IF_ANY" length="255" />
+        </property>
+                
+        <property name="processStatus" type="string">
+        	<column name="PROCESS_STATUS" length="15" />
+        </property>
+
+ 		<property name="updatedUser" type="string">
+        	<column name="UPDATED_USER"  length="15" />
+        </property>
+        
+       <property name="updatedDate" type="java.sql.Timestamp">
+            <column name="UPDATED_DATE"  />
+        </property>
+        
+         <property name="unlockedBy" type="string">
+        	<column name="UNLOCKED_BY"  length="15" />
+        </property>
+        
+       <property name="unlockedDate" type="java.sql.Timestamp">
+            <column name="UNLOCKED_DATE"  />
+        </property>
+        
+
+
+        </class>
+</hibernate-mapping>

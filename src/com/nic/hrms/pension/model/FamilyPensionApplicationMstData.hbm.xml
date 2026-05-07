@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 Jun, 2013 3:55:02 PM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.FamilyPensionApplicationMstData" table="FAMILYPENSIONAPPLICATIONMSTDATA">
+        <id name="desigId" type="java.lang.Integer">
+            <column name="DESIGID" />
+            <generator class="assigned" />
+        </id>
+        <property name="serialVersionUID" type="long" access="field">
+            <column name="SERIALVERSIONUID" />
+        </property>
+        <property name="empNo" type="java.lang.Integer">
+            <column name="EMPNO" />
+        </property>
+        <property name="empName" type="java.lang.String">
+            <column name="EMPNAME" />
+        </property>
+        <property name="empInitial" type="java.lang.String">
+            <column name="EMPINITIAL" />
+        </property>
+        <property name="gender" type="java.lang.String">
+            <column name="GENDER" />
+        </property>
+        <property name="dob" type="java.util.Date">
+            <column name="DOB" />
+        </property>
+        <property name="dob2" type="java.lang.String">
+            <column name="DOB2" />
+        </property>
+        <property name="doj" type="java.util.Date">
+            <column name="DOJ" />
+        </property>
+        <property name="doj2" type="java.lang.String">
+            <column name="DOJ2" />
+        </property>
+        <property name="designation" type="java.lang.String">
+            <column name="DESIGNATION" />
+        </property>
+        <property name="desigServiceGrp" type="java.lang.Integer">
+            <column name="DESIGSERVICEGRP" />
+        </property>
+        <property name="grade" type="java.lang.String">
+            <column name="GRADE" />
+        </property>
+        <property name="officeId" type="java.lang.Integer">
+            <column name="OFFICEID" />
+        </property>
+        <property name="office" type="java.lang.String">
+            <column name="OFFICE" />
+        </property>
+        <property name="gpfNo" type="java.lang.Integer">
+            <column name="GPFNO" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,1778 @@
+var seq=1;
+var seq2=0;
+
+
+String.prototype.trim = function() {
+    a = this.replace(/^\s+/, '');
+    return a.replace(/\s+$/, '');
+    };
+
+function getTransport()
+	{
+		var req = false;
+		try
+		{
+			req= new ActiveXObject("Msxml2.XMLHTTP");
+		}
+		catch (e)
+		{
+			try
+			{
+				req = new ActiveXObject("Microsoft.XMLHTTP");
+			}
+			catch (e2)
+			{
+				req = false;
+			}
+		}
+		if (!req && typeof XMLHttpRequest != 'undefined')
+		{
+			req = new XMLHttpRequest();
+		}
+		return req;
+	}
+
+
+
+function setRadio()
+{	
+	document.getElementById("famDeathCertFlagNo").checked=true;
+	document.getElementById("famHeirCertFlagNo").checked=true;
+	document.getElementById("famServBookRecFlagNo").checked=true;
+	document.getElementById("famRollFamilyPenFlagNo").checked=true;
+	document.getElementById("famPhotoFlagNo").checked=true;
+	document.getElementById("famSignFlagNo").checked=true;
+	document.getElementById("famNoDueFlagNo").checked=true;
+	document.getElementById("penFamilyPensionFlagNo").checked=true;
+	document.getElementById("penPhotoAttachFlagNo").checked=true;
+	document.getElementById("penSignAttachFlagNo").checked=true;
+	document.getElementById("penNoDueCertFlagNo").checked=true;
+	document.getElementById("penConsentRecoverFlagNo").checked=true;
+	document.getElementById("penDeathCertFlagNo").checked=true;
+	document.getElementById("penHeirCertFlagNo").checked=true;
+	document.getElementById("penServiceBookFlagNo").checked=true;
+	document.getElementById("penDeclareFlagNo").checked=true;
+	document.getElementById("penRegardDateFlagNo").checked=true;
+	document.getElementById("penSanctionUptoDateFlagNo").checked=true;
+	document.getElementById("retireOrderFlagNo").checked=true;
+
+}
+
+
+function callAjax()
+{	
+	var selectedEmpNo=document.getElementById("empNo").value;	
+	//getFieldOfficeData(selectedEmpNo);
+	 getHeadOfficeData(selectedEmpNo);
+}
+
+
+function getHeadOfficeData(selectedEmpNo)
+{
+	
+	 var url="penAppLoadHeadOfficeData.html?penappsearch1.empId="+selectedEmpNo;	 
+	 var req=getTransport();
+      req.open("GET",url,true);        
+      req.onreadystatechange=function()
+      {
+   	   processResult(req);
+       };   
+       req.send(null);
+
+
+}
+
+function getFieldOfficeData(selectedEmpNo)
+{
+	  var url="penAppLoadFieldOfficeDatatoHeadOffice.html?penappsearch.empId="+selectedEmpNo;	 
+	  var req=getTransport();
+       req.open("GET",url,true);        
+       req.onreadystatechange=function()
+       {
+    	   processResult(req);
+        };   
+        req.send(null);
+
+}
+
+
+
+function LoadMasterData()
+{
+	var selectedEmpNo=document.getElementById("empNo").value;
+	var url="penAppLoadMstdata.html?penappsearch2.empId="+selectedEmpNo;
+	var req=getTransport();
+     req.open("GET",url,true);        
+     req.onreadystatechange=function()
+     {
+  	   processResult(req);
+      };   
+      req.send(null);
+}
+
+
+
+function processResult(req)
+{
+	 if(req.readyState==4)
+	  {
+	      if(req.status==200)
+	      {  
+	    	  
+	    	 // console.log(req.responseXML)    
+	    	  var baseResponse=req.responseXML.getElementsByTagName("response")[0];
+	    	//  console.log(baseResponse);
+	    	  var tagCommand=baseResponse.getElementsByTagName("command")[0];
+	    	  var command=tagCommand.firstChild.nodeValue;
+	    	  
+	    	 if(command=="fieldOfficeData")
+	         { 
+	        	LoadFieldData(baseResponse);  	        	
+	         }	    	 
+	         if(command=="headOfficeData")
+	         {
+	        	LoadHOData(baseResponse); 
+	         }
+	         if(command=="masterData")
+	         {
+	        	loadMstData(baseResponse); 
+	         }
+	         
+	         
+	  
+	   }
+	}
+
+}
+
+function loadMstData(baseResponse)
+{	
+	
+	 var display=baseResponse.getElementsByTagName("record");
+	       
+	  if(display.length <=0)
+	  {
+		  alert('Record Not Found');			
+	  }
+	  
+	  else
+	   {
+		  
+		  for(var i=0;i<display.length;i++)
+    	  {      	  
+			
+		        
+			  document.getElementById("empNo").value=nullcheck(baseResponse.getElementsByTagName("empNo")[i].firstChild.nodeValue);		      
+			  document.getElementById("empNoLabel").innerHTML=nullcheck(baseResponse.getElementsByTagName("empNo")[i].firstChild.nodeValue);	
+			 
+			  var pinit=nullcheck(baseResponse.getElementsByTagName("empInitial")[i].firstChild.nodeValue);	
+    		  var pname=nullcheck(baseResponse.getElementsByTagName("empName")[i].firstChild.nodeValue);
+    		  var empname;
+    		  if(pinit!="" || pinit.length>0)
+			  {
+			  		empname=pinit+' '+pname;
+			  }
+    		  else
+			  {
+    			  empname=pname;
+			  }
+			  
+			
+			  document.getElementById("empNameLabel").innerHTML=empname;
+			  document.getElementById("empName").value=empname;		  	  
+  
+				  var gen=nullcheck(baseResponse.getElementsByTagName("gender")[i].firstChild.nodeValue);	  	  
+				  document.getElementById("hiddengender").value=gen;	  	  
+				  if(gen=='M')
+		  		  {
+		  		
+		  		  document.getElementById("genderM").checked=true;
+		  		  document.getElementById("husbandName").value="";
+		  		  document.getElementById("husbandName").disabled=true;
+		  		
+		  		  }
+		  	  else
+		  		  {
+		  		
+		  		  document.getElementById("genderF").checked=true;
+		  		  document.getElementById("fatherName").value="";	
+		  		  //document.getElementById("fatherName").readOnly=true;
+		  		 
+		  		  }
+				
+				
+				document.getElementById("desigId").value= nullcheck(baseResponse.getElementsByTagName("desigId")[i].firstChild.nodeValue);	
+				document.getElementById("desigServiceGrp").value=nullcheck(baseResponse.getElementsByTagName("desigServiceGrp")[i].firstChild.nodeValue);
+				document.getElementById("designationLabel").innerHTML=nullcheck(baseResponse.getElementsByTagName("designStr")[i].firstChild.nodeValue);				
+				document.getElementById("grade").value= nullcheck(baseResponse.getElementsByTagName("gradeId")[i].firstChild.nodeValue);	
+				document.getElementById("gradeLabel").innerHTML=nullcheck(baseResponse.getElementsByTagName("gradeId")[i].firstChild.nodeValue);
+				
+				document.getElementById("officeId").value=nullcheck(baseResponse.getElementsByTagName("officeId")[i].firstChild.nodeValue);
+				document.getElementById("officeLabel").innerHTML=nullcheck(baseResponse.getElementsByTagName("officeStr")[i].firstChild.nodeValue);				
+				document.getElementById("gpfNo").value=nullcheck(baseResponse.getElementsByTagName("gpfNo")[i].firstChild.nodeValue);
+				document.getElementById("gpfNoLabel").innerHTML=nullcheck(baseResponse.getElementsByTagName("gpfNo")[i].firstChild.nodeValue);
+				
+
+
+	   }
+}
+}
+ 
+
+function LoadFieldData(baseResponse)
+{	
+	try
+	{
+	
+//	alert("123");
+	  var display=baseResponse.getElementsByTagName("details"); 
+	  var display2=baseResponse.getElementsByTagName("nominee"); 
+	  var display3=baseResponse.getElementsByTagName("service"); 
+	        
+	  if(display.length <=0)
+	  {
+		  alert('Record Not Found in Field Office');	
+		  LoadMasterData();
+	  }
+	  
+	  else
+	  {
+		  for(var i=0;i<display.length;i++)
+		  {  
+		  	  document.getElementById("empNo").value=nullcheck(baseResponse.getElementsByTagName("empNo")[i].firstChild.nodeValue);		      
+		  	  document.getElementById("empNoLabel").innerHTML=nullcheck(baseResponse.getElementsByTagName("empNo")[i].firstChild.nodeValue);	
+		  	  var empName= nullcheck(baseResponse.getElementsByTagName("empName")[i].firstChild.nodeValue);		   
+		  	  document.getElementById("empNameLabel").innerHTML=empName;
+		  	  document.getElementById("empName").value=empName;		  	  
+		  	  
+		  	  var gen=nullcheck(baseResponse.getElementsByTagName("gender")[i].firstChild.nodeValue);	  	  
+		  	  document.getElementById("hiddengender").value=gen;	  	  
+		  	 if(gen=='M')
+	  		  {
+	  		
+	  		  document.getElementById("genderM").checked=true;
+	  		  document.getElementById("husbandName").value="";
+	  		  document.getElementById("husbandName").disabled=true;
+	  		  document.getElementById("fatherName").value= nullcheck(baseResponse.getElementsByTagName("fatherName")[i].firstChild.nodeValue);	
+	  		  }
+	  	  else
+	  		  {
+	  		
+	  		  document.getElementById("genderF").checked=true;
+	  		  document.getElementById("fatherName").value="";	
+	  		  document.getElementById("fatherName").disabled=true;
+	  		  document.getElementById("husbandName").value=nullcheck(baseResponse.getElementsByTagName("husbandName")[i].firstChild.nodeValue);
+	  		  }
+		 
+		 
+		  	document.getElementById("desigId").value= nullcheck(baseResponse.getElementsByTagName("desigId")[i].firstChild.nodeValue);	
+		  	document.getElementById("desigServiceGrp").value=nullcheck(baseResponse.getElementsByTagName("desigServiceGrp")[i].firstChild.nodeValue);
+		  	document.getElementById("designationLabel").innerHTML=nullcheck(baseResponse.getElementsByTagName("designStr")[i].firstChild.nodeValue);
+		  	 
+		  	document.getElementById("grade").value= nullcheck(baseResponse.getElementsByTagName("gradeId")[i].firstChild.nodeValue);	
+			document.getElementById("gradeLabel").innerHTML=nullcheck(baseResponse.getElementsByTagName("gradeId")[i].firstChild.nodeValue);	
+		  	
+		  	document.getElementById("officeId").value=nullcheck(baseResponse.getElementsByTagName("officeId")[i].firstChild.nodeValue);
+		  	document.getElementById("officeLabel").innerHTML=nullcheck(baseResponse.getElementsByTagName("officeStr")[i].firstChild.nodeValue);
+		  	
+		  	document.getElementById("gpfNo").value=nullcheck(baseResponse.getElementsByTagName("gpfNo")[i].firstChild.nodeValue);
+		  	document.getElementById("gpfNoLabel").innerHTML=nullcheck(baseResponse.getElementsByTagName("gpfNo")[i].firstChild.nodeValue);
+		  		  	
+		  		
+		  	var relId=nullcheck(baseResponse.getElementsByTagName("religion")[i].firstChild.nodeValue);
+		  //	alert("religion-"+relId);
+		  	if(relId=="")
+		  		{
+		  			document.getElementById("religion").selectedIndex=0;
+		  		}
+		  	else
+		  		{
+		  			document.getElementById("religion").value=relId;
+		  		}
+		  	
+			document.getElementById("nationality").value=nullcheck(baseResponse.getElementsByTagName("nationality")[i].firstChild.nodeValue);
+			document.getElementById("empHeight").value=nullcheck(baseResponse.getElementsByTagName("empHeight")[i].firstChild.nodeValue);
+			
+			document.getElementById("idMark1").value=nullcheck(baseResponse.getElementsByTagName("idMark1")[i].firstChild.nodeValue);
+			document.getElementById("idMark2").value=nullcheck(baseResponse.getElementsByTagName("idMark2")[i].firstChild.nodeValue);
+			document.getElementById("presentAddress").value=nullcheck(baseResponse.getElementsByTagName("presentAddress")[i].firstChild.nodeValue);
+			
+			document.getElementById("permanentAddress").value=nullcheck(baseResponse.getElementsByTagName("permanentAddress")[i].firstChild.nodeValue);
+			document.getElementById("addressAfterRetire").value=nullcheck(baseResponse.getElementsByTagName("addressAfterRetire")[i].firstChild.nodeValue);
+			document.getElementById("stateId").value=nullcheck(baseResponse.getElementsByTagName("stateId")[i].firstChild.nodeValue);
+			//alert("state-+"+baseResponse.getElementsByTagName("stateId")[i].firstChild.nodeValue);
+			var chargeFlag=nullcheck(baseResponse.getElementsByTagName("chargesFlag")[i].firstChild.nodeValue);
+			var chargeDet=nullcheck(baseResponse.getElementsByTagName("chargeDetails")[i].firstChild.nodeValue);
+			if(chargeFlag=='Yes')	
+				{				
+				document.getElementById("chargesFlagYes").checked=true;
+				document.getElementById("chargeDetails").value=chargeDet;
+				}
+			else
+				{				
+				document.getElementById("chargesFlagNo").checked=true;
+				document.getElementById("chargeDetails").value="";
+				}
+			
+			document.getElementById("pensionPayOfficeId").value=nullcheck(baseResponse.getElementsByTagName("pensionPayOfficeId")[i].firstChild.nodeValue);
+			document.getElementById("appliedDate").value=baseResponse.getElementsByTagName("appliedDate2")[i].firstChild.nodeValue;      
+			document.getElementById("dcrgNomineeName").value=nullcheck(baseResponse.getElementsByTagName("dcrgNomineeName")[i].firstChild.nodeValue);
+			document.getElementById("dcrgNomineeDob").value=nullcheck(baseResponse.getElementsByTagName("dcrgNomineeDob")[i].firstChild.nodeValue);
+			document.getElementById("dcrgRelation").value=nullcheck(baseResponse.getElementsByTagName("dcrgRelation")[i].firstChild.nodeValue);
+			document.getElementById("dcrgAddress").value=nullcheck(baseResponse.getElementsByTagName("dcrgAddress")[i].firstChild.nodeValue);			   
+			document.getElementById("notVerifyServiceTotYears").value=nullcheck(baseResponse.getElementsByTagName("notVerifyServiceTotYears")[i].firstChild.nodeValue);
+			document.getElementById("notVerifyServiceTotMonths").value=nullcheck(baseResponse.getElementsByTagName("notVerifyServiceTotMonths")[i].firstChild.nodeValue);
+			document.getElementById("notVerifyServiceTotDays").value=nullcheck(baseResponse.getElementsByTagName("notVerifyServiceTotDays")[i].firstChild.nodeValue);
+			
+			
+			  
+		      	        
+		  }
+		  
+		  
+		  if(display2.length <=0)
+		  {
+			  		  
+		  }
+		  else
+			  {
+			  	for(var i=0;i<display2.length;i++)
+			  	{   
+			  		var empno=nullcheck(baseResponse.getElementsByTagName("empNo")[i].firstChild.nodeValue);
+			  		var nomid=nullcheck(baseResponse.getElementsByTagName("nominId")[i].firstChild.nodeValue);
+			  		var nomname=nullcheck(baseResponse.getElementsByTagName("name")[i].firstChild.nodeValue);
+			  		var namini=nullcheck(baseResponse.getElementsByTagName("initial")[i].firstChild.nodeValue);
+			  		var rel=nullcheck(baseResponse.getElementsByTagName("relation")[i].firstChild.nodeValue);
+			  		var dob=nullcheck(baseResponse.getElementsByTagName("dob")[i].firstChild.nodeValue);
+			  		var age=nullcheck(baseResponse.getElementsByTagName("age")[i].firstChild.nodeValue);
+			  		var handy=nullcheck(baseResponse.getElementsByTagName("handicapped")[i].firstChild.nodeValue);
+			  		var martial=nullcheck(baseResponse.getElementsByTagName("martialStatus")[i].firstChild.nodeValue);
+			  		var nomdate=nullcheck(baseResponse.getElementsByTagName("nominDate")[i].firstChild.nodeValue);
+			  		var actsta=nullcheck(baseResponse.getElementsByTagName("activeStatus")[i].firstChild.nodeValue);
+			  		var nomreason=nullcheck(baseResponse.getElementsByTagName("nominReason")[i].firstChild.nodeValue);
+			  		loadNomineeFromXml(empno,nomid,nomname,namini,rel,dob,age,handy,martial,nomdate,actsta,nomreason);
+		  	    }
+			 }
+		  
+		  
+		  
+		  if(display3.length <=0)
+		  {
+			  		
+		  }
+		  else
+			  {
+			  	for(var i=0;i<display3.length;i++)
+			  	{   
+			  			        	  	
+			  		var serId=nullcheck(baseResponse.getElementsByTagName("ServiceId")[i].firstChild.nodeValue);
+			  		var empno=nullcheck(baseResponse.getElementsByTagName("empNo")[i].firstChild.nodeValue);
+			  		var fromdate=nullcheck(baseResponse.getElementsByTagName("fromDate")[i].firstChild.nodeValue);
+			  		var todate=nullcheck(baseResponse.getElementsByTagName("toDate")[i].firstChild.nodeValue);
+			  		var serRea=nullcheck(baseResponse.getElementsByTagName("reason")[i].firstChild.nodeValue);
+			  		var serYear=nullcheck(baseResponse.getElementsByTagName("year")[i].firstChild.nodeValue);
+			  		var serMonth=nullcheck(baseResponse.getElementsByTagName("month")[i].firstChild.nodeValue);
+			  		var serDays=nullcheck(baseResponse.getElementsByTagName("days")[i].firstChild.nodeValue);
+			  		loadServiceFromXml(serId,empno,fromdate,todate,serRea,serYear,serMonth,serDays);
+			  		
+		  	    }
+			 }
+		  
+	  }
+}
+	
+catch(e)
+{
+alert(e.message);	
+}
+}
+
+
+
+function LoadHOData(baseResponse)
+{
+	 var display=baseResponse.getElementsByTagName("HOdetails"); 
+	  var display2=baseResponse.getElementsByTagName("HOnominee"); 
+	  var display3=baseResponse.getElementsByTagName("HOservice"); 
+	  var selectedEmpNo=document.getElementById("empNo").value;
+	
+	 
+	  if(display.length <=0)
+	  {
+		  alert('Record Not Found in Head Office');
+		  getFieldOfficeData(selectedEmpNo);
+	  }
+	  
+	  else
+	  {		
+		  var frzchk=nullcheck(baseResponse.getElementsByTagName("frzdata")[0].firstChild.nodeValue);
+		  //alert("frzchk--"+frzchk);
+		  if(frzchk == null || frzchk == ""){
+		 
+		 	  
+		  for(var i=0;i<display.length;i++)
+		  {  
+		  	  document.getElementById("empNo").value=nullcheck(baseResponse.getElementsByTagName("empNo")[i].firstChild.nodeValue);		      
+		  	  document.getElementById("empNoLabel").innerHTML=nullcheck(baseResponse.getElementsByTagName("empNo")[i].firstChild.nodeValue);	
+		  	  var empName= nullcheck(baseResponse.getElementsByTagName("empName")[i].firstChild.nodeValue);		   
+		  	  document.getElementById("empNameLabel").innerHTML=empName;
+		  	  document.getElementById("empName").value=empName;		  	  
+		  	  
+		  	  var gen=nullcheck(baseResponse.getElementsByTagName("gender")[i].firstChild.nodeValue);
+		  	  document.getElementById("hiddengender").value=gen;	  	  
+		  	  if(gen=='M')
+		  		  {
+		  		
+		  		  document.getElementById("genderM").checked=true;
+		  		  document.getElementById("husbandName").value="";
+		  		  document.getElementById("husbandName").disabled=true;
+		  		  document.getElementById("fatherName").value= nullcheck(baseResponse.getElementsByTagName("fatherName")[i].firstChild.nodeValue);	
+		  		  }
+		  	  else
+		  		  {
+		  		
+		  		  document.getElementById("genderF").checked=true;
+		  		  document.getElementById("fatherName").value="";	
+		  		  document.getElementById("fatherName").disabled=true;
+		  		  document.getElementById("husbandName").value=nullcheck(baseResponse.getElementsByTagName("husbandName")[i].firstChild.nodeValue);
+		  		  }
+		 
+		  	document.getElementById("desigServiceGrp").value= nullcheck(baseResponse.getElementsByTagName("desigServiceGrp")[i].firstChild.nodeValue);	
+		  	document.getElementById("desigId").value=nullcheck(baseResponse.getElementsByTagName("desigId")[i].firstChild.nodeValue);
+		  	document.getElementById("designationLabel").innerHTML=nullcheck(baseResponse.getElementsByTagName("designStr")[i].firstChild.nodeValue);
+		  	 
+		  	document.getElementById("grade").value= nullcheck(baseResponse.getElementsByTagName("gradeId")[i].firstChild.nodeValue);	
+			document.getElementById("gradeLabel").innerHTML=nullcheck(baseResponse.getElementsByTagName("gradeId")[i].firstChild.nodeValue);	
+		  	
+		  	document.getElementById("officeId").value=nullcheck(baseResponse.getElementsByTagName("officeId")[i].firstChild.nodeValue);
+		  	document.getElementById("officeLabel").innerHTML=nullcheck(baseResponse.getElementsByTagName("officeStr")[i].firstChild.nodeValue);
+		  	
+		  	document.getElementById("gpfNo").value=nullcheck(baseResponse.getElementsByTagName("gpfNo")[i].firstChild.nodeValue);
+		  	document.getElementById("gpfNoLabel").innerHTML=nullcheck(baseResponse.getElementsByTagName("gpfNo")[i].firstChild.nodeValue);
+		  	
+		  	document.getElementById("religion").value=nullcheck(baseResponse.getElementsByTagName("religion")[i].firstChild.nodeValue);
+			document.getElementById("nationality").value=nullcheck(baseResponse.getElementsByTagName("nationality")[i].firstChild.nodeValue);
+			document.getElementById("empHeight").value=nullcheck(baseResponse.getElementsByTagName("empHeight")[i].firstChild.nodeValue);
+			
+			document.getElementById("idMark1").value=nullcheck(baseResponse.getElementsByTagName("idMark1")[i].firstChild.nodeValue);
+			document.getElementById("idMark2").value=nullcheck(baseResponse.getElementsByTagName("idMark2")[i].firstChild.nodeValue);
+			document.getElementById("presentAddress").value=nullcheck(baseResponse.getElementsByTagName("presentAddress")[i].firstChild.nodeValue);
+			
+			document.getElementById("permanentAddress").value=nullcheck(baseResponse.getElementsByTagName("permanentAddress")[i].firstChild.nodeValue);
+			document.getElementById("addressAfterRetire").value=nullcheck(baseResponse.getElementsByTagName("addressAfterRetire")[i].firstChild.nodeValue);
+			document.getElementById("stateId").value=nullcheck(baseResponse.getElementsByTagName("stateId")[i].firstChild.nodeValue);
+
+			var chargeFlag=nullcheck(baseResponse.getElementsByTagName("chargesFlag")[i].firstChild.nodeValue);
+			var chargeDet=nullcheck(baseResponse.getElementsByTagName("chargeDetails")[i].firstChild.nodeValue);
+			if(chargeFlag=='Yes')	
+				{
+					document.getElementById("chargesFlagYes").checked=true;
+					document.getElementById("chargeDetails").value=chargeDet;
+				}
+			else
+				{
+					document.getElementById("chargesFlagNo").checked=true;
+					document.getElementById("chargeDetails").value="";
+					document.getElementById("chargeDetails").readOnly=true;
+				}
+			
+			document.getElementById("pensionPayOfficeId").value=nullcheck(baseResponse.getElementsByTagName("pensionPayOfficeId")[i].firstChild.nodeValue);
+			document.getElementById("appliedDate").value=nullcheck(baseResponse.getElementsByTagName("appliedDate")[i].firstChild.nodeValue);      
+			document.getElementById("dcrgNomineeName").value=nullcheck(baseResponse.getElementsByTagName("dcrgNomineeName")[i].firstChild.nodeValue);
+			document.getElementById("dcrgNomineeDob").value=nullcheck(baseResponse.getElementsByTagName("dcrgNomineeDob")[i].firstChild.nodeValue);
+			document.getElementById("dcrgRelation").value=nullcheck(baseResponse.getElementsByTagName("dcrgRelation")[i].firstChild.nodeValue);
+			document.getElementById("dcrgAddress").value=nullcheck(baseResponse.getElementsByTagName("dcrgAddress")[i].firstChild.nodeValue);			   
+			document.getElementById("notVerifyServiceTotYears").value=nullcheck(baseResponse.getElementsByTagName("notVerifyServiceTotYears")[i].firstChild.nodeValue);
+			document.getElementById("notVerifyServiceTotMonths").value=nullcheck(baseResponse.getElementsByTagName("notVerifyServiceTotMonths")[i].firstChild.nodeValue);
+			document.getElementById("notVerifyServiceTotDays").value=nullcheck(baseResponse.getElementsByTagName("notVerifyServiceTotDays")[i].firstChild.nodeValue);
+			
+			var deathFlag =nullcheck(baseResponse.getElementsByTagName("famDeathFlag")[i].firstChild.nodeValue);
+			var deathDesc=nullcheck(baseResponse.getElementsByTagName("famDeathRemarks")[i].firstChild.nodeValue);
+			if(deathFlag=='Yes')	
+				{
+				document.getElementById("famDeathCertFlagYes").checked=true;
+				document.getElementById("famDeathCertDesc").value=deathDesc;
+				}
+			else
+				{
+				document.getElementById("famDeathCertFlagNo").checked=true;
+				document.getElementById("famDeathCertDesc").value=deathDesc;
+				}
+			
+					
+			
+			var heirFlag=nullcheck(baseResponse.getElementsByTagName("famHeirFlag")[i].firstChild.nodeValue);
+			var heirDesc=nullcheck(baseResponse.getElementsByTagName("famHeirRemarks")[i].firstChild.nodeValue);			
+			if(heirFlag=='Yes')	
+				{
+				document.getElementById("famHeirCertFlagYes").checked=true;
+				document.getElementById("famHeirCertDesc").value=heirDesc;
+				}
+			else
+				{
+				document.getElementById("famHeirCertFlagNo").checked=true;
+				document.getElementById("famHeirCertDesc").value=heirDesc;
+				}
+			
+			
+			var serFlag=nullcheck(baseResponse.getElementsByTagName("famServiceFlag")[i].firstChild.nodeValue);
+			var serRemarks=nullcheck(baseResponse.getElementsByTagName("famServiceRemarks")[i].firstChild.nodeValue);
+			if(serFlag=='Yes')	
+				{
+				document.getElementById("famServBookRecFlagYes").checked=true;
+				document.getElementById("famServBookRecDesc").value=serRemarks;
+				}
+			else
+				{
+				document.getElementById("famServBookRecFlagNo").checked=true;
+				document.getElementById("famServBookRecDesc").value=serRemarks;
+				}
+			
+			
+			document.getElementById("famLastpayDrawn").value=nullcheck(baseResponse.getElementsByTagName("famLpd")[i].firstChild.nodeValue);			
+			
+			var penFlag=nullcheck(baseResponse.getElementsByTagName("famPensionFlag")[i].firstChild.nodeValue);
+			var penRemarks=nullcheck(baseResponse.getElementsByTagName("famPensionRemarks")[i].firstChild.nodeValue);	
+			
+			if(penFlag=='Yes')	
+				{
+				document.getElementById("famRollFamilyPenFlagYes").checked=true;
+				document.getElementById("famRollFamilyPenDesc").value=penRemarks;
+				}
+			else
+				{
+				document.getElementById("famRollFamilyPenFlagNo").checked=true;
+				document.getElementById("famRollFamilyPenDesc").value=penRemarks;
+				}
+			
+			
+			var photoFlag=nullcheck(baseResponse.getElementsByTagName("famPhotoFlag")[i].firstChild.nodeValue);
+			var photoDesc=nullcheck(baseResponse.getElementsByTagName("famPhotoRemarks")[i].firstChild.nodeValue);
+			if(photoFlag=='Yes')	
+			{
+			document.getElementById("famPhotoFlagYes").checked=true;
+			document.getElementById("famPhotoDesc").value=photoDesc;
+			}
+		else
+			{
+			document.getElementById("famPhotoFlagNo").checked=true;
+			document.getElementById("famPhotoDesc").value=photoDesc;
+			}
+		
+			
+			var signFlag=nullcheck(baseResponse.getElementsByTagName("famSignFlag")[i].firstChild.nodeValue);
+			var signDesc=nullcheck(baseResponse.getElementsByTagName("famSignRemarks")[i].firstChild.nodeValue);			
+			if(signFlag=='Yes')	
+			{
+				document.getElementById("famSignFlagYes").checked=true;
+				document.getElementById("famSignDesc").value=signDesc;
+			}
+			else
+			{
+				document.getElementById("famSignFlagNo").checked=true;
+				document.getElementById("famSignDesc").value=signDesc;
+			}
+			
+			var nodueFlag=nullcheck(baseResponse.getElementsByTagName("famDueFlag")[i].firstChild.nodeValue);
+			var noDueDesc=nullcheck(baseResponse.getElementsByTagName("famDueRemarks")[i].firstChild.nodeValue);
+			if(nodueFlag=='Yes')	
+			{
+				document.getElementById("famNoDueFlagYes").checked=true;
+				document.getElementById("famNoDueDesc").value=noDueDesc;
+			}
+			else
+			{
+				document.getElementById("famNoDueFlagNo").checked=true;
+				document.getElementById("famNoDueDesc").value=noDueDesc;
+			}
+			
+			
+			
+			//document.getElementById("famMembersList").value=nullcheck(baseResponse.getElementsByTagName("famMembersList")[i].firstChild.nodeValue);
+			document.getElementById("famPensionAmount").value=nullcheck(baseResponse.getElementsByTagName("famPensionAmount")[i].firstChild.nodeValue);
+			document.getElementById("famDcrgAmount").value=nullcheck(baseResponse.getElementsByTagName("famDcrgAmount")[i].firstChild.nodeValue);
+
+			
+						
+		
+			
+			
+			var penFlag=nullcheck(baseResponse.getElementsByTagName("penFamFlag")[i].firstChild.nodeValue);			
+			if(penFlag=='Yes')	
+			{
+				document.getElementById("penFamilyPensionFlagYes").checked=true;				
+			}
+			else
+			{
+				document.getElementById("penFamilyPensionFlagNo").checked=true;
+				
+			}
+			
+			document.getElementById("penFamilyPensionRemarks").value=nullcheck(baseResponse.getElementsByTagName("penFamRemarks")[i].firstChild.nodeValue);	;
+			
+			
+			var photoFlag1=nullcheck(baseResponse.getElementsByTagName("penPhotoFlag")[i].firstChild.nodeValue);
+			if(photoFlag1=='Yes')
+				{
+					document.getElementById("penPhotoAttachFlagYes").checked=true;
+				}
+			else
+				{
+					document.getElementById("penPhotoAttachFlagNo").checked=true;
+				}
+			
+			document.getElementById("penPhotoAttachRemarks").value=nullcheck(baseResponse.getElementsByTagName("penPhotoRemarks")[i].firstChild.nodeValue);
+			
+			
+			var signFlag1 =nullcheck(baseResponse.getElementsByTagName("penSignFlag")[i].firstChild.nodeValue);
+			if(signFlag1=='Yes')
+				{
+					document.getElementById("penSignAttachFlagYes").checked=true;
+				}
+			else
+				{
+					document.getElementById("penSignAttachFlagNo").checked=true;
+				}
+			
+			document.getElementById("penSignAttachRemarks").value=nullcheck(baseResponse.getElementsByTagName("penSignRemarks")[i].firstChild.nodeValue);
+			
+			
+			
+			var dueFlag1=nullcheck(baseResponse.getElementsByTagName("penDueFlag")[i].firstChild.nodeValue);
+			if(dueFlag1=='Yes')
+				{
+					document.getElementById("penNoDueCertFlagYes").checked=true;
+				}
+			else
+				{
+					document.getElementById("penNoDueCertFlagNo").checked=true;
+				}
+			document.getElementById("penNoDueCertRemarks").value=nullcheck(baseResponse.getElementsByTagName("penDueRemarks")[i].firstChild.nodeValue);
+			
+			
+			
+			var conRecFlag1=nullcheck(baseResponse.getElementsByTagName("penConRecoverFlag")[i].firstChild.nodeValue);
+			if(conRecFlag1=='Yes')
+				{
+					document.getElementById("penConsentRecoverFlagYes").checked=true;
+				}
+			else
+				{
+					document.getElementById("penConsentRecoverFlagNo").checked=true;
+				}
+			document.getElementById("penConsentRecoverRemarks").value=nullcheck(baseResponse.getElementsByTagName("penConRecoverRemarks")[i].firstChild.nodeValue);
+			
+			
+			
+			
+			var deathFlag1=nullcheck(baseResponse.getElementsByTagName("penDeathFlag")[i].firstChild.nodeValue);
+			if(deathFlag1=='Yes')
+				{
+					document.getElementById("penDeathCertFlagYes").checked=true;
+				}
+			else
+				{
+					document.getElementById("penDeathCertFlagNo").checked=true;
+				}
+			document.getElementById("penDeathCertRemarks").value=nullcheck(baseResponse.getElementsByTagName("penDeathRemarks")[i].firstChild.nodeValue);
+			
+			
+			
+			var heirFlag1=nullcheck(baseResponse.getElementsByTagName("penHeirFlag")[i].firstChild.nodeValue);
+			if(heirFlag1=='Yes')
+				{
+					document.getElementById("penHeirCertFlagYes").checked=true;
+				}
+			else
+				{
+					document.getElementById("penHeirCertFlagNo").checked=true;
+				}
+			document.getElementById("penHeirCertRemarks").value=nullcheck(baseResponse.getElementsByTagName("penHeirRemarks")[i].firstChild.nodeValue);
+			
+			
+			
+			
+			var serBookFlag1=nullcheck(baseResponse.getElementsByTagName("penServiceFlag")[i].firstChild.nodeValue);
+			if(serBookFlag1=='Yes')
+				{
+					document.getElementById("penServiceBookFlagYes").checked=true;
+				}
+			else
+				{
+					document.getElementById("penServiceBookFlagNo").checked=true;
+				}
+			document.getElementById("penServiceBookRemarks").value=nullcheck(baseResponse.getElementsByTagName("penServiceRemarks")[i].firstChild.nodeValue);
+			
+			var decFlag1=nullcheck(baseResponse.getElementsByTagName("penDeclareFlag")[i].firstChild.nodeValue);
+			if(decFlag1=='Yes')
+				{
+					document.getElementById("penDeclareFlagYes").checked=true;
+				}
+			else
+				{
+					document.getElementById("penDeclareFlagNo").checked=true;
+				}
+			document.getElementById("penDeclareRemarks").value=nullcheck(baseResponse.getElementsByTagName("penDeclareRemarks")[i].firstChild.nodeValue);
+			
+		
+			
+			var regardFlag1=nullcheck(baseResponse.getElementsByTagName("penRegardFlag")[i].firstChild.nodeValue);
+			if(regardFlag1=='Yes')
+				{
+					document.getElementById("penRegardDateFlagYes").checked=true;
+				}
+			else
+				{
+					document.getElementById("penRegardDateFlagNo").checked=true;
+				}
+			document.getElementById("penRegardDateRemarks").value=nullcheck(baseResponse.getElementsByTagName("penRegardRemarks")[i].firstChild.nodeValue);
+			
+			
+			var penRegardFlag1=nullcheck(baseResponse.getElementsByTagName("penSancDateFlag")[i].firstChild.nodeValue);
+			
+			if(penRegardFlag1=='Yes')
+				{
+					document.getElementById("penSanctionUptoDateFlagYes").checked=true;
+				}
+			else
+				{
+					document.getElementById("penSanctionUptoDateFlagNo").checked=true;
+				}
+			document.getElementById("penSanctionUptoDateRemarks").value=nullcheck(baseResponse.getElementsByTagName("penSancDateRemarks")[i].firstChild.nodeValue);
+			
+			document.getElementById("pensionPaymentPlace").value=nullcheck(baseResponse.getElementsByTagName("penPaymentPlace")[i].firstChild.nodeValue);
+			document.getElementById("dcrgPaymentPlace").value=nullcheck(baseResponse.getElementsByTagName("dcrgPaymentPlace")[i].firstChild.nodeValue);
+			
+			
+			
+			
+			var retireFlag1=nullcheck(baseResponse.getElementsByTagName("retireFlag")[i].firstChild.nodeValue);
+			if(retireFlag1=='Yes')
+				{
+					document.getElementById("retireOrderFlagYes").checked=true;
+				}
+			else
+				{
+					document.getElementById("retireOrderFlagNo").checked=true;
+				}
+			
+			document.getElementById("retireOrderRemarks").value=nullcheck(baseResponse.getElementsByTagName("retireOrderRemarks")[i].firstChild.nodeValue);
+			
+			document.getElementById("recoveriesIfAny").value=nullcheck(baseResponse.getElementsByTagName("recoverFlag")[i].firstChild.nodeValue);
+			
+			
+			document.getElementById("deputationIfAny").value=nullcheck(baseResponse.getElementsByTagName("deputation")[i].firstChild.nodeValue);
+				
+		  	        
+		  }
+		  
+		  
+		 if(display2.length <=0)
+		  {
+			  		  
+		  }
+		  else
+			  {
+			  	for(var i=0;i<display2.length;i++)
+			  	{   
+			  		var empno=nullcheck(baseResponse.getElementsByTagName("empNo")[i].firstChild.nodeValue);
+			  		var nomid=nullcheck(baseResponse.getElementsByTagName("nominId")[i].firstChild.nodeValue);
+			  		var nomname=nullcheck(baseResponse.getElementsByTagName("name")[i].firstChild.nodeValue);
+			  		var namini=nullcheck(baseResponse.getElementsByTagName("initial")[i].firstChild.nodeValue);
+			  		var rel=nullcheck(baseResponse.getElementsByTagName("relation")[i].firstChild.nodeValue);
+			  		var dob=nullcheck(baseResponse.getElementsByTagName("dob")[i].firstChild.nodeValue);
+			  		var age=nullcheck(baseResponse.getElementsByTagName("age")[i].firstChild.nodeValue);
+			  		var handy=nullcheck(baseResponse.getElementsByTagName("handicapped")[i].firstChild.nodeValue);
+			  		var martial=nullcheck(baseResponse.getElementsByTagName("martialStatus")[i].firstChild.nodeValue);
+			  		var nomdate=nullcheck(baseResponse.getElementsByTagName("nominDate")[i].firstChild.nodeValue);
+			  		var actsta=nullcheck(baseResponse.getElementsByTagName("activeStatus")[i].firstChild.nodeValue);
+			  		var nomreason=nullcheck(baseResponse.getElementsByTagName("nominReason")[i].firstChild.nodeValue);
+			  		loadNomineeFromXml(empno,nomid,nomname,namini,rel,dob,age,handy,martial,nomdate,actsta,nomreason);
+		  	    }
+			 }
+		  
+		  
+		
+		  if(display3.length <=0)
+		  {
+			  		 
+		  }
+		  else
+			  {
+			  	for(var i=0;i<display3.length;i++)
+			  	{   
+			  			       	
+			  		var serId=nullcheck(baseResponse.getElementsByTagName("ServiceId")[i].firstChild.nodeValue);
+			  		var empno=nullcheck(baseResponse.getElementsByTagName("empNo")[i].firstChild.nodeValue);
+			  		var fromdate=nullcheck(baseResponse.getElementsByTagName("fromDate")[i].firstChild.nodeValue);
+			  		var todate=nullcheck(baseResponse.getElementsByTagName("toDate")[i].firstChild.nodeValue);
+			  		var serRea=nullcheck(baseResponse.getElementsByTagName("reason")[i].firstChild.nodeValue);
+			  		var serYear=nullcheck(baseResponse.getElementsByTagName("year")[i].firstChild.nodeValue);
+			  		var serMonth=nullcheck(baseResponse.getElementsByTagName("month")[i].firstChild.nodeValue);
+			  		var serDays=nullcheck(baseResponse.getElementsByTagName("days")[i].firstChild.nodeValue);
+			  		
+			  		loadServiceFromXml(serId,empno,fromdate,todate,serRea,serYear,serMonth,serDays);
+			  		
+		  	    }
+			 }
+	  }else{
+
+		  //alert(" This data has already been validated");
+		  // read only code here for validated data
+		  document.getElementById("addnew1").disabled=true;
+		  document.getElementById("addnew2").disabled=true;
+			 
+			  for(var i=0;i<display.length;i++)
+			  {  //  alert("else 1");
+			  	  document.getElementById("empNo").value=nullcheck(baseResponse.getElementsByTagName("empNo")[i].firstChild.nodeValue);		      
+			  	  document.getElementById("empNoLabel").innerHTML=nullcheck(baseResponse.getElementsByTagName("empNo")[i].firstChild.nodeValue);	
+			  	  var empName= nullcheck(baseResponse.getElementsByTagName("empName")[i].firstChild.nodeValue);		   
+			  	  document.getElementById("empNameLabel").innerHTML=empName;
+			  	  document.getElementById("empName").value=empName;		  	  
+			  	  
+			  	  var gen=nullcheck(baseResponse.getElementsByTagName("gender")[i].firstChild.nodeValue);
+			  	  document.getElementById("hiddengender").value=gen;	  	  
+			  	  if(gen=='M')
+			  		  {
+			  		
+			  		  document.getElementById("genderM").checked=true;
+			  		  document.getElementById("husbandName").value="";
+			  		  document.getElementById("husbandName").disabled=true;
+			  		  document.getElementById("fatherName").value= nullcheck(baseResponse.getElementsByTagName("fatherName")[i].firstChild.nodeValue);	
+			  		  }
+			  	  else
+			  		  {
+			  		
+			  		  document.getElementById("genderF").checked=true;
+			  		  document.getElementById("fatherName").value="";	
+			  		  document.getElementById("fatherName").disabled=true;
+			  		  document.getElementById("husbandName").value=nullcheck(baseResponse.getElementsByTagName("husbandName")[i].firstChild.nodeValue);
+			  		  }
+			  	document.getElementById("genderM").disabled=true;
+				document.getElementById("genderF").disabled=true;
+			  	document.getElementById("desigServiceGrp").value= nullcheck(baseResponse.getElementsByTagName("desigServiceGrp")[i].firstChild.nodeValue);	
+			  	document.getElementById("desigServiceGrp").disabled=true;
+			  	document.getElementById("desigId").value=nullcheck(baseResponse.getElementsByTagName("desigId")[i].firstChild.nodeValue);
+			  	document.getElementById("desigId").disabled=true;
+			  	document.getElementById("designationLabel").innerHTML=nullcheck(baseResponse.getElementsByTagName("designStr")[i].firstChild.nodeValue);
+			  	document.getElementById("designationLabel").disabled=true;
+			  	
+			  	document.getElementById("grade").value= nullcheck(baseResponse.getElementsByTagName("gradeId")[i].firstChild.nodeValue);	
+			  	document.getElementById("grade").disabled=true;
+			  	document.getElementById("gradeLabel").innerHTML=nullcheck(baseResponse.getElementsByTagName("gradeId")[i].firstChild.nodeValue);	
+			  	document.getElementById("gradeLabel").disabled=true;
+			  	
+			  	document.getElementById("officeId").value=nullcheck(baseResponse.getElementsByTagName("officeId")[i].firstChild.nodeValue);
+			  	document.getElementById("officeId").disabled=true;
+			  	document.getElementById("officeLabel").innerHTML=nullcheck(baseResponse.getElementsByTagName("officeStr")[i].firstChild.nodeValue);
+			  	document.getElementById("officeLabel").disabled=true;
+			  	
+			  	document.getElementById("gpfNo").value=nullcheck(baseResponse.getElementsByTagName("gpfNo")[i].firstChild.nodeValue);
+			  	document.getElementById("desigServiceGrp").disabled=true;
+			  	document.getElementById("gpfNoLabel").innerHTML=nullcheck(baseResponse.getElementsByTagName("gpfNo")[i].firstChild.nodeValue);
+			  	document.getElementById("desigServiceGrp").disabled=true;
+			  	
+			  	document.getElementById("religion").value=nullcheck(baseResponse.getElementsByTagName("religion")[i].firstChild.nodeValue);
+			  	document.getElementById("religion").disabled=true;
+			  	document.getElementById("nationality").value=nullcheck(baseResponse.getElementsByTagName("nationality")[i].firstChild.nodeValue);
+			  	document.getElementById("nationality").disabled=true;
+			  	document.getElementById("empHeight").value=nullcheck(baseResponse.getElementsByTagName("empHeight")[i].firstChild.nodeValue);
+			  	document.getElementById("empHeight").disabled=true;
+			  	
+				document.getElementById("idMark1").value=nullcheck(baseResponse.getElementsByTagName("idMark1")[i].firstChild.nodeValue);
+				document.getElementById("idMark1").disabled=true;
+				document.getElementById("idMark2").value=nullcheck(baseResponse.getElementsByTagName("idMark2")[i].firstChild.nodeValue);
+				document.getElementById("idMark2").disabled=true;
+				document.getElementById("presentAddress").value=nullcheck(baseResponse.getElementsByTagName("presentAddress")[i].firstChild.nodeValue);
+				document.getElementById("presentAddress").disabled=true;
+				
+				document.getElementById("permanentAddress").value=nullcheck(baseResponse.getElementsByTagName("permanentAddress")[i].firstChild.nodeValue);
+				document.getElementById("permanentAddress").disabled=true;
+				document.getElementById("addressAfterRetire").value=nullcheck(baseResponse.getElementsByTagName("addressAfterRetire")[i].firstChild.nodeValue);
+				document.getElementById("addressAfterRetire").disabled=true;
+				document.getElementById("stateId").value=nullcheck(baseResponse.getElementsByTagName("stateId")[i].firstChild.nodeValue);
+				document.getElementById("stateId").disabled=true;
+				
+				var chargeFlag=nullcheck(baseResponse.getElementsByTagName("chargesFlag")[i].firstChild.nodeValue);
+				var chargeDet=nullcheck(baseResponse.getElementsByTagName("chargeDetails")[i].firstChild.nodeValue);
+				if(chargeFlag=='Yes')	
+					{
+						document.getElementById("chargesFlagYes").checked=true;
+						document.getElementById("chargeDetails").value=chargeDet;
+						
+						document.getElementById("chargeDetails").disabled=true;
+					}
+				else
+					{
+						document.getElementById("chargesFlagNo").checked=true;
+						document.getElementById("chargeDetails").value="";
+						document.getElementById("chargeDetails").readOnly=true;
+						
+					}
+				document.getElementById("chargesFlagYes").disabled=true;
+				document.getElementById("chargesFlagNo").disabled=true;
+				document.getElementById("pensionPayOfficeId").value=nullcheck(baseResponse.getElementsByTagName("pensionPayOfficeId")[i].firstChild.nodeValue);
+				document.getElementById("pensionPayOfficeId").disabled=true;
+				document.getElementById("appliedDate").value=nullcheck(baseResponse.getElementsByTagName("appliedDate")[i].firstChild.nodeValue);      
+				document.getElementById("appliedDate").disabled=true;
+				document.getElementById("dcrgNomineeName").value=nullcheck(baseResponse.getElementsByTagName("dcrgNomineeName")[i].firstChild.nodeValue);
+				document.getElementById("dcrgNomineeName").disabled=true;
+				document.getElementById("dcrgNomineeDob").value=nullcheck(baseResponse.getElementsByTagName("dcrgNomineeDob")[i].firstChild.nodeValue);
+				document.getElementById("dcrgNomineeDob").disabled=true;
+				document.getElementById("dcrgRelation").value=nullcheck(baseResponse.getElementsByTagName("dcrgRelation")[i].firstChild.nodeValue);
+				document.getElementById("dcrgRelation").disabled=true;
+				document.getElementById("dcrgAddress").value=nullcheck(baseResponse.getElementsByTagName("dcrgAddress")[i].firstChild.nodeValue);			   
+				document.getElementById("dcrgAddress").disabled=true;
+				document.getElementById("notVerifyServiceTotYears").value=nullcheck(baseResponse.getElementsByTagName("notVerifyServiceTotYears")[i].firstChild.nodeValue);
+				document.getElementById("notVerifyServiceTotYears").disabled=true;
+				document.getElementById("notVerifyServiceTotMonths").value=nullcheck(baseResponse.getElementsByTagName("notVerifyServiceTotMonths")[i].firstChild.nodeValue);
+				document.getElementById("notVerifyServiceTotMonths").disabled=true;
+				document.getElementById("notVerifyServiceTotDays").value=nullcheck(baseResponse.getElementsByTagName("notVerifyServiceTotDays")[i].firstChild.nodeValue);
+				document.getElementById("notVerifyServiceTotDays").disabled=true;
+				
+				var deathFlag =nullcheck(baseResponse.getElementsByTagName("famDeathFlag")[i].firstChild.nodeValue);
+				var deathDesc=nullcheck(baseResponse.getElementsByTagName("famDeathRemarks")[i].firstChild.nodeValue);
+				if(deathFlag=='Yes')	
+					{
+					document.getElementById("famDeathCertFlagYes").checked=true;
+					document.getElementById("famDeathCertDesc").value=deathDesc;
+					
+					document.getElementById("famDeathCertDesc").disabled=true;
+					}
+				else
+					{
+					document.getElementById("famDeathCertFlagNo").checked=true;
+					document.getElementById("famDeathCertDesc").value=deathDesc;
+					
+					document.getElementById("famDeathCertDesc").disabled=true;
+					}
+				document.getElementById("famDeathCertFlagYes").disabled=true;
+				document.getElementById("famDeathCertFlagNo").disabled=true;	
+				
+				var heirFlag=nullcheck(baseResponse.getElementsByTagName("famHeirFlag")[i].firstChild.nodeValue);
+				var heirDesc=nullcheck(baseResponse.getElementsByTagName("famHeirRemarks")[i].firstChild.nodeValue);			
+				if(heirFlag=='Yes')	
+					{
+					document.getElementById("famHeirCertFlagYes").checked=true;
+					document.getElementById("famHeirCertDesc").value=heirDesc;
+					
+					document.getElementById("famHeirCertDesc").disabled=true;
+					}
+				else
+					{
+					document.getElementById("famHeirCertFlagNo").checked=true;
+					document.getElementById("famHeirCertDesc").value=heirDesc;
+					
+					document.getElementById("famHeirCertDesc").disabled=true;
+					}
+				document.getElementById("famHeirCertFlagYes").disabled=true;
+				document.getElementById("famHeirCertFlagNo").disabled=true;
+				
+				var serFlag=nullcheck(baseResponse.getElementsByTagName("famServiceFlag")[i].firstChild.nodeValue);
+				var serRemarks=nullcheck(baseResponse.getElementsByTagName("famServiceRemarks")[i].firstChild.nodeValue);
+				if(serFlag=='Yes')	
+					{
+					document.getElementById("famServBookRecFlagYes").checked=true;
+					document.getElementById("famServBookRecDesc").value=serRemarks;
+					
+					document.getElementById("famServBookRecDesc").disabled=true;
+					}
+				else
+					{
+					document.getElementById("famServBookRecFlagNo").checked=true;
+					document.getElementById("famServBookRecDesc").value=serRemarks;
+					
+					document.getElementById("famServBookRecDesc").disabled=true;
+					}
+				document.getElementById("famServBookRecFlagYes").disabled=true;
+				document.getElementById("famServBookRecFlagNo").disabled=true;
+				
+				document.getElementById("famLastpayDrawn").value=nullcheck(baseResponse.getElementsByTagName("famLpd")[i].firstChild.nodeValue);			
+				
+				var penFlag=nullcheck(baseResponse.getElementsByTagName("famPensionFlag")[i].firstChild.nodeValue);
+				var penRemarks=nullcheck(baseResponse.getElementsByTagName("famPensionRemarks")[i].firstChild.nodeValue);	
+				
+				if(penFlag=='Yes')	
+					{
+					document.getElementById("famRollFamilyPenFlagYes").checked=true;
+					document.getElementById("famRollFamilyPenDesc").value=penRemarks;
+					
+					document.getElementById("famRollFamilyPenDesc").disabled=true;
+					}
+				else
+					{
+					document.getElementById("famRollFamilyPenFlagNo").checked=true;
+					document.getElementById("famRollFamilyPenDesc").value=penRemarks;
+					
+					document.getElementById("famRollFamilyPenDesc").disabled=true;
+					}
+				
+				document.getElementById("famRollFamilyPenFlagYes").disabled=true;
+				document.getElementById("famRollFamilyPenFlagNo").disabled=true;
+				var photoFlag=nullcheck(baseResponse.getElementsByTagName("famPhotoFlag")[i].firstChild.nodeValue);
+				var photoDesc=nullcheck(baseResponse.getElementsByTagName("famPhotoRemarks")[i].firstChild.nodeValue);
+				if(photoFlag=='Yes')	
+				{
+				document.getElementById("famPhotoFlagYes").checked=true;
+				document.getElementById("famPhotoDesc").value=photoDesc;
+				
+				document.getElementById("famPhotoDesc").disabled=true;
+				}
+			else
+				{
+				document.getElementById("famPhotoFlagNo").checked=true;
+				document.getElementById("famPhotoDesc").value=photoDesc;
+				
+				document.getElementById("famPhotoDesc").disabled=true;
+				}
+				document.getElementById("famPhotoFlagYes").disabled=true;
+				document.getElementById("famPhotoFlagNo").disabled=true;
+				
+				var signFlag=nullcheck(baseResponse.getElementsByTagName("famSignFlag")[i].firstChild.nodeValue);
+				var signDesc=nullcheck(baseResponse.getElementsByTagName("famSignRemarks")[i].firstChild.nodeValue);			
+				if(signFlag=='Yes')	
+				{
+					document.getElementById("famSignFlagYes").checked=true;
+					document.getElementById("famSignDesc").value=signDesc;
+					
+					document.getElementById("famSignDesc").disabled=true;
+				}
+				else
+				{
+					document.getElementById("famSignFlagNo").checked=true;
+					document.getElementById("famSignDesc").value=signDesc;
+					
+					document.getElementById("famSignDesc").disabled=true;
+				}
+				document.getElementById("famSignFlagYes").disabled=true;
+				document.getElementById("famSignFlagNo").disabled=true;
+				var nodueFlag=nullcheck(baseResponse.getElementsByTagName("famDueFlag")[i].firstChild.nodeValue);
+				var noDueDesc=nullcheck(baseResponse.getElementsByTagName("famDueRemarks")[i].firstChild.nodeValue);
+				if(nodueFlag=='Yes')	
+				{
+					document.getElementById("famNoDueFlagYes").checked=true;
+					document.getElementById("famNoDueDesc").value=noDueDesc;
+					
+					document.getElementById("famNoDueDesc").disabled=true;
+				}
+				else
+				{
+					document.getElementById("famNoDueFlagNo").checked=true;
+					document.getElementById("famNoDueDesc").value=noDueDesc;
+					
+					document.getElementById("famNoDueDesc").disabled=true;
+				}
+				document.getElementById("famNoDueFlagYes").disabled=true;
+				document.getElementById("famNoDueFlagNo").disabled=true;
+				
+				//document.getElementById("famMembersList").value=nullcheck(baseResponse.getElementsByTagName("famMembersList")[i].firstChild.nodeValue);
+				document.getElementById("famPensionAmount").value=nullcheck(baseResponse.getElementsByTagName("famPensionAmount")[i].firstChild.nodeValue);
+				document.getElementById("famPensionAmount").disabled=true;
+				document.getElementById("famDcrgAmount").value=nullcheck(baseResponse.getElementsByTagName("famDcrgAmount")[i].firstChild.nodeValue);
+				document.getElementById("famDcrgAmount").disabled=true;
+				
+				
+				
+				var penFlag=nullcheck(baseResponse.getElementsByTagName("penFamFlag")[i].firstChild.nodeValue);			
+				if(penFlag=='Yes')	
+				{
+					document.getElementById("penFamilyPensionFlagYes").checked=true;
+					
+				}
+				else
+				{
+					document.getElementById("penFamilyPensionFlagNo").checked=true;
+					
+					
+				}
+				document.getElementById("penFamilyPensionFlagYes").disabled=true;
+				document.getElementById("penFamilyPensionFlagNo").disabled=true;
+				document.getElementById("penFamilyPensionRemarks").value=nullcheck(baseResponse.getElementsByTagName("penFamRemarks")[i].firstChild.nodeValue);	;
+				document.getElementById("penFamilyPensionRemarks").disabled=true;
+				
+				var photoFlag1=nullcheck(baseResponse.getElementsByTagName("penPhotoFlag")[i].firstChild.nodeValue);
+				if(photoFlag1=='Yes')
+					{
+						document.getElementById("penPhotoAttachFlagYes").checked=true;
+						
+					}
+				else
+					{
+						document.getElementById("penPhotoAttachFlagNo").checked=true;
+						
+					}
+				document.getElementById("penPhotoAttachFlagYes").disabled=true;
+				document.getElementById("penPhotoAttachFlagNo").disabled=true;
+				document.getElementById("penPhotoAttachRemarks").value=nullcheck(baseResponse.getElementsByTagName("penPhotoRemarks")[i].firstChild.nodeValue);
+				document.getElementById("penPhotoAttachRemarks").disabled=true;
+				
+				var signFlag1 =nullcheck(baseResponse.getElementsByTagName("penSignFlag")[i].firstChild.nodeValue);
+				if(signFlag1=='Yes')
+					{
+						document.getElementById("penSignAttachFlagYes").checked=true;
+						
+					}
+				else
+					{
+						document.getElementById("penSignAttachFlagNo").checked=true;
+						
+					}
+				document.getElementById("penSignAttachFlagYes").disabled=true;
+				document.getElementById("penSignAttachFlagNo").disabled=true;
+				document.getElementById("penSignAttachRemarks").value=nullcheck(baseResponse.getElementsByTagName("penSignRemarks")[i].firstChild.nodeValue);
+				document.getElementById("penSignAttachRemarks").disabled=true;
+				
+				
+				var dueFlag1=nullcheck(baseResponse.getElementsByTagName("penDueFlag")[i].firstChild.nodeValue);
+				if(dueFlag1=='Yes')
+					{
+						document.getElementById("penNoDueCertFlagYes").checked=true;
+						
+					}
+				else
+					{
+						document.getElementById("penNoDueCertFlagNo").checked=true;
+						
+					}
+				document.getElementById("penNoDueCertFlagNo").disabled=true;
+				document.getElementById("penNoDueCertFlagYes").disabled=true;
+				document.getElementById("penNoDueCertRemarks").value=nullcheck(baseResponse.getElementsByTagName("penDueRemarks")[i].firstChild.nodeValue);
+				document.getElementById("penNoDueCertRemarks").disabled=true;
+				
+				
+				var conRecFlag1=nullcheck(baseResponse.getElementsByTagName("penConRecoverFlag")[i].firstChild.nodeValue);
+				if(conRecFlag1=='Yes')
+					{
+						document.getElementById("penConsentRecoverFlagYes").checked=true;
+						
+					}
+				else
+					{
+						document.getElementById("penConsentRecoverFlagNo").checked=true;
+						
+					}
+				document.getElementById("penConsentRecoverFlagNo").disabled=true;
+				document.getElementById("penConsentRecoverFlagYes").disabled=true;
+				document.getElementById("penConsentRecoverRemarks").value=nullcheck(baseResponse.getElementsByTagName("penConRecoverRemarks")[i].firstChild.nodeValue);
+				document.getElementById("penConsentRecoverRemarks").disabled=true;
+				
+				
+				
+				var deathFlag1=nullcheck(baseResponse.getElementsByTagName("penDeathFlag")[i].firstChild.nodeValue);
+				if(deathFlag1=='Yes')
+					{
+						document.getElementById("penDeathCertFlagYes").checked=true;
+						
+					}
+				else
+					{
+						document.getElementById("penDeathCertFlagNo").checked=true;
+						
+					}
+				document.getElementById("penDeathCertFlagNo").disabled=true;
+				document.getElementById("penDeathCertFlagYes").disabled=true;
+				document.getElementById("penDeathCertRemarks").value=nullcheck(baseResponse.getElementsByTagName("penDeathRemarks")[i].firstChild.nodeValue);
+				document.getElementById("penDeathCertRemarks").disabled=true;
+				
+				
+				var heirFlag1=nullcheck(baseResponse.getElementsByTagName("penHeirFlag")[i].firstChild.nodeValue);
+				if(heirFlag1=='Yes')
+					{
+						document.getElementById("penHeirCertFlagYes").checked=true;
+						
+					}
+				else
+					{
+						document.getElementById("penHeirCertFlagNo").checked=true;
+						
+					}
+				document.getElementById("penHeirCertFlagNo").disabled=true;
+				document.getElementById("penHeirCertFlagYes").disabled=true;
+				document.getElementById("penHeirCertRemarks").value=nullcheck(baseResponse.getElementsByTagName("penHeirRemarks")[i].firstChild.nodeValue);
+				document.getElementById("penHeirCertRemarks").disabled=true;
+				
+				
+				
+				var serBookFlag1=nullcheck(baseResponse.getElementsByTagName("penServiceFlag")[i].firstChild.nodeValue);
+				if(serBookFlag1=='Yes')
+					{
+						document.getElementById("penServiceBookFlagYes").checked=true;
+						
+					}
+				else
+					{
+						document.getElementById("penServiceBookFlagNo").checked=true;
+						
+					}
+				document.getElementById("penServiceBookFlagNo").disabled=true;
+				document.getElementById("penServiceBookFlagYes").disabled=true;
+				document.getElementById("penServiceBookRemarks").value=nullcheck(baseResponse.getElementsByTagName("penServiceRemarks")[i].firstChild.nodeValue);
+				document.getElementById("penServiceBookRemarks").disabled=true;
+				
+				var decFlag1=nullcheck(baseResponse.getElementsByTagName("penDeclareFlag")[i].firstChild.nodeValue);
+				if(decFlag1=='Yes')
+					{
+						document.getElementById("penDeclareFlagYes").checked=true;
+						
+					}
+				else
+					{
+						document.getElementById("penDeclareFlagNo").checked=true;
+						
+					}
+				document.getElementById("penDeclareFlagNo").disabled=true;
+				document.getElementById("penDeclareFlagYes").disabled=true;
+				document.getElementById("penDeclareRemarks").value=nullcheck(baseResponse.getElementsByTagName("penDeclareRemarks")[i].firstChild.nodeValue);
+				document.getElementById("penDeclareRemarks").disabled=true;
+			
+				
+				var regardFlag1=nullcheck(baseResponse.getElementsByTagName("penRegardFlag")[i].firstChild.nodeValue);
+				if(regardFlag1=='Yes')
+					{
+						document.getElementById("penRegardDateFlagYes").checked=true;
+						
+					}
+				else
+					{
+						document.getElementById("penRegardDateFlagNo").checked=true;
+						
+					}
+				document.getElementById("penRegardDateFlagNo").disabled=true;
+				document.getElementById("penRegardDateFlagYes").disabled=true;
+				document.getElementById("penRegardDateRemarks").value=nullcheck(baseResponse.getElementsByTagName("penRegardRemarks")[i].firstChild.nodeValue);
+				
+				
+				var penRegardFlag1=nullcheck(baseResponse.getElementsByTagName("penSancDateFlag")[i].firstChild.nodeValue);
+				
+				if(penRegardFlag1=='Yes')
+					{
+						document.getElementById("penSanctionUptoDateFlagYes").checked=true;
+						
+					}
+				else
+					{
+						document.getElementById("penSanctionUptoDateFlagNo").checked=true;
+						
+					}
+				document.getElementById("penSanctionUptoDateFlagNo").disabled=true;
+				document.getElementById("penSanctionUptoDateFlagYes").disabled=true;
+				document.getElementById("penSanctionUptoDateRemarks").value=nullcheck(baseResponse.getElementsByTagName("penSancDateRemarks")[i].firstChild.nodeValue);
+				document.getElementById("penSanctionUptoDateRemarks").disabled=true;
+				document.getElementById("pensionPaymentPlace").value=nullcheck(baseResponse.getElementsByTagName("penPaymentPlace")[i].firstChild.nodeValue);
+				document.getElementById("pensionPaymentPlace").disabled=true;
+				document.getElementById("dcrgPaymentPlace").value=nullcheck(baseResponse.getElementsByTagName("dcrgPaymentPlace")[i].firstChild.nodeValue);
+				document.getElementById("dcrgPaymentPlace").disabled=true;
+				
+				
+				
+				var retireFlag1=nullcheck(baseResponse.getElementsByTagName("retireFlag")[i].firstChild.nodeValue);
+				if(retireFlag1=='Yes')
+					{
+						document.getElementById("retireOrderFlagYes").checked=true;
+						
+					}
+				else
+					{
+						document.getElementById("retireOrderFlagNo").checked=true;
+						
+					}
+				document.getElementById("retireOrderFlagYes").disabled=true;
+				document.getElementById("retireOrderFlagNo").disabled=true;
+				document.getElementById("retireOrderRemarks").value=nullcheck(baseResponse.getElementsByTagName("retireOrderRemarks")[i].firstChild.nodeValue);
+				document.getElementById("retireOrderRemarks").disabled=true;
+				document.getElementById("recoveriesIfAny").value=nullcheck(baseResponse.getElementsByTagName("recoverFlag")[i].firstChild.nodeValue);
+				document.getElementById("recoveriesIfAny").disabled=true;
+				
+				document.getElementById("deputationIfAny").value=nullcheck(baseResponse.getElementsByTagName("deputation")[i].firstChild.nodeValue);
+				document.getElementById("deputationIfAny").disabled=true;	
+			  	        
+			  }
+			
+			 if(display2.length <=0)
+			  {
+				  		  
+			  }
+			  else
+				  {
+				  	for(var i=0;i<display2.length;i++)
+				  	{   
+				  		var empno=nullcheck(baseResponse.getElementsByTagName("empNo")[i].firstChild.nodeValue);
+				  		var nomid=nullcheck(baseResponse.getElementsByTagName("nominId")[i].firstChild.nodeValue);
+				  		var nomname=nullcheck(baseResponse.getElementsByTagName("name")[i].firstChild.nodeValue);
+				  		var namini=nullcheck(baseResponse.getElementsByTagName("initial")[i].firstChild.nodeValue);
+				  		var rel=nullcheck(baseResponse.getElementsByTagName("relation")[i].firstChild.nodeValue);
+				  		var dob=nullcheck(baseResponse.getElementsByTagName("dob")[i].firstChild.nodeValue);
+				  		var age=nullcheck(baseResponse.getElementsByTagName("age")[i].firstChild.nodeValue);
+				  		var handy=nullcheck(baseResponse.getElementsByTagName("handicapped")[i].firstChild.nodeValue);
+				  		var martial=nullcheck(baseResponse.getElementsByTagName("martialStatus")[i].firstChild.nodeValue);
+				  		var nomdate=nullcheck(baseResponse.getElementsByTagName("nominDate")[i].firstChild.nodeValue);
+				  		var actsta=nullcheck(baseResponse.getElementsByTagName("activeStatus")[i].firstChild.nodeValue);
+				  		var nomreason=nullcheck(baseResponse.getElementsByTagName("nominReason")[i].firstChild.nodeValue);
+				  		loadNomineeFromXml(empno,nomid,nomname,namini,rel,dob,age,handy,martial,nomdate,actsta,nomreason);
+			  	    }
+				 }
+			  
+			  
+			
+			  if(display3.length <=0)
+			  {
+				  		 
+			  }
+			  else
+				  {
+				  	for(var i=0;i<display3.length;i++)
+				  	{   
+				  			       	
+				  		var serId=nullcheck(baseResponse.getElementsByTagName("ServiceId")[i].firstChild.nodeValue);
+				  		var empno=nullcheck(baseResponse.getElementsByTagName("empNo")[i].firstChild.nodeValue);
+				  		var fromdate=nullcheck(baseResponse.getElementsByTagName("fromDate")[i].firstChild.nodeValue);
+				  		var todate=nullcheck(baseResponse.getElementsByTagName("toDate")[i].firstChild.nodeValue);
+				  		var serRea=nullcheck(baseResponse.getElementsByTagName("reason")[i].firstChild.nodeValue);
+				  		var serYear=nullcheck(baseResponse.getElementsByTagName("year")[i].firstChild.nodeValue);
+				  		var serMonth=nullcheck(baseResponse.getElementsByTagName("month")[i].firstChild.nodeValue);
+				  		var serDays=nullcheck(baseResponse.getElementsByTagName("days")[i].firstChild.nodeValue);
+				  		
+				  		loadServiceFromXml(serId,empno,fromdate,todate,serRea,serYear,serMonth,serDays);
+				  		
+			  	    }
+				 }
+			  
+		  
+	  
+		  
+	  }
+		  if( frzchk ==null || frzchk==""){
+	    	//	alert("Data not exists");
+	    		
+	    		let x = document.querySelector("#addNewNominee").getElementsByTagName("td")
+	    		Array.from(x).forEach(i => {
+	    			i.children[0].disabled = false
+	    		})
+	    		
+	    		document.querySelector(".demo").querySelectorAll("textarea,select,textfield,input").forEach(i => i.disabled = false)
+	    		
+	    		    
+	    	}
+	    	else {
+	    		alert("Data have already been Validated");
+	    		document.querySelector(".demo").querySelectorAll("textarea,select,textfield,input").forEach(i => i.disabled = true)
+	    		
+	    		document.querySelectorAll("#cal-button-10,#cal-button-4").forEach(i => {i.style.display = "none"})
+	    		document.getElementById("submit").disabled=true;
+	    		
+	    		//document.getElementById("freezebtn").disabled=true;
+	    	}
+	  }
+		
+}
+
+function loadServiceFromXml(serId,empno,fromdate,todate,serRea,serYear,serMonth,serDays)
+{
+	var tbody2=document.getElementById("notVerifyService");	
+	
+	var tablerow=document.createElement("tr");	
+	tablerow.id=seq2;
+	
+	var tabletd1=document.createElement("td");
+	var text1=document.createElement("input");
+	text1.name="notVerifyServFromDate";
+	text1.id='notVerifyServFromDate';
+	text1.value=fromdate;
+	text1.type='text';
+	text1.className="textbox";	
+	text1.onkeyup = function() {			
+		dtval(this,"event");
+	};	
+	
+	text1.onblur =function() {			
+		checkValidDate(this);
+	};
+	
+	text1.maxLength=10;
+	tabletd1.align="center";
+	tabletd1.appendChild(text1);
+	tablerow.appendChild(tabletd1);
+	
+	var tabletd2=document.createElement("td");
+	var text2=document.createElement("input");
+	text2.name="notVerifyServToDate";
+	text2.id="notVerifyServToDate";
+	text2.className="textbox";
+	text2.value=todate;
+	text2.type="text";
+	text2.maxLength=10;
+	text2.onkeyup = function() {			
+		dtval(this,"event");
+	};
+	
+	/*text2.onblur =function() {			
+		calculateService(tablerow.id);
+	};*/
+	text2.onblur =function() {			
+		checkValidtoDate(this);
+		calculateService(tablerow.id);
+	};
+	
+	tabletd2.align="center";
+	tabletd2.appendChild(text2);	
+	tablerow.appendChild(tabletd2);
+	
+	var tabletd3=document.createElement("td");
+	var text3=document.createElement("input");
+	text3.name="notVerifyServiceReason";
+	text3.id="notVerifyServiceReason";	
+	text3.value=serRea;
+	text3.className="textbox";
+	tabletd3.align="center";
+	tabletd3.appendChild(text3);	
+	tablerow.appendChild(tabletd3);
+	
+	var tabletd4=document.createElement("td");
+	var text4=document.createElement("input");
+	text4.name="notVerifyYear";
+	text4.id="notVerifyYear";
+	text4.value=serYear;
+	text4.type="text";
+	text4.className="readonlytext";
+	text4.maxLength=10;
+	text4.readOnly=true;
+	tabletd4.align="center";
+	tabletd4.appendChild(text4);
+	tablerow.appendChild(tabletd4);
+	
+	var tabletd5=document.createElement("td");
+	var text5=document.createElement("input");
+	text5.name="notVerifyMonth";
+	text5.id="notVerifyMonth";
+	text5.value=serMonth;
+	text5.type="text";
+	text5.className="readonlytext";
+	text5.readOnly=true;
+	text5.maxLength=10;
+	tabletd5.align="center";
+	tabletd5.appendChild(text5);	
+	tablerow.appendChild(tabletd5);
+	
+	var tabletd6=document.createElement("td");
+	var text6=document.createElement("input");
+	text6.name="notVerifyDays";
+	text6.id="notVerifyDays";
+	text6.value=serDays;
+	text6.type="text";
+	text6.readOnly=true;
+	text6.className="readonlytext";	
+	text6.maxLength=10;
+	tabletd6.align="center";
+	tabletd6.appendChild(text6);	
+	tablerow.appendChild(tabletd6);
+	
+	
+	var image3 = document.createElement('img');
+	image3.src="../images/delete.png";
+	image3.align="center";
+	image3.border="0";
+	image3.align="center";
+	var tabletd7=document.createElement("td");
+    var anc1=document.createElement("A");
+    var url1="javascript:Delete1('"+seq2+"')";  
+    anc1.href = url1;
+    anc1.appendChild(image3);
+    tabletd7.appendChild(anc1);
+    tabletd7.align="center";
+    tablerow.appendChild(tabletd7);
+    
+	tbody2.appendChild(tablerow);
+	
+	seq2++;
+	
+	
+	
+	
+}
+
+
+
+
+function loadNomineeFromXml(empno,nomid,nomname,namini,rel,dob2,age,handy,martial,nomdate,actsta,nomreason)
+{
+	var tbody1=document.getElementById("addNewNominee");	
+	var tabletr=document.createElement("tr");	
+	tabletr.id=seq+'r';
+
+	
+	var tabletd12=document.createElement("td");
+	var initial=document.createElement("input");
+	initial.name="nomineeInitial";
+	initial.id="nomineeInitial";
+	initial.type = 'text';
+	initial.maxLength=5;
+	initial.size=5;
+	initial.className="textbox";
+	initial.value=namini;
+	tabletd12.appendChild(initial);
+	tabletd12.align="center";
+	tabletr.appendChild(tabletd12);
+	
+	
+	//////////////////// Family Members ////////////////////////
+	var tabletd1=document.createElement("td");
+	var familyMembers=document.createElement("input");
+	familyMembers.name="familyMembers";
+	familyMembers.id="familyMembers";
+	familyMembers.type = 'text';
+	familyMembers.className="textbox";
+	familyMembers.maxLength=30;
+	familyMembers.value=nomname;
+	tabletd1.appendChild(familyMembers);
+	tabletd1.align="center";
+	tabletr.appendChild(tabletd1);
+	
+	
+	//////////////////Family Members Relationship ////////////////////////
+	var tabletd2=document.createElement("td");
+	var combo1=document.createElement("select");
+	combo1.name="relation";
+	combo1.id="relation";
+		
+	
+	var opt1= document.createElement('option');
+	opt1.value ='1';
+	opt1.innerHTML ='Father';
+	combo1.appendChild(opt1);
+	if(parseInt(rel)==1)
+	{
+	opt1.selected="selected";
+	}
+
+	
+	var opt2 = document.createElement('option');
+	opt2.value = '2';
+	opt2.innerHTML = 'Mother';
+	combo1.appendChild(opt2);
+	if(parseInt(rel)==2)
+	{
+	opt2.selected="selected";
+	}
+	
+	var opt3 = document.createElement('option');
+	opt3.value = '3';
+	opt3.innerHTML = 'Spouse';
+	combo1.appendChild(opt3);
+	//if(parseInt(rel)==3)
+	if((parseInt(rel)==3) || (parseInt(rel)==4))
+	{
+	opt3.selected="selected";
+	}
+	
+	var opt4 = document.createElement('option');
+	opt4.value = '5';
+	opt4.innerHTML = 'Son';
+	combo1.appendChild(opt4);
+	if(parseInt(rel)==5)
+	{
+	opt4.selected="selected";
+	}
+	
+	var opt5 = document.createElement('option');
+	opt5.value = '6';
+	opt5.innerHTML = 'Daughter';
+	combo1.appendChild(opt5);
+	if(parseInt(rel)==6)
+	{
+	opt5.selected="selected";
+	}
+	
+	tabletd2.appendChild(combo1);
+	tabletd2.align="center";	
+	tabletr.appendChild(tabletd2);
+	
+    /////////////////Nominee DOB/////////////////
+	var tabletd3=document.createElement("td");
+	var dob=document.createElement("input");
+	dob.type="text";
+	dob.name="nomineeDob";
+	dob.id="nomineeDob";
+	dob.value=dob2;
+	dob.maxLength=10;
+	dob.size=10;
+	dob.className="textbox";
+	dob.onkeyup = function() {			
+		dtval(this,"event");
+	};
+	
+	tabletd3.appendChild(dob);
+	tabletd3.align="center";	
+	tabletr.appendChild(tabletd3);
+	/////////////////AGE/////////////////////////
+	
+	var tabletd8=document.createElement("td");
+	var nominAge=document.createElement("input");
+	nominAge.name="nomineeAge";
+	nominAge.id="nomineeAge";
+	nominAge.type = 'text';	
+	nominAge.className="textbox";
+	nominAge.value=age;
+	nominAge.maxLength=3;
+	nominAge.size=3;
+	
+	tabletd8.appendChild(nominAge);
+	tabletd8.align="center";
+	tabletr.appendChild(tabletd8);
+	
+	/////////////////Handicapped/////////////////
+	
+	var tabletd4 = document.createElement('td');
+	var combo2 = document.createElement('select');
+	combo2.name="handicapped";
+	combo2.id="handicapped";
+	combo2.value=handy;
+	/*var opt6 = document.createElement('option');
+	opt6.value = 'NS';
+	opt6.innerHTML = '--Select--';
+	combo2.appendChild(opt6);*/
+	
+	var opt7 = document.createElement('option');
+	opt7.value = 'Y';
+	opt7.innerHTML = 'Yes';
+	combo2.appendChild(opt7);
+	
+	var opt8= document.createElement('option');
+	opt8.value = 'N';
+	opt8.innerHTML ='No';
+	opt8.selected='selected';	
+	combo2.appendChild(opt8);
+	
+	tabletd4.appendChild(combo2);
+	tabletd4.align="center";	
+	tabletr.appendChild(tabletd4);
+	
+	//////////////////Martial Status/////////////////martial,nomdate,actsta,nomreason
+	
+	var tabletd5 = document.createElement('td');
+	var combo3 = document.createElement('Select');
+	combo3.name="martialStatus";
+	combo3.id="martialStatus";
+	
+				
+	var opt11 = document.createElement('option');
+	opt11.value = 'Married';
+	opt11.innerHTML = 'Married';
+	combo3.appendChild(opt11);
+	if(martial=='Married')
+	{
+		opt11.selected="selected";
+	}
+	
+	var opt12 = document.createElement('option');
+	opt12.value = 'Unmarried';
+	opt12.innerHTML = 'Unmarried';
+	combo3.appendChild(opt12);
+	if(martial=='Unmarried')
+	{
+		opt12.selected="selected";
+	}
+	
+	tabletd5.appendChild(combo3);
+	tabletd5.align="center";
+	tabletr.appendChild(tabletd5);
+	
+	
+	
+///////////////Nomination date/////////////////
+	
+	var tabletd9=document.createElement("td");
+	var nominDate=document.createElement("input");
+	nominDate.name="nominationDate";
+	nominDate.id="nominationDate";
+	nominDate.value=nomdate;
+	nominDate.type = 'text';	
+	nominDate.maxLength=10;
+	nominDate.className="textbox";
+	nominDate.size=10;
+	nominDate.onkeyup = function() {			
+		dtval(this,"event");
+	};
+	
+	tabletd9.appendChild(nominDate);
+	tabletd9.align="center";
+	tabletr.appendChild(tabletd9);
+	
+/////////////////Active Status/////////////////
+	
+	var tabletd6 = document.createElement('td');
+	var combo4 = document.createElement('Select');
+	combo4.name="activeStatus";
+	combo4.id="activeStatus";
+		
+	var opt11 = document.createElement('option');
+	opt11.value = 'Yes';
+	opt11.innerHTML = 'Yes';
+	combo4.appendChild(opt11);
+	if(actsta=='Yes')
+	{
+		opt11.selected="selected";
+	}
+	
+	var opt12 = document.createElement('option');
+	opt12.value = 'No';
+	opt12.innerHTML = 'No';
+	combo4.appendChild(opt12);	
+	if(actsta=='No')
+	{
+		opt12.selected="selected";
+	}
+	
+	tabletd6.appendChild(combo4);
+	tabletd6.align="center";
+	tabletr.appendChild(tabletd6);
+	
+    ///////////////Reason/////////////////
+	
+	var tabletd7=document.createElement("td");
+	var nominReason=document.createElement("input");
+	nominReason.name="nominReason";
+	nominReason.id="nominReason";
+	nominReason.value=nomreason;
+	nominReason.type = 'text';	
+	nominReason.className="textbox";
+	nominReason.maxLength=10;
+	tabletd7.appendChild(nominReason);
+	tabletd7.align="center";
+	tabletr.appendChild(tabletd7);
+	
+
+	var image2 = document.createElement('img');
+	image2.src="../images/delete.png";
+	image2.align="center";
+	image2.border="0";
+	image2.align="center";
+	var tabletd11=document.createElement("td");
+    var anc=document.createElement("A");
+    var url="javascript:Delete('" +seq+ "r')";              
+    anc.href = url;
+    anc.appendChild(image2);
+    tabletd11.appendChild(anc);
+    tabletd11.align="center";
+    tabletr.appendChild(tabletd11);
+    	
+	tbody1.appendChild(tabletr);	
+
+	seq++;
+}	
+
+
+function nullcheck(checkstring)
+{
+	var printstring;
+		if((checkstring=="null")||(checkstring==null))
+		{
+			printstring="";
+			
+		}
+		else
+		{
+			printstring=checkstring;
+		}
+		return printstring;
+}
+

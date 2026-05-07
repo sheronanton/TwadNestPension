@@ -1,0 +1,270 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 Jun, 2013 3:55:02 PM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.PensionApplicationHODetailsValidateDao" table="PENSIONAPPLICATIONHODETAILSVALIDATEDAO">
+        <id name="desigId" type="java.lang.Integer">
+            <column name="DESIGID" />
+            <generator class="assigned" />
+        </id>
+        <property name="serialVersionUID" type="long" access="field">
+            <column name="SERIALVERSIONUID" />
+        </property>
+        <property name="empNo" type="java.lang.Integer">
+            <column name="EMPNO" />
+        </property>
+        <property name="empName" type="java.lang.String">
+            <column name="EMPNAME" />
+        </property>
+        <property name="gender" type="java.lang.String">
+            <column name="GENDER" />
+        </property>
+        <property name="desigServiceGrp" type="java.lang.Integer">
+            <column name="DESIGSERVICEGRP" />
+        </property>
+        <property name="gradeId" type="java.lang.String">
+            <column name="GRADEID" />
+        </property>
+        <property name="officeId" type="java.lang.Integer">
+            <column name="OFFICEID" />
+        </property>
+        <property name="gpfNo" type="java.lang.Integer">
+            <column name="GPFNO" />
+        </property>
+        <property name="fatherName" type="java.lang.String">
+            <column name="FATHERNAME" />
+        </property>
+        <property name="husbandName" type="java.lang.String">
+            <column name="HUSBANDNAME" />
+        </property>
+        <property name="religion" type="java.lang.String">
+            <column name="RELIGION" />
+        </property>
+        <property name="nationality" type="java.lang.String">
+            <column name="NATIONALITY" />
+        </property>
+        <property name="empHeight" type="java.lang.String">
+            <column name="EMPHEIGHT" />
+        </property>
+        <property name="idMark1" type="java.lang.String">
+            <column name="IDMARK1" />
+        </property>
+        <property name="idMark2" type="java.lang.String">
+            <column name="IDMARK2" />
+        </property>
+        <property name="presentAddress" type="java.lang.String">
+            <column name="PRESENTADDRESS" />
+        </property>
+        <property name="permanentAddress" type="java.lang.String">
+            <column name="PERMANENTADDRESS" />
+        </property>
+        <property name="addressAfterRetire" type="java.lang.String">
+            <column name="ADDRESSAFTERRETIRE" />
+        </property>
+        <property name="stateId" type="java.lang.Integer">
+            <column name="STATEID" />
+        </property>
+        <property name="chargesFlag" type="java.lang.String">
+            <column name="CHARGESFLAG" />
+        </property>
+        <property name="chargeDetails" type="java.lang.String">
+            <column name="CHARGEDETAILS" />
+        </property>
+        <property name="pensionPayOfficeId" type="java.lang.Integer">
+            <column name="PENSIONPAYOFFICEID" />
+        </property>
+        <property name="pensionPayOfficeId1" type="java.lang.String">
+            <column name="PENSIONPAYOFFICEID1" />
+        </property>
+        <property name="appliedDate" type="java.lang.String">
+            <column name="APPLIEDDATE" />
+        </property>
+        <property name="appliedDate1" type="java.util.Date">
+            <column name="APPLIEDDATE1" />
+        </property>
+        <property name="appliedDate2" type="java.lang.String">
+            <column name="APPLIEDDATE2" />
+        </property>
+        <property name="dcrgNomineeName" type="java.lang.String">
+            <column name="DCRGNOMINEENAME" />
+        </property>
+        <property name="dcrgRelation" type="java.lang.String">
+            <column name="DCRGRELATION" />
+        </property>
+        <property name="dcrgAddress" type="java.lang.String">
+            <column name="DCRGADDRESS" />
+        </property>
+        <property name="dcrgNomineeDob" type="java.lang.String">
+            <column name="DCRGNOMINEEDOB" />
+        </property>
+        <property name="dcrgNomineeDob1" type="java.util.Date">
+            <column name="DCRGNOMINEEDOB1" />
+        </property>
+        <property name="dcrgNomineeDob2" type="java.lang.String">
+            <column name="DCRGNOMINEEDOB2" />
+        </property>
+        <property name="notVerifyServiceTotYears" type="java.lang.Integer">
+            <column name="NOTVERIFYSERVICETOTYEARS" />
+        </property>
+        <property name="notVerifyServiceTotMonths" type="java.lang.Integer">
+            <column name="NOTVERIFYSERVICETOTMONTHS" />
+        </property>
+        <property name="notVerifyServiceTotDays" type="java.lang.Integer">
+            <column name="NOTVERIFYSERVICETOTDAYS" />
+        </property>
+        <property name="dcfpDeathCertFlag" type="java.lang.String">
+            <column name="DCFPDEATHCERTFLAG" />
+        </property>
+        <property name="dcfpDeathCertRemarks" type="java.lang.String">
+            <column name="DCFPDEATHCERTREMARKS" />
+        </property>
+        <property name="dcfpHeirCertFlag" type="java.lang.String">
+            <column name="DCFPHEIRCERTFLAG" />
+        </property>
+        <property name="dcfpHeirCertRemarks" type="java.lang.String">
+            <column name="DCFPHEIRCERTREMARKS" />
+        </property>
+        <property name="dcfpServiceBookFlag" type="java.lang.String">
+            <column name="DCFPSERVICEBOOKFLAG" />
+        </property>
+        <property name="dcfpServiceBookRemarks" type="java.lang.String">
+            <column name="DCFPSERVICEBOOKREMARKS" />
+        </property>
+        <property name="dcfpLastPayDrwan" type="java.lang.Integer">
+            <column name="DCFPLASTPAYDRWAN" />
+        </property>
+        <property name="dcfpFamilyPensionFlag" type="java.lang.String">
+            <column name="DCFPFAMILYPENSIONFLAG" />
+        </property>
+        <property name="dcfpFamilyPensionRemarks" type="java.lang.String">
+            <column name="DCFPFAMILYPENSIONREMARKS" />
+        </property>
+        <property name="dcfpPhotoAttachFlag" type="java.lang.String">
+            <column name="DCFPPHOTOATTACHFLAG" />
+        </property>
+        <property name="dcfpPhotoAttachRemarks" type="java.lang.String">
+            <column name="DCFPPHOTOATTACHREMARKS" />
+        </property>
+        <property name="dcfpSignAttachFlag" type="java.lang.String">
+            <column name="DCFPSIGNATTACHFLAG" />
+        </property>
+        <property name="dcfpSignAttachRemarks" type="java.lang.String">
+            <column name="DCFPSIGNATTACHREMARKS" />
+        </property>
+        <property name="dcfpNoDueCertFlag" type="java.lang.String">
+            <column name="DCFPNODUECERTFLAG" />
+        </property>
+        <property name="dcfpNoDueCertRemarks" type="java.lang.String">
+            <column name="DCFPNODUECERTREMARKS" />
+        </property>
+        <property name="familyMembersList" type="java.lang.String">
+            <column name="FAMILYMEMBERSLIST" />
+        </property>
+        <property name="dcfpPensionAmount" type="java.lang.Integer">
+            <column name="DCFPPENSIONAMOUNT" />
+        </property>
+        <property name="dcfpGratuityAmount" type="java.lang.Integer">
+            <column name="DCFPGRATUITYAMOUNT" />
+        </property>
+        <property name="penFamilyPensionFlag" type="java.lang.String">
+            <column name="PENFAMILYPENSIONFLAG" />
+        </property>
+        <property name="penFamilyPensionRemarks" type="java.lang.String">
+            <column name="PENFAMILYPENSIONREMARKS" />
+        </property>
+        <property name="penPhotoAttachFlag" type="java.lang.String">
+            <column name="PENPHOTOATTACHFLAG" />
+        </property>
+        <property name="penPhotoAttachRemarks" type="java.lang.String">
+            <column name="PENPHOTOATTACHREMARKS" />
+        </property>
+        <property name="penSignAttachFlag" type="java.lang.String">
+            <column name="PENSIGNATTACHFLAG" />
+        </property>
+        <property name="penSignAttachRemarks" type="java.lang.String">
+            <column name="PENSIGNATTACHREMARKS" />
+        </property>
+        <property name="penNoDueCertFlag" type="java.lang.String">
+            <column name="PENNODUECERTFLAG" />
+        </property>
+        <property name="penNoDueCertRemarks" type="java.lang.String">
+            <column name="PENNODUECERTREMARKS" />
+        </property>
+        <property name="penConsentRecoverFlag" type="java.lang.String">
+            <column name="PENCONSENTRECOVERFLAG" />
+        </property>
+        <property name="penConsentRecoverRemarks" type="java.lang.String">
+            <column name="PENCONSENTRECOVERREMARKS" />
+        </property>
+        <property name="penDeathCertFlag" type="java.lang.String">
+            <column name="PENDEATHCERTFLAG" />
+        </property>
+        <property name="penDeathCertRemarks" type="java.lang.String">
+            <column name="PENDEATHCERTREMARKS" />
+        </property>
+        <property name="penHeirCertFlag" type="java.lang.String">
+            <column name="PENHEIRCERTFLAG" />
+        </property>
+        <property name="penHeirCertRemarks" type="java.lang.String">
+            <column name="PENHEIRCERTREMARKS" />
+        </property>
+        <property name="penServiceBookFlag" type="java.lang.String">
+            <column name="PENSERVICEBOOKFLAG" />
+        </property>
+        <property name="penServiceBookRemarks" type="java.lang.String">
+            <column name="PENSERVICEBOOKREMARKS" />
+        </property>
+        <property name="penDeclareFlag" type="java.lang.String">
+            <column name="PENDECLAREFLAG" />
+        </property>
+        <property name="penDeclareRemarks" type="java.lang.String">
+            <column name="PENDECLAREREMARKS" />
+        </property>
+        <property name="penRegardDateFlag" type="java.lang.String">
+            <column name="PENREGARDDATEFLAG" />
+        </property>
+        <property name="penRegardDateRemarks" type="java.lang.String">
+            <column name="PENREGARDDATEREMARKS" />
+        </property>
+        <property name="penSanctionUptoDateFlag" type="java.lang.String">
+            <column name="PENSANCTIONUPTODATEFLAG" />
+        </property>
+        <property name="penSanctionUptoDateRemarks" type="java.lang.String">
+            <column name="PENSANCTIONUPTODATEREMARKS" />
+        </property>
+        <property name="pensionPaymentPlace" type="java.lang.String">
+            <column name="PENSIONPAYMENTPLACE" />
+        </property>
+        <property name="dcrgPaymentPlace" type="java.lang.String">
+            <column name="DCRGPAYMENTPLACE" />
+        </property>
+        <property name="recoveriesIfAny" type="java.lang.String">
+            <column name="RECOVERIESIFANY" />
+        </property>
+        <property name="retireOrderFlag" type="java.lang.String">
+            <column name="RETIREORDERFLAG" />
+        </property>
+        <property name="retireOrderRemarks" type="java.lang.String">
+            <column name="RETIREORDERREMARKS" />
+        </property>
+        <property name="deputationIfAny" type="java.lang.String">
+            <column name="DEPUTATIONIFANY" />
+        </property>
+        <property name="processStatus" type="java.lang.String">
+            <column name="PROCESSSTATUS" />
+        </property>
+        <property name="updatedUser" type="java.lang.String">
+            <column name="UPDATEDUSER" />
+        </property>
+        <property name="updatedDate" type="java.sql.Timestamp">
+            <column name="UPDATEDDATE" />
+        </property>
+        <property name="unlockedBy" type="java.lang.String">
+            <column name="UNLOCKEDBY" />
+        </property>
+        <property name="unlockedDate" type="java.sql.Timestamp">
+            <column name="UNLOCKEDDATE" />
+        </property>
+    </class>
+</hibernate-mapping>

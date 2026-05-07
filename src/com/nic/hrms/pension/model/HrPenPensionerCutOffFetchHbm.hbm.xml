@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.nic.hrms.pension.model.HrPenPensionerCutOffFetchModel" table="HRM_MST_EMPLOYEES">
+       
+        <id name="employeeId" type="integer"  >
+            <column name="EMPLOYEE_ID"  length="5" />
+            <generator class="assigned" />
+        </id>
+        
+     	<property name="employeeName" type="string">
+            <column name="EMPLOYEE_NAME" length="40" />
+        </property>
+        
+        <property name="employeeInitial" type="string">
+            <column name="EMPLOYEE_INITIAL" length="8" />
+        </property>
+        
+        <property name="employeePrefix" type="string" >
+            <column name="EMPLOYEE_PREFIX" length="8" />
+        </property>        
+        
+        <property name="gpfNo" type="integer">
+            <column name="GPF_NO" length="10" />
+        </property>
+    	
+    	  <property name="panNo" type="string">
+            <column name="PAN_NO" length="20" />
+        </property>
+    	
+    	
+    	<property name="dateOfBirth" type="date">
+            <column name="DATE_OF_BIRTH"  />
+        </property>
+        
+        <property name="bloodGroup" type="string">
+            <column name="BLOOD_GROUP" length="5" />
+        </property>        
+        
+        <property name="gender" type="string">
+            <column name="GENDER" length="6" />
+        </property>
+        
+        <property name="communityId" type="character">
+            <column name="COMMUNITY_ID" length="3" />
+        </property>
+        
+        <property name="religonId" type="character">
+            <column name="RELIGON_ID" length="3" />
+        </property>
+        
+        <property name="motherTongueId" type="character">
+            <column name="MOTHER_TONGUE_ID" length="3" />
+        </property>
+        
+        <property name="mediumOfStudyId" type="character">
+            <column name="MEDIUM_OF_STUDY_ID" length="3" />
+        </property>
+        
+          
+          
+        <property name="nativeDistrictCode" type="integer">
+            <column name="NATIVE_DISTRICT_CODE" length="3" />
+        </property>
+        
+        <property name="nativeTalukCode" type="integer">
+            <column name="NATIVE_TALUK_CODE" length="3" />
+        </property>
+        
+        
+          
+        <property name="employmentStatusId" type="character">
+            <column name="EMPLOYMENT_STATUS_ID" length="3" />
+        </property>
+        
+        <property name="twadEntryDate" type="date">
+            <column name="TWAD_ENTRY_DATE"  />
+        </property>
+        
+         <property name="joinTimeDesigId" type="integer">
+            <column name="JOIN_TIME_DESIG_ID" length="3" />
+        </property>
+        
+           <property name="recruitmentModeId" type="character">
+            <column name="RECRUITMENT_MODE_ID" length="2" />
+        </property>
+        
+           <property name="serviceTobeCounted" type="character">
+            <column name="SERVICE_TOBE_COUNTED" length="1" />
+        </property>
+        
+           <property name="dateFromServiceCount" type="date">
+            <column name="DATE_FROM_SERVICE_COUNT"  />
+        </property>
+        
+           <property name="maritalStatus" type="character">
+            <column name="MARITAL_STATUS" length="1" />
+        </property>
+        
+        <property name="empCurrentStatusId" type="character">
+            <column name="EMP_CURRENT_STATUS_ID" length="3" />
+        </property>
+        
+        <property name="remarks" type="string">
+            <column name="REMARKS" length="200" />
+        </property>
+        
+          <property name="updatedByUserId" type="string">
+            <column name="UPDATED_BY_USER_ID" length="20" />
+        </property>
+        
+          <property name="updatedDate" type="timestamp">
+            <column name="UPDATED_DATE" length="6" />
+        </property>
+        
+          <property name="qualifications" type="string">
+            <column name="QUALIFICATIONS" length="60" />
+        </property>
+        
+          <property name="otherDistricts" type="string">
+            <column name="OTHER_DISTRICTS" length="30" />
+        </property>
+        
+          <property name="otherState" type="string">
+            <column name="OTHER_STATE" length="20" />
+        </property>
+        
+          <property name="processFlowStatusId" type="character">
+            <column name="PROCESS_FLOW_STATUS_ID" length="2" />
+        </property>
+        
+          <property name="regularisationProbationDate" type="date">
+            <column name="REGULARISATION_PROBATION_DATE"  />
+        </property>
+        
+           <property name="approvedProbationer" type="string">
+            <column name="APPROVED_PROBATIONER" length="1" />
+        </property>
+        
+          <property name="isConsolidate" type="string">
+            <column name="IS_CONSOLIDATE" length="1" />
+        </property>
+        
+          <property name="empWkgGettingPension" type="string">
+            <column name="EMP_WKG_GETTING_PENSION" length="1" />
+        </property>
+        
+            <property name="isHandicapped" type="string">
+            <column name="IS_HANDICAPPED" length="1" />
+        </property>
+      
+        
+       </class>      
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.nic.hrms.pension.model.AjaxCombo_dao" table="HRM_PEN_BANK_BRANCH_MASTER">
+		
+		<id name="branchId" type="integer"  >
+            <column name="BRANCH_ID"  length="30" />
+            <generator class="assigned" />
+        </id>
+        
+		<property name="bankId" type="integer">
+			<column name="BANK_ID" length="6"/>
+		</property>
+		
+		<property name="branchName" type="string">
+			<column name="BRANCH_NAME"/>
+		</property>
+		
+		<property name="officeId" type="integer">
+			<column name="OFFICE_ID" length="6"/>
+		</property>
+	
+	</class>
+</hibernate-mapping>	

@@ -1,0 +1,108 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 Jun, 2013 3:55:02 PM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.FamilyPensionApplicationDeathFieldForm2DetailsDao" table="FAMILYPENSIONAPPLICATIONDEATHFIELDFORM2DETAILSDAO">
+        <id name="idMark1" type="java.lang.String">
+            <column name="IDMARK1" />
+            <generator class="assigned" />
+        </id>
+        <property name="serialVersionUID" type="long" access="field">
+            <column name="SERIALVERSIONUID" />
+        </property>
+        <property name="empNo" type="java.lang.Integer">
+            <column name="EMPNO" />
+        </property>
+        <property name="religionId" type="java.lang.Integer">
+            <column name="RELIGIONID" />
+        </property>
+        <property name="religionIdStr" type="java.lang.String">
+            <column name="RELIGIONIDSTR" />
+        </property>
+        <property name="nationality" type="java.lang.String">
+            <column name="NATIONALITY" />
+        </property>
+        <property name="idMark2" type="java.lang.String">
+            <column name="IDMARK2" />
+        </property>
+        <property name="presentAddress" type="java.lang.String">
+            <column name="PRESENTADDRESS" />
+        </property>
+        <property name="stateId" type="java.lang.Integer">
+            <column name="STATEID" />
+        </property>
+        <property name="stateIdStr" type="java.lang.String">
+            <column name="STATEIDSTR" />
+        </property>
+        <property name="paymentOfficeId" type="java.lang.Integer">
+            <column name="PAYMENTOFFICEID" />
+        </property>
+        <property name="paymentOfficeIdStr" type="java.lang.String">
+            <column name="PAYMENTOFFICEIDSTR" />
+        </property>
+        <property name="claimentName" type="java.lang.String">
+            <column name="CLAIMENTNAME" />
+        </property>
+        <property name="claimentDob1" type="java.lang.String">
+            <column name="CLAIMENTDOB1" />
+        </property>
+        <property name="claimentDob2" type="java.util.Date">
+            <column name="CLAIMENTDOB2" />
+        </property>
+        <property name="claimentDob3" type="java.lang.String">
+            <column name="CLAIMENTDOB3" />
+        </property>
+        <property name="height" type="java.lang.String">
+            <column name="HEIGHT" />
+        </property>
+        <property name="claimentAge" type="java.lang.Integer">
+            <column name="CLAIMENTAGE" />
+        </property>
+        <property name="guardianName" type="java.lang.String">
+            <column name="GUARDIANNAME" />
+        </property>
+        <property name="guardianDob1" type="java.lang.String">
+            <column name="GUARDIANDOB1" />
+        </property>
+        <property name="guardianDob2" type="java.util.Date">
+            <column name="GUARDIANDOB2" />
+        </property>
+        <property name="guardianDob3" type="java.lang.String">
+            <column name="GUARDIANDOB3" />
+        </property>
+        <property name="guardianRelationMinor" type="java.lang.String">
+            <column name="GUARDIANRELATIONMINOR" />
+        </property>
+        <property name="guardianRelationEmp" type="java.lang.String">
+            <column name="GUARDIANRELATIONEMP" />
+        </property>
+        <property name="employeeDeathDate1" type="java.lang.String">
+            <column name="EMPLOYEEDEATHDATE1" />
+        </property>
+        <property name="employeeDeathDate2" type="java.util.Date">
+            <column name="EMPLOYEEDEATHDATE2" />
+        </property>
+        <property name="employeeDeathDate3" type="java.lang.String">
+            <column name="EMPLOYEEDEATHDATE3" />
+        </property>
+        <property name="address" type="java.lang.String">
+            <column name="ADDRESS" />
+        </property>
+        <property name="updatedUser" type="java.lang.String">
+            <column name="UPDATEDUSER" />
+        </property>
+        <property name="updatedDate" type="java.sql.Timestamp">
+            <column name="UPDATEDDATE" />
+        </property>
+        <property name="processStatus" type="java.lang.String">
+            <column name="PROCESSSTATUS" />
+        </property>
+        <property name="unlockedUser" type="java.lang.String">
+            <column name="UNLOCKEDUSER" />
+        </property>
+        <property name="unlockedDate" type="java.sql.Timestamp">
+            <column name="UNLOCKEDDATE" />
+        </property>
+    </class>
+</hibernate-mapping>

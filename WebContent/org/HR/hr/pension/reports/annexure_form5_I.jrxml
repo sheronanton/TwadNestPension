@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="annexure_form5_I"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+
+	<field name="EMP_NO" class="java.math.BigDecimal"/>
+	<field name="PPO_NO" class="java.math.BigDecimal"/>
+	<field name="FROM_ADDRESS" class="java.lang.String"/>
+	<field name="TO_ADDRESS" class="java.lang.String"/>
+	<field name="CIRCLE_HO_OFFICE_STATUS" class="java.lang.String"/>
+	<field name="PENSION_PAY_OFFICE_ADDRESS" class="java.lang.String"/>
+	<field name="LETTER_NO" class="java.lang.String"/>
+	<field name="DATED_ON" class="java.lang.String"/>
+	<field name="REFERENCE" class="java.lang.String"/>
+	<field name="AUTHORIZED_OFFICER" class="java.lang.String"/>
+	<field name="AUTHORIZED_OFFICER_ADDRESS" class="java.lang.String"/>
+	<field name="COPY_TO1" class="java.lang.String"/>
+	<field name="COPY_TO2" class="java.lang.String"/>
+	<field name="SUBJECT" class="java.lang.String"/>
+	<field name="CONTENT" class="java.lang.String"/>
+	<field name="EMP_NAME" class="java.lang.String"/>
+	<field name="DATE_OF_RETIREMENT" class="java.util.Date"/>
+	<field name="LAST_WORK_OFFICE_ADDRESS" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="700"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="0"
+						y="0"
+						width="530"
+						height="670"
+						key="staticText-74"/>
+					<box></box>
+					<textElement textAlignment="Justified">
+						<font size="12"/>
+					</textElement>
+				<text><![CDATA[
+
+Two slips each bearing the left hand thumb and finger impressions duly attested by the Head of office may be furnished by a person who is not literate enough to sign his name.  If such a Government Servant on account of Physical disability is unable to give left hand thumb and finger impressions he may give thumb and finger impressions of the right hand. There a Government servant has lost both the hands, he may give his toe impression. Impressions should be duly attested by the competent authority.
+
+Three copies of Passport size photo of self only need be furnished:-
+
+i.	If the Government Servant is governed by Rule 49 of the Tamilnadu pension Rule 1978 and is unmarried or a widower/widow.
+ii.	Where it is not possible for a Government servant to submit a photo with his wife or husband he or she may submit a separate photographs. The photos shall be attested by the Head of office.
+iii.	If the Government servant is governed by rule 50 of the Tamilnadu Pension Rule 1978.
+
+Specify a few conspicuous marks, not less than two, if possible.
+
+Any subsequent change of address should be notified to the Head of office and audit Officer.
+
+Applicable only where rule 49 of the Tamilnadu Pension Rules 1978 applied to the Government servant.
+
+The applicant should indicate the fraction of the amount of monthly pension (Subject to a maximum of one-third there of which he desired to commute and note the amount in rupees.)
+
+                                                                            PART II
+
+Forwarded to the Accountant General, Tamilnadu with remarks that:
+
+i.	The particulars furnished by the applicant in Para I have been verified and are correct.
+ii.	The applicant is eligible to get a fraction of his pension commuted without medical examination.
+iii.	The commuted value of pension determined with reference to the Table applicable at present comes to Rs. 
+iv.	The amount of residuary pension after commutation will be Rs. 
+v.	It is requested that further action to authorise the payment of the amount commuted value of pension may be taken as in rule 15 of the Tamilnadu (Commutation of pension rules).
+vi.	The commuted value of pension is debitable to Head of Account.
+]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="11"
+						y="678"
+						width="75"
+						height="20"
+						key="staticText-75"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Place:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="281"
+						y="678"
+						width="75"
+						height="20"
+						key="staticText-76"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<text><![CDATA[Signature:]]></text>
+				</staticText>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

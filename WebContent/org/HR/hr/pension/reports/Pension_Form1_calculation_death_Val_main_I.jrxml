@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="Pension_Form1_calculation_death_Val_main_I"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="842"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+
+	<field name="EMP_ID" class="java.math.BigDecimal"/>
+	<field name="OFFICE_ID" class="java.math.BigDecimal"/>
+	<field name="PENSION_TYPE" class="java.math.BigDecimal"/>
+	<field name="EMP_INITIAL" class="java.lang.String"/>
+	<field name="EMP_NAME" class="java.lang.String"/>
+	<field name="DESIG_SERVICE_GRP" class="java.math.BigDecimal"/>
+	<field name="DESIGNATION_ID" class="java.math.BigDecimal"/>
+	<field name="DATE_OF_BIRTH" class="java.util.Date"/>
+	<field name="DATE_OF_APP" class="java.util.Date"/>
+	<field name="DATE_OF_PROVINC" class="java.util.Date"/>
+	<field name="DATE_OF_REG_ESTAB" class="java.util.Date"/>
+	<field name="DATE_OF_SELECTION" class="java.util.Date"/>
+	<field name="DATE_OF_SPECIAL" class="java.util.Date"/>
+	<field name="DATE_OF_RETIRE" class="java.util.Date"/>
+	<field name="DATE_OF_VRS" class="java.util.Date"/>
+	<field name="COMM_OPTED" class="java.lang.String"/>
+	<field name="COMM_FACTOR_ONRTHIRD" class="java.lang.String"/>
+	<field name="COM_FACTOR_PERT" class="java.math.BigDecimal"/>
+	<field name="WCE_SERV_DAYS" class="java.lang.String"/>
+	<field name="WCE_SERV_MONTH" class="java.lang.String"/>
+	<field name="WCE_SERV_YEAR" class="java.lang.String"/>
+	<field name="WCE_SERV_FLAG" class="java.lang.String"/>
+	<field name="WCE_SERV_COUNT_FLAG" class="java.lang.String"/>
+	<field name="CONTINGENT_SERV_FLAG" class="java.lang.String"/>
+	<field name="CONTINGENT_SERV_DAYS" class="java.lang.String"/>
+	<field name="CONTINGENT_SERV_MONTH" class="java.lang.String"/>
+	<field name="CONTINGENT_SERV_YEAR" class="java.lang.String"/>
+	<field name="NON_PROV_SERV_DAYS" class="java.math.BigDecimal"/>
+	<field name="NON_PROV_SERV_MONTH" class="java.math.BigDecimal"/>
+	<field name="NON_PROV_SERV_YEAR" class="java.math.BigDecimal"/>
+	<field name="EOL_DAYS" class="java.math.BigDecimal"/>
+	<field name="EOL_MONTH" class="java.math.BigDecimal"/>
+	<field name="EOL_YEAR" class="java.math.BigDecimal"/>
+	<field name="SUSPENSION_DAYS" class="java.math.BigDecimal"/>
+	<field name="SUSPENSION_MONTH" class="java.math.BigDecimal"/>
+	<field name="SUSPENSION_YEAR" class="java.math.BigDecimal"/>
+	<field name="BOY_SERV_DAYS" class="java.math.BigDecimal"/>
+	<field name="BOY_SERV_MONTH" class="java.math.BigDecimal"/>
+	<field name="BOY_SERV_YEAR" class="java.math.BigDecimal"/>
+	<field name="OVERSTAY_LEAVE_DAYS" class="java.math.BigDecimal"/>
+	<field name="OVERSTAY_LEAVE_MONTH" class="java.math.BigDecimal"/>
+	<field name="OVERSTAY_LEAVE_YEAR" class="java.math.BigDecimal"/>
+	<field name="NOT_REG_LEAVE_DAYS" class="java.math.BigDecimal"/>
+	<field name="NOT_REG_LEAVE_MONTH" class="java.math.BigDecimal"/>
+	<field name="NOT_REG_LEAVE_YEAR" class="java.math.BigDecimal"/>
+	<field name="APPRENTICE_DAYS" class="java.math.BigDecimal"/>
+	<field name="APPRENTICE_MONTH" class="java.math.BigDecimal"/>
+	<field name="APPRENTICE_YEAR" class="java.math.BigDecimal"/>
+	<field name="NOT_SERV_VERIFY_DAYS" class="java.math.BigDecimal"/>
+	<field name="NOT_SERV_VERIFY_MONTH" class="java.math.BigDecimal"/>
+	<field name="NOT_SERV_VERIFY_YEAR" class="java.math.BigDecimal"/>
+	<field name="FOREIGN_SERV_DAYS" class="java.math.BigDecimal"/>
+	<field name="FOREIGN_SERV_MONTH" class="java.math.BigDecimal"/>
+	<field name="FOREIGN_SERV_YEAR" class="java.math.BigDecimal"/>
+	<field name="LAST_BASIC_PAY" class="java.lang.String"/>
+	<field name="LAST_SPECIAL_PAY" class="java.lang.String"/>
+	<field name="LAST_GRADE_PAY" class="java.lang.String"/>
+	<field name="LAST_OTHER_PAY1" class="java.lang.String"/>
+	<field name="LAST_OTHER_PAY2" class="java.lang.String"/>
+	<field name="LAST_OTHER_PAY3" class="java.lang.String"/>
+	<field name="PENSION_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="DCRG_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="NO_OF_HALFYEAR_PENSION" class="java.math.BigDecimal"/>
+	<field name="NO_OF_HALFYEAR_DCRG" class="java.math.BigDecimal"/>
+	<field name="TOTAL_COMMUTED_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="REDUCED_PENSION_AMOUNT" class="java.math.BigDecimal"/>
+	<field name="FAMILY_PENSION_50_AMT" class="java.math.BigDecimal"/>
+	<field name="FAMILY_PENSION_30_AMT" class="java.math.BigDecimal"/>
+	<field name="form1avgValDetails" class="org.apache.struts2.views.jasperreports.ValueStackDataSource"/>
+	<field name="form1Valrecovery" class="org.apache.struts2.views.jasperreports.ValueStackDataSource"/>
+	<field name="LPD" class="java.math.BigDecimal"/>
+	<field name="COMMUTEDAMOUNT" class="java.math.BigDecimal"/>
+	<field name="DAMOUNT" class="java.math.BigDecimal"/>
+	<field name="COMMUTEDVAL" class="java.math.BigDecimal"/>
+	<field name="DESIGNATION_NAME" class="java.lang.String"/>
+	<field name="ACTUALSERVICEYEAR" class="java.math.BigDecimal"/>
+	<field name="ACTUALSERVICEMONTH" class="java.math.BigDecimal"/>
+	<field name="ACTUALSERVICEDAYS" class="java.math.BigDecimal"/>
+	<field name="NONQUALSERVICEYEAR" class="java.math.BigDecimal"/>
+	<field name="NONQUALSERVICEMONTH" class="java.math.BigDecimal"/>
+	<field name="NONQUALSERVICEDAYS" class="java.math.BigDecimal"/>
+	<field name="NETQUALSERVICEYEAR" class="java.math.BigDecimal"/>
+	<field name="NETQUALSERVICEMONTH" class="java.math.BigDecimal"/>
+	<field name="NETQUALSERVICEDAYS" class="java.math.BigDecimal"/>
+	<field name="WCESERVICELABLE" class="java.lang.String"/>
+	<field name="SCALEOFPAY" class="java.lang.String"/>
+	<field name="TYPEOFPENSION" class="java.lang.String"/>
+	<field name="CONTSERVICELABLE" class="java.lang.String"/>
+	<field name="WEIGHTAGE_SERV_DAYS" class="java.lang.String"/>
+	<field name="WEIGHTAGE_SERV_MONTH" class="java.lang.String"/>
+	<field name="WEIGHTAGE_SERV_YEAR" class="java.lang.String"/>
+	<field name="WEIGHTAGELABLE" class="java.lang.String"/>
+	<field name="new Date()" class="java.util.Date">
+		<fieldDescription><![CDATA[new Date()]]></fieldDescription>
+	</field>
+	<field name="LASTBASICLABLE" class="java.lang.String"/>
+	<field name="LASTGRADELABLE" class="java.lang.String"/>
+	<field name="LASTSPECIALLABLE" class="java.lang.String"/>
+	<field name="LASTOTHER1LABLE" class="java.lang.String"/>
+	<field name="LASTOTHER2LABLE" class="java.lang.String"/>
+	<field name="LASTOTHER3LABLE" class="java.lang.String"/>
+	<field name="FAM_UPTO_DATE" class="java.util.Date"/>
+	<field name="FAM_AFTER_DATE" class="java.util.Date"/>
+	<field name="LASTPAYDRAWNAMOUNT" class="java.math.BigDecimal"/>
+	<field name="DAPERCENTAGE" class="java.math.BigDecimal"/>
+	<field name="AVGEMOULMENTSAMOUNT" class="java.math.BigDecimal"/>
+	<field name="RECOVERYAMOUNT" class="java.math.BigDecimal"/>
+	<field name="DCRGRECAMTLABLE" class="java.lang.String"/>
+	<field name="DCRGDISAMT" class="java.lang.String"/>
+	<field name="DCRGDISMINUSLABLE" class="java.lang.String"/>
+	<field name="RECAMOUNTDIS" class="java.lang.String"/>
+	<field name="DCRGAMOUNTEQUALLABLE" class="java.lang.String"/>
+	<field name="DCRGRECFINALDISAMT" class="java.lang.String"/>
+	<field name="COMMURECAMTLABLE" class="java.lang.String"/>
+	<field name="COMMUDISAMT" class="java.lang.String"/>
+	<field name="COMMUDISMINUSLABLE" class="java.lang.String"/>
+	<field name="COMMURECAMOUNTDIS" class="java.lang.String"/>
+	<field name="COMMUAMOUNTEQUALLABLE" class="java.lang.String"/>
+	<field name="COMMURECFINALDISAMT" class="java.lang.String"/>
+	<field name="RESTRICT_ORG_PEN" class="java.lang.String"/>
+	<field name="MAX_PEN_HALF_YR" class="java.math.BigDecimal"/>
+	<field name="VRS_FAM_PEN_TEXT" class="java.lang.String"/>
+	<field name="FAM_UPTO_DATE_TEXT" class="java.lang.String"/>
+	<field name="FAM_AFTER_DATE_TEXT" class="java.lang.String"/>
+	<field name="RESTRICT_PENSION_TEXT" class="java.lang.String"/>
+	<field name="SUBJECT_CONTENT" class="java.lang.String"/>
+	<field name="form1SubReportDetails" class="org.apache.struts2.views.jasperreports.ValueStackDataSource"/>
+	<field name="SUBJECT_CONTENT5" class="java.lang.String"/>
+
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="22"  isSplitAllowed="true" >
+				<textField isStretchWithOverflow="false" pattern="###0" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="3"
+						y="0"
+						width="530"
+						height="20"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font pdfFontName="Helvetica-Bold" size="12" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$F{SUBJECT_CONTENT5}]]></textFieldExpression>
+				</textField>
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>

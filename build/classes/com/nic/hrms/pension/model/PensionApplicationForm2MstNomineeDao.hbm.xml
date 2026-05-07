@@ -1,0 +1,71 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+<class name="com.nic.hrms.pension.model.PensionApplicationForm2MstNomineeDao" table="HRM_PEN_APP_MST_FORM2_NOMIN">
+  
+  	<id name="nomineeId" type="integer">
+            <column name="NOMINEE_ID" />
+            <generator class="increment" />
+     </id>
+      
+        <property name="empNo" type="integer">
+            <column name="EMP_NO" length="6" />
+        </property>
+
+  		<property name="nomineeInitial" type="string">
+            <column name="NOMINEE_INITIAL" length="10" />
+        </property>
+        
+		<property name="familyMembers" type="string">
+            <column name="NOMINEE_NAME" length="50" />
+        </property>
+        
+       <property name="relation" type="string">
+            <column name="RELATIONSHIP_ID" length="8" />
+        </property>        
+        
+        <property name="nomineeDob1" type="date">
+            <column name="DOB"  />
+        </property>
+        
+        <property name="nomineeAge" type="integer">
+            <column name="AGE" length="6" />
+        </property>
+        
+        <property name="handicapped" type="string">
+            <column name="HANDICAPPED" length="8" />
+        </property>
+        
+        
+        <property name="martialStatus" type="string">
+            <column name="MARITAL_STATUS" length="15" />
+        </property>
+           
+        <property name="nominationDate1" type="date">
+            <column name="NOMINATION_DATE"  />
+        </property>
+               
+         <property name="activeStatus" type="string">
+            <column name="ACTIVE_STATUS"  length="10"/>
+        </property>
+        
+         <property name="nominReason" type="string">
+            <column name="REASON"  length="100"/>
+        </property>        
+        
+        <property name="processStatus" type="string">
+        	<column name="PROCESS_STATUS" length="8"/>
+        </property>
+        
+        <property name="updatedUserId" type="string">
+            <column name="UPDATED_USER"  length="20"/>
+        </property>
+        
+        <property name="updatedDate" type="java.sql.Timestamp">
+            <column name="UPDATED_DATE"  />
+        </property>
+</class>
+</hibernate-mapping>

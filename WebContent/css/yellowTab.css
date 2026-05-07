@@ -1,0 +1,103 @@
+/*
+
+bright: rgb(234,242,255);
+normal: rgb(120,172,255);
+dark:	rgb(0,66,174);
+
+*/
+
+
+.dynamic-tab-pane-control.tab-pane {
+	position:	relative;
+	width:   100%;   
+}
+
+.dynamic-tab-pane-control .tab-row .tab {
+	font-family:	Verdana, Helvetica, Arial;
+	font-size:		12px;
+	cursor:			Default;
+	display:		inline;
+	margin:			1px 5px 1px 5px;
+	float:			left;
+	padding:		3px 6px 3px 6px;
+/*  background:	rgb(228,237,238) ;*/
+background:	rgb(184,188,177);
+	border:			1px ;
+	border-color:	black;
+	border-left:	0;
+	border-bottom: 3px;
+	border-top:		0;
+	
+	cursor:			pointer;	
+	position:		relative;
+	top:			0;
+}
+
+.dynamic-tab-pane-control .tab-row .tab.selected {
+	border:			3px groove white;
+/*	border-bottom:	0;  
+	z-index:		3;
+	padding:		2px 6px 5px 6px;
+	margin:			1px -6px -2px 0px;
+	top:			-2px;*/
+	background:	rgb(249,247,236);
+}
+
+.dynamic-tab-pane-control .tab-row .tab a {
+	font-family:		Verdana, Helvetica, Arial;
+	font-size:			13px;
+	color:				rgb(10,10,10);
+	text-decoration:	none;
+	cursor:			pointer;	  
+}
+
+.dynamic-tab-pane-control .tab-row .hover a {
+background:	rgb(184,188,177);
+}
+
+.dynamic-tab-pane-control .tab-row .tab.selected a {
+	font-weight:	bold;
+}
+
+.dynamic-tab-pane-control .tab-page {
+	clear:			both;	
+   border: 1px solid rgb(184,188,177);
+   
+	background:		rgb(249,247,236);
+	z-index:		2;
+	position:		relative;
+	top:			-2px;
+	color:			Black;
+	font-family:	Verdana, Helvetica, Arial;
+	font-size:		13px;
+  /*height: 500px;*/
+  width: 100%; 
+}
+
+.dynamic-tab-pane-control .tab-row {
+	z-index:		1;
+	white-space:	nowrap;	
+  background:   rgb(249,247,236);
+	height:			1.65em;
+	width:			100%;
+}
+
+.dynamic-tab-pane-control .row {
+	z-index:		1;	
+  background:   rgb(227,232,218) ;
+	height:			2.65em;
+	width:			100%;
+}
+
+/*.secondLevelMenuBar{
+  background:rgb(207,222,225);
+  width: 100%; height:15px; border-bottom: 1px solid rgb(51,102,102);  padding: 0px; margin: 0px;
+}
+
+.secondLevelMenuItem{
+  background: rgb(228,237,238);
+}
+
+.secondLevelMenuItemOnMouseOver{
+  background: rgb(216,232,235);
+}*/

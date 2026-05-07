@@ -1,0 +1,148 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+
+	<class name="com.nic.hrms.pension.model.MstOfficesModel" table="COM_MST_OFFICES">
+       
+    	<id name="office_id" type="integer">
+			<column name="OFFICE_ID" />
+			<generator class="assigned" />
+		</id>
+            				
+        <property name="office_name" type="string">
+        	<column name="OFFICE_NAME" length="60"/>
+        </property>
+        
+        <property name="office_short_name" type="string">
+            <column name="OFFICE_SHORT_NAME" length="55"/>
+        </property>
+        
+        <property name="office_level_id" type="char">
+            <column name="OFFICE_LEVEL_ID"  length="2"/>
+        </property>
+		
+		 <property name="office_head_cadre_id" type="integer">
+        	<column name="OFFICE_HEAD_CADRE_ID" />
+        </property>
+        
+        <property name="office_address1" type="string">
+            <column name="OFFICE_ADDRESS1" length="50"/>
+        </property>
+        
+        <property name="office_address2" type="string">
+            <column name="OFFICE_ADDRESS2" length="50" />
+        </property>
+        
+        <property name="city_town_name" type="string">
+            <column name="CITY_TOWN_NAME" length="50" />
+        </property>
+        
+        <property name="office_pin_code" type="integer">
+        	<column name="OFFICE_PIN_CODE" />
+        </property>
+        
+         <property name="district_code" type="integer">
+        	<column name="DISTRICT_CODE" />
+        </property>
+        
+        <property name="office_std_code" type="string">
+            <column name="OFFICE_STD_CODE" length="6"/>
+        </property>
+        
+        
+        <property name="office_phone_no" type="string">
+            <column name="OFFICE_PHONE_NO" length="10"/>
+        </property>
+        
+        
+        <property name="addl_phone_nos" type="string">
+            <column name="ADDL_PHONE_NOS" length="50"/>
+        </property>
+        
+         <property name="office_fax_no" type="string">
+            <column name="OFFICE_FAX_NO" length="10"/>
+        </property>
+        
+        
+        <property name="office_email_id" type="string">
+            <column name="OFFICE_EMAIL_ID" length="75"/>
+        </property>
+        
+         
+        <property name="addl_email_ids" type="string">
+            <column name="ADDL_EMAIL_IDS" length="250"/>
+        </property>
+        
+        
+        <property name="primary_work_id" type="char">
+            <column name="PRIMARY_WORK_ID" length="2"/>
+        </property>
+        
+         <property name="date_of_formation"  type="date">
+            <column name="DATE_OF_FORMATION" />
+        </property>
+        
+        <property name="hra_class_id" type="char">
+            <column name="HRA_CLASS_ID" length="1" />
+        </property>
+       
+        <property name="accounting_unit" type="char">
+            <column name="ACCOUNTING_UNIT" length="1" />
+        </property>
+        
+         <property name="wings_applicable" type="char">
+            <column name="WINGS_APPLICABLE" length="1" />
+        </property>
+        
+         <property name="office_old_code" type="char">
+            <column name="OFFICE_OLD_CODE" length="4"/>
+        </property>
+       
+        <property name="office_status_id" type="char">
+            <column name="OFFICE_STATUS_ID" length="2"/>
+        </property>
+        
+         <property name="status_effective_from" type="date">
+            <column name="STATUS_EFFECTIVE_FROM" />
+        </property>
+        
+       <property name="remarks" type="string">
+            <column name="REMARKS" length="200" />
+        </property>
+        
+        <property name="updated_by_user_id" type="string">
+            <column name="UPDATED_BY_USER_ID" length="20"/>
+        </property>
+        
+        <property name="updated_date" type="timestamp">
+            <column name="UPDATED_DATE" />
+        </property>
+      
+        <property name="cca_class_id" type="char">
+            <column name="CCA_CLASS_ID" length="1"/>
+        </property>
+        
+          <property name="process_flow_status_id" type="char">
+            <column name="PROCESS_FLOW_STATUS_ID" length="2"/>
+        </property>
+        
+        <property name="office_name_original" type="string">
+            <column name="OFFICE_NAME_ORIGINAL" length="60"/>
+        </property>
+        
+         <property name="pension_payment_office" type="char">
+            <column name="PENSION_PAYMENT_OFFICE" length="1"/>
+        </property>
+             
+      
+        
+          
+     
+	</class>
+		
+
+	
+</hibernate-mapping>

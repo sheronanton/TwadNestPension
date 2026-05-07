@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 Jun, 2013 3:55:02 PM by Hibernate Tools 3.3.0.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.RevisedPensionReportModel" table="REVISEDPENSIONREPORTMODEL">
+        <id name="serialVersionUID" type="long" access="field">
+            <column name="SERIALVERSIONUID" />
+            <generator class="assigned" />
+        </id>
+        <property name="NAME_FROM_ADDRESS" type="java.lang.String">
+            <column name="NAME_FROM_ADDRESS" />
+        </property>
+        <property name="AUTHORIZED_OFFICER" type="java.lang.String">
+            <column name="AUTHORIZED_OFFICER" />
+        </property>
+        <property name="LAST_WORK_OFFICE_ADDRESS" type="java.lang.String">
+            <column name="LAST_WORK_OFFICE_ADDRESS" />
+        </property>
+        <property name="PENSION_PAY_OFFICE_ADDRESS" type="java.lang.String">
+            <column name="PENSION_PAY_OFFICE_ADDRESS" />
+        </property>
+        <property name="LETTER_NO" type="java.lang.String">
+            <column name="LETTER_NO" />
+        </property>
+        <property name="DATED_ON" type="java.lang.String">
+            <column name="DATED_ON" />
+        </property>
+        <property name="SUBJECT" type="java.lang.String">
+            <column name="SUBJECT" />
+        </property>
+        <property name="DATE_OF_RETIRE" type="java.util.Date">
+            <column name="DATE_OF_RETIRE" />
+        </property>
+        <property name="DEATH_DATE" type="java.util.Date">
+            <column name="DEATH_DATE" />
+        </property>
+        <property name="DATE_OF_VRS" type="java.util.Date">
+            <column name="DATE_OF_VRS" />
+        </property>
+        <property name="EMP_NAME" type="java.lang.String">
+            <column name="EMP_NAME" />
+        </property>
+        <property name="DESIGNATION" type="java.lang.String">
+            <column name="DESIGNATION" />
+        </property>
+        <property name="CONTENT" type="java.lang.String">
+            <column name="CONTENT" />
+        </property>
+        <property name="subject" type="java.lang.String">
+            <column name="SUBJECT" />
+        </property>
+        <property name="sub" type="java.lang.String">
+            <column name="SUB" />
+        </property>
+        <property name="ref" type="java.lang.String">
+            <column name="REF" />
+        </property>
+        <property name="note_content1" type="java.lang.String">
+            <column name="NOTE_CONTENT1" />
+        </property>
+        <property name="note_content2" type="java.lang.String">
+            <column name="NOTE_CONTENT2" />
+        </property>
+        <property name="note_content3" type="java.lang.String">
+            <column name="NOTE_CONTENT3" />
+        </property>
+        <property name="EMPNAME_CONTENT" type="java.lang.String">
+            <column name="EMPNAME_CONTENT" />
+        </property>
+        <property name="OLDPENSIONAMOUNT" type="java.math.BigDecimal">
+            <column name="OLDPENSIONAMOUNT" />
+        </property>
+        <property name="OLDCOMMPENAMT" type="java.math.BigDecimal">
+            <column name="OLDCOMMPENAMT" />
+        </property>
+        <property name="OLDREDPENAMT" type="java.math.BigDecimal">
+            <column name="OLDREDPENAMT" />
+        </property>
+        <property name="OLDFAMPEN50AMT" type="java.math.BigDecimal">
+            <column name="OLDFAMPEN50AMT" />
+        </property>
+        <property name="OLDFAMPEN30AMT" type="java.math.BigDecimal">
+            <column name="OLDFAMPEN30AMT" />
+        </property>
+        <property name="OLDDCRGAMOUNT" type="java.math.BigDecimal">
+            <column name="OLDDCRGAMOUNT" />
+        </property>
+        <property name="PPO_NO" type="java.math.BigDecimal">
+            <column name="PPO_NO" />
+        </property>
+        <property name="CONTENT1" type="java.lang.String">
+            <column name="CONTENT1" />
+        </property>
+        <property name="CONTENT2" type="java.lang.String">
+            <column name="CONTENT2" />
+        </property>
+        <property name="CONTENT3" type="java.lang.String">
+            <column name="CONTENT3" />
+        </property>
+        <property name="CONTENT4" type="java.lang.String">
+            <column name="CONTENT4" />
+        </property>
+        <property name="CONTENT5" type="java.lang.String">
+            <column name="CONTENT5" />
+        </property>
+        <property name="NEWPENSIONAMOUNT" type="java.math.BigDecimal">
+            <column name="NEWPENSIONAMOUNT" />
+        </property>
+        <property name="NEWCOMMPENAMT" type="java.math.BigDecimal">
+            <column name="NEWCOMMPENAMT" />
+        </property>
+        <property name="NEWREDPENAMT" type="java.math.BigDecimal">
+            <column name="NEWREDPENAMT" />
+        </property>
+        <property name="NEWFAMPEN50AMT" type="java.math.BigDecimal">
+            <column name="NEWFAMPEN50AMT" />
+        </property>
+        <property name="NEWFAMPEN30AMT" type="java.math.BigDecimal">
+            <column name="NEWFAMPEN30AMT" />
+        </property>
+        <property name="NEWDCRGAMOUNT" type="java.math.BigDecimal">
+            <column name="NEWDCRGAMOUNT" />
+        </property>
+        <property name="WEFDATE" type="java.lang.String">
+            <column name="WEFDATE" />
+        </property>
+        <property name="DIFFCOMMAMT" type="java.lang.String">
+            <column name="DIFFCOMMAMT" />
+        </property>
+        <property name="COPY1" type="java.lang.String">
+            <column name="COPY1" />
+        </property>
+        <property name="COPY2" type="java.lang.String">
+            <column name="COPY2" />
+        </property>
+        <property name="REFERENCE" type="java.lang.String">
+            <column name="REFERENCE" />
+        </property>
+        <property name="LETTERNO" type="java.lang.String">
+            <column name="LETTERNO" />
+        </property>
+        <property name="DATEDON" type="java.lang.String">
+            <column name="DATEDON" />
+        </property>
+        <property name="EMPNO" type="java.math.BigDecimal">
+            <column name="EMPNO" />
+        </property>
+        <property name="LETTERNO1" type="java.lang.String">
+            <column name="LETTERNO1" />
+        </property>
+    </class>
+</hibernate-mapping>

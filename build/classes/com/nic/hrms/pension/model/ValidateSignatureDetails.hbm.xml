@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15 Sep, 2009 3:45:35 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.ValidateSignatureDetails" table="HRM_PEN_MST_SIGN_ATTACH">
+      
+      <id name="ppoNo" type="integer"  >
+            <column name="PPO_NO"  length="6" />
+            <generator class="assigned" />
+        </id>
+        
+         <property name="pensionStatus" type="string">
+            <column name="PENSION_STATUS" length="10" />
+        </property>
+        <property name="pensionNotPaidFrmMon" type="string">
+            <column name="PENSION_NOT_PAID_FRM_MON" length="15" />
+        </property>
+        
+        <property name="pensionNotPaidFrmYear" type="string">
+            <column name="PENSION_NOT_PAID_FRM_YEAR" length="15" />
+        </property>
+        
+         <property name="processStatus" type="string">
+            <column name="PROCESS_STATUS" length="10" />
+        </property>
+        
+        <property name="lastSignatureDate1" type="date">
+            <column name="LAST_SIGNATURE_DATE"  />
+        </property>
+        
+         <property name="updatedId" type="string">
+            <column name="UPDATED_USER_ID" length="20"/>
+        </property>
+        
+         <property name="updatedDate" type="java.sql.Timestamp">
+            <column name="UPDATED_DATE" />
+        </property>
+        
+        
+        
+         </class>
+</hibernate-mapping>
+        
+        

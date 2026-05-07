@@ -1,0 +1,72 @@
+.white_border {
+	border: 1pt solid #FFFFFF;
+}
+.red_border {
+
+	border: 1pt solid #C80000;
+}
+.grey_txt {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: #686666;
+	text-decoration: none;
+}
+.textbox {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	color: #666666;
+	text-decoration: none;
+	height: 15px;
+	border: 1pt solid #007EA2;
+}
+.black_txt {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: #333333;
+	text-decoration: none;
+}
+.red_txt {
+
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: bold;
+	color: #C80000;
+	text-decoration: none;
+}
+.blue_border {
+
+
+	border: 1pt solid #8FB1D6;
+}
+.black_normal {
+
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	color: #333333;
+	text-decoration: none;
+}
+.grey_border {
+
+
+	border: 1pt solid #DADBDC;
+}
+.content {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	color: #111111;
+	text-decoration: none;
+	line-height: 17px;
+}
+.blue_text {
+	font-family: Tahoma;
+	font-size: 11px;
+	font-weight: normal;
+	color: #054892;
+	text-decoration: none;
+	line-height: 18px;
+}

@@ -1,0 +1,11 @@
+#dhtmltooltip{
+position: absolute;
+width: 150px;
+border: 2px solid black;
+padding: 2px;
+background-color:red; 
+visibility:hidden; 
+z-index:50;
+/*Remove below line to remove shadow. Below line should always appear last within this CSS*/
+
+}

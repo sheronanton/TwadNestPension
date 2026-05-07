@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15 Sep, 2009 3:45:35 PM by Hibernate Tools 3.2.4.GA -->
+<hibernate-mapping>
+    <class name="com.nic.hrms.pension.model.ValidatePenAddres_dao" table="HRM_PEN_MST_ADDRESS">
+      
+      	<id name="ppoNo" type="integer"  >
+            <column name="PPO_NO"  length="6" />
+            <generator class="assigned" />
+        </id>
+        
+       <property name="address" type="string">
+            <column name="ADDRESS" length="100" />
+        </property>
+        
+        <property name="district" type="string">
+            <column name="DISTRICT" length="50" />
+        </property>
+        
+         <property name="state" type="string">
+            <column name="STATE" length="50" />
+        </property>
+        
+        <property name="pincode" type="string">
+            <column name="PINCODE" length="10" />
+        </property>
+       
+        <property name="contactLandline" type="string">
+            <column name="CONTACT_LANDLINE" length="20" />
+        </property>
+        
+        <property name="contactCell" type="string">
+            <column name="CONTACT_CELL" length="20" />
+        </property>
+        
+        <property name="faxNo" type="string">
+            <column name="FAX_NUMBER" length="20" />
+        </property>
+        
+        <property name="contactEmailId" type="string">
+            <column name="CONTACT_EMAIL_ID" length="50" />
+        </property>
+                
+         <property name="processStatus" type="string">
+            <column name="PROCESS_STATUS" length="10" />
+        </property>
+        
+          <property name="updatedId" type="string">
+            <column name="UPDATED_USER_ID" length="20"/>
+        </property>
+        
+         <property name="updatedDate" type="java.sql.Timestamp">
+            <column name="UPDATED_DATE" />
+        </property>
+        
+        	
+
+	</class>
+</hibernate-mapping>

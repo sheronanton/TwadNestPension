@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+	<class name="com.nic.hrms.pension.model.LastWorkingOffice_dao" table="COM_MST_OFFICE_LEVELS">
+		
+		<id name="LastWorkingOfficeLevel" type="string"  >
+            <column name="OFFICE_LEVEL_ID"  length="30" />
+            <generator class="assigned" />
+        </id>
+        
+		<property name="LastWorkingOfficeName" type="string">
+			<column name="OFFICE_LEVEL_NAME" length="50"/>
+		</property>
+		
+		
+	</class>
+</hibernate-mapping>
+
